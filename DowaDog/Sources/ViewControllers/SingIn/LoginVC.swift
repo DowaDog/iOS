@@ -22,7 +22,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var aroundBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        idTextField.circleRadius(5.0)
+        
         loginBtn.circleRadius()
         aroundBtn.circleRadius()
         loginBtn.dropShadow()//그림자 안먹힘
