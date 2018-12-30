@@ -13,16 +13,30 @@ class CommunityWriteVC: UIViewController {
     @IBOutlet var textView: UITextView!
     @IBOutlet var photoViewConstraint: NSLayoutConstraint!
     
+    let picker = UIImagePickerController()
+    
+    @IBOutlet var imageBox: UIView!
+    
+    @IBOutlet var imgBtn1: UIButton!
     @IBOutlet var image1: UIImageView!
+    var imgFlag1: Bool = false
+    
+    @IBOutlet var imgBtn2: UIButton!
     @IBOutlet var image2: UIImageView!
+    var imgFlag2: Bool = false
+    
+    @IBOutlet var imgBtn3: UIButton!
     @IBOutlet var image3: UIImageView!
+    var imgFlag3: Bool = false
+    
+    @IBOutlet var imgBtn4: UIButton!
     @IBOutlet var image4: UIImageView!
-    
-    
+    var imgFlag4: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        picker.delegate = self
+        
         // set Navigation Bar
         self.setNavigationBarShadow()
         self.setTopItem(title: "글 작성하기")
@@ -30,6 +44,42 @@ class CommunityWriteVC: UIViewController {
         self.setRightBtn(title: "확인", color: UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0))
         
         initGestureRecognizer()
+    }
+    
+    
+    @IBAction func btnAction(_ sender: UIButton) {
+        switch (sender) {
+        case imgBtn1:
+            if image1.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+            } else {
+                image1.image = UIImage(named: "writingPlusBtn")
+            }
+            break
+        case imgBtn2:
+            if image2.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+            } else {
+                image2.image = UIImage(named: "writingPlusBtn")
+            }
+            break
+        case imgBtn3:
+            if image3.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+            } else {
+                image3.image = UIImage(named: "writingPlusBtn")
+            }
+            break
+        case imgBtn4:
+            if image4.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+                image4.image = UIImage(named: "writingPlusBtn")
+            }
+            break
+        default:
+            print("default")
+            break
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,25 +95,23 @@ class CommunityWriteVC: UIViewController {
     }
     
     func photoActionSheet() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
         
         let actionSheet = UIAlertController(title: "사진 첨부", message: "사진은 최대 4장까지 업로드 가능합니다", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "카메라", style: .default, handler: { (action) in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                picker.sourceType = .camera
-                picker.allowsEditing = true
-                picker.showsCameraControls = true
-                self.present(picker, animated: true)
+                self.picker.sourceType = .camera
+                self.picker.allowsEditing = true
+                self.picker.showsCameraControls = true
+                self.present(self.picker, animated: true)
             } else {
                 print("not available")
             }
         }))
         
         actionSheet.addAction(UIAlertAction(title: "앨범", style: .default, handler: { (action) in
-            picker.sourceType = .photoLibrary
-            picker.allowsEditing = true
-            self.present(picker, animated: true)
+            self.picker.sourceType = .photoLibrary
+            self.picker.allowsEditing = true
+            self.present(self.picker, animated: true)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel))
@@ -93,15 +141,7 @@ extension CommunityWriteVC: UIImagePickerControllerDelegate, UINavigationControl
             return
         }
         
-        if image1 == nil {
-            image1.image = newImg
-        } else if image2 == nil {
-            image2.image = newImg
-        } else if image3 == nil {
-            image3.image = newImg
-        } else {
-            image4.image = newImg
-        }
+        
         
         dismiss(animated: true, completion: nil)
     }
@@ -118,13 +158,13 @@ extension CommunityWriteVC: UIGestureRecognizerDelegate {
     @objc func handleTapTextView(_ sender: UITapGestureRecognizer) {
         self.textView.resignFirstResponder()
     }
-    
+
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if (touch.view?.isDescendant(of: textView))! {
-            
+
             return false
         }
-        
+
         return true
     }
     
