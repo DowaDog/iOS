@@ -50,6 +50,8 @@ class MainPageVC: UIViewController {
 //        self.setNavigationBar()
         coverView.isHidden=true
         page2CV.alpha = 0.0
+        self.selectPoint1.frame.size.height = 8.0//사이즈 변경 안먹힘
+        self.selectPoint2.frame.size.height = 0.0//사이즈 변경 안먹힘
         
         
     }

@@ -28,6 +28,13 @@
 		4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95ED21D893A800301D52 /* NewDogCVCell.swift */; };
 		4C0E95F021D893C400301D52 /* HeaderCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95EF21D893C400301D52 /* HeaderCRView.swift */; };
 		4C0E95F221D894B000301D52 /* Contents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95F121D894B000301D52 /* Contents.storyboard */; };
+		4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */; };
+		4C0E95F621D8B98000301D52 /* EmergenDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F521D8B98000301D52 /* EmergenDogVC.swift */; };
+		4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */; };
+		4C0E95FA21D8CB4300301D52 /* AboutEmergenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F921D8CB4300301D52 /* AboutEmergenVC.swift */; };
+		4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */; };
+		4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FD21D9228F00301D52 /* NewDogVC.swift */; };
+		4C0E960021D92B9A00301D52 /* AboutNewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */; };
 		B4A3D6B3BCF11D3C05CD91E4 /* Pods_DowaDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */; };
 		F501E64621D4DFA9004CD703 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F501E64521D4DFA9004CD703 /* Home.storyboard */; };
 		F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501E64921D4DFF6004CD703 /* HomeExtension.swift */; };
@@ -69,6 +76,13 @@
 		4C0E95ED21D893A800301D52 /* NewDogCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogCVCell.swift; sourceTree = "<group>"; };
 		4C0E95EF21D893C400301D52 /* HeaderCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCRView.swift; sourceTree = "<group>"; };
 		4C0E95F121D894B000301D52 /* Contents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contents.storyboard; sourceTree = "<group>"; };
+		4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorUICVLayoutAttributes.swift; sourceTree = "<group>"; };
+		4C0E95F521D8B98000301D52 /* EmergenDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDogVC.swift; sourceTree = "<group>"; };
+		4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDetailCVCell.swift; sourceTree = "<group>"; };
+		4C0E95F921D8CB4300301D52 /* AboutEmergenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutEmergenVC.swift; sourceTree = "<group>"; };
+		4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogDetailCVCell.swift; sourceTree = "<group>"; };
+		4C0E95FD21D9228F00301D52 /* NewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogVC.swift; sourceTree = "<group>"; };
+		4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewDogVC.swift; sourceTree = "<group>"; };
 		5AE6EC9ACD1107B95B4D092F /* Pods-DowaDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.debug.xcconfig"; sourceTree = "<group>"; };
 		EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DowaDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F501E64521D4DFA9004CD703 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -131,6 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				4C0E95D421D891D100301D52 /* FindMainVC.swift */,
+				4C0E95F921D8CB4300301D52 /* AboutEmergenVC.swift */,
+				4C0E95F521D8B98000301D52 /* EmergenDogVC.swift */,
+				4C0E95FD21D9228F00301D52 /* NewDogVC.swift */,
+				4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -184,6 +202,9 @@
 				4C0E95EA21D8937C00301D52 /* EmergencyCVCell.swift */,
 				4C0E95ED21D893A800301D52 /* NewDogCVCell.swift */,
 				4C0E95EF21D893C400301D52 /* HeaderCRView.swift */,
+				4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */,
+				4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */,
+				4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -506,19 +527,26 @@
 				4C0E95F021D893C400301D52 /* HeaderCRView.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
+				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
+				4C0E960021D92B9A00301D52 /* AboutNewDogVC.swift in Sources */,
+				4C0E95FA21D8CB4300301D52 /* AboutEmergenVC.swift in Sources */,
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
+				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
+				4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */,
+				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
 				4C0E95E921D8935C00301D52 /* RoundView.swift in Sources */,
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95D521D891D100301D52 /* FindMainVC.swift in Sources */,
 				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
 				4C0E95CF21D8916200301D52 /* SignIn2VC.swift in Sources */,
+				4C0E95F621D8B98000301D52 /* EmergenDogVC.swift in Sources */,
 				4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */,
 				4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */,
 				F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */,
