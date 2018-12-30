@@ -103,12 +103,6 @@ extension CommunityWriteVC: UIImagePickerControllerDelegate, UINavigationControl
             image4.image = newImg
         }
         
-        
-        a-1 세트 2    46000
-        짜장 1        6000
-        간짜장 1       7000
-        짬뽕 1        7000
-        
         dismiss(animated: true, completion: nil)
     }
 }
