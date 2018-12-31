@@ -35,6 +35,9 @@
 		4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */; };
 		4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FD21D9228F00301D52 /* NewDogVC.swift */; };
 		4C0E960021D92B9A00301D52 /* AboutNewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */; };
+		4C89FC2821D9F85C0078D695 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2721D9F85C0078D695 /* KakaoLink.framework */; };
+		4C89FC2C21DA00E70078D695 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */; };
+		4C89FC2E21DA02FD0078D695 /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */; };
 		B4A3D6B3BCF11D3C05CD91E4 /* Pods_DowaDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */; };
 		F501E64621D4DFA9004CD703 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F501E64521D4DFA9004CD703 /* Home.storyboard */; };
 		F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501E64921D4DFF6004CD703 /* HomeExtension.swift */; };
@@ -83,6 +86,10 @@
 		4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogDetailCVCell.swift; sourceTree = "<group>"; };
 		4C0E95FD21D9228F00301D52 /* NewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogVC.swift; sourceTree = "<group>"; };
 		4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewDogVC.swift; sourceTree = "<group>"; };
+		4C89FC2721D9F85C0078D695 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
+		4C89FC2A21D9FBCC0078D695 /* KakaoOpenHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KakaoOpenHeader.h; sourceTree = "<group>"; };
+		4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
+		4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
 		5AE6EC9ACD1107B95B4D092F /* Pods-DowaDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.debug.xcconfig"; sourceTree = "<group>"; };
 		EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DowaDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F501E64521D4DFA9004CD703 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -109,6 +116,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C89FC2821D9F85C0078D695 /* KakaoLink.framework in Frameworks */,
+				4C89FC2C21DA00E70078D695 /* KakaoCommon.framework in Frameworks */,
+				4C89FC2E21DA02FD0078D695 /* KakaoMessageTemplate.framework in Frameworks */,
 				B4A3D6B3BCF11D3C05CD91E4 /* Pods_DowaDog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +219,13 @@
 			path = Find;
 			sourceTree = "<group>";
 		};
+		4C89FC2921D9FB7F0078D695 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		AA734A21068415B81E5E6647 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +272,10 @@
 		F5508A0E21D4D54400BE73FF /* DowaDog */ = {
 			isa = PBXGroup;
 			children = (
+				4C89FC2A21D9FBCC0078D695 /* KakaoOpenHeader.h */,
+				4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */,
+				4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */,
+				4C89FC2721D9F85C0078D695 /* KakaoLink.framework */,
 				F5508A2221D4D86600BE73FF /* Resources */,
 				F5508A2121D4D85D00BE73FF /* Sources */,
 			);
@@ -264,6 +285,7 @@
 		F5508A2121D4D85D00BE73FF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4C89FC2921D9FB7F0078D695 /* Header */,
 				F5508A3121D4D90000BE73FF /* Protocols */,
 				F5508A3021D4D8DB00BE73FF /* APIServices */,
 				F5508A2F21D4D8D200BE73FF /* ViewControllers */,
@@ -699,14 +721,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JT57WV788F;
+				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DowaDog",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/DowaDog/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.DowaDog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = DowaDog/KakaoOpenHeader.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -718,14 +757,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JT57WV788F;
+				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DowaDog",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/DowaDog/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.DowaDog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = DowaDog/KakaoOpenHeader.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
