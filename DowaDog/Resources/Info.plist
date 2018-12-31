@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>KAKAO_APP_KEY</key>
+	<string>ffbe6d5198bf9f2d37cdc2a9c87f4baa</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSCameraUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -52,5 +56,25 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+<!--    //추가-->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>kakaoffbe6d5198bf9f2d37cdc2a9c87f4baa</string>
+            </array>
+        </dict>
+    </array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>kakaoffbe6d5198bf9f2d37cdc2a9c87f4baa</string>
+        <string>kakaolink</string>
+        <string>kakaotalk-5.9.7</string>
+    </array>
+
+<!--    추가 끝-->
 </dict>
 </plist>
