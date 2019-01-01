@@ -10,35 +10,25 @@ import UIKit
 
 class AdoptDocPersonalVC: UIViewController {
     
-    var positive: Bool = false
-    var textFlag: Bool = false
-    var textTemp: String = ""
-    @IBOutlet var jobTextField: UITextField!
-    
     @IBOutlet var topViewConstraint: NSLayoutConstraint!
     
-    @IBOutlet var nextButton: UIButton!
-    @IBOutlet var addressTextView: CumstomTextView!
+    @IBOutlet var profileImage: UIImageView!
+    
+    @IBOutlet var addressTextField: UITextField!
+    @IBOutlet var jobTextField: UITextField!
+    @IBOutlet var nextBtn: UIButton!
+    
+    var agreeFlag: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBarClear()
         self.setBackBtn()
-        self.addressTextView.delegate = self
         
         initGestureRecognizer()
-        setPlaceholder()
-    }
-    
-    func setPlaceholder() {
-        addressTextView.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1.0)
-        addressTextView.text = "입력해주세요"
-    }
-    
-    
-    @IBAction func agreeBtnAction(_ sender: UIButton) {
-        
+        setTextField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,84 +38,96 @@ class AdoptDocPersonalVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         unregisterForKeyboardNotifications()
     }
+    
+    func setTextField() {
+        addressTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        
+        jobTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange(textField: UITextField) {
+        if addressTextField.text != "" && jobTextField.text != "" && agreeFlag == true {
+            nextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
+        } else {
+            nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
+        }
+    }
+    
+    @IBAction func personalEditAction(_ sender: Any) {
+        let dvc = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyProfileNav") as! UINavigationController
+        
+        self.present(dvc, animated: true, completion: nil)
+//        self.show(dvc, sender: self)
+    }
+    
+    
+    @IBAction func checkBoxAction(_ sender: UIButton) {
+        agreeFlag = !agreeFlag
+        sender.isSelected = !sender.isSelected
+        
+        sender.setImage(UIImage(named:"adoptingDocumentCheckGrey"), for: .normal)
+        sender.setImage(UIImage(named:"adoptingDocumentCheckYellow"), for: .selected)
+        
+        if addressTextField.text != "" && jobTextField.text != "" && agreeFlag == true {
+            nextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
+        } else {
+            nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
+        }
+    }
+    
+    @IBAction func nextBtn(_ sender: UIButton) {
+        if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) {
+            performSegue(withIdentifier: "goStep2", sender: self)
+        }
+    }
 }
 
-extension AdoptDocPersonalVC: UITextViewDelegate {
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-            return false
-        }
-        
-        if text != "\u{232B}" {
-            textTemp = text
-        }
-        
-        return true
-    }
-    
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//
-//        if (textView.text == "입력해주세요" && textView.textColor == UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1.0))
-//        {
-//            textView.text = ""
-//            textView.textColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
-//        }
-//
-//        textView.becomeFirstResponder()
-//    }
-    func textViewDidChange(_ textView: UITextView) {
-        
-        if textView.text == "" {
-            textView.text = "입력해주세요"
-            textView.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1.0)
-            textFlag = false
-        } else if textFlag == false && textView.textColor == UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1.0) {
-            textView.text = ""
-            textView.text = textTemp
-            textView.textColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
-            textFlag = true
-        }
-        textView.becomeFirstResponder()
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text == "" {
-            textView.text = "입력해주세요"
-            textView.textColor = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1.0)
-            textFlag = false
-        }
-        textView.resignFirstResponder()
-    }
-}
+
 
 extension AdoptDocPersonalVC: UIGestureRecognizerDelegate {
     
     func initGestureRecognizer() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTabMainView(_:)))
-        tap.delegate = self
-        view.addGestureRecognizer(tap)
+        let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
+        textFieldTap.delegate = self
+        view.addGestureRecognizer(textFieldTap)
+        
+        let profileImageTap = UITapGestureRecognizer(target: self, action: #selector(handleTapImageView(_:)))
+        profileImageTap.delegate = self
+        view.addGestureRecognizer(profileImageTap)
     }
     
-    @objc func handleTabMainView(_ sender: UITapGestureRecognizer){
-        self.addressTextView.resignFirstResponder()
+    @objc func handleTapImageView(_ sender: UITapGestureRecognizer) {
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        self.present(picker, animated: true)
+    }
+    
+    @objc func handleTapTextField(_ sender: UITapGestureRecognizer){
+        self.addressTextField.resignFirstResponder()
+        self.jobTextField.resignFirstResponder()
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if (touch.view?.isDescendant(of: addressTextView))! {
+        if (touch.view?.isDescendant(of: addressTextField))! || (touch.view?.isDescendant(of: jobTextField))! {
+            
             return false
         }
         return true
     }
+    
+    
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
         
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
         
-        //duration 과 cruve 는
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            self.topViewConstraint.constant = 200 //스택 뷰의 제약조건을 변경한다.
+            self.topViewConstraint.constant = 190
         })
         
         self.view.layoutIfNeeded()
@@ -135,7 +137,7 @@ extension AdoptDocPersonalVC: UIGestureRecognizerDelegate {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            self.topViewConstraint.constant = 64 //스택 뷰의 제약조건을 변경한다.
+            self.topViewConstraint.constant = 64
         })
         
         self.view.layoutIfNeeded()
@@ -146,8 +148,39 @@ extension AdoptDocPersonalVC: UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func unregisterForKeyboardNotifications() { //뷰에서 나갈 때 옵저버를 해제해야한다.
+    func unregisterForKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+}
+
+
+
+extension AdoptDocPersonalVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //이미지를 선택하지 않고 피커 종료시에 실행되는 delegate 메소드
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        var newImg = UIImage()
+        
+        if let possibleImg = info[.editedImage] as? UIImage {
+            newImg = possibleImg
+        }
+        else if let possibleImg = info[.originalImage] as? UIImage {
+            newImg = possibleImg
+        }
+        else {
+            return
+        }
+        profileImage.image = newImg
+        
+        profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = 34
+        
+        dismiss(animated: true, completion: nil)
     }
 }
