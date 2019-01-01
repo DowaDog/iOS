@@ -54,6 +54,10 @@
 		F5508A2921D4D8B100BE73FF /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2521D4D8B100BE73FF /* NanumSquareLight.ttf */; };
 		F5508A2A21D4D8B100BE73FF /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2621D4D8B100BE73FF /* NanumSquareExtraBold.ttf */; };
 		F5508A2B21D4D8B100BE73FF /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2721D4D8B100BE73FF /* NanumSquareBold.ttf */; };
+		F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */; };
+		F58ADAA121DA045C00231B27 /* AdoptDocPersonalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocPersonalVC.swift */; };
+		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
+		F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA521DA725800231B27 /* CustomTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +113,10 @@
 		F5508A2521D4D8B100BE73FF /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
 		F5508A2621D4D8B100BE73FF /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
 		F5508A2721D4D8B100BE73FF /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
+		F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocumentVC.swift; sourceTree = "<group>"; };
+		F58ADAA021DA045C00231B27 /* AdoptDocPersonalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocPersonalVC.swift; sourceTree = "<group>"; };
+		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		F58ADAA521DA725800231B27 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				4C0E95D621D8920D00301D52 /* AdoptVC.swift */,
+				F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */,
+				F58ADAA021DA045C00231B27 /* AdoptDocPersonalVC.swift */,
 			);
 			path = Adopt;
 			sourceTree = "<group>";
@@ -329,6 +339,7 @@
 		F5508A2D21D4D8C300BE73FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F58ADAA221DA2ECA00231B27 /* Adopt */,
 				4C0E95EC21D8939100301D52 /* Find */,
 				4C0E95E321D892F400301D52 /* Filter */,
 				4C0E95E221D892EB00301D52 /* Login */,
@@ -406,6 +417,15 @@
 			children = (
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F58ADAA221DA2ECA00231B27 /* Adopt */ = {
+			isa = PBXGroup;
+			children = (
+				F58ADAA321DA2ED600231B27 /* CheckBox.swift */,
+				F58ADAA521DA725800231B27 /* CustomTextView.swift */,
+			);
+			path = Adopt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0E95F021D893C400301D52 /* HeaderCRView.swift in Sources */,
+				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
@@ -558,6 +579,9 @@
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
+				F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */,
+				F58ADAA121DA045C00231B27 /* AdoptDocPersonalVC.swift in Sources */,
+				F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */,
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
 				4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */,
