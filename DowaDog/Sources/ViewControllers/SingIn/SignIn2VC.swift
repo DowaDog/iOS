@@ -29,7 +29,7 @@ class SignIn2VC: UIViewController {
         super.viewDidLoad()
         nextBtn.isEnabled = false
         
-        //        self.setBackBtn()
+        self.setBackBtn()
         level1.circleRadius()
         level2.circleRadius()
         idTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)

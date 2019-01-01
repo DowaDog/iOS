@@ -11,6 +11,7 @@ import UIKit
 class FindMainVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var filterBtn: UIButton!
     var  reusablecell = "cell1"
     var   reusablecell2 = "cell2"
     var resusableheader = "header"
@@ -27,6 +28,7 @@ class FindMainVC: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        filterBtn.roundRadius()
         
         
     }
@@ -52,6 +54,7 @@ extension FindMainVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         let cellA:EmergenCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! EmergenCVCell
+        
         let cellB:NewDogCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell2, for: indexPath) as! NewDogCVCell
         
         let section = indexPath.section
@@ -59,19 +62,23 @@ extension FindMainVC:UICollectionViewDataSource{
         
         
         if section == 0{
-            collectionView.backgroundColor = UIColor.init(displayP3Red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+
             cellA.emerImage.image = self.emerImg[indexPath.item]
             
             cell = cellA
+          
+         
             
         }else if section == 1{
             
             cellB.newImage.image = self.newImg[indexPath.item]
             cell = cellB
+            
         }
         return cell
         
     }
+
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
@@ -86,8 +93,15 @@ extension FindMainVC:UICollectionViewDataSource{
             let section = indexPath.section
             if section == 0{
                 headerView.headerLabel.text = "긴급"
+                headerView.moreBtn.setTitle("더보기", for: .normal)
+            
+
+              
+             
             }else if section == 1 {
                 headerView.headerLabel.text = "새로 구조된 아이들"
+                headerView.moreBtn.setTitle("", for: .normal)
+                
             }
             
             return headerView
@@ -96,6 +110,7 @@ extension FindMainVC:UICollectionViewDataSource{
             assert(false, "Unexpected element kind")
         }
     }
+    
     
 }
 
@@ -107,16 +122,26 @@ extension FindMainVC: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
+        let section = indexPath.section
+        if section == 1{
+
+            let cell = self.collectionView.cellForItem(at: indexPath) as! NewDogCVCell
+            if indexPath.row == 0{
+                if let dvc = storyboard?.instantiateViewController(withIdentifier: "NewDogVC") as? NewDogVC {
+                    
+                    //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+                    navigationController?.pushViewController(dvc, animated: true)
+                }
+        }
         
         
-        //        let cell = self.collectionView.cellForItem(at: indexPath) as! AreaCollectionViewCell
-        
-        
-        
-    }
+        }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
         
         
     }
+}
+
 }

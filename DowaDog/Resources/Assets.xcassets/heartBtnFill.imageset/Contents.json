@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "heartBtnFill.png",
       "idiom" : "universal",
+      "filename" : "heartBtnFill.png",
       "scale" : "1x"
     },
     {
-      "filename" : "heartBtnFill@2x.png",
       "idiom" : "universal",
+      "filename" : "heartBtnFill@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "heartBtnFill@3x.png",
       "idiom" : "universal",
+      "filename" : "heartBtnFill@3x.png",
       "scale" : "3x"
     }
   ],

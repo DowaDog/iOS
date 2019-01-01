@@ -32,6 +32,17 @@ extension UIViewController {
         }
     }
     
+        //커스텀 백버튼 설정
+        func setBackBtn(color : UIColor){
+    
+            let backBTN = UIBarButtonItem(image: UIImage(named: "icBackBtn"), //백버튼 이미지 파일 이름에 맞게 변경해주세요.
+                style: .plain,
+                target: self,
+                action: #selector(self.pop))
+            navigationItem.leftBarButtonItem = backBTN
+            navigationItem.leftBarButtonItem?.tintColor = color
+            navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+        }
     
     //네비게이션 바 투명하게 하는 함수
     func setNavigationBar() {
