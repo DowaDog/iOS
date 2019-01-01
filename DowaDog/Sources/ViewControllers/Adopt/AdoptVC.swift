@@ -28,30 +28,21 @@ class AdoptVC: UIViewController {
     
     
     @IBAction func walkAction(_ sender: Any) {
-        write = false
-        walk = true
         
         nextBtn.backgroundColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
-        
         way1Btn.setBackgroundImage(UIImage(named: "walkingImgCheck.png"), for: .normal)
-        
         way2Btn.setBackgroundImage(UIImage(named: "writingImgUncheck.png"), for: .normal)
+        
+        
+        
+        
     }
     
     @IBAction func writeAction(_ sender: Any) {
-        walk = false
-        write = true
-        
         nextBtn.backgroundColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
         way1Btn.setBackgroundImage(UIImage(named: "walkingImgUncheck.png"), for: .normal)
         way2Btn.setBackgroundImage(UIImage(named:"writingImgCheck.png"), for: .normal)
-    }
-    
-    @IBAction func nextBtnAction(_ sender: Any) {
-        if walk == true {
-            performSegue(withIdentifier: "goDirect", sender: self)
-        } else if write == true {
-            performSegue(withIdentifier: "goDocument", sender: self)
-        }
+        
+        
     }
 }

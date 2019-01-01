@@ -91,15 +91,11 @@ class HomeVC: UIViewController {
                 print("Infomation")
                 break
             case "입양하기":
-                hideMenu()
-                
-                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptNav") as! UINavigationController
-                
-                self.present(adopt, animated: true, completion: nil)
-                
+                print("Adopt")
                 break
             case "커뮤니티":
                 hideMenu()
+//                sideMenuView.isHidden = true
                 
                 let community = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityNav") as! UINavigationController
                 
