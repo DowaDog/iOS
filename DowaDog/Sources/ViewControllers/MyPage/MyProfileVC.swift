@@ -14,6 +14,10 @@ class MyProfileVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+    }
+    @IBAction func leftBtnAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 
