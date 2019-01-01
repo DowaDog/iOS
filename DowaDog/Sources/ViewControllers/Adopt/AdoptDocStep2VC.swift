@@ -102,7 +102,7 @@ class AdoptDocStep2VC: UIViewController {
             hideEdit()
             agreeBtn.isSelected = false
             animalImage.image = defaultImage
-            animalImage.removeGestureRecognizer(UIGestureRecognizer.)
+//            animalImage.removeGestureRecognizer(UIGestureRecognizer.)
         } else if sender == disagreeBtn && sender.isSelected == false {
             sender.isSelected = true
         }
