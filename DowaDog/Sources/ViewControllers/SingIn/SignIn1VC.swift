@@ -10,6 +10,7 @@ import UIKit
 
 class SignIn1VC: UIViewController {
     
+    @IBOutlet weak var checkView: RoundView!
     var emailCheck = false
     var emptyCheck = false
     
@@ -86,6 +87,11 @@ class SignIn1VC: UIViewController {
         }
         
         
+    }
+    
+    
+    @IBAction func phoneCheckAction(_ sender: Any) {
+        checkView.isHidden = false
     }
     
 }
