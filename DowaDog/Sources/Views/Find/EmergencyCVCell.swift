@@ -24,7 +24,7 @@ class EmergenCVCell: UICollectionViewCell {
     
     @IBAction func heartClickAction(_ sender: Any) {
         if isClick == false{
-            heartBtn.setImage(UIImage(named: "likedAnimalHeartBtnFill.png"), for: UIControl.State.normal)
+            heartBtn.setImage(UIImage(named: "findingHeartBtnFill.png"), for: UIControl.State.normal)
             isClick = true
         }else{
             heartBtn.setImage(UIImage(named: "heartBtn.png"), for: UIControl.State.normal)

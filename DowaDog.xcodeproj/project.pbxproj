@@ -35,17 +35,10 @@
 		4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */; };
 		4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FD21D9228F00301D52 /* NewDogVC.swift */; };
 		4C0E960021D92B9A00301D52 /* AboutNewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */; };
-		4C72A14D21DB2B5B0039ECB9 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C72A14C21DB2B5B0039ECB9 /* Keys.plist */; };
-		4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */; };
 		4C89FC2821D9F85C0078D695 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2721D9F85C0078D695 /* KakaoLink.framework */; };
 		4C89FC2C21DA00E70078D695 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */; };
 		4C89FC2E21DA02FD0078D695 /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */; };
-		4CF5A62521DB760C00969511 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62421DB760C00969511 /* WRCycleScrollView.swift */; };
-		4CF5A62721DB761300969511 /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62621DB761300969511 /* WRProxy.swift */; };
-		4CF5A62921DB761A00969511 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62821DB761A00969511 /* WRCycleCell.swift */; };
-		4CF5A62B21DB764000969511 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62A21DB764000969511 /* WRCustomNavigationBar.swift */; };
-		4CF5A62D21DB764700969511 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62C21DB764700969511 /* WRNavigationBar.swift */; };
-		4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */; };
+		4C89FC3421DB0C1C0078D695 /* makeLinkTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C89FC3321DB0C1C0078D695 /* makeLinkTestVC.swift */; };
 		4CFA97E921DB0F8B00AFB491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CFA97E821DB0F8B00AFB491 /* GoogleService-Info.plist */; };
 		B4A3D6B3BCF11D3C05CD91E4 /* Pods_DowaDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */; };
 		F501E64621D4DFA9004CD703 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F501E64521D4DFA9004CD703 /* Home.storyboard */; };
@@ -99,18 +92,11 @@
 		4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogDetailCVCell.swift; sourceTree = "<group>"; };
 		4C0E95FD21D9228F00301D52 /* NewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogVC.swift; sourceTree = "<group>"; };
 		4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewDogVC.swift; sourceTree = "<group>"; };
-		4C72A14C21DB2B5B0039ECB9 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Keys.plist; path = DowaDog/Keys.plist; sourceTree = SOURCE_ROOT; };
-		4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMSTestViewController.swift; path = DowaDog/Sources/ViewControllers/SMSTestViewController.swift; sourceTree = SOURCE_ROOT; };
 		4C89FC2721D9F85C0078D695 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
 		4C89FC2A21D9FBCC0078D695 /* KakaoOpenHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KakaoOpenHeader.h; sourceTree = "<group>"; };
 		4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
 		4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
-		4CF5A62421DB760C00969511 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
-		4CF5A62621DB761300969511 /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
-		4CF5A62821DB761A00969511 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
-		4CF5A62A21DB764000969511 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
-		4CF5A62C21DB764700969511 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
-		4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdoptPopupTestVC.swift; path = DowaDog/Sources/ViewControllers/AdoptPopupTestVC.swift; sourceTree = SOURCE_ROOT; };
+		4C89FC3321DB0C1C0078D695 /* makeLinkTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeLinkTestVC.swift; sourceTree = "<group>"; };
 		4CFA97E821DB0F8B00AFB491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AE6EC9ACD1107B95B4D092F /* Pods-DowaDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.debug.xcconfig"; sourceTree = "<group>"; };
 		EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DowaDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,25 +240,6 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		4CF5A62021DB758F00969511 /* WRCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				4CF5A62821DB761A00969511 /* WRCycleCell.swift */,
-				4CF5A62621DB761300969511 /* WRProxy.swift */,
-				4CF5A62421DB760C00969511 /* WRCycleScrollView.swift */,
-			);
-			path = WRCycleScrollView;
-			sourceTree = "<group>";
-		};
-		4CF5A62121DB75A000969511 /* WRNavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				4CF5A62C21DB764700969511 /* WRNavigationBar.swift */,
-				4CF5A62A21DB764000969511 /* WRCustomNavigationBar.swift */,
-			);
-			path = WRNavigationBar;
-			sourceTree = "<group>";
-		};
 		AA734A21068415B81E5E6647 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,13 +315,10 @@
 		F5508A2221D4D86600BE73FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4CF5A62121DB75A000969511 /* WRNavigationBar */,
-				4CF5A62021DB758F00969511 /* WRCycleScrollView */,
 				F5508A3321D4D93A00BE73FF /* Storyboards */,
 				F5508A2321D4D89200BE73FF /* Fonts */,
 				F5508A1621D4D54400BE73FF /* Assets.xcassets */,
 				F5508A1B21D4D54400BE73FF /* Info.plist */,
-				4C72A14C21DB2B5B0039ECB9 /* Keys.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -402,8 +366,7 @@
 		F5508A2F21D4D8D200BE73FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */,
-				4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */,
+				4C89FC3321DB0C1C0078D695 /* makeLinkTestVC.swift */,
 				4C0E95DB21D8926300301D52 /* Filter */,
 				4C0E95CB21D8912100301D52 /* SingIn */,
 				4C0E95CA21D8910700301D52 /* Content */,
@@ -543,7 +506,6 @@
 				4CFA97E921DB0F8B00AFB491 /* GoogleService-Info.plist in Resources */,
 				F5508A1A21D4D54400BE73FF /* LaunchScreen.storyboard in Resources */,
 				4C0E95C221D890A900301D52 /* Login.storyboard in Resources */,
-				4C72A14D21DB2B5B0039ECB9 /* Keys.plist in Resources */,
 				F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */,
 				4C0E95C421D890BD00301D52 /* Adopt.storyboard in Resources */,
 				F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */,
@@ -615,13 +577,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF5A62D21DB764700969511 /* WRNavigationBar.swift in Sources */,
 				4C0E95F021D893C400301D52 /* HeaderCRView.swift in Sources */,
 				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
-				4CF5A62721DB761300969511 /* WRProxy.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
-				4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */,
+				4C89FC3421DB0C1C0078D695 /* makeLinkTestVC.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
@@ -630,7 +590,6 @@
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
-				4CF5A62921DB761A00969511 /* WRCycleCell.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
 				F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */,
 				F58ADAA121DA045C00231B27 /* AdoptDocPersonalVC.swift in Sources */,
@@ -639,13 +598,11 @@
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
 				4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */,
 				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
-				4CF5A62521DB760C00969511 /* WRCycleScrollView.swift in Sources */,
 				4C0E95E921D8935C00301D52 /* RoundView.swift in Sources */,
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95D521D891D100301D52 /* FindMainVC.swift in Sources */,
 				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
-				4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */,
 				4C0E95CF21D8916200301D52 /* SignIn2VC.swift in Sources */,
 				4C0E95F621D8B98000301D52 /* EmergenDogVC.swift in Sources */,
 				4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */,
@@ -653,7 +610,6 @@
 				F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */,
 				F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */,
 				4C0E95E721D8934600301D52 /* CustomUISlider.swift in Sources */,
-				4CF5A62B21DB764000969511 /* WRCustomNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,7 +757,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
+				DEVELOPMENT_TEAM = JT57WV788F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DowaDog",
@@ -837,7 +793,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
+				DEVELOPMENT_TEAM = JT57WV788F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DowaDog",
