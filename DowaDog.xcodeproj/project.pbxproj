@@ -35,7 +35,6 @@
 		4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */; };
 		4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FD21D9228F00301D52 /* NewDogVC.swift */; };
 		4C0E960021D92B9A00301D52 /* AboutNewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */; };
-		4C72A14D21DB2B5B0039ECB9 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C72A14C21DB2B5B0039ECB9 /* Keys.plist */; };
 		4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */; };
 		4C89FC2821D9F85C0078D695 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2721D9F85C0078D695 /* KakaoLink.framework */; };
 		4C89FC2C21DA00E70078D695 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */; };
@@ -99,7 +98,6 @@
 		4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogDetailCVCell.swift; sourceTree = "<group>"; };
 		4C0E95FD21D9228F00301D52 /* NewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogVC.swift; sourceTree = "<group>"; };
 		4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewDogVC.swift; sourceTree = "<group>"; };
-		4C72A14C21DB2B5B0039ECB9 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Keys.plist; path = DowaDog/Keys.plist; sourceTree = SOURCE_ROOT; };
 		4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMSTestViewController.swift; path = DowaDog/Sources/ViewControllers/SMSTestViewController.swift; sourceTree = SOURCE_ROOT; };
 		4C89FC2721D9F85C0078D695 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
 		4C89FC2A21D9FBCC0078D695 /* KakaoOpenHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KakaoOpenHeader.h; sourceTree = "<group>"; };
@@ -354,7 +352,6 @@
 				F5508A2321D4D89200BE73FF /* Fonts */,
 				F5508A1621D4D54400BE73FF /* Assets.xcassets */,
 				F5508A1B21D4D54400BE73FF /* Info.plist */,
-				4C72A14C21DB2B5B0039ECB9 /* Keys.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -543,7 +540,6 @@
 				4CFA97E921DB0F8B00AFB491 /* GoogleService-Info.plist in Resources */,
 				F5508A1A21D4D54400BE73FF /* LaunchScreen.storyboard in Resources */,
 				4C0E95C221D890A900301D52 /* Login.storyboard in Resources */,
-				4C72A14D21DB2B5B0039ECB9 /* Keys.plist in Resources */,
 				F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */,
 				4C0E95C421D890BD00301D52 /* Adopt.storyboard in Resources */,
 				F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */,
