@@ -57,9 +57,10 @@
 		F5508A2A21D4D8B100BE73FF /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2621D4D8B100BE73FF /* NanumSquareExtraBold.ttf */; };
 		F5508A2B21D4D8B100BE73FF /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2721D4D8B100BE73FF /* NanumSquareBold.ttf */; };
 		F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */; };
-		F58ADAA121DA045C00231B27 /* AdoptDocPersonalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocPersonalVC.swift */; };
+		F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */; };
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
 		F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA521DA725800231B27 /* CustomTextView.swift */; };
+		F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,9 +119,10 @@
 		F5508A2621D4D8B100BE73FF /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
 		F5508A2721D4D8B100BE73FF /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
 		F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocumentVC.swift; sourceTree = "<group>"; };
-		F58ADAA021DA045C00231B27 /* AdoptDocPersonalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocPersonalVC.swift; sourceTree = "<group>"; };
+		F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep1VC.swift; sourceTree = "<group>"; };
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F58ADAA521DA725800231B27 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep2VC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +162,8 @@
 			children = (
 				4C0E95D621D8920D00301D52 /* AdoptVC.swift */,
 				F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */,
-				F58ADAA021DA045C00231B27 /* AdoptDocPersonalVC.swift */,
+				F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */,
+				F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */,
 			);
 			path = Adopt;
 			sourceTree = "<group>";
@@ -592,10 +595,11 @@
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
 				F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */,
-				F58ADAA121DA045C00231B27 /* AdoptDocPersonalVC.swift in Sources */,
+				F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */,
 				F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */,
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
+				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
 				4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */,
 				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
 				4C0E95E921D8935C00301D52 /* RoundView.swift in Sources */,

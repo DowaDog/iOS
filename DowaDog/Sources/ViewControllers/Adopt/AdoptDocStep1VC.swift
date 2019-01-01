@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdoptDocPersonalVC: UIViewController {
+class AdoptDocStep1VC: UIViewController {
     
     @IBOutlet var topViewConstraint: NSLayoutConstraint!
     
@@ -29,6 +29,9 @@ class AdoptDocPersonalVC: UIViewController {
         
         initGestureRecognizer()
         setTextField()
+        
+        profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = profileImage.layer.frame.size.height/2
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +76,8 @@ class AdoptDocPersonalVC: UIViewController {
         } else {
             nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
         }
+        
+        self.view.endEditing(true)
     }
     
     @IBAction func nextBtn(_ sender: UIButton) {
@@ -84,26 +89,12 @@ class AdoptDocPersonalVC: UIViewController {
 
 
 
-extension AdoptDocPersonalVC: UIGestureRecognizerDelegate {
+extension AdoptDocStep1VC: UIGestureRecognizerDelegate {
     
     func initGestureRecognizer() {
         let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
         textFieldTap.delegate = self
         view.addGestureRecognizer(textFieldTap)
-        
-        let profileImageTap = UITapGestureRecognizer(target: self, action: #selector(handleTapImageView(_:)))
-        profileImageTap.delegate = self
-        view.addGestureRecognizer(profileImageTap)
-    }
-    
-    @objc func handleTapImageView(_ sender: UITapGestureRecognizer) {
-        
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        
-        picker.sourceType = .photoLibrary
-        picker.allowsEditing = true
-        self.present(picker, animated: true)
     }
     
     @objc func handleTapTextField(_ sender: UITapGestureRecognizer){
@@ -127,7 +118,7 @@ extension AdoptDocPersonalVC: UIGestureRecognizerDelegate {
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            self.topViewConstraint.constant = 190
+            self.topViewConstraint.constant = 250
         })
         
         self.view.layoutIfNeeded()
@@ -151,36 +142,5 @@ extension AdoptDocPersonalVC: UIGestureRecognizerDelegate {
     func unregisterForKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-}
-
-
-
-extension AdoptDocPersonalVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    //이미지를 선택하지 않고 피커 종료시에 실행되는 delegate 메소드
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        var newImg = UIImage()
-        
-        if let possibleImg = info[.editedImage] as? UIImage {
-            newImg = possibleImg
-        }
-        else if let possibleImg = info[.originalImage] as? UIImage {
-            newImg = possibleImg
-        }
-        else {
-            return
-        }
-        profileImage.image = newImg
-        
-        profileImage.clipsToBounds = true
-        profileImage.layer.cornerRadius = 34
-        
-        dismiss(animated: true, completion: nil)
     }
 }
