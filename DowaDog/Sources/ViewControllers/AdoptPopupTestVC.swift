@@ -1,5 +1,5 @@
 //
-//  makeLinkTestVC.swift
+//  AdoptPopupTestVC.swift
 //  DowaDog
 //
 //  Created by 조윤영 on 01/01/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class makeLinkTestVC: UIViewController {
+class AdoptPopupTestVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +16,5 @@ class makeLinkTestVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
 
 }

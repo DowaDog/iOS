@@ -8,18 +8,29 @@
 
 import UIKit
 
-class AboutNewDogVC: UIViewController {
 
+
+
+class AboutNewDogVC: UIViewController {
+var heartClick = false
+    
     @IBOutlet weak var adoptBtn: UIButton!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var contentView: UIView!
+
+    
+    var heartItem: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.setNavigationBar()
         self.setBackBtn()
+        navBarBackgroundAlpha = 0//navbar 투명하게 setup
+ 
+        heartItem = UIBarButtonItem(image:UIImage(named: "heartBtnLine.png") , style: .plain, target: self, action: #selector(heartTapped))
+        heartItem.tintColor = UIColor.white
         
+        navigationItem.rightBarButtonItems = [heartItem]
         
         
         let panGestureRecongnizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))
@@ -28,43 +39,41 @@ class AboutNewDogVC: UIViewController {
         
         panGestureRecongnizer.delegate = self
     
-        let share = UIBarButtonItem(image:UIImage(named: "shareBtn.png") , style: UIBarButtonItem.Style.plain, target: AnyObject.self, action: #selector(shareTapped))
-        share.tintColor = UIColor.white
-        
-        let heart = UIBarButtonItem(image:UIImage(named: "heartBtnLine.png") , style: UIBarButtonItem.Style.plain, target: AnyObject.self, action: #selector(heartTapped))
-        heart.tintColor = UIColor.white
-        
-        navigationItem.rightBarButtonItems = [heart, share]
 
     }
-    
-    @objc func shareTapped() {
-        
-    }
+
     
     @objc func heartTapped(){
+        if heartClick == false{
+            heartItem.image = UIImage(named: "heartBtnFill")
+            heartClick = true
+        }else{
+            heartItem.image = UIImage(named: "heartBtnLine.png")
+            heartClick = false
+        }
         
     }
+    
     
     @objc func panAction (_ sender : UIPanGestureRecognizer){
         
-        let velocity = sender.velocity(in: scrollView)
+        let velocity = sender.velocity(in: scroll)
         
         if abs(velocity.x) > abs(velocity.y) {
             
-            velocity.x < 0 ? print("left") :  print("right")
+//            velocity.x < 0 ? print("left") :  print("right")
             
         }
             
         else if abs(velocity.y) > abs(velocity.x) {
             if velocity.y<0{
-                print("up")
+                
                 
                 self.adoptBtn.frame.size.height = 0.0
                 self.adoptBtn.setTitle("", for: UIControl.State.normal)
                
             }else{
-                 print("down")
+                
                 self.adoptBtn.frame.size.height = 49.0
                 self.adoptBtn.setTitle("임보/입양하기", for: UIControl.State.normal)
 
@@ -72,11 +81,22 @@ class AboutNewDogVC: UIViewController {
 
             
         }
+
+         let offsetY = scroll.contentOffset.y
+        if ( offsetY > 170) {
+            UIView.animate(withDuration: 0.4, animations: {
+                self.navBarBackgroundAlpha = 1
+            })
+
+        }else if (offsetY <= 170 ){
+            UIView.animate(withDuration: 0.4, animations: {
+                self.navBarBackgroundAlpha = 0
+            })
+
+        }
         
     }
-    
 
-    
 }
 extension AboutNewDogVC : UIGestureRecognizerDelegate{
     
