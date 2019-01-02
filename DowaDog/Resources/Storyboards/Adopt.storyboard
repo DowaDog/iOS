@@ -1127,23 +1127,99 @@
         <!--View Controller-->
         <scene sceneID="0Zv-r4-zdE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kem-RD-nPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZVy-DX-CUw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dxx-pS-GRe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-Y1-IVR">
-                                <rect key="frame" x="67" y="128" width="240" height="313"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUx-KK-5Ik">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="731" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-G2-UR4">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="731"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽고 동의를 선택해 주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVo-mN-9fm">
+                                                <rect key="frame" x="28" y="122" width="269" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="269" id="WGD-EU-gpG"/>
+                                                    <constraint firstAttribute="height" constant="27" id="hAP-b4-FyU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
+                                                <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHU-sB-68h">
+                                                <rect key="frame" x="28" y="80" width="70" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="LpP-nQ-Lhc"/>
+                                                    <constraint firstAttribute="height" constant="28" id="jGm-sS-uQi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="25"/>
+                                                <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="유기견 입양 시 학대, 매매 경우 동물 보호법에" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-1o-I8t">
+                                                <rect key="frame" x="28" y="205" width="269" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="JCV-eW-Nvu"/>
+                                                    <constraint firstAttribute="width" constant="269" id="owb-rL-GG5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="aHU-sB-68h" firstAttribute="top" secondItem="BIk-G2-UR4" secondAttribute="top" constant="80" id="Hmu-n5-h9I"/>
+                                            <constraint firstItem="YVo-mN-9fm" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="PJF-xS-vK7"/>
+                                            <constraint firstItem="aHU-sB-68h" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="gFV-M8-sVg"/>
+                                            <constraint firstItem="YVo-mN-9fm" firstAttribute="top" secondItem="aHU-sB-68h" secondAttribute="bottom" constant="14" id="oCS-di-yop"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BIk-G2-UR4" secondAttribute="bottom" id="HV8-rr-RAu"/>
+                                    <constraint firstItem="BIk-G2-UR4" firstAttribute="top" secondItem="MUx-KK-5Ik" secondAttribute="top" id="HhE-2N-IUq"/>
+                                    <constraint firstAttribute="trailing" secondItem="BIk-G2-UR4" secondAttribute="trailing" id="aSt-U0-hgJ"/>
+                                    <constraint firstItem="BIk-G2-UR4" firstAttribute="leading" secondItem="MUx-KK-5Ik" secondAttribute="leading" id="xKW-3x-gfz"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kwL-C7-zow" firstAttribute="top" secondItem="MUx-KK-5Ik" secondAttribute="top" constant="64" id="APJ-rB-Uoh"/>
+                            <constraint firstItem="kwL-C7-zow" firstAttribute="bottom" secondItem="MUx-KK-5Ik" secondAttribute="bottom" id="aWb-Ku-PjY"/>
+                            <constraint firstItem="kwL-C7-zow" firstAttribute="trailing" secondItem="MUx-KK-5Ik" secondAttribute="trailing" id="oOP-ll-isq"/>
+                            <constraint firstItem="MUx-KK-5Ik" firstAttribute="leading" secondItem="kwL-C7-zow" secondAttribute="leading" id="yZP-cf-5UY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kwL-C7-zow"/>
                     </view>
+                    <size key="freeformSize" width="375" height="729"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kem-RD-nPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽고 동의를 선택해 주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-UE-0hw">
+                    <rect key="frame" x="0.0" y="0.0" width="269" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="269" id="A1h-Jo-maO"/>
+                        <constraint firstAttribute="height" constant="27" id="oCL-TN-u0k"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
+                    <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-ZQ-Zqb">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="VW5-4S-Cgd"/>
+                        <constraint firstAttribute="height" constant="28" id="rek-nN-ZZ2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="25"/>
+                    <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
-            <point key="canvasLocation" x="6224.8000000000002" y="222.63868065967017"/>
+            <point key="canvasLocation" x="6224.8000000000002" y="221.73913043478262"/>
         </scene>
     </scenes>
     <resources>
@@ -1159,6 +1235,6 @@
         <image name="writingImgUncheck" width="338" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JGy-oM-CSj"/>
+        <segue reference="nad-7b-if9"/>
     </inferredMetricsTieBreakers>
 </document>
