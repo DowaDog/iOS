@@ -1158,7 +1158,7 @@
                                                 <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="유기견 입양 시 학대, 매매 경우 동물 보호법에" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-1o-I8t">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유기견 입양 시 학대, 매매 경우 동물 보호법에" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-1o-I8t">
                                                 <rect key="frame" x="28" y="205" width="269" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="JCV-eW-Nvu"/>
@@ -1172,7 +1172,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="aHU-sB-68h" firstAttribute="top" secondItem="BIk-G2-UR4" secondAttribute="top" constant="80" id="Hmu-n5-h9I"/>
+                                            <constraint firstItem="2Rd-1o-I8t" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="I73-wf-vfB"/>
                                             <constraint firstItem="YVo-mN-9fm" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="PJF-xS-vK7"/>
+                                            <constraint firstItem="2Rd-1o-I8t" firstAttribute="top" secondItem="YVo-mN-9fm" secondAttribute="bottom" constant="56" id="c8f-2i-ecG"/>
                                             <constraint firstItem="aHU-sB-68h" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="gFV-M8-sVg"/>
                                             <constraint firstItem="YVo-mN-9fm" firstAttribute="top" secondItem="aHU-sB-68h" secondAttribute="bottom" constant="14" id="oCS-di-yop"/>
                                         </constraints>
@@ -1235,6 +1237,6 @@
         <image name="writingImgUncheck" width="338" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nad-7b-if9"/>
+        <segue reference="JGy-oM-CSj"/>
     </inferredMetricsTieBreakers>
 </document>
