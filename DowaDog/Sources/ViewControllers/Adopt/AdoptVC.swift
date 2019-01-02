@@ -22,8 +22,8 @@ class AdoptVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigationBarClear()
-        self.setBackBtn()
+        //        self.setNavigationSahdow()
+        // Do any additional setup after loading the view.
     }
     
     
