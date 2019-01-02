@@ -56,15 +56,6 @@ class AdoptDocStep2VC: UIViewController {
         } else {
             nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
         }
-        
-//        if agreeBtn.isSelected == true && (contentView.text != placeholder && contentView.text != ""){
-//                nextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
-//        } else {
-//            nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
-//        }
-//        if disagreeBtn.isSelected == true {
-//            nextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,7 +119,7 @@ class AdoptDocStep2VC: UIViewController {
     @IBAction func nextBtnAction(_ sender: UIButton) {
         
         if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) && (animalImage.image != defaultImage || disagreeBtn.isSelected == true) {
-            performSegue(withIdentifier: "goStep3", sender: self)
+            performSegue(withIdentifier: "goSelectStep3", sender: self)
         }
         
         if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) && animalImage.image == defaultImage && agreeBtn.isSelected == true {
