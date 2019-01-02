@@ -398,7 +398,7 @@
                                         </constraints>
                                         <state key="normal" image="memberInformationBtn"/>
                                         <connections>
-                                            <action selector="personalEditAction:" destination="srJ-vO-GEg" eventType="touchUpInside" id="nZa-hL-uQO"/>
+                                            <action selector="personalEditAction:" destination="srJ-vO-GEg" eventType="touchUpInside" id="yWB-O1-NEZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -455,7 +455,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtn:" destination="srJ-vO-GEg" eventType="touchUpInside" id="mBi-7H-vN4"/>
+                                    <action selector="nextBtn:" destination="srJ-vO-GEg" eventType="touchUpInside" id="arW-Lg-kFL"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXW-8q-fsv">
@@ -475,7 +475,7 @@
                                         <rect key="frame" x="323" y="28" width="24" height="24"/>
                                         <state key="normal" image="adoptingDocumentCheckGrey"/>
                                         <connections>
-                                            <action selector="checkBoxAction:" destination="srJ-vO-GEg" eventType="touchUpInside" id="pRP-p0-tfD"/>
+                                            <action selector="checkBoxAction:" destination="srJ-vO-GEg" eventType="touchUpInside" id="jbm-9F-ZmL"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입양 여부에 관해 동의하셨습니까?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-1A-pMU">
@@ -516,12 +516,12 @@
                         <viewLayoutGuide key="safeArea" id="ask-zR-fNY"/>
                     </view>
                     <connections>
-                        <outlet property="addressTextField" destination="NUF-UX-XMH" id="FDa-Ca-9yK"/>
-                        <outlet property="jobTextField" destination="CVP-rS-awF" id="VqJ-Ci-0eq"/>
-                        <outlet property="nextBtn" destination="Ll5-n2-0Aq" id="gBl-Vo-eyt"/>
-                        <outlet property="profileImage" destination="fq7-Kj-LSw" id="B1b-YA-yfz"/>
-                        <outlet property="topViewConstraint" destination="kEs-nf-cdO" id="6Fe-BO-Off"/>
-                        <segue destination="eTX-Fb-2fE" kind="show" identifier="goStep2" id="kpe-t7-80I"/>
+                        <outlet property="addressTextField" destination="NUF-UX-XMH" id="Big-b5-Wop"/>
+                        <outlet property="jobTextField" destination="CVP-rS-awF" id="aDO-Qz-UZr"/>
+                        <outlet property="nextBtn" destination="Ll5-n2-0Aq" id="fTQ-GA-JAa"/>
+                        <outlet property="profileImage" destination="fq7-Kj-LSw" id="1YO-jd-VtX"/>
+                        <outlet property="topViewConstraint" destination="kEs-nf-cdO" id="Igd-vO-d60"/>
+                        <segue destination="eTX-Fb-2fE" kind="show" identifier="goStep2" id="OSp-g7-KRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RlW-J3-V8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,7 +580,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="Pkd-WY-0nC"/>
+                                    <action selector="nextBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="pCE-2J-1qk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM4-nF-Oko">
@@ -652,14 +652,14 @@
                                 <rect key="frame" x="48" y="326" width="24" height="24"/>
                                 <state key="normal" image="adoptingDocumentCheckGrey"/>
                                 <connections>
-                                    <action selector="agreeBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="J9j-Pm-Dhn"/>
+                                    <action selector="agreeBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="1Jt-qc-Nwq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVC-82-55e">
                                 <rect key="frame" x="131" y="326" width="24" height="24"/>
                                 <state key="normal" image="adoptingDocumentCheckGrey"/>
                                 <connections>
-                                    <action selector="agreeBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="udS-5G-m1S"/>
+                                    <action selector="agreeBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="UXh-UR-IVo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아니오" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuN-Kw-x5d">
@@ -732,15 +732,15 @@
                         <viewLayoutGuide key="safeArea" id="cvD-5z-Wcy"/>
                     </view>
                     <connections>
-                        <outlet property="agreeBtn" destination="izW-oL-DpM" id="gQ0-ce-393"/>
-                        <outlet property="animalImage" destination="ezb-T3-GrC" id="hP0-da-XOa"/>
-                        <outlet property="bottomConstraint" destination="h0E-fL-NRm" id="oBn-Ew-dzt"/>
-                        <outlet property="bottomLabel" destination="VGA-Ui-nlf" id="jbi-by-U98"/>
-                        <outlet property="contentView" destination="J3P-Ot-9Vp" id="xBZ-Ow-HkR"/>
-                        <outlet property="disagreeBtn" destination="yVC-82-55e" id="5Qr-A4-Nas"/>
-                        <outlet property="nextBtn" destination="bYg-ay-jDx" id="OVD-R0-Wqk"/>
-                        <outlet property="topConstraint" destination="HGk-1v-IsE" id="yTR-76-cQ7"/>
-                        <outlet property="topLabel" destination="NNy-VO-NnZ" id="B7h-bI-GXv"/>
+                        <outlet property="agreeBtn" destination="izW-oL-DpM" id="s6X-Ad-P1d"/>
+                        <outlet property="animalImage" destination="ezb-T3-GrC" id="lVf-P4-9sB"/>
+                        <outlet property="bottomConstraint" destination="h0E-fL-NRm" id="qbs-v9-FeX"/>
+                        <outlet property="bottomLabel" destination="VGA-Ui-nlf" id="rel-Cy-sff"/>
+                        <outlet property="contentView" destination="J3P-Ot-9Vp" id="Emr-W5-HMG"/>
+                        <outlet property="disagreeBtn" destination="yVC-82-55e" id="nr1-TD-2eu"/>
+                        <outlet property="nextBtn" destination="bYg-ay-jDx" id="Yio-8m-zdG"/>
+                        <outlet property="topConstraint" destination="HGk-1v-IsE" id="W4z-oC-bMH"/>
+                        <outlet property="topLabel" destination="NNy-VO-NnZ" id="Pn9-Wi-PH5"/>
                         <segue destination="c9D-Q7-wUp" kind="show" identifier="goSelectStep3" id="abk-pE-uuY"/>
                     </connections>
                 </viewController>
@@ -773,7 +773,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtnAction:" destination="c9D-Q7-wUp" eventType="touchUpInside" id="xHe-e6-yuP"/>
+                                    <action selector="nextBtnAction:" destination="c9D-Q7-wUp" eventType="touchUpInside" id="5pn-fC-TVQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임시보호 또는 입양을" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89o-Zr-eT7">
@@ -812,7 +812,7 @@
                                             <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectBtnAction:" destination="c9D-Q7-wUp" eventType="touchUpInside" id="rlw-i3-OFG"/>
+                                            <action selector="selectBtnAction:" destination="c9D-Q7-wUp" eventType="touchUpInside" id="Y0W-Ch-mgm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12k-YA-jtj">
@@ -828,7 +828,7 @@
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectBtnAction:" destination="c9D-Q7-wUp" eventType="touchUpInside" id="mpL-VZ-1Hy"/>
+                                            <action selector="selectBtnAction:" destination="c9D-Q7-wUp" eventType="touchUpInside" id="ROE-1u-lrf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -864,9 +864,9 @@
                         <viewLayoutGuide key="safeArea" id="wHO-63-hAK"/>
                     </view>
                     <connections>
-                        <outlet property="adoptBtn" destination="12k-YA-jtj" id="cY1-EW-Zgw"/>
-                        <outlet property="nextBtn" destination="bbE-Ys-Mdl" id="Rc0-Bb-pAb"/>
-                        <outlet property="tempBtn" destination="XVv-k6-WH0" id="a7A-8O-b3Y"/>
+                        <outlet property="adoptBtn" destination="12k-YA-jtj" id="4Ue-Ro-ALA"/>
+                        <outlet property="nextBtn" destination="bbE-Ys-Mdl" id="Ep7-vX-JZO"/>
+                        <outlet property="tempBtn" destination="XVv-k6-WH0" id="6CP-3Z-bgP"/>
                         <segue destination="cBP-Ih-ZtF" kind="show" identifier="goTemp" id="sFN-Sg-37M"/>
                         <segue destination="ZPp-MF-rX9" kind="show" identifier="goAdopt" id="ZpP-lS-TM2"/>
                     </connections>
@@ -963,8 +963,7 @@
                                 </constraints>
                                 <state key="normal" image="adoptingDocumentCheckGrey"/>
                                 <connections>
-                                    <action selector="agreeBtnAction:" destination="cBP-Ih-ZtF" eventType="touchUpInside" id="TQc-K3-vk4"/>
-                                    <action selector="agreeBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="Xzd-OP-VIX"/>
+                                    <action selector="agreeBtnAction:" destination="cBP-Ih-ZtF" eventType="touchUpInside" id="1yk-8c-qET"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9V-Tp-RCm">
@@ -978,8 +977,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="ocU-cW-yhV"/>
-                                    <action selector="nextBtnAction:" destination="cBP-Ih-ZtF" eventType="touchUpInside" id="w55-Xh-pxY"/>
+                                    <action selector="nextBtnAction:" destination="cBP-Ih-ZtF" eventType="touchUpInside" id="vNh-gX-6m6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1007,11 +1005,11 @@
                         <viewLayoutGuide key="safeArea" id="KbC-FL-XeL"/>
                     </view>
                     <connections>
-                        <outlet property="agreeBtn" destination="x0O-4D-x5I" id="zYg-Yj-0C7"/>
-                        <outlet property="nextBtn" destination="Q9V-Tp-RCm" id="YN8-Bc-1JA"/>
-                        <outlet property="periodView" destination="jhw-oG-8Kc" id="XHg-ZY-3QK"/>
-                        <outlet property="textField" destination="ktO-ed-SHl" id="qeU-HU-1vx"/>
-                        <outlet property="textFieldConstraint" destination="KR3-0k-zfU" id="PyA-SN-vPP"/>
+                        <outlet property="agreeBtn" destination="x0O-4D-x5I" id="RcH-ej-hMF"/>
+                        <outlet property="nextBtn" destination="Q9V-Tp-RCm" id="oql-RC-ykK"/>
+                        <outlet property="periodView" destination="jhw-oG-8Kc" id="sCG-zk-hqD"/>
+                        <outlet property="textField" destination="ktO-ed-SHl" id="grZ-YG-h4t"/>
+                        <outlet property="textFieldConstraint" destination="sJO-sv-AYi" id="R3L-Uk-X3m"/>
                         <segue destination="ZVy-DX-CUw" kind="show" identifier="goStep4" id="nad-7b-if9"/>
                     </connections>
                 </viewController>
@@ -1078,8 +1076,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtnAction:" destination="ZPp-MF-rX9" eventType="touchUpInside" id="NEN-qb-NQU"/>
-                                    <action selector="nextBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="uOO-2g-G7Z"/>
+                                    <action selector="nextBtnAction:" destination="ZPp-MF-rX9" eventType="touchUpInside" id="hdB-aS-HXE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-j2-qQ0">
@@ -1090,8 +1087,7 @@
                                 </constraints>
                                 <state key="normal" image="adoptingDocumentCheckGrey"/>
                                 <connections>
-                                    <action selector="agreeBtnAction:" destination="ZPp-MF-rX9" eventType="touchUpInside" id="Cjv-ao-ozl"/>
-                                    <action selector="agreeBtnAction:" destination="eTX-Fb-2fE" eventType="touchUpInside" id="CsM-VQ-UtO"/>
+                                    <action selector="agreeBtnAction:" destination="ZPp-MF-rX9" eventType="touchUpInside" id="iC6-fd-6FD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1115,8 +1111,8 @@
                         <viewLayoutGuide key="safeArea" id="6QG-mT-mgq"/>
                     </view>
                     <connections>
-                        <outlet property="agreeBtn" destination="3hQ-j2-qQ0" id="pxi-9x-9lU"/>
-                        <outlet property="nextBtn" destination="2N8-qX-A6N" id="sr1-io-Dft"/>
+                        <outlet property="agreeBtn" destination="3hQ-j2-qQ0" id="tRS-sd-7K8"/>
+                        <outlet property="nextBtn" destination="2N8-qX-A6N" id="fi2-9f-Xow"/>
                         <segue destination="ZVy-DX-CUw" kind="show" identifier="goStep4" id="JGy-oM-CSj"/>
                     </connections>
                 </viewController>
@@ -1132,10 +1128,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUx-KK-5Ik">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="729" translatesAutoresizingMaskIntoConstraints="NO" id="MUx-KK-5Ik">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="731" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-G2-UR4">
+                                    <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="729" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-G2-UR4">
                                         <rect key="frame" x="0.0" y="-64" width="375" height="731"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽고 동의를 선택해 주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVo-mN-9fm">
@@ -1159,24 +1155,265 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유기견 입양 시 학대, 매매 경우 동물 보호법에" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-1o-I8t">
-                                                <rect key="frame" x="28" y="205" width="269" height="27"/>
+                                                <rect key="frame" x="28" y="205" width="269" height="16"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="27" id="JCV-eW-Nvu"/>
+                                                    <constraint firstAttribute="height" constant="16" id="Ocd-JR-uvF"/>
                                                     <constraint firstAttribute="width" constant="269" id="owb-rL-GG5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
                                                 <color key="textColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근거하여 처벌 할 수 있습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1a-LQ-wB1">
+                                                <rect key="frame" x="28" y="229" width="174" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="174" id="7T5-HI-3ie"/>
+                                                    <constraint firstAttribute="height" constant="16" id="FFF-oL-uEb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRy-oa-axu">
+                                                <rect key="frame" x="28" y="255" width="319" height="1"/>
+                                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Cx5-yM-S9V"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임보/입양을 못할 시 관리자에게 통보하지 않고" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evz-59-VXJ">
+                                                <rect key="frame" x="28" y="266" width="269" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="0It-49-DTU"/>
+                                                    <constraint firstAttribute="width" constant="269" id="DQT-bR-Yu0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유기, 매매할 경우 법적책임을 물을 수 있습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxT-Xd-71v">
+                                                <rect key="frame" x="28" y="290" width="269" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="DBk-nS-NZp"/>
+                                                    <constraint firstAttribute="width" constant="269" id="vSf-QT-ugS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNz-Sq-zJs">
+                                                <rect key="frame" x="28" y="316" width="319" height="1"/>
+                                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="qXo-tk-GnU"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수익을 목적으로 하는 단체나 개인은 임보/입양" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fio-z9-OIb">
+                                                <rect key="frame" x="28" y="327" width="269" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="269" id="TGO-jB-fRb"/>
+                                                    <constraint firstAttribute="height" constant="16" id="yyx-wP-bqA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신청이 불가하며 사후/임보 입양사기가 발견될" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wij-y3-fmt">
+                                                <rect key="frame" x="28" y="351" width="269" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="HUu-Ar-QTr"/>
+                                                    <constraint firstAttribute="width" constant="269" id="ROR-Bn-r9j"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경우 법적으로 책임을 져야 합니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZy-aT-fDT">
+                                                <rect key="frame" x="28" y="375" width="200" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="gQc-lt-YHk"/>
+                                                    <constraint firstAttribute="height" constant="16" id="rJB-t2-z1v"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SzI-r5-F6f">
+                                                <rect key="frame" x="28" y="401" width="319" height="1"/>
+                                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="11C-co-E51"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입양책임비 대신 중성화 필수조건입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKc-Af-HaP">
+                                                <rect key="frame" x="28" y="412" width="232" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="232" id="L3u-De-Qz2"/>
+                                                    <constraint firstAttribute="height" constant="16" id="gwD-lL-s6I"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-u9-tSB">
+                                                <rect key="frame" x="28" y="438" width="319" height="1"/>
+                                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="smt-a0-GMd"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임보/입양동물이 예방접종을 해야 하거나" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4B-PB-9xM">
+                                                <rect key="frame" x="28" y="449" width="232" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="232" id="Xt7-n9-cdy"/>
+                                                    <constraint firstAttribute="height" constant="16" id="dwg-z8-FtU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아플 때 병원 비용을 부담할 수 있는" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBP-xg-M9S">
+                                                <rect key="frame" x="28" y="473" width="200" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="6Ip-gW-tVe"/>
+                                                    <constraint firstAttribute="height" constant="16" id="u6y-gO-3yk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본인(신청자)의 경제 능력에 대해 설명해 주세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpg-LJ-vb7">
+                                                <rect key="frame" x="28" y="497" width="272" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="272" id="8ar-6z-lQL"/>
+                                                    <constraint firstAttribute="height" constant="16" id="nz6-xu-s1U"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="013-LC-bEv">
+                                                <rect key="frame" x="28" y="523" width="319" height="32"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예시) 필수적인 예방 접종에 대한 비용 부담 가능" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSV-df-aqi">
+                                                        <rect key="frame" x="13" y="4" width="293" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="gVk-wt-4Qx"/>
+                                                            <constraint firstAttribute="width" constant="293" id="th0-X6-mPG"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="DSV-df-aqi" firstAttribute="leading" secondItem="013-LC-bEv" secondAttribute="leading" constant="13" id="cTJ-TY-IYy"/>
+                                                    <constraint firstItem="DSV-df-aqi" firstAttribute="top" secondItem="013-LC-bEv" secondAttribute="top" constant="4" id="fZZ-7m-bEj"/>
+                                                    <constraint firstAttribute="height" constant="32" id="ko2-L1-ktM"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="모두 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0Q-fm-rqr">
+                                                <rect key="frame" x="255" y="574" width="55" height="16"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
+                                                <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgG-0p-PRZ">
+                                                <rect key="frame" x="323" y="201" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="FJe-uo-GCf"/>
+                                                    <constraint firstAttribute="width" constant="24" id="MjL-jV-pXY"/>
+                                                </constraints>
+                                                <state key="normal" image="adoptingDocumentCheckGrey"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKq-ZM-8Mo">
+                                                <rect key="frame" x="323" y="262" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="IhP-Gv-khO"/>
+                                                    <constraint firstAttribute="height" constant="24" id="Kaw-Jg-jKb"/>
+                                                </constraints>
+                                                <state key="normal" image="adoptingDocumentCheckGrey"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHo-Y2-m9K">
+                                                <rect key="frame" x="323" y="323" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="lwg-MK-HE6"/>
+                                                    <constraint firstAttribute="height" constant="24" id="oLO-7w-0Du"/>
+                                                </constraints>
+                                                <state key="normal" image="adoptingDocumentCheckGrey"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da9-gv-UoI">
+                                                <rect key="frame" x="323" y="408" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="Cd0-a6-8CD"/>
+                                                    <constraint firstAttribute="height" constant="24" id="sDi-1s-4fQ"/>
+                                                </constraints>
+                                                <state key="normal" image="adoptingDocumentCheckGrey"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVm-pF-bAn">
+                                                <rect key="frame" x="323" y="570" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="GbN-NA-XVZ"/>
+                                                    <constraint firstAttribute="height" constant="24" id="tuy-9b-4eI"/>
+                                                </constraints>
+                                                <state key="normal" image="adoptingDocumentCheckGrey"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CHo-Y2-m9K" secondAttribute="trailing" constant="28" id="034-mu-bl8"/>
+                                            <constraint firstItem="yBP-xg-M9S" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="05q-cS-7BL"/>
+                                            <constraint firstItem="jgG-0p-PRZ" firstAttribute="top" secondItem="YVo-mN-9fm" secondAttribute="bottom" constant="52" id="2NX-l2-IXD"/>
+                                            <constraint firstItem="SzI-r5-F6f" firstAttribute="top" secondItem="SZy-aT-fDT" secondAttribute="bottom" constant="10" id="3aH-oO-SYN"/>
+                                            <constraint firstItem="IRy-oa-axu" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="5Xu-9y-Rfe"/>
+                                            <constraint firstItem="CHo-Y2-m9K" firstAttribute="top" secondItem="JNz-Sq-zJs" secondAttribute="bottom" constant="6" id="5b8-jN-v66"/>
+                                            <constraint firstItem="bCZ-u9-tSB" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="5g5-i8-uVn"/>
+                                            <constraint firstItem="Wij-y3-fmt" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="6UT-tX-9HG"/>
+                                            <constraint firstItem="B1a-LQ-wB1" firstAttribute="top" secondItem="2Rd-1o-I8t" secondAttribute="bottom" constant="8" id="ECB-6j-099"/>
+                                            <constraint firstAttribute="trailing" secondItem="013-LC-bEv" secondAttribute="trailing" constant="28" id="ENb-cR-JbC"/>
+                                            <constraint firstAttribute="trailing" secondItem="bCZ-u9-tSB" secondAttribute="trailing" constant="28" id="EZK-mH-M5J"/>
+                                            <constraint firstItem="013-LC-bEv" firstAttribute="top" secondItem="xpg-LJ-vb7" secondAttribute="bottom" constant="10" id="GEA-ss-HXO"/>
+                                            <constraint firstAttribute="trailing" secondItem="jgG-0p-PRZ" secondAttribute="trailing" constant="28" id="GMU-Jr-4dC"/>
+                                            <constraint firstAttribute="trailing" secondItem="IRy-oa-axu" secondAttribute="trailing" constant="28" id="Gm0-w8-b7H"/>
+                                            <constraint firstItem="Evz-59-VXJ" firstAttribute="top" secondItem="IRy-oa-axu" secondAttribute="bottom" constant="10" id="HTT-Kv-sVI"/>
                                             <constraint firstItem="aHU-sB-68h" firstAttribute="top" secondItem="BIk-G2-UR4" secondAttribute="top" constant="80" id="Hmu-n5-h9I"/>
+                                            <constraint firstItem="KVm-pF-bAn" firstAttribute="top" secondItem="013-LC-bEv" secondAttribute="bottom" constant="15" id="I1W-GG-VJb"/>
                                             <constraint firstItem="2Rd-1o-I8t" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="I73-wf-vfB"/>
+                                            <constraint firstItem="Evz-59-VXJ" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="J4p-V3-tpd"/>
+                                            <constraint firstItem="IRy-oa-axu" firstAttribute="top" secondItem="B1a-LQ-wB1" secondAttribute="bottom" constant="10" id="Kdd-l6-Dal"/>
+                                            <constraint firstAttribute="trailing" secondItem="KVm-pF-bAn" secondAttribute="trailing" constant="28" id="LJJ-xb-a7f"/>
+                                            <constraint firstItem="KxT-Xd-71v" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="LnV-YO-LQF"/>
+                                            <constraint firstItem="KxT-Xd-71v" firstAttribute="top" secondItem="Evz-59-VXJ" secondAttribute="bottom" constant="8" id="PHn-LB-zYU"/>
                                             <constraint firstItem="YVo-mN-9fm" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="PJF-xS-vK7"/>
+                                            <constraint firstItem="SZy-aT-fDT" firstAttribute="top" secondItem="Wij-y3-fmt" secondAttribute="bottom" constant="8" id="R2J-zd-rtO"/>
+                                            <constraint firstItem="B1a-LQ-wB1" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="Rup-jv-Scw"/>
+                                            <constraint firstItem="t4B-PB-9xM" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="SgL-c2-gk8"/>
+                                            <constraint firstItem="XKc-Af-HaP" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="TeS-ft-jFw"/>
+                                            <constraint firstItem="Wij-y3-fmt" firstAttribute="top" secondItem="fio-z9-OIb" secondAttribute="bottom" constant="8" id="TlU-Qp-Tdb"/>
+                                            <constraint firstItem="xpg-LJ-vb7" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="Tna-IZ-nJO"/>
+                                            <constraint firstItem="JNz-Sq-zJs" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="V0J-nd-urB"/>
+                                            <constraint firstItem="xpg-LJ-vb7" firstAttribute="top" secondItem="yBP-xg-M9S" secondAttribute="bottom" constant="8" id="VfF-bT-HNl"/>
+                                            <constraint firstItem="SZy-aT-fDT" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="Vlf-ws-fNj"/>
+                                            <constraint firstItem="JNz-Sq-zJs" firstAttribute="top" secondItem="KxT-Xd-71v" secondAttribute="bottom" constant="10" id="Xcp-sN-RVh"/>
+                                            <constraint firstAttribute="trailing" secondItem="zKq-ZM-8Mo" secondAttribute="trailing" constant="28" id="byF-5V-CIS"/>
                                             <constraint firstItem="2Rd-1o-I8t" firstAttribute="top" secondItem="YVo-mN-9fm" secondAttribute="bottom" constant="56" id="c8f-2i-ecG"/>
+                                            <constraint firstAttribute="trailing" secondItem="da9-gv-UoI" secondAttribute="trailing" constant="28" id="ehB-Of-6vI"/>
+                                            <constraint firstItem="yBP-xg-M9S" firstAttribute="top" secondItem="t4B-PB-9xM" secondAttribute="bottom" constant="8" id="fkr-ua-ZKj"/>
+                                            <constraint firstItem="fio-z9-OIb" firstAttribute="top" secondItem="JNz-Sq-zJs" secondAttribute="bottom" constant="10" id="g6N-0x-r1M"/>
                                             <constraint firstItem="aHU-sB-68h" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="gFV-M8-sVg"/>
+                                            <constraint firstItem="t4B-PB-9xM" firstAttribute="top" secondItem="bCZ-u9-tSB" secondAttribute="bottom" constant="10" id="ga2-Pa-BYh"/>
+                                            <constraint firstAttribute="trailing" secondItem="JNz-Sq-zJs" secondAttribute="trailing" constant="28" id="h79-GJ-Vhj"/>
+                                            <constraint firstItem="013-LC-bEv" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="iA1-M2-bkU"/>
+                                            <constraint firstItem="fio-z9-OIb" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="jcn-gQ-RTk"/>
+                                            <constraint firstItem="bCZ-u9-tSB" firstAttribute="top" secondItem="XKc-Af-HaP" secondAttribute="bottom" constant="10" id="kqw-H9-24m"/>
+                                            <constraint firstItem="SzI-r5-F6f" firstAttribute="leading" secondItem="BIk-G2-UR4" secondAttribute="leading" constant="28" id="lNt-Ir-D6d"/>
+                                            <constraint firstItem="F0Q-fm-rqr" firstAttribute="top" secondItem="013-LC-bEv" secondAttribute="bottom" constant="19" id="nXE-qn-bpW"/>
                                             <constraint firstItem="YVo-mN-9fm" firstAttribute="top" secondItem="aHU-sB-68h" secondAttribute="bottom" constant="14" id="oCS-di-yop"/>
+                                            <constraint firstAttribute="trailing" secondItem="SzI-r5-F6f" secondAttribute="trailing" constant="28" id="pDq-Ay-pwZ"/>
+                                            <constraint firstItem="XKc-Af-HaP" firstAttribute="top" secondItem="SzI-r5-F6f" secondAttribute="bottom" constant="10" id="tAF-nR-tL6"/>
+                                            <constraint firstItem="da9-gv-UoI" firstAttribute="top" secondItem="SzI-r5-F6f" secondAttribute="bottom" constant="6" id="u8V-eW-Ihj"/>
+                                            <constraint firstItem="zKq-ZM-8Mo" firstAttribute="top" secondItem="IRy-oa-axu" secondAttribute="bottom" constant="6" id="zJS-DT-oFA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1187,11 +1424,26 @@
                                     <constraint firstItem="BIk-G2-UR4" firstAttribute="leading" secondItem="MUx-KK-5Ik" secondAttribute="leading" id="xKW-3x-gfz"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxp-md-hVz">
+                                <rect key="frame" x="0.0" y="673" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hxp-md-hVz" secondAttribute="height" multiplier="375:56" id="bQy-rF-TEU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="작성 완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kwL-C7-zow" firstAttribute="top" secondItem="MUx-KK-5Ik" secondAttribute="top" constant="64" id="APJ-rB-Uoh"/>
+                            <constraint firstItem="hxp-md-hVz" firstAttribute="leading" secondItem="kwL-C7-zow" secondAttribute="leading" id="RdW-ng-9Lk"/>
                             <constraint firstItem="kwL-C7-zow" firstAttribute="bottom" secondItem="MUx-KK-5Ik" secondAttribute="bottom" id="aWb-Ku-PjY"/>
+                            <constraint firstItem="kwL-C7-zow" firstAttribute="trailing" secondItem="hxp-md-hVz" secondAttribute="trailing" id="ktQ-wo-ZxI"/>
+                            <constraint firstItem="kwL-C7-zow" firstAttribute="bottom" secondItem="hxp-md-hVz" secondAttribute="bottom" id="nql-9C-jSb"/>
                             <constraint firstItem="kwL-C7-zow" firstAttribute="trailing" secondItem="MUx-KK-5Ik" secondAttribute="trailing" id="oOP-ll-isq"/>
                             <constraint firstItem="MUx-KK-5Ik" firstAttribute="leading" secondItem="kwL-C7-zow" secondAttribute="leading" id="yZP-cf-5UY"/>
                         </constraints>
@@ -1200,26 +1452,6 @@
                     <size key="freeformSize" width="375" height="729"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kem-RD-nPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽고 동의를 선택해 주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-UE-0hw">
-                    <rect key="frame" x="0.0" y="0.0" width="269" height="27"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="269" id="A1h-Jo-maO"/>
-                        <constraint firstAttribute="height" constant="27" id="oCL-TN-u0k"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
-                    <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-ZQ-Zqb">
-                    <rect key="frame" x="0.0" y="0.0" width="70" height="28"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="70" id="VW5-4S-Cgd"/>
-                        <constraint firstAttribute="height" constant="28" id="rek-nN-ZZ2"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="25"/>
-                    <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </objects>
             <point key="canvasLocation" x="6224.8000000000002" y="221.73913043478262"/>
         </scene>
@@ -1237,6 +1469,6 @@
         <image name="writingImgUncheck" width="338" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JGy-oM-CSj"/>
+        <segue reference="nad-7b-if9"/>
     </inferredMetricsTieBreakers>
 </document>
