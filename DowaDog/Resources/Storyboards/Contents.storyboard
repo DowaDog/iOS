@@ -18,6 +18,85 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Page1VC-->
+        <scene sceneID="ax7-1u-d7Q">
+            <objects>
+                <viewController id="RqX-JN-DXd" customClass="Page1VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zR7-xI-giJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yZT-ZJ-58s">
+                                <rect key="frame" x="0.0" y="20" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="A4i-Dq-y3O"/>
+                                    <constraint firstAttribute="width" secondItem="yZT-ZJ-58s" secondAttribute="height" multiplier="125:166" id="GAp-Tf-Z1E"/>
+                                    <constraint firstAttribute="height" constant="498" id="ICf-Ei-9bB"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3WK-sl-TQf">
+                                    <size key="itemSize" width="375" height="279"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Page1CVCell" id="Bh9-wO-NXr" customClass="Page1CVCell" customModule="DowaDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-sn-FCW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="375" id="a0L-Qn-Fak"/>
+                                                        <constraint firstAttribute="width" secondItem="AYG-sn-FCW" secondAttribute="height" multiplier="125:93" id="dQT-Wb-VK9"/>
+                                                        <constraint firstAttribute="height" constant="279" id="pgE-DW-FJB"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncompletedContents" translatesAutoresizingMaskIntoConstraints="NO" id="YrX-u5-fEy">
+                                                    <rect key="frame" x="306" y="0.0" width="27" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="YrX-u5-fEy" secondAttribute="height" multiplier="27:25" id="5dt-kC-YT7"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="AYG-sn-FCW" firstAttribute="top" secondItem="YrX-u5-fEy" secondAttribute="bottom" constant="-25" id="GZL-K4-qpp"/>
+                                            <constraint firstAttribute="trailing" secondItem="AYG-sn-FCW" secondAttribute="trailing" id="Hki-mg-soE"/>
+                                            <constraint firstAttribute="bottom" secondItem="AYG-sn-FCW" secondAttribute="bottom" id="K3L-F3-BKi"/>
+                                            <constraint firstItem="AYG-sn-FCW" firstAttribute="leading" secondItem="Bh9-wO-NXr" secondAttribute="leading" id="ejR-fG-JzH"/>
+                                            <constraint firstItem="YrX-u5-fEy" firstAttribute="leading" secondItem="AYG-sn-FCW" secondAttribute="trailing" constant="-69" id="h2q-Oa-paY"/>
+                                            <constraint firstItem="AYG-sn-FCW" firstAttribute="top" secondItem="Bh9-wO-NXr" secondAttribute="top" id="xqW-6t-wGO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cardImage" destination="AYG-sn-FCW" id="frs-fX-SE5"/>
+                                            <outlet property="readCheck" destination="YrX-u5-fEy" id="Xd2-XU-d9A"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yZT-ZJ-58s" firstAttribute="trailing" secondItem="hoX-ef-8rI" secondAttribute="trailing" id="6RS-f3-6xv"/>
+                            <constraint firstItem="hoX-ef-8rI" firstAttribute="bottom" secondItem="yZT-ZJ-58s" secondAttribute="bottom" id="cLn-wR-pgA"/>
+                            <constraint firstItem="yZT-ZJ-58s" firstAttribute="leading" secondItem="hoX-ef-8rI" secondAttribute="leading" id="g6s-hj-4RU"/>
+                            <constraint firstItem="yZT-ZJ-58s" firstAttribute="top" secondItem="hoX-ef-8rI" secondAttribute="top" id="h2g-0R-F5Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hoX-ef-8rI"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="yZT-ZJ-58s" id="yII-Od-TiM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1GM-9x-4tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2300" y="462.36881559220393"/>
+        </scene>
         <!--Main PageVC-->
         <scene sceneID="C48-q1-wN6">
             <objects>
@@ -105,13 +184,13 @@
                                     <constraint firstAttribute="height" constant="518" id="nu4-Ez-lh2"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="dD7-Ob-AI9" kind="embed" id="aTc-E2-Iv7"/>
+                                    <segue destination="uf3-b3-AdU" kind="embed" id="QQN-u8-2qS"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WlA-Sr-mJU">
                                 <rect key="frame" x="0.0" y="149" width="375" height="518"/>
                                 <connections>
-                                    <segue destination="7Hv-V8-oGF" kind="embed" id="qi1-bl-LiA"/>
+                                    <segue destination="RqX-JN-DXd" kind="embed" id="eqU-RK-QxZ"/>
                                 </connections>
                             </containerView>
                             <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjs-fx-RRX">
@@ -369,58 +448,10 @@
             </objects>
             <point key="canvasLocation" x="-1959.2" y="-260.41979010494754"/>
         </scene>
-        <!--Page1CV-->
-        <scene sceneID="2Pj-as-d4g">
-            <objects>
-                <collectionViewController id="7Hv-V8-oGF" customClass="Page1CV" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="29f-4V-oaz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ili-ex-350">
-                            <size key="itemSize" width="321" height="377"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="Z5F-bk-lmQ">
-                                <rect key="frame" x="27" y="0.0" width="321" height="377"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="321" height="377"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="contentTest" translatesAutoresizingMaskIntoConstraints="NO" id="Jxk-aG-o0c">
-                                            <rect key="frame" x="0.0" y="0.0" width="321" height="377"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncompletedContents" translatesAutoresizingMaskIntoConstraints="NO" id="gm6-N7-PRq">
-                                            <rect key="frame" x="274" y="0.0" width="27" height="25"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="gm6-N7-PRq" firstAttribute="top" secondItem="Z5F-bk-lmQ" secondAttribute="top" id="NfG-VD-8rQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="gm6-N7-PRq" secondAttribute="trailing" constant="20" id="bJQ-QJ-Cns"/>
-                                    <constraint firstItem="gm6-N7-PRq" firstAttribute="leading" secondItem="Z5F-bk-lmQ" secondAttribute="leading" constant="274" id="e6G-PU-a8m"/>
-                                </constraints>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="7Hv-V8-oGF" id="o7t-dP-MkL"/>
-                            <outlet property="delegate" destination="7Hv-V8-oGF" id="hZ6-1C-Rv2"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xK9-d7-USC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2255.1999999999998" y="505.54722638680664"/>
-        </scene>
-        <!--Common SenseVC-->
+        <!--CardVC-->
         <scene sceneID="pkf-jt-uTM">
             <objects>
-                <viewController id="OG0-SB-LbU" customClass="CommonSenseVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardVC" id="OG0-SB-LbU" customClass="CardVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jeI-bC-PyN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,53 +526,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HhV-8Q-Rf8"/>
                     </view>
-                    <connections>
-                        <outlet property="textView" destination="zMR-NV-ZeT" id="SdP-te-4Bx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32j-T0-bHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2258.4000000000001" y="1113.1934032983509"/>
-        </scene>
-        <!--Page2CV-->
-        <scene sceneID="kLx-ib-QoW">
-            <objects>
-                <collectionViewController id="dD7-Ob-AI9" customClass="Page2CV" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QlN-RP-PC1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mSo-dr-G7Q">
-                            <size key="itemSize" width="321" height="377"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="6rn-GB-Xae">
-                                <rect key="frame" x="27" y="0.0" width="321" height="377"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="321" height="377"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01H-41-q86">
-                                            <rect key="frame" x="0.0" y="0.0" width="321" height="377"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="dD7-Ob-AI9" id="XTY-aJ-HcR"/>
-                            <outlet property="delegate" destination="dD7-Ob-AI9" id="LQC-0H-521"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vWo-mw-PVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1295.2" y="505.54722638680664"/>
+            <point key="canvasLocation" x="-1169" y="-260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RQN-bV-IfH">
@@ -560,6 +548,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0F-SD-jQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2802" y="-260"/>
+        </scene>
+        <!--Page2VC-->
+        <scene sceneID="b08-Ng-rfW">
+            <objects>
+                <viewController id="uf3-b3-AdU" customClass="Page2VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K25-G4-wSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wys-ic-29a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjS-Y3-U32" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1463" y="464"/>
         </scene>
     </scenes>
     <resources>
