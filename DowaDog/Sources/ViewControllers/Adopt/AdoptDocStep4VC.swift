@@ -13,6 +13,9 @@ class AdoptDocStep4VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setNavigationBarClear()
+        self.setBackBtn()
+
 
     }
 
