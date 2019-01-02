@@ -25,7 +25,7 @@ var heartClick = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackBtn()
-        navBarBackgroundAlpha = 0//navbar 투명하게 setup
+        self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
  
         heartItem = UIBarButtonItem(image:UIImage(named: "heartBtnLine.png") , style: .plain, target: self, action: #selector(heartTapped))
         heartItem.tintColor = UIColor.white
@@ -85,12 +85,16 @@ var heartClick = false
          let offsetY = scroll.contentOffset.y
         if ( offsetY > 170) {
             UIView.animate(withDuration: 0.4, animations: {
-                self.navBarBackgroundAlpha = 1
+                self.navBarBackgroundAlpha = 1//navbar 투명하게 setup
+              
+                self.heartItem.tintColor = UIColor.init(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
+                
             })
 
         }else if (offsetY <= 170 ){
             UIView.animate(withDuration: 0.4, animations: {
-                self.navBarBackgroundAlpha = 0
+                self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
+                self.heartItem.tintColor = UIColor.white
             })
 
         }

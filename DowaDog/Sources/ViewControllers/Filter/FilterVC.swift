@@ -50,6 +50,7 @@ class FilterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackBtn()
         collectionView.delegate = self
         collectionView.dataSource = self
         
