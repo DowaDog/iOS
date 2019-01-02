@@ -50,7 +50,8 @@ class AdoptDocStep2VC: UIViewController {
     }
     
     func checkInfo() {
-        if ((contentView.text != placeholder || contentView.text != "") && (animalImage.image != defaultImage)) {
+        
+        if (agreeBtn.isSelected == true && (contentView.text != placeholder && contentView.text != "")) || disagreeBtn.isSelected == true {
             nextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
         } else {
             nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
@@ -96,13 +97,14 @@ class AdoptDocStep2VC: UIViewController {
         if sender == agreeBtn && sender.isSelected == true {
             showEdit()
             disagreeBtn.isSelected = false
+            animalImage.isUserInteractionEnabled = true
         } else if sender == agreeBtn && sender.isSelected == false {
             sender.isSelected = true
         } else if sender == disagreeBtn && sender.isSelected == true {
             hideEdit()
             agreeBtn.isSelected = false
             animalImage.image = defaultImage
-//            animalImage.removeGestureRecognizer(UIGestureRecognizer.)
+            animalImage.isUserInteractionEnabled = false
         } else if sender == disagreeBtn && sender.isSelected == false {
             sender.isSelected = true
         }
@@ -112,6 +114,19 @@ class AdoptDocStep2VC: UIViewController {
         self.view.endEditing(true)
     }
     
+    
+    
+    @IBAction func nextBtnAction(_ sender: UIButton) {
+        
+        if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) && (animalImage.image != defaultImage || disagreeBtn.isSelected == true) {
+            performSegue(withIdentifier: "goSelectStep3", sender: self)
+        }
+        
+        if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) && animalImage.image == defaultImage && agreeBtn.isSelected == true {
+            simpleAlert(title: "사진을 첨부해주세요", message: "")
+        }
+        
+    }
     
 }
 
@@ -183,11 +198,6 @@ extension AdoptDocStep2VC: UIGestureRecognizerDelegate {
         let animalImageTap = UITapGestureRecognizer(target: self, action: #selector(handleTapImageView(_:)))
         animalImageTap.delegate = self
         animalImage.addGestureRecognizer(animalImageTap)
-    }
-    
-    func removeGestureRecognizer() {
-        let animalImageTap = UITapGestureRecognizer(target: self, action: #selector(handleTapImageView(_:)))
-        animalImage.removeGestureRecognizer(animalImageTap)
     }
     
     @objc func handleTapImageView(_ sender: UITapGestureRecognizer) {

@@ -15,7 +15,5 @@ class AdoptDocumentVC: UIViewController {
 
         self.setNavigationBarClear()
         self.setBackBtn()
-    }
-    
-    
+    }    
 }

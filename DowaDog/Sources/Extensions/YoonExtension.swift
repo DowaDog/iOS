@@ -47,11 +47,10 @@ extension UIViewController {
     //네비게이션 바 투명하게 하는 함수
     func setNavigationBar() {
         let bar: UINavigationBar! = self.navigationController?.navigationBar
-        bar.backgroundColor = UIColor.clear
         
         bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         bar.shadowImage = UIImage()
-
+        bar.backgroundColor = UIColor.clear
     }
     
     func setNavigationSahdow(){
