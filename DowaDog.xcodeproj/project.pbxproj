@@ -36,16 +36,13 @@
 		4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FD21D9228F00301D52 /* NewDogVC.swift */; };
 		4C0E960021D92B9A00301D52 /* AboutNewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */; };
 		4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */; };
-		4C89FC2821D9F85C0078D695 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2721D9F85C0078D695 /* KakaoLink.framework */; };
-		4C89FC2C21DA00E70078D695 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */; };
-		4C89FC2E21DA02FD0078D695 /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */; };
-		4CF5A62521DB760C00969511 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62421DB760C00969511 /* WRCycleScrollView.swift */; };
-		4CF5A62721DB761300969511 /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62621DB761300969511 /* WRProxy.swift */; };
-		4CF5A62921DB761A00969511 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62821DB761A00969511 /* WRCycleCell.swift */; };
-		4CF5A62B21DB764000969511 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62A21DB764000969511 /* WRCustomNavigationBar.swift */; };
-		4CF5A62D21DB764700969511 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A62C21DB764700969511 /* WRNavigationBar.swift */; };
+		4CF5A63F21DC952900969511 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A63E21DC952900969511 /* CustomNavigationBar.swift */; };
+		4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */; };
+		4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64721DC9A2700969511 /* Page2CVCell.swift */; };
+		4CF5A64A21DCA0E100969511 /* Page1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64921DCA0E100969511 /* Page1VC.swift */; };
+		4CF5A64C21DCA0ED00969511 /* Page2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64B21DCA0ED00969511 /* Page2VC.swift */; };
+		4CF5A64E21DCB33C00969511 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64D21DCB33C00969511 /* CardVC.swift */; };
 		4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */; };
-		4CFA97E921DB0F8B00AFB491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CFA97E821DB0F8B00AFB491 /* GoogleService-Info.plist */; };
 		B4A3D6B3BCF11D3C05CD91E4 /* Pods_DowaDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */; };
 		F501E64621D4DFA9004CD703 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F501E64521D4DFA9004CD703 /* Home.storyboard */; };
 		F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501E64921D4DFF6004CD703 /* HomeExtension.swift */; };
@@ -100,17 +97,14 @@
 		4C0E95FD21D9228F00301D52 /* NewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogVC.swift; sourceTree = "<group>"; };
 		4C0E95FF21D92B9A00301D52 /* AboutNewDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutNewDogVC.swift; sourceTree = "<group>"; };
 		4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMSTestViewController.swift; path = DowaDog/Sources/ViewControllers/SMSTestViewController.swift; sourceTree = SOURCE_ROOT; };
-		4C89FC2721D9F85C0078D695 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
-		4C89FC2A21D9FBCC0078D695 /* KakaoOpenHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KakaoOpenHeader.h; sourceTree = "<group>"; };
-		4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
-		4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
-		4CF5A62421DB760C00969511 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
-		4CF5A62621DB761300969511 /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
-		4CF5A62821DB761A00969511 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
-		4CF5A62A21DB764000969511 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
-		4CF5A62C21DB764700969511 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
+		4CF5A63C21DC941B00969511 /* WRNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
+		4CF5A63E21DC952900969511 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1CVCell.swift; sourceTree = "<group>"; };
+		4CF5A64721DC9A2700969511 /* Page2CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CVCell.swift; sourceTree = "<group>"; };
+		4CF5A64921DCA0E100969511 /* Page1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1VC.swift; sourceTree = "<group>"; };
+		4CF5A64B21DCA0ED00969511 /* Page2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2VC.swift; sourceTree = "<group>"; };
+		4CF5A64D21DCB33C00969511 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdoptPopupTestVC.swift; path = DowaDog/Sources/ViewControllers/AdoptPopupTestVC.swift; sourceTree = SOURCE_ROOT; };
-		4CFA97E821DB0F8B00AFB491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AE6EC9ACD1107B95B4D092F /* Pods-DowaDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.debug.xcconfig"; sourceTree = "<group>"; };
 		EC28111DB7B248A0774F3B69 /* Pods_DowaDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DowaDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F501E64521D4DFA9004CD703 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -142,9 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C89FC2821D9F85C0078D695 /* KakaoLink.framework in Frameworks */,
-				4C89FC2C21DA00E70078D695 /* KakaoCommon.framework in Frameworks */,
-				4C89FC2E21DA02FD0078D695 /* KakaoMessageTemplate.framework in Frameworks */,
 				B4A3D6B3BCF11D3C05CD91E4 /* Pods_DowaDog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				4C0E95D221D891BC00301D52 /* MainPageVC.swift */,
+				4CF5A64921DCA0E100969511 /* Page1VC.swift */,
+				4CF5A64B21DCA0ED00969511 /* Page2VC.swift */,
+				4CF5A64D21DCB33C00969511 /* CardVC.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -248,30 +242,20 @@
 			path = Find;
 			sourceTree = "<group>";
 		};
-		4C89FC2921D9FB7F0078D695 /* Header */ = {
+		4CF5A63621DC917300969511 /* API */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Header;
+			path = API;
 			sourceTree = "<group>";
 		};
-		4CF5A62021DB758F00969511 /* WRCycleScrollView */ = {
+		4CF5A64621DC9A1800969511 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				4CF5A62821DB761A00969511 /* WRCycleCell.swift */,
-				4CF5A62621DB761300969511 /* WRProxy.swift */,
-				4CF5A62421DB760C00969511 /* WRCycleScrollView.swift */,
+				4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */,
+				4CF5A64721DC9A2700969511 /* Page2CVCell.swift */,
 			);
-			path = WRCycleScrollView;
-			sourceTree = "<group>";
-		};
-		4CF5A62121DB75A000969511 /* WRNavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				4CF5A62C21DB764700969511 /* WRNavigationBar.swift */,
-				4CF5A62A21DB764000969511 /* WRCustomNavigationBar.swift */,
-			);
-			path = WRNavigationBar;
+			path = Content;
 			sourceTree = "<group>";
 		};
 		AA734A21068415B81E5E6647 /* Frameworks */ = {
@@ -320,11 +304,7 @@
 		F5508A0E21D4D54400BE73FF /* DowaDog */ = {
 			isa = PBXGroup;
 			children = (
-				4CFA97E821DB0F8B00AFB491 /* GoogleService-Info.plist */,
-				4C89FC2A21D9FBCC0078D695 /* KakaoOpenHeader.h */,
-				4C89FC2D21DA02FD0078D695 /* KakaoMessageTemplate.framework */,
-				4C89FC2B21DA00E70078D695 /* KakaoCommon.framework */,
-				4C89FC2721D9F85C0078D695 /* KakaoLink.framework */,
+				4CF5A63C21DC941B00969511 /* WRNavigationBar.swift */,
 				F5508A2221D4D86600BE73FF /* Resources */,
 				F5508A2121D4D85D00BE73FF /* Sources */,
 			);
@@ -334,7 +314,6 @@
 		F5508A2121D4D85D00BE73FF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4C89FC2921D9FB7F0078D695 /* Header */,
 				F5508A3121D4D90000BE73FF /* Protocols */,
 				F5508A3021D4D8DB00BE73FF /* APIServices */,
 				F5508A2F21D4D8D200BE73FF /* ViewControllers */,
@@ -349,12 +328,12 @@
 		F5508A2221D4D86600BE73FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4CF5A62121DB75A000969511 /* WRNavigationBar */,
-				4CF5A62021DB758F00969511 /* WRCycleScrollView */,
+				4CF5A63621DC917300969511 /* API */,
 				F5508A3321D4D93A00BE73FF /* Storyboards */,
 				F5508A2321D4D89200BE73FF /* Fonts */,
 				F5508A1621D4D54400BE73FF /* Assets.xcassets */,
 				F5508A1B21D4D54400BE73FF /* Info.plist */,
+				4CF5A63E21DC952900969511 /* CustomNavigationBar.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -380,6 +359,7 @@
 		F5508A2D21D4D8C300BE73FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CF5A64621DC9A1800969511 /* Content */,
 				F58ADAA221DA2ECA00231B27 /* Adopt */,
 				4C0E95EC21D8939100301D52 /* Find */,
 				4C0E95E321D892F400301D52 /* Filter */,
@@ -540,7 +520,6 @@
 				F5508A2A21D4D8B100BE73FF /* NanumSquareExtraBold.ttf in Resources */,
 				F5508A2921D4D8B100BE73FF /* NanumSquareLight.ttf in Resources */,
 				4C0E95F221D894B000301D52 /* Contents.storyboard in Resources */,
-				4CFA97E921DB0F8B00AFB491 /* GoogleService-Info.plist in Resources */,
 				F5508A1A21D4D54400BE73FF /* LaunchScreen.storyboard in Resources */,
 				4C0E95C221D890A900301D52 /* Login.storyboard in Resources */,
 				F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */,
@@ -614,32 +593,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF5A62D21DB764700969511 /* WRNavigationBar.swift in Sources */,
 				4C0E95F021D893C400301D52 /* HeaderCRView.swift in Sources */,
 				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
-				4CF5A62721DB761300969511 /* WRProxy.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
 				4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
+				4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */,
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
 				4C0E960021D92B9A00301D52 /* AboutNewDogVC.swift in Sources */,
 				4C0E95FA21D8CB4300301D52 /* AboutEmergenVC.swift in Sources */,
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
+				4CF5A63F21DC952900969511 /* CustomNavigationBar.swift in Sources */,
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
-				4CF5A62921DB761A00969511 /* WRCycleCell.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
 				F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */,
 				F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */,
+				4CF5A64A21DCA0E100969511 /* Page1VC.swift in Sources */,
 				F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */,
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
+				4CF5A64E21DCB33C00969511 /* CardVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
 				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
 				4C0E95FE21D9228F00301D52 /* NewDogVC.swift in Sources */,
 				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
-				4CF5A62521DB760C00969511 /* WRCycleScrollView.swift in Sources */,
 				4C0E95E921D8935C00301D52 /* RoundView.swift in Sources */,
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95D521D891D100301D52 /* FindMainVC.swift in Sources */,
@@ -650,10 +629,11 @@
 				4C0E95F621D8B98000301D52 /* EmergenDogVC.swift in Sources */,
 				4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */,
 				4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */,
+				4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */,
 				F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */,
 				F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */,
+				4CF5A64C21DCA0ED00969511 /* Page2VC.swift in Sources */,
 				4C0E95E721D8934600301D52 /* CustomUISlider.swift in Sources */,
-				4CF5A62B21DB764000969511 /* WRCustomNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,7 +805,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.DowaDog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = DowaDog/KakaoOpenHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -861,7 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sopt.DowaDog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = DowaDog/KakaoOpenHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

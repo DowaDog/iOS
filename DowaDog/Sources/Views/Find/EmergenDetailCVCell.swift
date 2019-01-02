@@ -10,6 +10,8 @@ import UIKit
 
 class EmergenDetailCVCell: UICollectionViewCell {
     
+    
+    
     @IBOutlet weak var heartBtn: UIButton!
     @IBOutlet weak var animalImage: UIImageView!
 
@@ -18,6 +20,7 @@ class EmergenDetailCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         animalImage.sectionRound()
+       
     }
     @IBAction func heartClickAction(_ sender: Any) {
         if isClick == false{

@@ -27,6 +27,14 @@ class NewDogVC: UIViewController {
         self.setBackBtn()
         self.setNavigationBarShadow()
     }
+    @IBAction func filterClickAction(_ sender: Any) {
+        
+        
+        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
+        
+        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+        navigationController?.pushViewController(filter, animated: true)
+    }
 }
 extension NewDogVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -65,4 +73,31 @@ extension NewDogVC: UICollectionViewDelegate{
         
     }
 }
+
+extension NewDogVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (view.frame.width - 45) / 2
+        let height: CGFloat = (view.frame.width - 30) / 2 + 15
+        
+        //TODO: 이미지 사이즈도 view에 맞춰 동적으로 변경
+        
+        
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+}
+
 
