@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Page1VC-->
+        <!--Page2VC-->
         <scene sceneID="ax7-1u-d7Q">
             <objects>
-                <viewController id="RqX-JN-DXd" customClass="Page1VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2VC" id="RqX-JN-DXd" customClass="Page2VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zR7-xI-giJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,7 +556,68 @@
                     <view key="view" contentMode="scaleToFill" id="K25-G4-wSQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="518"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cpr-Ya-mmT">
+                                <rect key="frame" x="0.0" y="10" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="498" id="17u-1c-H7w"/>
+                                    <constraint firstAttribute="width" constant="375" id="goi-5N-VZv"/>
+                                    <constraint firstAttribute="width" secondItem="cpr-Ya-mmT" secondAttribute="height" multiplier="125:166" id="oGX-ZN-UN6"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EwV-YW-Ahn">
+                                    <size key="itemSize" width="375" height="279"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Page2CVCell" id="rYL-Oo-YSL" customClass="Page2CVCell" customModule="DowaDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymK-Dq-M9H">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="375" id="M7C-fv-8L0"/>
+                                                        <constraint firstAttribute="width" secondItem="ymK-Dq-M9H" secondAttribute="height" multiplier="125:93" id="fti-ZQ-w46"/>
+                                                        <constraint firstAttribute="height" constant="279" id="z2c-9h-Kwm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncompletedContents" translatesAutoresizingMaskIntoConstraints="NO" id="ALo-6H-mnw">
+                                                    <rect key="frame" x="306" y="0.0" width="27" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ALo-6H-mnw" secondAttribute="height" multiplier="27:25" id="CPM-yb-UHA"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ymK-Dq-M9H" firstAttribute="top" secondItem="rYL-Oo-YSL" secondAttribute="top" id="8Mf-Lu-icO"/>
+                                            <constraint firstAttribute="trailing" secondItem="ymK-Dq-M9H" secondAttribute="trailing" id="ATh-ZR-duU"/>
+                                            <constraint firstItem="ymK-Dq-M9H" firstAttribute="top" secondItem="ALo-6H-mnw" secondAttribute="bottom" constant="-25" id="C7i-gC-BXQ"/>
+                                            <constraint firstItem="ymK-Dq-M9H" firstAttribute="leading" secondItem="rYL-Oo-YSL" secondAttribute="leading" id="K6q-an-4iL"/>
+                                            <constraint firstAttribute="bottom" secondItem="ymK-Dq-M9H" secondAttribute="bottom" id="Tqd-gU-jTs"/>
+                                            <constraint firstItem="ALo-6H-mnw" firstAttribute="leading" secondItem="ymK-Dq-M9H" secondAttribute="trailing" constant="-69" id="erb-bc-Hqm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cardImage" destination="ymK-Dq-M9H" id="765-Wl-wNy"/>
+                                            <outlet property="readCheck" destination="ALo-6H-mnw" id="bfp-iK-apO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wys-ic-29a" firstAttribute="bottom" secondItem="cpr-Ya-mmT" secondAttribute="bottom" constant="10" id="7Ez-ja-BaX"/>
+                            <constraint firstItem="cpr-Ya-mmT" firstAttribute="top" secondItem="K25-G4-wSQ" secondAttribute="top" constant="10" id="93V-78-C2C"/>
+                            <constraint firstItem="cpr-Ya-mmT" firstAttribute="trailing" secondItem="wys-ic-29a" secondAttribute="trailing" id="anT-9X-2Lw"/>
+                            <constraint firstItem="cpr-Ya-mmT" firstAttribute="leading" secondItem="wys-ic-29a" secondAttribute="leading" id="wOc-dl-SS7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wys-ic-29a"/>
                     </view>
                 </viewController>
