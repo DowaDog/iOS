@@ -15,4 +15,7 @@ class AdoptDocEndVC: UIViewController {
 
         
     }
+    @IBAction func unwindAction(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToHome", sender: self)
+    }
 }

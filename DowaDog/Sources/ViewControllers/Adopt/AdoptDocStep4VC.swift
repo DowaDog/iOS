@@ -78,7 +78,10 @@ class AdoptDocStep4VC: UIViewController {
                 checkBox4.isSelected = true
                 checkBox5.isSelected = true
 
-                nextBtn.backgroundColor = selectColor
+                if textField.text != "" {
+                    nextBtn.backgroundColor = selectColor
+                }
+                
             } else {
                 checkBox1.isSelected = false
                 checkBox2.isSelected = false
@@ -92,10 +95,13 @@ class AdoptDocStep4VC: UIViewController {
             self.view.endEditing(true)
         }
 
-        if checkBox1.isSelected == true && checkBox2.isSelected && checkBox3.isSelected && checkBox4.isSelected && checkBox5.isSelected && textField.text != "" {
+        if checkBox1.isSelected == true && checkBox2.isSelected && checkBox3.isSelected && checkBox4.isSelected && checkBox5.isSelected {
+            
             checkBoxAll.isSelected = true
 
-            nextBtn.backgroundColor = selectColor
+            if textField.text != "" {
+                nextBtn.backgroundColor = selectColor
+            }
         } else {
             checkBoxAll.isSelected = false
 
