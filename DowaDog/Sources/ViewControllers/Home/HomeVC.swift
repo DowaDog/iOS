@@ -10,7 +10,16 @@ import UIKit
 
 class HomeVC: UIViewController {
  
+    // 0 -> -428
+    @IBOutlet var cardViewConstraint: NSLayoutConstraint!
+
+    @IBOutlet var blackScreen2: UIView!
     
+    @IBOutlet var upSwipe: UISwipeGestureRecognizer!
+    @IBOutlet var downSwipe: UISwipeGestureRecognizer!
+
+    @IBOutlet var cardView: UIImageView!
+
     @IBOutlet var sideMenuView: UIView!
     var blackScreen: UIView!
     
@@ -22,9 +31,14 @@ class HomeVC: UIViewController {
         self.setNavigationBarShadow()
         newFamBtn.layer.cornerRadius = newFamBtn.layer.frame.height/2
         
+        upSwipe.direction = .up
+        downSwipe.direction = .down
+        
         setBlackScreen()
-        hideMenu()
+        setBlackScreen2()
         setSideMenu()
+        
+        setCardView()
     }
     
     @IBAction func menuTapped(_ sender: Any) {
@@ -39,16 +53,31 @@ class HomeVC: UIViewController {
         hideMenu()
     }
     
+    @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
+        hideCardView()
+    }
+    
+    func setCardView() {
+        cardViewConstraint.constant = -428
+    }
+    
+    func setBlackScreen2() {
+        let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(blackScreen2TapAction(sender:)))
+        blackScreen2.addGestureRecognizer(tapGestRecognizer2)
+    }
+    
     // sideMenu 를 뷰 최상단으로 지정
     func setSideMenu() {
         sideMenuView.frame = UIApplication.shared.keyWindow!.frame
         UIApplication.shared.keyWindow!.addSubview(sideMenuView)
+        
+        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
     }
     
     // init BlackScreen
     func setBlackScreen() {
         blackScreen=UIView(frame: self.view.bounds)
-        blackScreen.isHidden = true
+        blackScreen.alpha = 0
         blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
         self.navigationController?.view.addSubview(blackScreen)
         let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
@@ -57,14 +86,26 @@ class HomeVC: UIViewController {
 
     // Open sideMenu
     func showMenu() {
-        self.sideMenuView.isHidden = false
-        self.blackScreen.isHidden = false
         UIView.animate(withDuration: 0.4, animations: {
             self.blackScreen.alpha = 1
         })
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.sideMenuView.transform = .identity
+        })
+    }
+    
+    func hideCardView() {
+        
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.navigationController?.navigationBar.layer.zPosition = 1
+            
+            self.blackScreen2.alpha = 0
+            self.cardViewConstraint.constant = -428
+            print("down")
+            
+            self.view.layoutIfNeeded()
         })
     }
     
@@ -121,6 +162,40 @@ class HomeVC: UIViewController {
         }
     }
     
+    @IBAction func upSwipeAction(_ sender: UISwipeGestureRecognizer) {
+
+        
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.navigationController?.navigationBar.layer.zPosition = -1
+
+
+            self.blackScreen2.alpha = 1
+            self.cardViewConstraint.constant = 0
+            print("up")
+
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    @IBAction func downSwipeAction(_ sender: UISwipeGestureRecognizer) {
+
+        
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.navigationController?.navigationBar.layer.zPosition = 1
+
+
+            self.blackScreen2.alpha = 0
+            self.cardViewConstraint.constant = -428
+            print("down")
+
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    
+    //unwind Point
     @IBAction func unwindAction(_ sender: UIStoryboardSegue) {
         
     }

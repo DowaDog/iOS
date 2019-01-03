@@ -81,7 +81,7 @@ class AdoptDocStep4VC: UIViewController {
                 if textField.text != "" {
                     nextBtn.backgroundColor = selectColor
                 }
-                
+
             } else {
                 checkBox1.isSelected = false
                 checkBox2.isSelected = false

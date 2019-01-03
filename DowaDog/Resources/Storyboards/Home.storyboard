@@ -32,85 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIllust" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IU-xlP">
-                                <rect key="frame" x="0.0" y="65" width="375" height="443"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="yfa-IU-xlP" secondAttribute="height" multiplier="375:443" id="sqV-6J-12r"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9z-zA-wTb">
-                                <rect key="frame" x="77.5" y="545" width="220" height="43"/>
-                                <color key="backgroundColor" red="1" green="0.76078431372549016" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="j7W-ni-niR"/>
-                                    <constraint firstAttribute="height" constant="43" id="zEf-X8-L9C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="16"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="새 가족 되기">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-hH-to4">
-                                <rect key="frame" x="56" y="82" width="46" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="ZyG-Rr-waE"/>
-                                    <constraint firstAttribute="width" constant="46" id="wwF-La-aV8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
-                                <color key="textColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8n-sI-7Hk">
-                                <rect key="frame" x="55.5" y="114" width="65.5" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="cdX-2B-UI7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="35"/>
-                                <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마리" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NF-g2w">
-                                <rect key="frame" x="122" y="122" width="46" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="4iK-BG-vVd"/>
-                                    <constraint firstAttribute="width" constant="46" id="eZy-qy-4hG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="25"/>
-                                <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bia-sp-U3C">
-                                <rect key="frame" x="168" y="122" width="23" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="23" id="JqP-eA-eXY"/>
-                                    <constraint firstAttribute="height" constant="28" id="MdT-OJ-hJZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
-                                <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구조되었어요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-OX-KQ7">
-                                <rect key="frame" x="56" y="164" width="143" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="143" id="1FA-iP-1GM"/>
-                                    <constraint firstAttribute="height" constant="28" id="bBM-Qk-Nh9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
-                                <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유기 동물의 새로운 가족이 되어주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeC-Cr-Pqr">
-                                <rect key="frame" x="56" y="202" width="249" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="Y1D-kw-7Yk"/>
-                                    <constraint firstAttribute="width" constant="249" id="w2P-cH-LPh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="16"/>
-                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fP-3x-OzS" customClass="SidebarView" customModule="DowaDog" customModuleProvider="target">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fP-3x-OzS" customClass="SidebarView" customModule="DowaDog" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="285" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 로그인이 되지 않았어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMH-F8-akx">
@@ -351,30 +273,130 @@
                                     <constraint firstItem="Sdo-cm-BqY" firstAttribute="top" secondItem="CK3-4j-FP0" secondAttribute="bottom" constant="14" id="zs8-F4-pJg"/>
                                 </constraints>
                             </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIllust" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IU-xlP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="602"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yfa-IU-xlP" secondAttribute="height" multiplier="375:602" id="JhV-3H-dj6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9z-zA-wTb">
+                                <rect key="frame" x="77" y="510" width="220" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.76078431372549016" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="16"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="새 가족 되기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-hH-to4">
+                                <rect key="frame" x="56" y="81" width="46" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="OZU-Sy-4nJ"/>
+                                    <constraint firstAttribute="height" constant="27" id="g3w-yr-nEK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
+                                <color key="textColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8n-sI-7Hk">
+                                <rect key="frame" x="16" y="113" width="99" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="eIY-Oi-YUR"/>
+                                    <constraint firstAttribute="height" constant="39" id="hI4-1Q-NQR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="35"/>
+                                <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마리" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-NF-g2w">
+                                <rect key="frame" x="117" y="122" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="205-Yx-0hR"/>
+                                    <constraint firstAttribute="width" constant="46" id="BPt-qf-o3F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.76078431369999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bia-sp-U3C">
+                                <rect key="frame" x="163" y="122" width="23" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="eJU-41-xfP"/>
+                                    <constraint firstAttribute="width" constant="23" id="vnd-7i-EuP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구조되었어요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzp-OX-KQ7">
+                                <rect key="frame" x="56" y="163" width="143" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="APG-W1-Khg"/>
+                                    <constraint firstAttribute="height" constant="28" id="gFk-6U-hEX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유기 동물의 새로운 가족이 되어주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeC-Cr-Pqr">
+                                <rect key="frame" x="56" y="202" width="249" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="K9d-TZ-kxe"/>
+                                    <constraint firstAttribute="width" constant="249" id="yXs-GN-0Fh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="16"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-yc-4vi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="n0r-yc-4vi" secondAttribute="height" multiplier="375:667" id="ihV-FJ-Zub"/>
+                                </constraints>
+                            </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bSliderMainImg" translatesAutoresizingMaskIntoConstraints="NO" id="ocE-yZ-3EX">
+                                <rect key="frame" x="6" y="154" width="363" height="513"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="363" id="Smi-ja-IBe"/>
+                                    <constraint firstAttribute="height" constant="513" id="wes-4c-UtA"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iEa-se-KPW" appends="YES" id="FwD-3r-uv2"/>
+                                    <outletCollection property="gestureRecognizers" destination="Hfm-7g-TAV" appends="YES" id="3LR-9z-tWu"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="Yt4-a6-vQh" secondAttribute="top" constant="1" id="14l-g5-QA7"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="jeC-Cr-Pqr" secondAttribute="trailing" constant="-305" id="1UF-Na-ZIH"/>
                             <constraint firstItem="Yt4-a6-vQh" firstAttribute="bottom" secondItem="5fP-3x-OzS" secondAttribute="bottom" id="207-5A-oII"/>
-                            <constraint firstItem="Bia-sp-U3C" firstAttribute="leading" secondItem="rxi-NF-g2w" secondAttribute="trailing" id="2bW-q4-xTD"/>
-                            <constraint firstItem="s8n-sI-7Hk" firstAttribute="top" secondItem="5Md-hH-to4" secondAttribute="bottom" constant="5" id="2hW-Kg-Fkx"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="Yt4-a6-vQh" secondAttribute="leading" id="4nd-Rb-vgI"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="5Md-hH-to4" secondAttribute="trailing" constant="-102" id="9Xn-NF-bb2"/>
+                            <constraint firstItem="ocE-yZ-3EX" firstAttribute="centerX" secondItem="Yt4-a6-vQh" secondAttribute="centerX" id="3Ih-0e-IaU"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="s8n-sI-7Hk" secondAttribute="trailing" constant="-115" id="3z2-4c-uTp"/>
+                            <constraint firstItem="n0r-yc-4vi" firstAttribute="bottom" secondItem="Yt4-a6-vQh" secondAttribute="bottom" id="5md-pr-EEH"/>
+                            <constraint firstItem="Yt4-a6-vQh" firstAttribute="bottom" secondItem="ocE-yZ-3EX" secondAttribute="bottom" id="71J-TK-qkV"/>
                             <constraint firstItem="Yt4-a6-vQh" firstAttribute="trailing" secondItem="5fP-3x-OzS" secondAttribute="trailing" constant="90" id="BAB-wu-NMn"/>
-                            <constraint firstItem="rxi-NF-g2w" firstAttribute="leading" secondItem="s8n-sI-7Hk" secondAttribute="trailing" constant="1" id="CKd-8Z-GJ0"/>
-                            <constraint firstItem="C9z-zA-wTb" firstAttribute="top" secondItem="yfa-IU-xlP" secondAttribute="bottom" constant="37" id="CNP-yf-qu6"/>
-                            <constraint firstItem="jeC-Cr-Pqr" firstAttribute="top" secondItem="Uzp-OX-KQ7" secondAttribute="bottom" constant="10" id="PeR-Ka-JMO"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="s8n-sI-7Hk" secondAttribute="trailing" constant="-121" id="Smv-vw-QRi"/>
+                            <constraint firstItem="Bia-sp-U3C" firstAttribute="leading" secondItem="rxi-NF-g2w" secondAttribute="trailing" id="CBY-Ms-XY7"/>
+                            <constraint firstItem="Uzp-OX-KQ7" firstAttribute="top" secondItem="s8n-sI-7Hk" secondAttribute="bottom" constant="11" id="FGm-Uz-6s9"/>
+                            <constraint firstItem="n0r-yc-4vi" firstAttribute="trailing" secondItem="Yt4-a6-vQh" secondAttribute="trailing" id="HBJ-cm-Qid"/>
+                            <constraint firstItem="n0r-yc-4vi" firstAttribute="leading" secondItem="Yt4-a6-vQh" secondAttribute="leading" id="HmY-U7-q65"/>
+                            <constraint firstItem="rxi-NF-g2w" firstAttribute="leading" secondItem="s8n-sI-7Hk" secondAttribute="trailing" constant="2" id="K1g-2u-b57"/>
+                            <constraint firstItem="s8n-sI-7Hk" firstAttribute="top" secondItem="5Md-hH-to4" secondAttribute="bottom" constant="5" id="KiH-kq-3FU"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="5Md-hH-to4" secondAttribute="trailing" constant="-102" id="NHr-MZ-tHb"/>
+                            <constraint firstItem="Yt4-a6-vQh" firstAttribute="trailing" secondItem="yfa-IU-xlP" secondAttribute="trailing" id="Pqq-wR-rdt"/>
                             <constraint firstItem="5fP-3x-OzS" firstAttribute="leading" secondItem="Yt4-a6-vQh" secondAttribute="leading" id="T9q-EW-oBO"/>
-                            <constraint firstItem="Yt4-a6-vQh" firstAttribute="trailing" secondItem="yfa-IU-xlP" secondAttribute="trailing" id="at5-dD-BGP"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="5Md-hH-to4" secondAttribute="bottom" constant="-44" id="bmH-yi-CDQ"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="jeC-Cr-Pqr" secondAttribute="trailing" constant="-305" id="aPu-NI-HDa"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="5Md-hH-to4" secondAttribute="bottom" constant="-44" id="d8t-dD-xFX"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="rxi-NF-g2w" secondAttribute="bottom" constant="-86" id="fZv-Pj-rij"/>
                             <constraint firstItem="Yt4-a6-vQh" firstAttribute="top" secondItem="5fP-3x-OzS" secondAttribute="top" constant="64" id="iXx-iP-kIB"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="Bia-sp-U3C" secondAttribute="bottom" constant="-85" id="kYf-k1-xdt"/>
-                            <constraint firstItem="C9z-zA-wTb" firstAttribute="centerX" secondItem="Yt4-a6-vQh" secondAttribute="centerX" id="mcP-41-CVW"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="Uzp-OX-KQ7" secondAttribute="trailing" constant="-199" id="nk8-et-IOz"/>
-                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="rxi-NF-g2w" secondAttribute="bottom" constant="-85" id="r4H-vT-aI0"/>
-                            <constraint firstItem="Uzp-OX-KQ7" firstAttribute="top" secondItem="s8n-sI-7Hk" secondAttribute="bottom" constant="11" id="u2L-8t-j2N"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="Uzp-OX-KQ7" secondAttribute="trailing" constant="-199" id="kjN-fg-I2O"/>
+                            <constraint firstItem="n0r-yc-4vi" firstAttribute="top" secondItem="jcn-Zf-Zdd" secondAttribute="top" id="m0V-ZP-Hmi"/>
+                            <constraint firstItem="jeC-Cr-Pqr" firstAttribute="top" secondItem="Uzp-OX-KQ7" secondAttribute="bottom" constant="11" id="wFI-w3-jls"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="Bia-sp-U3C" secondAttribute="bottom" constant="-86" id="xJs-pu-PIK"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="Yt4-a6-vQh" secondAttribute="top" id="xUp-r0-qZf"/>
+                            <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="Yt4-a6-vQh" secondAttribute="leading" id="xtj-D2-HJ9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yt4-a6-vQh"/>
                     </view>
@@ -390,13 +412,28 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="blackScreen2" destination="n0r-yc-4vi" id="vCp-iM-Rvw"/>
+                        <outlet property="cardView" destination="ocE-yZ-3EX" id="18b-zP-uD6"/>
+                        <outlet property="cardViewConstraint" destination="71J-TK-qkV" id="cn4-QO-4ll"/>
+                        <outlet property="downSwipe" destination="iEa-se-KPW" id="67Y-vZ-x2H"/>
                         <outlet property="newFamBtn" destination="C9z-zA-wTb" id="E68-k8-737"/>
                         <outlet property="sideMenuView" destination="5fP-3x-OzS" id="2bD-wZ-Nv5"/>
+                        <outlet property="upSwipe" destination="Hfm-7g-TAV" id="NoX-c7-clJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKp-Xf-aXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="Hfm-7g-TAV">
+                    <connections>
+                        <action selector="upSwipeAction:" destination="ifU-eu-E2I" id="7ed-qo-IxM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="iEa-se-KPW">
+                    <connections>
+                        <action selector="downSwipeAction:" destination="ifU-eu-E2I" id="d3O-gV-Z0J"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="752.79999999999995" y="90.404797601199405"/>
+            <point key="canvasLocation" x="492" y="89.505247376311857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dZ8-tB-Cmg">
@@ -418,9 +455,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bSliderMainImg" width="363" height="531"/>
         <image name="categoryMypageIcon" width="28" height="28"/>
         <image name="drawerBtn" width="20" height="20"/>
-        <image name="mainIllust" width="375" height="443"/>
+        <image name="mainIllust" width="375" height="602"/>
         <image name="xBtn" width="15" height="15.5"/>
     </resources>
 </document>
