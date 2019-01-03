@@ -103,11 +103,11 @@ var heartClick = false
 
 }
 extension AboutNewDogVC : UIGestureRecognizerDelegate{
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
-        
+
+    private func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+
         return true
-        
+
     }
-    
+
 }
