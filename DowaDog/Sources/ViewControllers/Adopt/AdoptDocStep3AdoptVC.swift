@@ -20,6 +20,8 @@ class AdoptDocStep3AdoptVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setBackBtn()
+        self.setNavigationBarClear()
     }
 
     @IBAction func agreeBtnAction(_ sender: UIButton) {
