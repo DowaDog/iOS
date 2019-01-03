@@ -10,6 +10,8 @@ import UIKit
 
 
 
+var resusableheader = "header"
+var reusablefooter = "footer"
 var cell0 = true
 var cell1 = false
 var cell2 = false
@@ -22,14 +24,7 @@ var cell8 = false
 
 class FilterVC: UIViewController {
     
-    
-    
-    @IBOutlet weak var dogBtn: UIButton!
-    
-    @IBOutlet weak var catBtn: UIButton!
-    
-    @IBOutlet weak var slider: CustomUISlider!
-    @IBOutlet weak var maxDate: UILabel!
+    var resetItem: UIBarButtonItem!
     
     let reuseIdentifier = "cellId"
     
@@ -46,7 +41,7 @@ class FilterVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,53 +49,31 @@ class FilterVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        dogBtn.roundRadius()
-        catBtn.roundRadius()
+        resetItem = UIBarButtonItem(image:UIImage(named: "filterRefresh.png") , style: .plain, target: self, action: #selector(refreshClicked))
+        resetItem.tintColor = UIColor.init(displayP3Red: 119/255, green: 119/255, blue: 119/2515, alpha: 1)
         
-        //        dogView.dropShadow(color: UIColor.black, opacity: 0.16, offSet: CGSize.init(width: 0, height: 0.1), radius: 10, scale: true)
+        navigationItem.rightBarButtonItems = [resetItem]
         
     }
     override func didReceiveMemoryWarning() {
-        super .didReceiveMemoryWarning()
-        
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func dogSelectedAction(_ sender: UIButton) {
+    @objc func refreshClicked(){
         
-        
-        sender.setImage(UIImage(named: "filterDogIconYellow.png"), for: UIControl.State.normal)
-        catBtn.setImage(UIImage(named: "filterCatIconGrey.png"), for: UIControl.State.normal)
-        
-        
-        
-        
-        
-        
-        
+        cell0 = true
+        cell1 = false
+        cell2 = false
+        cell3 = false
+        cell4 = false
+        cell5 = false
+        cell6 = false
+        cell7 = false
+        cell8 = false
     }
     
-    @IBAction func catSelectedAction(_ sender: UIButton) {
-        
-        sender.setImage(UIImage(named: "filterCatIconYellow.png"), for: UIControl.State.normal)
-        dogBtn.setImage(UIImage(named: "filterDogIconGrey.png"), for: UIControl.State.normal)
-        
-        
-        
-    }
-    
-    
-    
-    @IBAction func sliderValueChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
-        
-        maxDate.text = "\(currentValue)일"
-        
-        if(currentValue == 15){
-            maxDate.text = "\(currentValue)일 이상"
-        }
-    }
-    
+
     
 }
 
@@ -118,8 +91,27 @@ extension FilterVC:UICollectionViewDataSource{
         //print(self.area[indexPath.row])
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+      
+        if (kind == UICollectionView.elementKindSectionFooter) {
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reusablefooter, for: indexPath) as! FooterCRView
+       
+            // Customize footerView here
+            return footer
+
+        } else if (kind == UICollectionView.elementKindSectionHeader) {
+            
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: resusableheader, for: indexPath) as! FilterCRView
+            
+            return header
+        }
+        fatalError()
+    }
 }
+    
+ 
+    
+
 
 extension FilterVC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -279,3 +271,5 @@ extension FilterVC: UICollectionViewDelegate{
         
     }
 }
+
+

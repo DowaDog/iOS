@@ -20,6 +20,7 @@ class FindMainVC: UIViewController {
                    (UIImage(named: "testcat.png"))
     ]
     var newImg = [(UIImage(named: "testcat.png")),
+                  (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),
                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png"))
     ]
     
@@ -31,6 +32,14 @@ class FindMainVC: UIViewController {
         filterBtn.roundRadius()
         
         
+    }
+    @IBAction func searchClickAction(_ sender: Any) {
+//
+//        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
+//
+//        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+//        navigationController?.pushViewController(filter, animated: true)
+//    }
     }
     
     @IBAction func filterClickAction(_ sender: Any) {
@@ -52,10 +61,13 @@ extension FindMainVC:UICollectionViewDataSource{
         
         if section == 0{
             
-            returnValue = emerImg.count
+            returnValue = 0
             
         }
         else if section == 1 {
+               returnValue = emerImg.count
+        }
+        else if section == 2 {
             returnValue =  newImg.count
             //            returnValue = self.sectionDataSource.count
         }
@@ -74,67 +86,61 @@ extension FindMainVC:UICollectionViewDataSource{
         
         if section == 0{
 
-            cellA.emerImage.image = self.emerImg[indexPath.item]
-            
-            cell = cellA
-          
-         
-            
+             return UICollectionViewCell()
         }else if section == 1{
-            
+            cellA.emerImage.image = self.emerImg[indexPath.item]
+            cell = cellA
+//            cell.backgroundColor = UIColor.init(displayP3Red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+           
+        }else if section == 2 {
             cellB.newImage.image = self.newImg[indexPath.item]
             cell = cellB
-            
         }
         return cell
         
-    }
+}
 
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-        //1
-        switch kind {
-        //2
-        case UICollectionView.elementKindSectionHeader:
-            //3
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                             withReuseIdentifier: resusableheader,
-                                                                             for: indexPath) as! HeaderCRView
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
             let section = indexPath.section
             if section == 0{
-                headerView.headerLabel.text = "긴급"
-                headerView.moreBtn.setTitle("더보기", for: .normal)
-            
+                let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "headerImage", for: indexPath) as! ImageCRView
+                return view
+ 
 
-              
-             
             }else if section == 1 {
-                headerView.headerLabel.text = "새로 구조된 아이들"
-                headerView.moreBtn.setTitle("", for: .normal)
+                let view = collectionView.dequeueReusableSupplementaryView(ofKind:UICollectionView.elementKindSectionHeader,
+                                                                                 withReuseIdentifier: resusableheader,
+                                                                                 for: indexPath) as! HeaderCRView
+                view.headerLabel.text = "긴급"
+                view.moreBtn.setTitle("더보기", for: .normal)
+                view.backgroundColor = UIColor.init(displayP3Red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+                return view
+
                 
+            }else {
+                let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                                 withReuseIdentifier: resusableheader,
+                                                                                 for: indexPath) as! HeaderCRView
+                view.headerLabel.text = "새로 구조된 아이들"
+                view.moreBtn.isHidden = true
+                return view
+
             }
-            
-            return headerView
-        default:
-            //4
-            assert(false, "Unexpected element kind")
-        }
     }
-    
-    
+
 }
 
 extension FindMainVC: UICollectionViewDelegate{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         let section = indexPath.section
-        if section == 1{
+        if section == 2{
 
             let cell = self.collectionView.cellForItem(at: indexPath) as! NewDogCVCell
             if indexPath.row == 0{
@@ -154,30 +160,35 @@ extension FindMainVC: UICollectionViewDelegate{
 }
 
 }
-//extension FindMainVC: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width: CGFloat = (view.frame.width - 45) / 2
-//        let height: CGFloat = (view.frame.width - 30) / 2 + 15
-//        
-//        //TODO: 이미지 사이즈도 view에 맞춰 동적으로 변경
-//        
-//        
-//        
-//        return CGSize(width: width, height: height)
-//    }
-//    
-//    private func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//    private func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//    }
-//    
-//}
-//
-//
+extension FindMainVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (view.frame.width - 45) / 2
+        let height: CGFloat = (view.frame.width - 30) / 2 + 15
+        
+        //TODO: 이미지 사이즈도 view에 맞춰 동적으로 변경
+        
+        
+        
+        return CGSize(width: width, height: height)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: view.frame.width, height: 0)
+        } else {
+            return CGSize(width: view.frame.width, height: 50)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: view.frame.width, height: 246)
+        } else {
+            return CGSize(width: view.frame.width, height: 0)
+        }
+    }
+}
