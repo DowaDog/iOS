@@ -1651,7 +1651,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adoptingSubmissionImg" translatesAutoresizingMaskIntoConstraints="NO" id="Ikz-2R-dSg">
-                                <rect key="frame" x="92.5" y="133" width="190" height="191"/>
+                                <rect key="frame" x="92.5" y="191" width="190" height="191"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ikz-2R-dSg" secondAttribute="height" multiplier="190:191" id="yvp-I2-tri"/>
                                 </constraints>
@@ -1673,7 +1673,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0KS-Ld-pKv">
-                                <rect key="frame" x="161.5" y="349" width="52.5" height="21"/>
+                                <rect key="frame" x="161.5" y="407" width="52.5" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제출" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-eE-kwR">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="21"/>
@@ -1710,7 +1710,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료했습니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlG-yI-hlj">
-                                <rect key="frame" x="132.5" y="378" width="110" height="21"/>
+                                <rect key="frame" x="132.5" y="436" width="110" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4jJ-2p-iHJ"/>
                                     <constraint firstAttribute="width" constant="110" id="HfE-WP-Pap"/>
@@ -1720,7 +1720,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심사 후 전화 연락드리겠습니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-em-X6y">
-                                <rect key="frame" x="103.5" y="438" width="168" height="15"/>
+                                <rect key="frame" x="103.5" y="496" width="168" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="168" id="I1x-zK-rd1"/>
                                     <constraint firstAttribute="height" constant="15" id="PqH-wT-FR1"/>
@@ -1730,7 +1730,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일주일 이내에 보호소에서" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTd-Kn-DW3">
-                                <rect key="frame" x="119" y="415" width="137" height="15"/>
+                                <rect key="frame" x="119" y="473" width="137" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="sO0-eB-ldt"/>
                                     <constraint firstAttribute="width" constant="137" id="u4b-mP-ael"/>
@@ -1743,7 +1743,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NlG-yI-hlj" firstAttribute="centerX" secondItem="XJs-GR-Sm7" secondAttribute="centerX" id="1qd-B6-q0I"/>
-                            <constraint firstItem="Ikz-2R-dSg" firstAttribute="top" secondItem="XJs-GR-Sm7" secondAttribute="top" constant="113" id="419-i0-DkU"/>
+                            <constraint firstItem="Ikz-2R-dSg" firstAttribute="top" secondItem="XJs-GR-Sm7" secondAttribute="top" constant="171" id="419-i0-DkU"/>
                             <constraint firstItem="vi1-vG-EYl" firstAttribute="leading" secondItem="XJs-GR-Sm7" secondAttribute="leading" id="5CZ-od-jox"/>
                             <constraint firstItem="0KS-Ld-pKv" firstAttribute="top" secondItem="Ikz-2R-dSg" secondAttribute="bottom" constant="25" id="5Vb-YT-qZM"/>
                             <constraint firstItem="XJs-GR-Sm7" firstAttribute="trailing" secondItem="vi1-vG-EYl" secondAttribute="trailing" id="Gqy-is-NWm"/>

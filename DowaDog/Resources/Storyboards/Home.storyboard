@@ -163,14 +163,19 @@
                                             <constraint firstAttribute="height" constant="1" id="vh3-zO-omd"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="325" translatesAutoresizingMaskIntoConstraints="NO" id="xDO-LH-gA4">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="325" translatesAutoresizingMaskIntoConstraints="NO" id="xDO-LH-gA4">
                                         <rect key="frame" x="9" y="66" width="247" height="261"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="247" id="Ni4-UC-I9u"/>
                                             <constraint firstAttribute="height" constant="261" id="z2F-Wt-GJZ"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="xXX-s1-Ctg" appends="YES" id="RIG-H8-GhQ"/>
+                                            <outletCollection property="gestureRecognizers" destination="QOq-Ql-Olu" appends="YES" id="1gg-WA-2F9"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popupOneIndicate" translatesAutoresizingMaskIntoConstraints="NO" id="rzd-iL-kur">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popupOneIndicate" translatesAutoresizingMaskIntoConstraints="NO" id="rzd-iL-kur">
                                         <rect key="frame" x="89.5" y="334" width="86" height="6"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="6" id="lQr-GL-jpV"/>
@@ -480,8 +485,10 @@
                         <outlet property="guideIndicator" destination="rzd-iL-kur" id="Egj-Q3-Yht"/>
                         <outlet property="guideView" destination="8sT-Zk-G5i" id="wpu-wb-fNB"/>
                         <outlet property="guideViewNextBtn" destination="5Sm-gG-IAa" id="Iif-yQ-pB9"/>
+                        <outlet property="leftSwipe" destination="xXX-s1-Ctg" id="mZU-Bh-kry"/>
                         <outlet property="new" destination="XBf-Xi-R50" id="2mp-FR-pNC"/>
                         <outlet property="newFamBtn" destination="C9z-zA-wTb" id="E68-k8-737"/>
+                        <outlet property="rightSwipe" destination="QOq-Ql-Olu" id="zmw-Ne-VKB"/>
                         <outlet property="sideMenuView" destination="5fP-3x-OzS" id="2bD-wZ-Nv5"/>
                         <outlet property="stateImageView" destination="hSf-6q-mpB" id="P4q-cj-8wc"/>
                         <outlet property="upSwipe" destination="Hfm-7g-TAV" id="NoX-c7-clJ"/>
@@ -496,6 +503,16 @@
                 <swipeGestureRecognizer direction="down" id="iEa-se-KPW">
                     <connections>
                         <action selector="downSwipeAction:" destination="ifU-eu-E2I" id="d3O-gV-Z0J"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="xXX-s1-Ctg">
+                    <connections>
+                        <action selector="leftSwipeAction:" destination="ifU-eu-E2I" id="kyk-DZ-tbt"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="QOq-Ql-Olu">
+                    <connections>
+                        <action selector="rightSwipeAction:" destination="ifU-eu-E2I" id="jF8-YK-TM4"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

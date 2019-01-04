@@ -17,6 +17,9 @@ class HomeVC: UIViewController {
     
     @IBOutlet var upSwipe: UISwipeGestureRecognizer!
     @IBOutlet var downSwipe: UISwipeGestureRecognizer!
+    @IBOutlet var leftSwipe: UISwipeGestureRecognizer!
+    @IBOutlet var rightSwipe: UISwipeGestureRecognizer!
+    
 
     @IBOutlet var guideView: UIView!
     @IBOutlet var guideImageView: UIImageView!
@@ -77,6 +80,8 @@ class HomeVC: UIViewController {
         
         upSwipe.direction = .up
         downSwipe.direction = .down
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
         
         setBlackScreen()
         setBlackScreen2()
@@ -297,6 +302,65 @@ class HomeVC: UIViewController {
             self.view.layoutIfNeeded()
         })
     }
+    
+    
+    @IBAction func leftSwipeAction(_ sender: UISwipeGestureRecognizer) {
+
+        if guideState < 5 {
+            guideState += 1
+
+            self.guideImageView.alpha = 0
+            self.guideImageView.image = self.guideImageArray[self.guideState]
+            self.guideIndicator.image = self.guideIndicatorArray[self.guideState]
+            UIView.animate(withDuration: 0.5, animations: {
+                self.guideImageView.alpha = 1
+
+                self.view.layoutIfNeeded()
+            })
+
+            if guideState == 5 {
+                guideViewNextBtn.setTitle("시작할개요", for: .normal)
+                guideViewNextBtn.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0), for: .normal)
+                guideViewNextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
+            }
+        } else {
+            hideGuideView()
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.alpha = 1
+                self.new.alpha = 1
+            })
+        }
+       
+
+        
+        print("left")
+    }
+    
+    
+    @IBAction func rightSwipeAction(_ sender: UISwipeGestureRecognizer) {
+
+        if guideState > 0 {
+            guideState -= 1
+
+            self.guideImageView.alpha = 0
+            self.guideImageView.image = self.guideImageArray[self.guideState]
+            self.guideIndicator.image = self.guideIndicatorArray[self.guideState]
+            UIView.animate(withDuration: 0.5, animations: {
+                self.guideImageView.alpha = 1
+
+                self.view.layoutIfNeeded()
+            })
+
+            if guideState < 5 {
+                guideViewNextBtn.setTitle("다음으로", for: .normal)
+                guideViewNextBtn.setTitleColor(UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0), for: .normal)
+                guideViewNextBtn.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            }
+        }
+        
+        print("right")
+    }
+    
     
     
     
