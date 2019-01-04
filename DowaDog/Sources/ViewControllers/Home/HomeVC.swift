@@ -68,12 +68,12 @@ class HomeVC: UIViewController {
     var state: Int = 0
     var guideState: Int = 0
     var guideViewFlag: Bool = false
+    var blackFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
-//        newFamBtn.layer.cornerRadius = newFamBtn.layer.frame.height/2
         
         upSwipe.direction = .up
         downSwipe.direction = .down
@@ -105,6 +105,10 @@ class HomeVC: UIViewController {
     
     func showGuideView() {
         UIView.animate(withDuration: 0.3, animations: {
+            
+            self.navigationController?.navigationBar.layer.zPosition = -1
+            
+            self.blackFlag = true
             self.blackScreen2.alpha = 1
             self.guideView.alpha = 1
 
@@ -114,6 +118,10 @@ class HomeVC: UIViewController {
 
     func hideGuideView() {
         UIView.animate(withDuration: 0.3, animations: {
+            
+            self.navigationController?.navigationBar.layer.zPosition = 1
+            
+            self.blackFlag = false
             self.blackScreen2.alpha = 0
             self.guideView.alpha = 0
             self.guideViewFlag = true
@@ -123,7 +131,9 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func menuTapped(_ sender: Any) {
-        showMenu()
+        if blackFlag != true {
+            showMenu()
+        }
     }
     
     @IBAction func xBtnAction(_ sender: Any) {
@@ -207,10 +217,16 @@ class HomeVC: UIViewController {
         if let btnTitle = sender.titleLabel?.text {
             switch (btnTitle) {
             case "홈":
-                print("Home")
+                hideMenu()
+                
                 break
-            case "기다릴 개란?":
-                print("Infomation")
+            case "기다릴개 란?":
+                hideMenu()
+                
+                let info = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "InfoNav") as! UINavigationController
+                
+                self.present(info, animated: true, completion: nil)
+                
                 break
             case "입양하기":
                 hideMenu()
@@ -251,6 +267,7 @@ class HomeVC: UIViewController {
             
             self.new.isHidden = true
             
+            self.blackFlag = true
             self.stateImageView.image = self.stateImageArray[self.state]
             self.stateImageView.alpha = 1
             self.navigationController?.navigationBar.layer.zPosition = -1
@@ -271,8 +288,8 @@ class HomeVC: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.navigationController?.navigationBar.layer.zPosition = 1
 
+            self.blackFlag = false
             self.stateImageView.alpha = 0
-
             self.blackScreen2.alpha = 0
             self.cardViewConstraint.constant = -428
             print("down")

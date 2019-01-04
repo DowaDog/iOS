@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumSquareExtraBold.ttf">
+            <string>NanumSquareEB</string>
+        </array>
         <array key="NanumSquareRegular.ttf">
             <string>NanumSquareR</string>
         </array>
@@ -34,10 +37,242 @@
                                     <segue destination="ry7-7Q-xo6" kind="show" id="MxF-fZ-4DT"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhn-ad-FOc">
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="1000"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 로그인이 되지 않았어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujC-0V-8Rp">
+                                        <rect key="frame" x="30" y="86" width="187" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="Hvc-61-DMX"/>
+                                            <constraint firstAttribute="width" constant="187" id="Vx5-n5-B03"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHU-6q-b2W">
+                                        <rect key="frame" x="30" y="110" width="77" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="77" id="UEA-Jw-hdR"/>
+                                            <constraint firstAttribute="height" constant="18" id="uk8-dW-fii"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="로그인 하기">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="16" name="NanumSquareEB"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4B-5s-Tog">
+                                        <rect key="frame" x="30" y="189" width="16" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="MEq-Ax-N47"/>
+                                            <constraint firstAttribute="width" constant="16" id="Wib-cG-ESG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="18"/>
+                                        <state key="normal" title="홈">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideNavBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="K83-il-BRB"/>
+                                            <segue destination="H7h-vx-lgS" kind="unwind" identifier="unwindToHome" unwindAction="unwindAction:" id="nTo-Hp-D8t"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-iw-2t3">
+                                        <rect key="frame" x="30" y="223" width="225" height="1"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="3Hz-rQ-Eop"/>
+                                            <constraint firstAttribute="height" constant="1" id="rPE-c5-f1C"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUm-XH-CDb">
+                                        <rect key="frame" x="30" y="238" width="86" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="NSh-4m-AqC"/>
+                                            <constraint firstAttribute="width" constant="86" id="vbc-wu-QUq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                        <state key="normal" title="기다릴개 란?">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideNavBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="sah-Ra-mEX"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-9l-xX4">
+                                        <rect key="frame" x="30" y="270" width="225" height="1"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="l5z-mz-IOE"/>
+                                            <constraint firstAttribute="height" constant="1" id="rr3-l1-Osh"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bk-y8-Wgg">
+                                        <rect key="frame" x="30" y="285" width="59" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="5vz-27-efa"/>
+                                            <constraint firstAttribute="width" constant="59" id="iYp-xv-n0W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                        <state key="normal" title="입양하기">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideNavBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="wkn-AX-gG8"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-Cp-y9p">
+                                        <rect key="frame" x="30" y="317" width="225" height="1"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="Ml5-GE-6ZY"/>
+                                            <constraint firstAttribute="height" constant="1" id="VGe-5F-k9D"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-TO-vNg">
+                                        <rect key="frame" x="30" y="332" width="59" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="59" id="KqU-hv-Lqh"/>
+                                            <constraint firstAttribute="height" constant="18" id="wyP-jm-Cfq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                        <state key="normal" title="커뮤니티">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideNavBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="zzG-lg-IXO"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g8-Qe-Ooc">
+                                        <rect key="frame" x="30" y="364" width="225" height="1"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="DpS-b1-3Kj"/>
+                                            <constraint firstAttribute="height" constant="1" id="vWL-6u-e2x"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFy-Ur-Li2">
+                                        <rect key="frame" x="30" y="379" width="44" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="aO0-KI-zq7"/>
+                                            <constraint firstAttribute="height" constant="18" id="hOU-P4-wa8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                        <state key="normal" title="컨텐츠">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideNavBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="Aw1-Cf-vAL"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anq-a5-l8q">
+                                        <rect key="frame" x="30" y="411" width="225" height="1"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="1cX-sq-RNX"/>
+                                            <constraint firstAttribute="width" constant="225" id="Sl0-XZ-bp9"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqt-Sr-lC4">
+                                        <rect key="frame" x="30" y="426" width="73" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="bkO-rL-2ll"/>
+                                            <constraint firstAttribute="width" constant="73" id="eBE-Ng-pZX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                        <state key="normal" title="마이페이지">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideNavBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="EO0-8e-wYR"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-Ru-Tji">
+                                        <rect key="frame" x="30" y="458" width="225" height="1"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="CId-Yt-VNu"/>
+                                            <constraint firstAttribute="width" constant="225" id="Tis-da-Xw7"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3S-Bc-c1q">
+                                        <rect key="frame" x="30" y="473" width="63" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="cdJ-I6-9yO"/>
+                                            <constraint firstAttribute="width" constant="63" id="e51-Dg-AIt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                        <state key="normal" title="입양 안내">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideNavBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="VM4-aL-31X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixU-ko-FaY">
+                                        <rect key="frame" x="242" y="35" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="FiD-51-bH4"/>
+                                            <constraint firstAttribute="width" constant="15" id="S7N-4Y-lep"/>
+                                        </constraints>
+                                        <state key="normal" image="xBtn"/>
+                                        <connections>
+                                            <action selector="xBtnAction:" destination="ngK-kt-nXs" eventType="touchUpInside" id="Mq1-xl-2tz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="U4B-5s-Tog" firstAttribute="top" secondItem="FHU-6q-b2W" secondAttribute="bottom" constant="61" id="1U4-rb-MBb"/>
+                                    <constraint firstItem="FHU-6q-b2W" firstAttribute="top" secondItem="ujC-0V-8Rp" secondAttribute="bottom" constant="6" id="6XG-LD-8oO"/>
+                                    <constraint firstItem="ujC-0V-8Rp" firstAttribute="top" secondItem="Bhn-ad-FOc" secondAttribute="top" constant="86" id="6aD-CK-fmZ"/>
+                                    <constraint firstItem="ujC-0V-8Rp" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="8k7-q7-1L5"/>
+                                    <constraint firstItem="iOI-TO-vNg" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="9J3-Ij-SJD"/>
+                                    <constraint firstItem="lUm-XH-CDb" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="BFY-ti-cAG"/>
+                                    <constraint firstItem="cFy-Ur-Li2" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="DZ8-1L-loa"/>
+                                    <constraint firstItem="anq-a5-l8q" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="H9R-4n-iVi"/>
+                                    <constraint firstItem="anq-a5-l8q" firstAttribute="top" secondItem="cFy-Ur-Li2" secondAttribute="bottom" constant="14" id="HPa-eU-6Cf"/>
+                                    <constraint firstItem="cFy-Ur-Li2" firstAttribute="top" secondItem="0g8-Qe-Ooc" secondAttribute="bottom" constant="14" id="JCo-zv-cQE"/>
+                                    <constraint firstAttribute="width" constant="285" id="QUM-BB-MQ4"/>
+                                    <constraint firstItem="FHU-6q-b2W" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="SCC-gX-IS2"/>
+                                    <constraint firstItem="9Bk-y8-Wgg" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="TOV-WH-7rw"/>
+                                    <constraint firstItem="bpR-9l-xX4" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="TVE-FM-KQk"/>
+                                    <constraint firstItem="0g8-Qe-Ooc" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="Te8-Ge-khd"/>
+                                    <constraint firstItem="bpR-9l-xX4" firstAttribute="top" secondItem="lUm-XH-CDb" secondAttribute="bottom" constant="12" id="TgN-AF-ysP"/>
+                                    <constraint firstItem="U4B-5s-Tog" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="VaV-xe-6ze"/>
+                                    <constraint firstItem="wqt-Sr-lC4" firstAttribute="top" secondItem="anq-a5-l8q" secondAttribute="bottom" constant="14" id="Vl8-Ur-MKx"/>
+                                    <constraint firstItem="kn7-Ru-Tji" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="XBJ-92-jNd"/>
+                                    <constraint firstItem="I3S-Bc-c1q" firstAttribute="top" secondItem="kn7-Ru-Tji" secondAttribute="bottom" constant="14" id="XRp-KG-a5z"/>
+                                    <constraint firstItem="wqt-Sr-lC4" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="Xsb-NO-dF0"/>
+                                    <constraint firstItem="0g8-Qe-Ooc" firstAttribute="top" secondItem="iOI-TO-vNg" secondAttribute="bottom" constant="14" id="Z3O-uI-oyh"/>
+                                    <constraint firstItem="ixU-ko-FaY" firstAttribute="top" secondItem="Bhn-ad-FOc" secondAttribute="top" constant="35" id="bho-JK-wCH"/>
+                                    <constraint firstItem="kn7-Ru-Tji" firstAttribute="top" secondItem="wqt-Sr-lC4" secondAttribute="bottom" constant="14" id="cRN-is-RBF"/>
+                                    <constraint firstItem="Ci1-iw-2t3" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="cg8-5L-BpP"/>
+                                    <constraint firstItem="ixU-ko-FaY" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="242" id="dI8-OI-iBA"/>
+                                    <constraint firstItem="Ci1-iw-2t3" firstAttribute="top" secondItem="U4B-5s-Tog" secondAttribute="bottom" constant="14" id="dzk-Wt-1H6"/>
+                                    <constraint firstItem="n6W-Cp-y9p" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="fQF-mH-31a"/>
+                                    <constraint firstAttribute="height" constant="1000" id="fjS-OW-xhn"/>
+                                    <constraint firstItem="iOI-TO-vNg" firstAttribute="top" secondItem="n6W-Cp-y9p" secondAttribute="bottom" constant="14" id="kIi-te-9HP"/>
+                                    <constraint firstItem="I3S-Bc-c1q" firstAttribute="leading" secondItem="Bhn-ad-FOc" secondAttribute="leading" constant="30" id="qwP-df-g3h"/>
+                                    <constraint firstItem="lUm-XH-CDb" firstAttribute="top" secondItem="Ci1-iw-2t3" secondAttribute="bottom" constant="14" id="s4L-ia-jXf"/>
+                                    <constraint firstItem="n6W-Cp-y9p" firstAttribute="top" secondItem="9Bk-y8-Wgg" secondAttribute="bottom" constant="14" id="uHQ-ip-l2Q"/>
+                                    <constraint firstItem="9Bk-y8-Wgg" firstAttribute="top" secondItem="bpR-9l-xX4" secondAttribute="bottom" constant="14" id="whY-so-F7b"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vnT-Gg-OSZ" firstAttribute="bottom" secondItem="DM8-cy-9U8" secondAttribute="bottom" constant="18" id="5wD-dA-IBR"/>
+                            <constraint firstItem="Bhn-ad-FOc" firstAttribute="leading" secondItem="vnT-Gg-OSZ" secondAttribute="leading" id="W3c-SZ-afe"/>
+                            <constraint firstItem="vnT-Gg-OSZ" firstAttribute="top" secondItem="Bhn-ad-FOc" secondAttribute="top" constant="64" id="bNV-Bf-Gqu"/>
+                            <constraint firstItem="vnT-Gg-OSZ" firstAttribute="trailing" secondItem="Bhn-ad-FOc" secondAttribute="trailing" constant="90" id="dNI-ko-Wok"/>
                             <constraint firstItem="DM8-cy-9U8" firstAttribute="centerX" secondItem="vnT-Gg-OSZ" secondAttribute="centerX" id="oTd-rO-69s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vnT-Gg-OSZ"/>
@@ -45,10 +280,17 @@
                     <navigationItem key="navigationItem" title="커뮤니티" id="oW4-1B-j6g">
                         <barButtonItem key="leftBarButtonItem" image="drawerBtn" id="jy8-HH-QHu">
                             <color key="tintColor" red="0.43529411759999997" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="menuTapped:" destination="ngK-kt-nXs" id="b7d-Hh-u3l"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sideMenuView" destination="Bhn-ad-FOc" id="PM4-R5-pEl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOa-oj-lf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="H7h-vx-lgS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="756" y="187.55622188905548"/>
         </scene>
@@ -270,5 +512,6 @@
         <image name="drawerBtn" width="20" height="20"/>
         <image name="writingFloatingBtn" width="114" height="61"/>
         <image name="writingPlusBtn" width="85" height="85"/>
+        <image name="xBtn" width="15" height="15"/>
     </resources>
 </document>

@@ -176,6 +176,8 @@ extension CommunityWriteVC: UIGestureRecognizerDelegate {
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             self.photoViewConstraint.constant = -369 //스택 뷰의 제약조건을 변경한다.
         })
+        
+        self.view.layoutIfNeeded()
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {

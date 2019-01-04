@@ -192,8 +192,8 @@
                                     <constraint firstAttribute="bottom" secondItem="5Sm-gG-IAa" secondAttribute="bottom" id="yOp-Vo-vK5"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fP-3x-OzS" customClass="SidebarView" customModule="DowaDog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="667"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fP-3x-OzS">
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="1000"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 로그인이 되지 않았어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMH-F8-akx">
                                         <rect key="frame" x="30" y="86" width="187" height="18"/>
@@ -424,7 +424,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Yt4-a6-vQh" firstAttribute="bottom" secondItem="C9z-zA-wTb" secondAttribute="bottom" constant="100" id="13A-pW-Spb"/>
-                            <constraint firstItem="Yt4-a6-vQh" firstAttribute="bottom" secondItem="5fP-3x-OzS" secondAttribute="bottom" id="207-5A-oII"/>
                             <constraint firstItem="ocE-yZ-3EX" firstAttribute="centerX" secondItem="Yt4-a6-vQh" secondAttribute="centerX" id="3Ih-0e-IaU"/>
                             <constraint firstItem="rzd-iL-kur" firstAttribute="centerX" secondItem="Yt4-a6-vQh" secondAttribute="centerX" id="3is-iI-UZ5"/>
                             <constraint firstItem="XBf-Xi-R50" firstAttribute="centerX" secondItem="Yt4-a6-vQh" secondAttribute="centerX" id="3kN-W5-hpH"/>
@@ -530,6 +529,6 @@
         <image name="mainFindingBtn" width="238" height="61"/>
         <image name="mainIllust" width="375" height="602"/>
         <image name="popupOneIndicate" width="86" height="6"/>
-        <image name="xBtn" width="15" height="15.5"/>
+        <image name="xBtn" width="15" height="15"/>
     </resources>
 </document>

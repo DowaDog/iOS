@@ -47,6 +47,8 @@
 		F524E9D821DDABBB0001CA5A /* AdoptDocStep4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D721DDABBB0001CA5A /* AdoptDocStep4VC.swift */; };
 		F524E9DA21DDE7210001CA5A /* AdoptDocEndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D921DDE7210001CA5A /* AdoptDocEndVC.swift */; };
 		F524E9DC21DE153B0001CA5A /* AdoptDirectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9DB21DE153B0001CA5A /* AdoptDirectVC.swift */; };
+		F524E9E021DF553A0001CA5A /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F524E9DF21DF553A0001CA5A /* Info.storyboard */; };
+		F524E9E321DF55BC0001CA5A /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9E221DF55BC0001CA5A /* InfoVC.swift */; };
 		F527A08621D6591E00BC20DE /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F527A08521D6591E00BC20DE /* Community.storyboard */; };
 		F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527A0A921D7567900BC20DE /* NavBtn.swift */; };
 		F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527A0AB21D7626E00BC20DE /* CommunityVC.swift */; };
@@ -109,6 +111,8 @@
 		F524E9D721DDABBB0001CA5A /* AdoptDocStep4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep4VC.swift; sourceTree = "<group>"; };
 		F524E9D921DDE7210001CA5A /* AdoptDocEndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocEndVC.swift; sourceTree = "<group>"; };
 		F524E9DB21DE153B0001CA5A /* AdoptDirectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDirectVC.swift; sourceTree = "<group>"; };
+		F524E9DF21DF553A0001CA5A /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		F524E9E221DF55BC0001CA5A /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		F527A08521D6591E00BC20DE /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		F527A0A921D7567900BC20DE /* NavBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBtn.swift; sourceTree = "<group>"; };
 		F527A0AB21D7626E00BC20DE /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
@@ -266,6 +270,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F524E9E121DF55AC0001CA5A /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				F524E9E221DF55BC0001CA5A /* InfoVC.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 		F527A08221D658E400BC20DE /* Community */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +392,7 @@
 		F5508A2F21D4D8D200BE73FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F524E9E121DF55AC0001CA5A /* Info */,
 				4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */,
 				4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */,
 				4C0E95DB21D8926300301D52 /* Filter */,
@@ -423,6 +436,7 @@
 				F501E64521D4DFA9004CD703 /* Home.storyboard */,
 				F5508A1821D4D54400BE73FF /* LaunchScreen.storyboard */,
 				F527A08521D6591E00BC20DE /* Community.storyboard */,
+				F524E9DF21DF553A0001CA5A /* Info.storyboard */,
 				4C0E95BD21D8906700301D52 /* Filter.storyboard */,
 				4C0E95BF21D8909900301D52 /* Finding.storyboard */,
 				4C0E95C121D890A900301D52 /* Login.storyboard */,
@@ -511,6 +525,7 @@
 			files = (
 				F527A08621D6591E00BC20DE /* Community.storyboard in Resources */,
 				F5508A2B21D4D8B100BE73FF /* NanumSquareBold.ttf in Resources */,
+				F524E9E021DF553A0001CA5A /* Info.storyboard in Resources */,
 				4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */,
 				4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */,
 				4C0E95C621D890CB00301D52 /* MyProfile.storyboard in Resources */,
@@ -595,6 +610,7 @@
 				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
+				F524E9E321DF55BC0001CA5A /* InfoVC.swift in Sources */,
 				4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
