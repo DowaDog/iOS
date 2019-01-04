@@ -22,6 +22,7 @@ var cell6 = false
 var cell7 = false
 var cell8 = false
 
+
 class FilterVC: UIViewController {
     
     var resetItem: UIBarButtonItem!
@@ -60,6 +61,8 @@ class FilterVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+   
+    
     @objc func refreshClicked(){
         
         cell0 = true
@@ -89,8 +92,10 @@ extension FilterVC:UICollectionViewDataSource{
         
         cell.areaImage.image = self.area[indexPath.item]
         //print(self.area[indexPath.row])
+        
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
       
         if (kind == UICollectionView.elementKindSectionFooter) {
@@ -114,16 +119,20 @@ extension FilterVC:UICollectionViewDataSource{
 
 
 extension FilterVC: UICollectionViewDelegate{
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        
-        
+
         let cell = self.collectionView.cellForItem(at: indexPath) as! AreaCollectionViewCell
+        
+      
+        
         
         if indexPath.row == 0 {
             if cell0 == true{
                 cell.areaImage.image = UIImage(named: "wholeAreaBtnYellow")
                 cell0 = false
+
             }
             else{
                 cell.areaImage.image = UIImage(named: "wholeAreaBtnDefault")
@@ -135,8 +144,11 @@ extension FilterVC: UICollectionViewDelegate{
             
             if cell1 == false{
                 cell.areaImage.image = UIImage(named: "seoulBtnYellow")
+                
                 cell1 = true
-                cell0  = false
+
+                
+               
                 
             }
             else{
@@ -147,7 +159,8 @@ extension FilterVC: UICollectionViewDelegate{
             if cell2 == false{
                 cell.areaImage.image = UIImage(named: "gyeonggilBtnYellow")
                 cell2 = true
-                cell0  = false
+                
+               
             }
             else{
                 cell.areaImage.image = UIImage(named: "gyeonggilBtnDefault")
@@ -158,7 +171,9 @@ extension FilterVC: UICollectionViewDelegate{
             if cell3 == false{
                 cell.areaImage.image = UIImage(named: "incheonBtnYellow")
                 cell3 = true
-                cell0  = false
+
+                
+               
             }
             else{
                 cell.areaImage.image = UIImage(named: "incheonBtnDefault")
@@ -169,7 +184,9 @@ extension FilterVC: UICollectionViewDelegate{
             if cell4 == false{
                 cell.areaImage.image = UIImage(named: "gangwonBtnYellow")
                 cell4 = true
-                cell0  = false
+
+                
+               
             }
             else{
                 cell.areaImage.image = UIImage(named: "gangwonBtnDefault")
@@ -181,7 +198,9 @@ extension FilterVC: UICollectionViewDelegate{
             if cell5 == false{
                 cell.areaImage.image = UIImage(named: "chungcheongBtnYellow")
                 cell5 = true
-                cell0  = false
+
+                
+               
             }
             else{
                 cell.areaImage.image = UIImage(named: "chungcheongBtnDefault")
@@ -192,7 +211,8 @@ extension FilterVC: UICollectionViewDelegate{
             if cell6 == false{
                 cell.areaImage.image = UIImage(named: "jeollaBtnYellow")
                 cell6 = true
-                cell0  = false
+
+               
             }
             else{
                 cell.areaImage.image = UIImage(named: "jeollaBtnDefault")
@@ -202,7 +222,9 @@ extension FilterVC: UICollectionViewDelegate{
             if cell7 == false{
                 cell.areaImage.image = UIImage(named: "gyeongsangBtnYellow")
                 cell7 = true
-                cell0  = false
+          
+                
+                
             }else{
                 cell.areaImage.image = UIImage(named: "gyeongsangBtnDefault")
                 cell7 = false
@@ -212,7 +234,10 @@ extension FilterVC: UICollectionViewDelegate{
             if cell8 == false{
                 cell.areaImage.image = UIImage(named: "jejuBtnYellow")
                 cell8 = true
-                cell0  = false
+
+
+                
+              
             }
             else{
                 cell.areaImage.image = UIImage(named: "jejuBtnDefault")
@@ -224,19 +249,22 @@ extension FilterVC: UICollectionViewDelegate{
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        
+        //TODO: 각 버튼이 선택될 경우에만 그 버튼이 true임을 앱이 아는 것 같다. 해결방법?
         
         let unselectedCell:AreaCollectionViewCell = collectionView.cellForItem(at: indexPath)! as! AreaCollectionViewCell
         
-        if indexPath.row == 0{
-            cell0 = false
-            unselectedCell.areaImage.image = UIImage(named: "wholeAreaBtnYellow")
+        if indexPath.row == 0 {
             
+            unselectedCell.areaImage.image = UIImage(named: "wholeAreaBtnYellow")
+            cell0 = false
+            print("0 didnt click")
+  
         }
         if indexPath.row == 1{
             
             unselectedCell.areaImage.image = UIImage(named: "seoulBtnDefault")
             cell1 = false
+            print("1 didnt click")
         }
         if indexPath.row == 2{
             unselectedCell.areaImage.image = UIImage(named: "gyeonggilBtnDefault")
@@ -271,5 +299,3 @@ extension FilterVC: UICollectionViewDelegate{
         
     }
 }
-
-

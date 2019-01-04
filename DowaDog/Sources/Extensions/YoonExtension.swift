@@ -43,6 +43,7 @@ extension UIViewController {
             navigationItem.leftBarButtonItem?.tintColor = color
             navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         }
+  
     
     //네비게이션 바 투명하게 하는 함수
     func setNavigationBar() {
