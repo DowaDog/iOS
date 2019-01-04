@@ -18,6 +18,11 @@ class HomeVC: UIViewController {
     @IBOutlet var upSwipe: UISwipeGestureRecognizer!
     @IBOutlet var downSwipe: UISwipeGestureRecognizer!
 
+    @IBOutlet var guideView: UIView!
+    @IBOutlet var guideImageView: UIImageView!
+    @IBOutlet var guideViewNextBtn: UIButton!
+    @IBOutlet var guideIndicator: UIImageView!
+    
     @IBOutlet var cardView: UIImageView!
 
     @IBOutlet var sideMenuView: UIView!
@@ -28,7 +33,7 @@ class HomeVC: UIViewController {
     @IBOutlet var new: UIImageView!
     @IBOutlet var stateImageView: UIImageView!
     
-    let stateImageArray: [UIImage] = [
+    let stateImageArray: Array<UIImage> = [
         UIImage(named: "mainSlideNonadoptImg")!,
         UIImage(named: "mainSlideFailImg")!,
         UIImage(named: "mainSlide1StepImg")!,
@@ -37,16 +42,38 @@ class HomeVC: UIViewController {
         UIImage(named: "mainSlide4StepImg")!,
         UIImage(named: "mainSlide5StepImg")!
         ]
+
+    let guideImageArray: Array<UIImage> = [
+        UIImage(named: "325")!,
+        UIImage(named: "324")!,
+        UIImage(named: "323")!,
+        UIImage(named: "322")!,
+        UIImage(named: "321")!,
+        UIImage(named: "320")!
+    ]
+    
+    let guideIndicatorArray: Array<UIImage> = [
+        UIImage(named: "popupOneIndicate")!,
+        UIImage(named: "popupTwoIndicate")!,
+        UIImage(named: "popupThreeIndicate")!,
+        UIImage(named: "popupFourIndicate")!,
+        UIImage(named: "popupFiveIndicate")!,
+        UIImage(named: "popupSixIndicate")!
+    ]
+
+
     
     // flag
     var newFlag: Bool = true
     var state: Int = 0
+    var guideState: Int = 0
+    var guideViewFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
-        newFamBtn.layer.cornerRadius = newFamBtn.layer.frame.height/2
+//        newFamBtn.layer.cornerRadius = newFamBtn.layer.frame.height/2
         
         upSwipe.direction = .up
         downSwipe.direction = .down
@@ -54,14 +81,45 @@ class HomeVC: UIViewController {
         setBlackScreen()
         setBlackScreen2()
         setSideMenu()
-        
+        setGuideView()
         setCardView()
-        
-        
-        if newFlag == true {
-            new.isHidden = false
+
+
+
+        if guideViewFlag == false {
+            cardView.alpha = 0
+            new.alpha = 0
+            showGuideView()
+        } else {
+            if newFlag == true {
+                new.alpha = 1
+            }
         }
-        
+    }
+    
+    func setGuideView() {
+        guideView.layer.cornerRadius = 15
+        guideViewNextBtn.roundedButton()
+        guideImageView.image = guideImageArray[guideState]
+    }
+    
+    func showGuideView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blackScreen2.alpha = 1
+            self.guideView.alpha = 1
+
+            self.view.layoutIfNeeded()
+        })
+    }
+
+    func hideGuideView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.blackScreen2.alpha = 0
+            self.guideView.alpha = 0
+            self.guideViewFlag = true
+
+            self.view.layoutIfNeeded()
+        })
     }
     
     @IBAction func menuTapped(_ sender: Any) {
@@ -77,7 +135,9 @@ class HomeVC: UIViewController {
     }
     
     @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
-        hideCardView()
+        if guideViewFlag == true {
+            hideCardView()
+        }
     }
     
     func setCardView() {
@@ -119,15 +179,13 @@ class HomeVC: UIViewController {
     }
     
     func hideCardView() {
-        
-        
         UIView.animate(withDuration: 0.3, animations: {
             self.navigationController?.navigationBar.layer.zPosition = 1
-            
+
             self.blackScreen2.alpha = 0
             self.cardViewConstraint.constant = -428
             print("down")
-            
+
             self.view.layoutIfNeeded()
         })
     }
@@ -199,7 +257,7 @@ class HomeVC: UIViewController {
 
 
             self.blackScreen2.alpha = 1
-            self.cardViewConstraint.constant = 0
+            self.cardViewConstraint.constant = -8
             print("up")
 
             self.view.layoutIfNeeded()
@@ -224,8 +282,55 @@ class HomeVC: UIViewController {
     }
     
     
+    
+    @IBAction func guideViewNextBtnAction(_ sender: UIButton) {
+
+        if guideState < 5 {
+            guideState += 1
+
+            self.guideImageView.alpha = 0
+            self.guideImageView.image = self.guideImageArray[self.guideState]
+            self.guideIndicator.image = self.guideIndicatorArray[self.guideState]
+            UIView.animate(withDuration: 0.5, animations: {
+                self.guideImageView.alpha = 1
+                
+                self.view.layoutIfNeeded()
+            })
+            
+            if guideState == 5 {
+                sender.setTitle("시작할개요", for: .normal)
+                guideViewNextBtn.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0), for: .normal)
+                guideViewNextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
+            }
+        } else {
+            hideGuideView()
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.alpha = 1
+                self.new.alpha = 1
+            })
+        }
+    }
+    
+    
+    
     //unwind Point
     @IBAction func unwindAction(_ sender: UIStoryboardSegue) {
         
+    }
+}
+
+extension UIButton {
+    func roundedButton(){
+        let maskPath1 = UIBezierPath(
+                roundedRect: bounds,
+                byRoundingCorners: [.bottomLeft , .bottomRight],
+                cornerRadii: CGSize(width: 15, height: 15)
+        )
+
+        let maskLayer1 = CAShapeLayer()
+
+        maskLayer1.frame = bounds
+        maskLayer1.path = maskPath1.cgPath
+        layer.mask = maskLayer1
     }
 }
