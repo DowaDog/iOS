@@ -25,6 +25,23 @@ class HomeVC: UIViewController {
     
     @IBOutlet var newFamBtn: UIButton!
     
+    @IBOutlet var new: UIImageView!
+    @IBOutlet var stateImageView: UIImageView!
+    
+    let stateImageArray: [UIImage] = [
+        UIImage(named: "mainSlideNonadoptImg")!,
+        UIImage(named: "mainSlideFailImg")!,
+        UIImage(named: "mainSlide1StepImg")!,
+        UIImage(named: "mainSlide2StepImg")!,
+        UIImage(named: "mainSlide3StepImg")!,
+        UIImage(named: "mainSlide4StepImg")!,
+        UIImage(named: "mainSlide5StepImg")!
+        ]
+    
+    // flag
+    var newFlag: Bool = true
+    var state: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +56,12 @@ class HomeVC: UIViewController {
         setSideMenu()
         
         setCardView()
+        
+        
+        if newFlag == true {
+            new.isHidden = false
+        }
+        
     }
     
     @IBAction func menuTapped(_ sender: Any) {
@@ -167,6 +190,11 @@ class HomeVC: UIViewController {
         
         
         UIView.animate(withDuration: 0.3, animations: {
+            
+            self.new.isHidden = true
+            
+            self.stateImageView.image = self.stateImageArray[self.state]
+            self.stateImageView.alpha = 1
             self.navigationController?.navigationBar.layer.zPosition = -1
 
 
@@ -185,6 +213,7 @@ class HomeVC: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.navigationController?.navigationBar.layer.zPosition = 1
 
+            self.stateImageView.alpha = 0
 
             self.blackScreen2.alpha = 0
             self.cardViewConstraint.constant = -428
