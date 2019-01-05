@@ -10,18 +10,25 @@ import UIKit
 
 class CommunityVC: UIViewController {
     
-    @IBOutlet var sideMenuView: UIView!
-    var blackScreen: UIView!
     
 //    var CommunityList = [Community]()
 
     @IBOutlet var communityTableView: UITableView!
     
     
+    // sidemenu
+    var blackScreen: UIView!
+    @IBOutlet var sideMenuView: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
+
+        
+        // sidemenu
         setBlackScreen()
         setSideMenu()
         
@@ -31,8 +38,6 @@ class CommunityVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
         // 통신
 //        BoardService.shared.getBoardList(offset: nil, limit: nil) {[weak self]
 //            (data) in
@@ -43,25 +48,18 @@ class CommunityVC: UIViewController {
 //            self.tableView.reloadData()
 //        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // init BlackScreen
+    
+    
+    
+    
+    // sidemenu
+    func setSideMenu() {
+        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
+        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
+        
+        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+    }
+    
     func setBlackScreen() {
         blackScreen=UIView(frame: self.view.bounds)
         blackScreen.alpha = 0
@@ -71,18 +69,19 @@ class CommunityVC: UIViewController {
         blackScreen.addGestureRecognizer(tapGestRecognizer)
     }
     
+    @IBAction func menuTapped(_ sender: Any) {
+        showMenu()
+    }
+    
+    @IBAction func xBtnAction(_ sender: Any) {
+        hideMenu()
+    }
+    
+    
     @objc func blackScreenTapAction(sender: UITapGestureRecognizer) {
         hideMenu()
     }
     
-    func setSideMenu() {
-        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
-        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
-        
-        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
-    }
-    
-    // Open sideMenu
     func showMenu() {
         UIView.animate(withDuration: 0.4, animations: {
             self.blackScreen.alpha = 1
@@ -92,7 +91,6 @@ class CommunityVC: UIViewController {
             self.sideMenuView.transform = .identity
         })
     }
-    // Close sideMenu
     func hideMenu() {
         UIView.animate(withDuration: 0.4, animations: {
             self.blackScreen.alpha = 0
@@ -102,23 +100,12 @@ class CommunityVC: UIViewController {
             self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
         })
     }
-    
-    @IBAction func menuTapped(_ sender: Any) {
-        showMenu()
-    }
-    
-    @IBAction func xBtnAction(_ sender: Any) {
-        hideMenu()
-    }
-
     @IBAction func sideNavBtnAction(_ sender: UIButton) {
         
         if let btnTitle = sender.titleLabel?.text {
             switch (btnTitle) {
             case "홈":
                 hideMenu()
-                
-                performSegue(withIdentifier: "unwindToHome", sender: self)
                 
                 break
             case "기다릴개 란?":
@@ -140,6 +127,9 @@ class CommunityVC: UIViewController {
             case "커뮤니티":
                 hideMenu()
                 
+                let community = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityNav") as! UINavigationController
+                
+                self.present(community, animated: true, completion: nil)
                 break
             case "컨텐츠":
                 print("Contents")
@@ -155,7 +145,6 @@ class CommunityVC: UIViewController {
                 break
             }
         }
-    }
 }
 
 

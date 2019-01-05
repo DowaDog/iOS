@@ -29,24 +29,44 @@ class MainPageVC: UIViewController {
     @IBOutlet weak var tab1: UIButton!
     
     @IBOutlet weak var tab2: UIButton!
+
     
-
-
-    @IBOutlet var sideMenuView: UIView!
+    // sidemenu
     var blackScreen: UIView!
+    @IBOutlet var sideMenuView: UIView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
 
-        navBarTintColor = UIColor.init(displayP3Red: 111/255, green: 111/255, blue: 111/255, alpha: 1) 
         page2CV.alpha = 0.0
         self.selectPoint1.alpha = 1.0
            self.selectPoint2.alpha = 0.0
+        
+        
+        // sidemenu
         setBlackScreen()
-        hideMenu()
         setSideMenu()
+    }
+    
+    // sidemenu
+    func setSideMenu() {
+        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
+        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
+        
+        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+    }
+    
+    func setBlackScreen() {
+        blackScreen=UIView(frame: self.view.bounds)
+        blackScreen.alpha = 0
+        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        self.navigationController?.view.addSubview(blackScreen)
+        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
+        blackScreen.addGestureRecognizer(tapGestRecognizer)
     }
     
     @IBAction func menuTapped(_ sender: Any) {
@@ -57,40 +77,20 @@ class MainPageVC: UIViewController {
         hideMenu()
     }
     
+    
     @objc func blackScreenTapAction(sender: UITapGestureRecognizer) {
         hideMenu()
     }
     
-    // sideMenu 를 뷰 최상단으로 지정
-    func setSideMenu() {
-        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
-        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
-    }
-    
-    // init BlackScreen
-    func setBlackScreen() {
-        blackScreen=UIView(frame: self.view.bounds)
-        blackScreen.isHidden = true
-        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        self.navigationController?.view.addSubview(blackScreen)
-        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
-        blackScreen.addGestureRecognizer(tapGestRecognizer)
-    }
-    
-    // Open sideMenu
     func showMenu() {
-        self.sideMenuView.isHidden = false
-        self.blackScreen.isHidden = false
         UIView.animate(withDuration: 0.4, animations: {
             self.blackScreen.alpha = 1
-        }) 
+        })
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.sideMenuView.transform = .identity
         })
     }
-    
-    // Close sideMenu
     func hideMenu() {
         UIView.animate(withDuration: 0.4, animations: {
             self.blackScreen.alpha = 0
@@ -100,17 +100,21 @@ class MainPageVC: UIViewController {
             self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
         })
     }
-    
-    
     @IBAction func sideNavBtnAction(_ sender: UIButton) {
         
         if let btnTitle = sender.titleLabel?.text {
             switch (btnTitle) {
             case "홈":
-                print("Home")
+                hideMenu()
+                
                 break
-            case "기다릴 개란?":
-                print("Infomation")
+            case "기다릴개 란?":
+                hideMenu()
+                
+                let info = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "InfoNav") as! UINavigationController
+                
+                self.present(info, animated: true, completion: nil)
+                
                 break
             case "입양하기":
                 hideMenu()
@@ -142,7 +146,8 @@ class MainPageVC: UIViewController {
             }
         }
     }
-
+    
+    
 
 
     

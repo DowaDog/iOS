@@ -26,6 +26,14 @@ class FindMainVC: UIViewController {
     ]
     
     
+    
+    // sidemenu
+    var blackScreen: UIView!
+    @IBOutlet var sideMenuView: UIView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -33,7 +41,114 @@ class FindMainVC: UIViewController {
         filterBtn.roundRadius()
         
         
+        // sidemenu
+        setBlackScreen()
+        setSideMenu()
+        
+        
     }
+    
+    // sidemenu
+    func setSideMenu() {
+        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
+        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
+        
+        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+    }
+    
+    func setBlackScreen() {
+        blackScreen=UIView(frame: self.view.bounds)
+        blackScreen.alpha = 0
+        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        self.navigationController?.view.addSubview(blackScreen)
+        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
+        blackScreen.addGestureRecognizer(tapGestRecognizer)
+    }
+    
+    @IBAction func menuTapped(_ sender: Any) {
+        showMenu()
+    }
+    
+    @IBAction func xBtnAction(_ sender: Any) {
+        hideMenu()
+    }
+    
+    
+    @objc func blackScreenTapAction(sender: UITapGestureRecognizer) {
+        hideMenu()
+    }
+    
+    func showMenu() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackScreen.alpha = 1
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = .identity
+        })
+    }
+    func hideMenu() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackScreen.alpha = 0
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+        })
+    }
+    @IBAction func sideNavBtnAction(_ sender: UIButton) {
+        
+        if let btnTitle = sender.titleLabel?.text {
+            switch (btnTitle) {
+            case "홈":
+                hideMenu()
+                
+                break
+            case "기다릴개 란?":
+                hideMenu()
+                
+                let info = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "InfoNav") as! UINavigationController
+                
+                self.present(info, animated: true, completion: nil)
+                
+                break
+            case "입양하기":
+                hideMenu()
+                
+                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptNav") as! UINavigationController
+                
+                self.present(adopt, animated: true, completion: nil)
+                
+                break
+            case "커뮤니티":
+                hideMenu()
+                
+                let community = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityNav") as! UINavigationController
+                
+                self.present(community, animated: true, completion: nil)
+                break
+            case "컨텐츠":
+                print("Contents")
+                break
+            case "마이페이지":
+                print("MyPage")
+                break
+            case "입양 안내":
+                print("Guide")
+                break
+            default:
+                print("Default")
+                break
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     @IBAction func searchClickAction(_ sender: Any) {
         //
         //        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
