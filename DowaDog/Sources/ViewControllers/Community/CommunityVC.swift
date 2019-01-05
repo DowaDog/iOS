@@ -12,20 +12,37 @@ class CommunityVC: UIViewController {
     
     @IBOutlet var sideMenuView: UIView!
     var blackScreen: UIView!
+    
+//    var CommunityList = [Community]()
 
+    @IBOutlet var communityTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
         setBlackScreen()
         setSideMenu()
+        
+//        communityTableView.delegate = self
+//        communityTableView.dataSource = self
     }
 
-
-
-
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        // 통신
+//        BoardService.shared.getBoardList(offset: nil, limit: nil) {[weak self]
+//            (data) in
+//            guard let `self` = self else {return}
+//
+//            self.boardList = data
+//
+//            self.tableView.reloadData()
+//        }
+    }
 
 
 
@@ -140,3 +157,49 @@ class CommunityVC: UIViewController {
         }
     }
 }
+
+
+
+//extension CommunityVC : UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//        return communityList.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cellOne = communityTableView.dequeueReusableCell(withIdentifier: "OneTVC") as! CommunityOneTVC
+//        let cellTwo = communityTableView.dequeueReusableCell(withIdentifier: "TwoTVC") as! CommunityTwoTVC
+//        let cellThree = communityTableView.dequeueReusableCell(withIdentifier: "ThreeTVC") as! CommunityThreeTVC
+//        let cellFour = communityTableView.dequeueReusableCell(withIdentifier: "FourTVC") as! CommunityFourTVC
+//
+//
+////        let board = boardList[indexPath.row]
+////
+////        let dateFormatter = DateFormatter()
+////        dateFormatter.dateFormat = "MM/dd hh:mm"
+////
+////        cell.imgView.imageFromUrl(gsno(board.boardPhoto), defaultImgPath: "")
+////        cell.titleLabel.text = board.boardTitle
+////        cell.contentsLabel.text = board.boardContents
+////        cell.dateLabel.text = dateFormatter.string(from: board.boardDate ?? Date())
+////        cell.likeLabel.text = "좋아요 " + String(board.boardLike!) + "개"
+////        cell.nameLabel.text = String(board.userId!)
+//
+//        return cellOne
+//    }
+//}
+//
+//extension CommunityVC: UITableViewDelegate {
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailBoardVC") as! DetailBoardVC
+//
+//        let board = boardList[indexPath.row]
+//
+//        detailVC.detailBoardId = board.boardId
+//
+//        navigationController?.pushViewController(detailVC, animated: true)
+//    }
+//}
