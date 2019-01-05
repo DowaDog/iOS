@@ -13,5 +13,14 @@ class CommunityDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        self.setNavigationBarShadow()
+        
+        
+
+    }
+    @IBAction func backBtnAction(_ sender: Any) {
+        
+        
     }
 }

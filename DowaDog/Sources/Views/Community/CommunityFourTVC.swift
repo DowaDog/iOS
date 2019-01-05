@@ -9,7 +9,16 @@
 import UIKit
 
 class CommunityFourTVC: UITableViewCell {
-
+    
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var userId: UILabel!
+    @IBOutlet var writeTime: UILabel!
+    @IBOutlet var uploadImage1: UIImageView!
+    @IBOutlet var uploadImage2: UIImageView!
+    @IBOutlet var uploadImage3: UIImageView!
+    @IBOutlet var uploadImage4: UIView!
+    @IBOutlet var title: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
