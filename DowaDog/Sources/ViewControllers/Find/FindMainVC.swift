@@ -76,26 +76,20 @@ extension FindMainVC:UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
-        let cellA:EmergenCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! EmergenCVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! EmergenCVCell
         
-        let cellB:NewDogCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell2, for: indexPath) as! NewDogCVCell
+    
         
         let section = indexPath.section
         
         
         
         if section == 0{
-
-             return UICollectionViewCell()
-        }else if section == 1{
-            cellA.emerImage.image = self.emerImg[indexPath.item]
-            cell = cellA
-//            cell.backgroundColor = UIColor.init(displayP3Red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
-           
-        }else if section == 2 {
-            cellB.newImage.image = self.newImg[indexPath.item]
-            cell = cellB
+            return UICollectionViewCell()
+        } else if section == 1 {
+            cell.emerImage.image = emerImg[indexPath.item]
+        } else if section == 2 {
+            cell.emerImage.image = newImg[indexPath.item]
         }
         return cell
         
@@ -104,8 +98,8 @@ extension FindMainVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
             let section = indexPath.section
-            if section == 0{
-                let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "headerImage", for: indexPath) as! ImageCRView
+            if section == 0 {
+                let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer", for: indexPath) as! ImageCRView
                 return view
  
 
@@ -143,7 +137,7 @@ extension FindMainVC: UICollectionViewDelegate{
         let section = indexPath.section
         if section == 2{
 
-            let cell = self.collectionView.cellForItem(at: indexPath) as! NewDogCVCell
+            let cell = self.collectionView.cellForItem(at: indexPath) as! EmergenCVCell
             if indexPath.row == 0{
                 if let dvc = storyboard?.instantiateViewController(withIdentifier: "NewDogVC") as? NewDogVC {
                     
@@ -164,17 +158,8 @@ extension FindMainVC: UICollectionViewDelegate{
 extension FindMainVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (view.frame.width - 45) / 2
-        let height: CGFloat = (view.frame.width - 30) / 2 + 15
-
-        
+        let height: CGFloat = ((view.frame.width - 45) / 2) * 0.8 + 53
         return CGSize(width: width, height: height)
-    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//    }
-//
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

@@ -10,15 +10,15 @@ import UIKit
 var isClick = false
 
 class NewDogCVCell: UICollectionViewCell {
-    @IBOutlet weak var animalImage: UIButton!
+    
     @IBOutlet weak var day: UILabel!
     @IBOutlet weak var newImage: UIImageView!
     
-    @IBOutlet weak var genderImage: UIButton!
+    @IBOutlet weak var genderImage: UIImageView!
     @IBOutlet weak var heartBtn: UIButton!
-    
+    @IBOutlet weak var kindImage: UIImageView!
     @IBOutlet weak var aboutLabel: UILabel!
-    
+     
     override func awakeFromNib() {
         super.awakeFromNib()
         newImage.sectionRound()

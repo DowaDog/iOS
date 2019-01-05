@@ -85,12 +85,7 @@ extension EmergenDogVC: UICollectionViewDelegate{
 extension EmergenDogVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (view.frame.width - 45) / 2
-        let height: CGFloat = (view.frame.width - 30) / 2 + 15
-        
-        //TODO: 이미지 사이즈도 view에 맞춰 동적으로 변경
-        
-        
-        
+        let height: CGFloat = ((view.frame.width - 45) / 2) * 0.8 + 53
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
