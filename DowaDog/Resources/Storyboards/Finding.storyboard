@@ -27,7 +27,6 @@
         <!--Find MainVC-->
         <scene sceneID="aXe-Ba-1GB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjf-Pm-mRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gCu-Rm-ulV" customClass="FindMainVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J45-Kj-rO5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -200,11 +199,48 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findingMainImg" translatesAutoresizingMaskIntoConstraints="NO" id="bc9-Gz-KdN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="246"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="들어보실래요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbw-pC-he4">
+                                            <rect key="frame" x="27" y="46" width="121" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="121" id="9v1-HR-Bpp"/>
+                                                <constraint firstAttribute="height" constant="25" id="M73-pg-h52"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="20"/>
+                                            <color key="textColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBb-aF-lOf">
+                                            <rect key="frame" x="27" y="79" width="114" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="114" id="lah-sn-WG5"/>
+                                                <constraint firstAttribute="height" constant="24" id="ylh-ww-r81"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
+                                            <state key="normal" title="스토리 반려동물 보러가기 &gt;">
+                                                <color key="titleColor" red="0.26274910569190979" green="0.26273781061172485" blue="0.26274549961090088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제 이야기," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nax-xL-DmN">
+                                            <rect key="frame" x="27" y="15" width="82" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="A4I-nR-yoX"/>
+                                                <constraint firstAttribute="width" constant="82" id="YYs-cQ-j2G"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Xbw-pC-he4" firstAttribute="top" secondItem="nax-xL-DmN" secondAttribute="bottom" constant="8" id="F6Z-3x-qrQ"/>
+                                        <constraint firstItem="bc9-Gz-KdN" firstAttribute="leading" secondItem="Xbw-pC-he4" secondAttribute="trailing" constant="-148" id="GFM-ei-gHB"/>
                                         <constraint firstItem="bc9-Gz-KdN" firstAttribute="bottom" secondItem="A22-Fx-rUT" secondAttribute="bottom" id="OMZ-lx-7Au"/>
                                         <constraint firstItem="bc9-Gz-KdN" firstAttribute="top" secondItem="lFh-QI-PCb" secondAttribute="top" id="S9s-jU-Px5"/>
                                         <constraint firstItem="bc9-Gz-KdN" firstAttribute="leading" secondItem="A22-Fx-rUT" secondAttribute="leading" id="Sl0-N8-yah"/>
+                                        <constraint firstItem="VBb-aF-lOf" firstAttribute="top" secondItem="Xbw-pC-he4" secondAttribute="bottom" constant="8" id="Utj-QQ-m6S"/>
+                                        <constraint firstItem="bc9-Gz-KdN" firstAttribute="leading" secondItem="nax-xL-DmN" secondAttribute="trailing" constant="-109" id="ZDf-Dp-CQk"/>
+                                        <constraint firstItem="bc9-Gz-KdN" firstAttribute="top" secondItem="nax-xL-DmN" secondAttribute="bottom" constant="-38" id="aeX-u1-QGo"/>
+                                        <constraint firstItem="bc9-Gz-KdN" firstAttribute="leading" secondItem="VBb-aF-lOf" secondAttribute="trailing" constant="-141" id="jP9-tQ-uMg"/>
                                         <constraint firstItem="bc9-Gz-KdN" firstAttribute="trailing" secondItem="A22-Fx-rUT" secondAttribute="trailing" id="rRM-Jk-PVc"/>
                                     </constraints>
                                     <viewLayoutGuide key="safeArea" id="A22-Fx-rUT"/>
@@ -251,6 +287,7 @@
                         <outlet property="filterBtn" destination="wso-CZ-ZMi" id="SEw-HQ-oCr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjf-Pm-mRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="-47.226386806596707"/>
         </scene>
