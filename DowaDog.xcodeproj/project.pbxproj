@@ -14,11 +14,6 @@
 		4C06767F21E03F7700AC9A92 /* MyWantDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06767E21E03F7700AC9A92 /* MyWantDogVC.swift */; };
 		4C06768121E03F9600AC9A92 /* MyWantCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06768021E03F9600AC9A92 /* MyWantCVCell.swift */; };
 		4C06768321E108CE00AC9A92 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06768221E108CE00AC9A92 /* CustomNavigationBar.swift */; };
-		4C06768921E1096800AC9A92 /* AboutNewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06768421E1096700AC9A92 /* AboutNewDogVC.swift */; };
-		4C06768A21E1096800AC9A92 /* FindMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06768521E1096700AC9A92 /* FindMainVC.swift */; };
-		4C06768B21E1096800AC9A92 /* NewDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06768621E1096700AC9A92 /* NewDogVC.swift */; };
-		4C06768C21E1096800AC9A92 /* AboutEmergenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06768721E1096700AC9A92 /* AboutEmergenVC.swift */; };
-		4C06768D21E1096800AC9A92 /* EmergenDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06768821E1096700AC9A92 /* EmergenDogVC.swift */; };
 		4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BD21D8906700301D52 /* Filter.storyboard */; };
 		4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BF21D8909900301D52 /* Finding.storyboard */; };
 		4C0E95C221D890A900301D52 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95C121D890A900301D52 /* Login.storyboard */; };
@@ -98,11 +93,6 @@
 		4C06767E21E03F7700AC9A92 /* MyWantDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWantDogVC.swift; sourceTree = "<group>"; };
 		4C06768021E03F9600AC9A92 /* MyWantCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWantCVCell.swift; sourceTree = "<group>"; };
 		4C06768221E108CE00AC9A92 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		4C06768421E1096700AC9A92 /* AboutNewDogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutNewDogVC.swift; path = "../../../../../앱잼 백업/HelpDog 2/DowaDog/Sources/ViewControllers/Find/AboutNewDogVC.swift"; sourceTree = "<group>"; };
-		4C06768521E1096700AC9A92 /* FindMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindMainVC.swift; path = "../../../../../앱잼 백업/HelpDog 2/DowaDog/Sources/ViewControllers/Find/FindMainVC.swift"; sourceTree = "<group>"; };
-		4C06768621E1096700AC9A92 /* NewDogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewDogVC.swift; path = "../../../../../앱잼 백업/HelpDog 2/DowaDog/Sources/ViewControllers/Find/NewDogVC.swift"; sourceTree = "<group>"; };
-		4C06768721E1096700AC9A92 /* AboutEmergenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutEmergenVC.swift; path = "../../../../../앱잼 백업/HelpDog 2/DowaDog/Sources/ViewControllers/Find/AboutEmergenVC.swift"; sourceTree = "<group>"; };
-		4C06768821E1096700AC9A92 /* EmergenDogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergenDogVC.swift; path = "../../../../../앱잼 백업/HelpDog 2/DowaDog/Sources/ViewControllers/Find/EmergenDogVC.swift"; sourceTree = "<group>"; };
 		4C0E95BD21D8906700301D52 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		4C0E95BF21D8909900301D52 /* Finding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Finding.storyboard; sourceTree = "<group>"; };
 		4C0E95C121D890A900301D52 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -239,11 +229,6 @@
 		4C0E95C921D890FE00301D52 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				4C06768721E1096700AC9A92 /* AboutEmergenVC.swift */,
-				4C06768421E1096700AC9A92 /* AboutNewDogVC.swift */,
-				4C06768821E1096700AC9A92 /* EmergenDogVC.swift */,
-				4C06768521E1096700AC9A92 /* FindMainVC.swift */,
-				4C06768621E1096700AC9A92 /* NewDogVC.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -701,20 +686,16 @@
 			files = (
 				4C0E95F021D893C400301D52 /* HeaderCRView.swift in Sources */,
 				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
-				4C06768C21E1096800AC9A92 /* AboutEmergenVC.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
 				F524E9E621DF782B0001CA5A /* CommunityOneTVC.swift in Sources */,
 				F524E9E321DF55BC0001CA5A /* InfoVC.swift in Sources */,
-				4C06768921E1096800AC9A92 /* AboutNewDogVC.swift in Sources */,
 				4C06767F21E03F7700AC9A92 /* MyWantDogVC.swift in Sources */,
 				4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
-				4C06768B21E1096800AC9A92 /* NewDogVC.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
 				4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */,
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
-				4C06768D21E1096800AC9A92 /* EmergenDogVC.swift in Sources */,
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				4C06767321E03A7300AC9A92 /* MyScrapVC.swift in Sources */,
@@ -732,7 +713,6 @@
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
 				4CF5A64E21DCB33C00969511 /* CardVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
-				4C06768A21E1096800AC9A92 /* FindMainVC.swift in Sources */,
 				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
 				F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */,

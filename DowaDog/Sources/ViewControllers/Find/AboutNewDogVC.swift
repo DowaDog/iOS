@@ -19,10 +19,7 @@ var heartClick = false
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var contentView: UIView!
 
-    @IBOutlet weak var coverView: UIView!
     
-    
-    @IBOutlet weak var popupView: UIView!
     var heartItem: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -30,9 +27,6 @@ var heartClick = false
         self.setBackBtn()
         self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
  
-        self.coverView.alpha = 0.0
-        self.popupView.alpha = 0.0
-        
         heartItem = UIBarButtonItem(image:UIImage(named: "heartBtnLine.png") , style: .plain, target: self, action: #selector(heartTapped))
         heartItem.tintColor = UIColor.white
         
@@ -53,13 +47,6 @@ var heartClick = false
         if heartClick == false{
             heartItem.image = UIImage(named: "heartBtnFill")
             heartClick = true
-            UIView.animate(withDuration: 0.5, animations: {
-                self.coverView.alpha = 0.5
-                self.popupView.alpha = 1.0
-
-            })
-            
-            
         }else{
             heartItem.image = UIImage(named: "heartBtnLine.png")
             heartClick = false
@@ -113,31 +100,14 @@ var heartClick = false
         }
         
     }
-    @IBAction func okBtnAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.coverView.alpha = 0.0
-            self.popupView.alpha = 0.0
-            
-        })
-    }
-    
-    @IBAction func callAction(_ sender: Any) {
-        
-        guard let number = URL(string: "tel://" + "01056472489") else { return }
-        UIApplication.shared.open(number)
-        
-        //이거 실제 디바이스에서는 되는지 승언 오빠 핸드폰으로 확인하기
-        //데이터 받아올 때 -나 스페이스 제외해서 넣기
-    }
-    
 
 }
 extension AboutNewDogVC : UIGestureRecognizerDelegate{
-
-   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
-
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+        
         return true
-
+        
     }
-
+    
 }
