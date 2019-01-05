@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "gangwonBtnYellow.png",
       "idiom" : "universal",
+      "filename" : "gangwonBtnYellow.png",
       "scale" : "1x"
     },
     {
-      "filename" : "gangwonBtnYellow@2x.png",
       "idiom" : "universal",
+      "filename" : "gangwonBtnYellow@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "gangwonBtnYellow@3x.png",
       "idiom" : "universal",
+      "filename" : "gangwonBtnYellow@3x.png",
       "scale" : "3x"
     }
   ],

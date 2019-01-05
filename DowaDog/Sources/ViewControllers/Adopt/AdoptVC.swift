@@ -36,6 +36,7 @@ class AdoptVC: UIViewController {
         way1Btn.setBackgroundImage(UIImage(named: "walkingImgCheck.png"), for: .normal)
         
         way2Btn.setBackgroundImage(UIImage(named: "writingImgUncheck.png"), for: .normal)
+        
     }
     
     @IBAction func writeAction(_ sender: Any) {

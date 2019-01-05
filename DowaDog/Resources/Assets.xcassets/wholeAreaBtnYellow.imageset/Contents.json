@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "wholeAreaBtnYellow.png",
       "idiom" : "universal",
+      "filename" : "wholeAreaBtnYellow.png",
       "scale" : "1x"
     },
     {
-      "filename" : "wholeAreaBtnYellow@2x.png",
       "idiom" : "universal",
+      "filename" : "wholeAreaBtnYellow@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "wholeAreaBtnYellow@3x.png",
       "idiom" : "universal",
+      "filename" : "wholeAreaBtnYellow@3x.png",
       "scale" : "3x"
     }
   ],
