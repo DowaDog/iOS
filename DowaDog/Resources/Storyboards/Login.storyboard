@@ -13,6 +13,12 @@
         <array key="NanumSquareBold.ttf">
             <string>NanumSquareB</string>
         </array>
+        <array key="NanumSquareExtraBold.ttf">
+            <string>NanumSquareEB</string>
+        </array>
+        <array key="NanumSquareLight.ttf">
+            <string>NanumSquareL</string>
+        </array>
         <array key="NanumSquareRegular.ttf">
             <string>NanumSquareR</string>
         </array>
@@ -22,15 +28,33 @@
         <scene sceneID="8Wc-zD-964">
             <objects>
                 <viewController id="dik-NC-fl9" customClass="LoginVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleAspectFit" id="UPM-RO-MP9">
+                    <view key="view" contentMode="scaleToFill" id="UPM-RO-MP9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginImg" translatesAutoresizingMaskIntoConstraints="NO" id="2Nj-oA-tB5">
-                                <rect key="frame" x="0.0" y="491" width="375" height="176"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ds-dD-Vy4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리가," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hq-Sd-mPC">
+                                <rect key="frame" x="102" y="195" width="77" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9hq-Sd-mPC" secondAttribute="height" multiplier="77:27" id="9fr-5T-uwj"/>
+                                    <constraint firstAttribute="height" constant="27" id="CMT-La-xFD"/>
+                                    <constraint firstAttribute="width" constant="77" id="XQo-O6-1Gd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="25"/>
+                                <color key="textColor" red="0.435326457" green="0.43920236829999998" blue="0.43921631570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기다릴개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck2-dI-pAn">
+                                <rect key="frame" x="179" y="195" width="91" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ck2-dI-pAn" secondAttribute="height" multiplier="91:27" id="0id-N3-97z"/>
+                                    <constraint firstAttribute="width" constant="91" id="GdX-hb-xqm"/>
+                                    <constraint firstAttribute="height" constant="27" id="SUp-U1-Hbz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="25"/>
+                                <color key="textColor" red="0.43530029059999997" green="0.43528294560000003" blue="0.43529474740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ds-dD-Vy4">
                                 <rect key="frame" x="56" y="390" width="264" height="41"/>
                                 <color key="backgroundColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -46,7 +70,7 @@
                                     <action selector="loginAction:" destination="dik-NC-fl9" eventType="touchUpInside" id="mIl-e9-WAL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-bo-X8q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-bo-X8q">
                                 <rect key="frame" x="56" y="446" width="264" height="41"/>
                                 <color key="backgroundColor" red="0.88628643750000002" green="0.88625305889999995" blue="0.88627570870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -59,7 +83,7 @@
                                     <color key="titleColor" red="0.93366807699999999" green="0.98034507039999996" blue="0.98039418460000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="기다릴개와 함께하시겠어요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o27-rD-sI9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기다릴개와 함께하시겠어요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o27-rD-sI9">
                                 <rect key="frame" x="111" y="513" width="152" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="Zp7-Qj-TM8"/>
@@ -69,7 +93,7 @@
                                 <color key="textColor" red="0.78040271999999999" green="0.78037315610000002" blue="0.78039318319999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OY-PE-Aa4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OY-PE-Aa4">
                                 <rect key="frame" x="160" y="537" width="54" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="54" id="KT1-oW-Is4"/>
@@ -83,7 +107,7 @@
                                     <segue destination="Q1e-IH-1WM" kind="show" id="g2V-gD-ItB"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsq-G4-3IN" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsq-G4-3IN" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
                                 <rect key="frame" x="56" y="267" width="264" height="41"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsf-tH-WMV">
@@ -111,7 +135,7 @@
                                     <constraint firstAttribute="trailing" secondItem="dsf-tH-WMV" secondAttribute="trailing" constant="8" id="rsd-yY-ntZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9k8-f1-rL0" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9k8-f1-rL0" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
                                 <rect key="frame" x="56" y="324" width="264" height="41"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="패스워드" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFR-jf-1mQ">
@@ -134,22 +158,14 @@
                                     <constraint firstAttribute="trailing" secondItem="iFR-jf-1mQ" secondAttribute="trailing" constant="8" id="vqn-hN-qmw"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginText" translatesAutoresizingMaskIntoConstraints="NO" id="N7V-Qz-Y8j">
-                                <rect key="frame" x="100" y="150" width="174" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="174" id="ddJ-qj-04l"/>
-                                    <constraint firstAttribute="width" secondItem="N7V-Qz-Y8j" secondAttribute="height" multiplier="29:5" id="oy1-Qs-yRV"/>
-                                    <constraint firstAttribute="height" constant="30" id="x28-Z7-LMP"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9hq-Sd-mPC" firstAttribute="top" secondItem="Hge-9C-TtM" secondAttribute="top" constant="131" id="3vn-lx-zoV"/>
                             <constraint firstItem="Hge-9C-TtM" firstAttribute="trailing" secondItem="9k8-f1-rL0" secondAttribute="trailing" constant="55" id="5ea-Ji-4oG"/>
+                            <constraint firstItem="fsq-G4-3IN" firstAttribute="top" secondItem="9hq-Sd-mPC" secondAttribute="bottom" constant="45" id="6di-oY-QEp"/>
                             <constraint firstItem="Hge-9C-TtM" firstAttribute="trailing" secondItem="6ds-dD-Vy4" secondAttribute="trailing" constant="55" id="6wU-TJ-8Wr"/>
-                            <constraint firstItem="N7V-Qz-Y8j" firstAttribute="top" secondItem="Hge-9C-TtM" secondAttribute="top" constant="86" id="BEp-d2-ym9"/>
                             <constraint firstItem="1OY-PE-Aa4" firstAttribute="leading" secondItem="Hge-9C-TtM" secondAttribute="leading" constant="160" id="DGO-x2-wjo"/>
-                            <constraint firstItem="N7V-Qz-Y8j" firstAttribute="leading" secondItem="Hge-9C-TtM" secondAttribute="leading" constant="100" id="FbF-G2-CIA"/>
                             <constraint firstItem="6ds-dD-Vy4" firstAttribute="leading" secondItem="Hge-9C-TtM" secondAttribute="leading" constant="56" id="GbV-xz-FB3"/>
                             <constraint firstItem="eKy-bo-X8q" firstAttribute="leading" secondItem="Hge-9C-TtM" secondAttribute="leading" constant="56" id="Lia-YN-MZ0"/>
                             <constraint firstItem="Hge-9C-TtM" firstAttribute="trailing" secondItem="fsq-G4-3IN" secondAttribute="trailing" constant="55" id="MY7-so-Nzx"/>
@@ -157,13 +173,17 @@
                             <constraint firstItem="6ds-dD-Vy4" firstAttribute="top" secondItem="9k8-f1-rL0" secondAttribute="bottom" constant="25" id="PeU-o8-bVS"/>
                             <constraint firstItem="9k8-f1-rL0" firstAttribute="top" secondItem="fsq-G4-3IN" secondAttribute="bottom" constant="16" id="UFZ-v1-rac"/>
                             <constraint firstItem="1OY-PE-Aa4" firstAttribute="top" secondItem="o27-rD-sI9" secondAttribute="bottom" constant="10" id="aZq-EO-ZJR"/>
+                            <constraint firstItem="Ck2-dI-pAn" firstAttribute="top" secondItem="Hge-9C-TtM" secondAttribute="top" constant="131" id="cBt-H3-eup"/>
                             <constraint firstItem="Hge-9C-TtM" firstAttribute="trailing" secondItem="o27-rD-sI9" secondAttribute="trailing" constant="112" id="dFr-ye-QNW"/>
                             <constraint firstItem="eKy-bo-X8q" firstAttribute="top" secondItem="6ds-dD-Vy4" secondAttribute="bottom" constant="15" id="gIc-bd-uL5"/>
+                            <constraint firstItem="Ck2-dI-pAn" firstAttribute="leading" secondItem="9hq-Sd-mPC" secondAttribute="trailing" id="hFG-DM-Iw6"/>
                             <constraint firstItem="fsq-G4-3IN" firstAttribute="leading" secondItem="Hge-9C-TtM" secondAttribute="leading" constant="56" id="hpU-Lm-hF9"/>
                             <constraint firstItem="Hge-9C-TtM" firstAttribute="trailing" secondItem="eKy-bo-X8q" secondAttribute="trailing" constant="55" id="iBW-Ih-12X"/>
+                            <constraint firstItem="Hge-9C-TtM" firstAttribute="trailing" secondItem="Ck2-dI-pAn" secondAttribute="trailing" constant="105" id="knO-bd-7Is"/>
                             <constraint firstItem="9k8-f1-rL0" firstAttribute="leading" secondItem="Hge-9C-TtM" secondAttribute="leading" constant="56" id="njM-Lz-H8U"/>
                             <constraint firstItem="Hge-9C-TtM" firstAttribute="trailing" secondItem="1OY-PE-Aa4" secondAttribute="trailing" constant="161" id="nqc-n4-sWe"/>
                             <constraint firstItem="o27-rD-sI9" firstAttribute="top" secondItem="eKy-bo-X8q" secondAttribute="bottom" constant="26" id="pQT-q6-w0z"/>
+                            <constraint firstItem="9hq-Sd-mPC" firstAttribute="leading" secondItem="Hge-9C-TtM" secondAttribute="leading" constant="102" id="qMJ-49-Fgo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hge-9C-TtM"/>
                     </view>
@@ -779,8 +799,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loginImg" width="375" height="176"/>
-        <image name="loginText" width="174" height="31"/>
         <image name="mypageProfileImg" width="86" height="86"/>
         <image name="settingCameraIcon" width="22" height="22"/>
     </resources>

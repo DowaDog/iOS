@@ -9,27 +9,29 @@
 import UIKit
 
 class CommunityWriteVC: UIViewController {
-    
+
     @IBOutlet var textView: UITextView!
     @IBOutlet var photoViewConstraint: NSLayoutConstraint!
-    var keyboardHeight: CGFloat = 0
     
     let picker = UIImagePickerController()
     
     @IBOutlet var imageBox: UIView!
     
     @IBOutlet var imgBtn1: UIButton!
+    @IBOutlet var image1: UIImageView!
+    var imgFlag1: Bool = false
+    
     @IBOutlet var imgBtn2: UIButton!
+    @IBOutlet var image2: UIImageView!
+    var imgFlag2: Bool = false
+    
     @IBOutlet var imgBtn3: UIButton!
+    @IBOutlet var image3: UIImageView!
+    var imgFlag3: Bool = false
+    
     @IBOutlet var imgBtn4: UIButton!
-    
-    var tempImage = UIImage()
-    
-    var defaultImage = UIImage(named: "writingPlusBtn")
-    var uploadImage1 = UIImage(named: "writingPlusBtn")
-    var uploadImage2 = UIImage(named: "writingPlusBtn")
-    var uploadImage3 = UIImage(named: "writingPlusBtn")
-    var uploadImage4 = UIImage(named: "writingPlusBtn")
+    @IBOutlet var image4: UIImageView!
+    var imgFlag4: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,78 +46,40 @@ class CommunityWriteVC: UIViewController {
         initGestureRecognizer()
     }
     
-    func showBox() {
-        imageBox.isHidden = false
-    }
-    
-    func hideBox() {
-        imageBox.isHidden = true
-    }
     
     @IBAction func btnAction(_ sender: UIButton) {
-        if sender.currentImage == defaultImage {
-            photoActionSheet()
-            if tempImage != UIImage() {
-                sender.setImage(tempImage, for: .normal)
+        switch (sender) {
+        case imgBtn1:
+            if image1.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+            } else {
+                image1.image = UIImage(named: "writingPlusBtn")
             }
+            break
+        case imgBtn2:
+            if image2.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+            } else {
+                image2.image = UIImage(named: "writingPlusBtn")
+            }
+            break
+        case imgBtn3:
+            if image3.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+            } else {
+                image3.image = UIImage(named: "writingPlusBtn")
+            }
+            break
+        case imgBtn4:
+            if image4.image == UIImage(named: "writingPlusBtn") {
+                photoActionSheet()
+                image4.image = UIImage(named: "writingPlusBtn")
+            }
+            break
+        default:
+            print("default")
+            break
         }
-//        else {
-//            simpleAlertwithHandler(title: "첨부한 이미지를 삭제합니다.", message: "") { (UIAlertAction) in
-//                sender.setImage(self.defaultImage, for: .normal)
-//
-//                switch sender {
-//                case self.imgBtn1:
-//                    if self.imgBtn2.currentImage != self.defaultImage {
-//                        self.imgBtn1.setImage(self.imgBtn2.currentImage, for: .normal)
-//                        self.imgBtn2.setImage(self.defaultImage, for: .normal)
-//
-//                        if self.imgBtn3.currentImage != self.defaultImage {
-//                            self.imgBtn2.setImage(self.imgBtn3.currentImage, for: .normal)
-//                            self.imgBtn3.setImage(self.defaultImage, for: .normal)
-//
-//                            if self.imgBtn4.currentImage != self.defaultImage {
-//                                self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
-//                                self.imgBtn4.setImage(self.defaultImage, for: .normal)
-//                            } else {
-//                                self.imgBtn4.isHidden = true
-//                            }
-//                        } else {
-//                            self.imgBtn3.isHidden = true
-//                        }
-//                    } else {
-//                        self.hideBox()
-//                    }
-//                    break;
-//
-//                case self.imgBtn2:
-//                    if self.imgBtn3.currentImage != self.defaultImage {
-//                        self.imgBtn2.setImage(self.imgBtn3.currentImage, for: .normal)
-//                        self.imgBtn3.setImage(self.defaultImage, for: .normal)
-//
-//                        if self.imgBtn4.currentImage != self.defaultImage {
-//                            self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
-//                            self.imgBtn4.setImage(self.defaultImage, for: .normal)
-//                        }
-//                    }
-//
-//                    break;
-//
-//                case self.imgBtn3:
-//                    if self.imgBtn4.currentImage != self.defaultImage {
-//                        self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
-//                        self.imgBtn4.setImage(self.defaultImage, for: .normal)
-//                    }
-//                    break;
-//
-//                case self.imgBtn4:
-//                    self.imgBtn4.setImage(self.defaultImage, for: .normal)
-//                    break;
-//
-//                default:
-//                    break;
-//                }
-//            }
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,7 +92,6 @@ class CommunityWriteVC: UIViewController {
     
     @IBAction func cameraBtnAction(_ sender: Any) {
         photoActionSheet()
-        
     }
     
     func photoActionSheet() {
@@ -161,15 +124,11 @@ extension CommunityWriteVC: UIImagePickerControllerDelegate, UINavigationControl
     
     //이미지를 선택하지 않고 피커 종료시에 실행되는 delegate 메소드
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
-        
-        
         dismiss(animated: true, completion: nil)
     }
     
     //이미지 피커에서 이미지를 선택하였을 때 일어나는 이벤트를 작성하는 메소드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         var newImg = UIImage()
         
         if let possibleImg = info[.editedImage] as? UIImage {
@@ -181,22 +140,12 @@ extension CommunityWriteVC: UIImagePickerControllerDelegate, UINavigationControl
         else {
             return
         }
-    
-        tempImage = newImg
-        showBox()
+        
         
         
         dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
 
 // 하단 뷰를 키보드에 맞게 움직이는 작업
 extension CommunityWriteVC: UIGestureRecognizerDelegate {
@@ -209,13 +158,13 @@ extension CommunityWriteVC: UIGestureRecognizerDelegate {
     @objc func handleTapTextView(_ sender: UITapGestureRecognizer) {
         self.textView.resignFirstResponder()
     }
-    
+
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if (touch.view?.isDescendant(of: textView))! {
-            
+
             return false
         }
-        
+
         return true
     }
     
@@ -224,13 +173,8 @@ extension CommunityWriteVC: UIGestureRecognizerDelegate {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
         
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            keyboardHeight = keyboardRectangle.height
-        }
-        
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            self.photoViewConstraint.constant = self.keyboardHeight
+            self.photoViewConstraint.constant = -369 //스택 뷰의 제약조건을 변경한다.
         })
     }
     
@@ -238,7 +182,7 @@ extension CommunityWriteVC: UIGestureRecognizerDelegate {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            self.photoViewConstraint.constant = 0 //스택 뷰의 제약조건을 변경한다.
+            self.photoViewConstraint.constant = -154 //스택 뷰의 제약조건을 변경한다.
         })
         
         self.view.layoutIfNeeded()

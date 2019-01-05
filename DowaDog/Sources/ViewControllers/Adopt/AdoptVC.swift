@@ -22,8 +22,8 @@ class AdoptVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigationBarClear()
-        self.setBackBtn()
+        //        self.setNavigationSahdow()
+        // Do any additional setup after loading the view.
     }
     
     
@@ -36,7 +36,6 @@ class AdoptVC: UIViewController {
         way1Btn.setBackgroundImage(UIImage(named: "walkingImgCheck.png"), for: .normal)
         
         way2Btn.setBackgroundImage(UIImage(named: "writingImgUncheck.png"), for: .normal)
-        
     }
     
     @IBAction func writeAction(_ sender: Any) {
@@ -55,6 +54,4 @@ class AdoptVC: UIViewController {
             performSegue(withIdentifier: "goDocument", sender: self)
         }
     }
-    
-    
 }

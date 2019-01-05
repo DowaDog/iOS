@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "filename" : "gyeongsangBtnDefault.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
       "filename" : "gyeongsangBtnDefault@2x.png",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
       "filename" : "gyeongsangBtnDefault@3x.png",
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],

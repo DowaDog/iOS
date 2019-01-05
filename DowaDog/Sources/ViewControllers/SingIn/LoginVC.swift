@@ -22,7 +22,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var aroundBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackBtn()
         
         loginBtn.circleRadius()
         aroundBtn.circleRadius()
