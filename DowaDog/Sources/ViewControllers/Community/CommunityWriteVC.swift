@@ -58,63 +58,64 @@ class CommunityWriteVC: UIViewController {
             if tempImage != UIImage() {
                 sender.setImage(tempImage, for: .normal)
             }
-        } else {
-            simpleAlertwithHandler(title: "첨부한 이미지를 삭제합니다.", message: "") { (UIAlertAction) in
-                sender.setImage(self.defaultImage, for: .normal)
-                
-                switch sender {
-                case self.imgBtn1:
-                    if self.imgBtn2.currentImage != self.defaultImage {
-                        self.imgBtn1.setImage(self.imgBtn2.currentImage, for: .normal)
-                        self.imgBtn2.setImage(self.defaultImage, for: .normal)
-                        
-                        if self.imgBtn3.currentImage != self.defaultImage {
-                            self.imgBtn2.setImage(self.imgBtn3.currentImage, for: .normal)
-                            self.imgBtn3.setImage(self.defaultImage, for: .normal)
-                            
-                            if self.imgBtn4.currentImage != self.defaultImage {
-                                self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
-                                self.imgBtn4.setImage(self.defaultImage, for: .normal)
-                            } else {
-                                self.imgBtn4.isHidden = true
-                            }
-                        } else {
-                            self.imgBtn3.isHidden = true
-                        }
-                    } else {
-                        self.hideBox()
-                    }
-                    break;
-                    
-                case self.imgBtn2:
-                    if self.imgBtn3.currentImage != self.defaultImage {
-                        self.imgBtn2.setImage(self.imgBtn3.currentImage, for: .normal)
-                        self.imgBtn3.setImage(self.defaultImage, for: .normal)
-                            
-                        if self.imgBtn4.currentImage != self.defaultImage {
-                            self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
-                            self.imgBtn4.setImage(self.defaultImage, for: .normal)
-                        }
-                    }
-                    
-                    break;
-                    
-                case self.imgBtn3:
-                    if self.imgBtn4.currentImage != self.defaultImage {
-                        self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
-                        self.imgBtn4.setImage(self.defaultImage, for: .normal)
-                    }
-                    break;
-                    
-                case self.imgBtn4:
-                    self.imgBtn4.setImage(self.defaultImage, for: .normal)
-                    break;
-                    
-                default:
-                    break;
-                }
-            }
         }
+//        else {
+//            simpleAlertwithHandler(title: "첨부한 이미지를 삭제합니다.", message: "") { (UIAlertAction) in
+//                sender.setImage(self.defaultImage, for: .normal)
+//
+//                switch sender {
+//                case self.imgBtn1:
+//                    if self.imgBtn2.currentImage != self.defaultImage {
+//                        self.imgBtn1.setImage(self.imgBtn2.currentImage, for: .normal)
+//                        self.imgBtn2.setImage(self.defaultImage, for: .normal)
+//
+//                        if self.imgBtn3.currentImage != self.defaultImage {
+//                            self.imgBtn2.setImage(self.imgBtn3.currentImage, for: .normal)
+//                            self.imgBtn3.setImage(self.defaultImage, for: .normal)
+//
+//                            if self.imgBtn4.currentImage != self.defaultImage {
+//                                self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
+//                                self.imgBtn4.setImage(self.defaultImage, for: .normal)
+//                            } else {
+//                                self.imgBtn4.isHidden = true
+//                            }
+//                        } else {
+//                            self.imgBtn3.isHidden = true
+//                        }
+//                    } else {
+//                        self.hideBox()
+//                    }
+//                    break;
+//
+//                case self.imgBtn2:
+//                    if self.imgBtn3.currentImage != self.defaultImage {
+//                        self.imgBtn2.setImage(self.imgBtn3.currentImage, for: .normal)
+//                        self.imgBtn3.setImage(self.defaultImage, for: .normal)
+//
+//                        if self.imgBtn4.currentImage != self.defaultImage {
+//                            self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
+//                            self.imgBtn4.setImage(self.defaultImage, for: .normal)
+//                        }
+//                    }
+//
+//                    break;
+//
+//                case self.imgBtn3:
+//                    if self.imgBtn4.currentImage != self.defaultImage {
+//                        self.imgBtn3.setImage(self.imgBtn4.currentImage, for: .normal)
+//                        self.imgBtn4.setImage(self.defaultImage, for: .normal)
+//                    }
+//                    break;
+//
+//                case self.imgBtn4:
+//                    self.imgBtn4.setImage(self.defaultImage, for: .normal)
+//                    break;
+//
+//                default:
+//                    break;
+//                }
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
