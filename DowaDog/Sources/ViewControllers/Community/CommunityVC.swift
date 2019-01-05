@@ -20,7 +20,30 @@ class CommunityVC: UIViewController {
         setBlackScreen()
         setSideMenu()
     }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // init BlackScreen
     func setBlackScreen() {
         blackScreen=UIView(frame: self.view.bounds)

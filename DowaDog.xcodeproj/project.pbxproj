@@ -49,6 +49,10 @@
 		F524E9DC21DE153B0001CA5A /* AdoptDirectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9DB21DE153B0001CA5A /* AdoptDirectVC.swift */; };
 		F524E9E021DF553A0001CA5A /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F524E9DF21DF553A0001CA5A /* Info.storyboard */; };
 		F524E9E321DF55BC0001CA5A /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9E221DF55BC0001CA5A /* InfoVC.swift */; };
+		F524E9E621DF782B0001CA5A /* CommunityOneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9E521DF782B0001CA5A /* CommunityOneTVC.swift */; };
+		F524E9E821DF783E0001CA5A /* CommunityTwoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9E721DF783E0001CA5A /* CommunityTwoTVC.swift */; };
+		F524E9EA21DF784E0001CA5A /* CommunityThreeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9E921DF784E0001CA5A /* CommunityThreeTVC.swift */; };
+		F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9EB21DF78600001CA5A /* CommunityFourTVC.swift */; };
 		F527A08621D6591E00BC20DE /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F527A08521D6591E00BC20DE /* Community.storyboard */; };
 		F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527A0A921D7567900BC20DE /* NavBtn.swift */; };
 		F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527A0AB21D7626E00BC20DE /* CommunityVC.swift */; };
@@ -113,6 +117,10 @@
 		F524E9DB21DE153B0001CA5A /* AdoptDirectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDirectVC.swift; sourceTree = "<group>"; };
 		F524E9DF21DF553A0001CA5A /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		F524E9E221DF55BC0001CA5A /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		F524E9E521DF782B0001CA5A /* CommunityOneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityOneTVC.swift; sourceTree = "<group>"; };
+		F524E9E721DF783E0001CA5A /* CommunityTwoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTwoTVC.swift; sourceTree = "<group>"; };
+		F524E9E921DF784E0001CA5A /* CommunityThreeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityThreeTVC.swift; sourceTree = "<group>"; };
+		F524E9EB21DF78600001CA5A /* CommunityFourTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFourTVC.swift; sourceTree = "<group>"; };
 		F527A08521D6591E00BC20DE /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		F527A0A921D7567900BC20DE /* NavBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBtn.swift; sourceTree = "<group>"; };
 		F527A0AB21D7626E00BC20DE /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
@@ -278,6 +286,17 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		F524E9E421DF77E40001CA5A /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				F524E9E521DF782B0001CA5A /* CommunityOneTVC.swift */,
+				F524E9E721DF783E0001CA5A /* CommunityTwoTVC.swift */,
+				F524E9E921DF784E0001CA5A /* CommunityThreeTVC.swift */,
+				F524E9EB21DF78600001CA5A /* CommunityFourTVC.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 		F527A08221D658E400BC20DE /* Community */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +388,7 @@
 		F5508A2D21D4D8C300BE73FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F524E9E421DF77E40001CA5A /* Community */,
 				4CF5A64621DC9A1800969511 /* Content */,
 				F58ADAA221DA2ECA00231B27 /* Adopt */,
 				4C0E95EC21D8939100301D52 /* Find */,
@@ -610,6 +630,7 @@
 				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
+				F524E9E621DF782B0001CA5A /* CommunityOneTVC.swift in Sources */,
 				F524E9E321DF55BC0001CA5A /* InfoVC.swift in Sources */,
 				4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
@@ -623,10 +644,12 @@
 				F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */,
 				F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */,
 				4CF5A64A21DCA0E100969511 /* Page1VC.swift in Sources */,
+				F524E9EA21DF784E0001CA5A /* CommunityThreeTVC.swift in Sources */,
 				F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */,
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
 				4CF5A64E21DCB33C00969511 /* CardVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
+				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
 				F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */,
 				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
@@ -637,6 +660,7 @@
 				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
 				4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */,
+				F524E9E821DF783E0001CA5A /* CommunityTwoTVC.swift in Sources */,
 				4C0E95CF21D8916200301D52 /* SignIn2VC.swift in Sources */,
 				4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */,
 				4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */,
