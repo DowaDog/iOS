@@ -29,7 +29,14 @@ class AdoptListVC: UIViewController {
         collectionView.delegate = self
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "mydog_show" {
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: nil, action: nil)
+            self.navigationItem.backBarButtonItem?.tintColor = UIColor.init(displayP3Red: 130/255, green: 130/255, blue: 130/255, alpha: 1)
+            
+        }
+    }
 
 }
 
@@ -68,10 +75,10 @@ extension AdoptListVC: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        if let dvc = storyboard?.instantiateViewController(withIdentifier: "MyDogDetailVC") as? MyDogDetailVC{
-            
-            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-            navigationController?.pushViewController(dvc, animated: true)
+//        if let dvc = storyboard?.instantiateViewController(withIdentifier: "MyDogDetailVC") as? MyDogDetailVC{
+//
+//            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+//            navigationController?.pushViewController(dvc, animated: true)
 
         }
         
@@ -79,7 +86,7 @@ extension AdoptListVC: UICollectionViewDelegate{
             
         }
     }
-}
+
     
 
 extension AdoptListVC: UICollectionViewDelegateFlowLayout {

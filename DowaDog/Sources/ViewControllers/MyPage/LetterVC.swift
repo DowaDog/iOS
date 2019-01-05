@@ -19,6 +19,7 @@ class LetterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn()
+        setNavigationBarShadow()
        self.title="편지"
         collectionView.delegate = self
         collectionView.dataSource = self
