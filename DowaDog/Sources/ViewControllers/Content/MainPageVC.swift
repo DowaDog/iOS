@@ -83,7 +83,7 @@ class MainPageVC: UIViewController {
         self.blackScreen.isHidden = false
         UIView.animate(withDuration: 0.4, animations: {
             self.blackScreen.alpha = 1
-        })
+        }) 
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.sideMenuView.transform = .identity

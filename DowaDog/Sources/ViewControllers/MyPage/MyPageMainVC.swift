@@ -10,18 +10,30 @@ import UIKit
 
 class MyPageMainVC: UIViewController {
 
+    @IBOutlet weak var coverView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setBackBtn()
+        coverView.alpha = 0.0
     }
     
 
     @IBAction func logoutAction(_ sender: Any) {
-        simpleAlertwithHandler(title: "로그아웃 하시겠습니가?", message: "", okHandler:  nil)
-        simpleAlert(title: "로그아웃 하시겠습니까?", message: "")
+        UIView.animate(withDuration: 0.5, animations: {
+            self.coverView.alpha = 0.5
+            
+        })
+    simpleAlertwithHandler(title: "로그아웃 하시겠습니까?", message: "", okHandler:  {(alert: UIAlertAction!) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.coverView.alpha = 0.0
+            })}
+            , cancleHandler: {(alert: UIAlertAction!) in
+              
+                    self.coverView.alpha = 0.0
+                })
+
     }
-    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
