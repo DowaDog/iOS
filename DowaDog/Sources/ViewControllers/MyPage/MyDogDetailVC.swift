@@ -24,10 +24,12 @@ class MyDogDetailVC: UIViewController {
     @IBOutlet weak var inject5Btn: UIButton!
     @IBOutlet weak var inject6Btn: UIButton!
     
+    var confirmItem:UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackBtn()
+
        
         maleBtn.setImage(UIImage(named:"adoptingDocumentCheckDefault"), for: .normal)
         maleBtn.setImage(UIImage(named:"adoptingDocumentCheckYellow"), for: .selected)
@@ -54,6 +56,11 @@ class MyDogDetailVC: UIViewController {
         profileImage.circleImageView()
         
         self.title = "개인 정보 수정"
+        
+        confirmItem = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(confirmTapped))
+        confirmItem.tintColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
+        
+        navigationItem.rightBarButtonItems = [ confirmItem ]
         
     }
     @objc func confirmTapped(){

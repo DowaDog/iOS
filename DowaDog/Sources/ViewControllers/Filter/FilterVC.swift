@@ -9,46 +9,63 @@
 import UIKit
 
 
-
-var resusableheader = "header"
-var reusablefooter = "footer"
-var cell0 = true
-var cell1 = false
-var cell2 = false
-var cell3 = false
-var cell4 = false
-var cell5 = false
-var cell6 = false
-var cell7 = false
-var cell8 = false
-
-
 class FilterVC: UIViewController {
     
+    @IBOutlet weak var slider: CustomUISlider!
+    @IBOutlet weak var dogBtn: UIButton!
+    @IBOutlet weak var catBtn: UIButton!
+    
+    @IBOutlet weak var maxDate: UILabel!
+    @IBOutlet weak var allBtn: UIButton!
+    @IBOutlet weak var area1Btn: UIButton!
+    @IBOutlet weak var area2Btn: UIButton!
+    @IBOutlet weak var area3Btn: UIButton!
+    @IBOutlet weak var area4Btn: UIButton!
+    @IBOutlet weak var area5Btn: UIButton!
+    @IBOutlet weak var area7Btn: UIButton!
+    @IBOutlet weak var area6Btn: UIButton!
+    @IBOutlet weak var area8Btn: UIButton!
+    
+    @IBOutlet weak var dogLabel: UILabel!
+    @IBOutlet weak var catLabel: UILabel!
+    
+    
     var resetItem: UIBarButtonItem!
-    
-    let reuseIdentifier = "cellId"
-    
-    var area = [(UIImage(named: "wholeAreaBtnDefault.png")),
-                (UIImage(named: "seoulBtnDefault.png")),
-                (UIImage(named: "gyeonggilBtnDefault.png")),
-                (UIImage(named: "incheonBtnDefault.png")),
-                (UIImage(named: "gangwonBtnDefault.png")),
-                (UIImage(named: "chungcheongBtnDefault.png")),
-                (UIImage(named: "jeollaBtnDefault.png")),
-                (UIImage(named: "gyeongsangBtnDefault.png")),
-                (UIImage(named: "jejuBtnDefault.png")),
-                ]
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        
+        allBtn.isSelected = true
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
+        
+        allBtn.setImage(UIImage(named:"wholeAreaBtnYellow"), for: .normal)
+        allBtn.setImage(UIImage(named:"wholeAreaBtnDefault"), for: .selected)
+        area1Btn.setImage(UIImage(named:"seoulBtnDefault"), for: .normal)
+        area1Btn.setImage(UIImage(named:"seoulBtnYellow"), for: .selected)
+        area2Btn.setImage(UIImage(named:"gyeonggilBtnDefault"), for: .normal)
+        area2Btn.setImage(UIImage(named:"gyeonggilBtnYellow"), for: .selected)
+        area3Btn.setImage(UIImage(named:"incheonBtnDefault"), for: .normal)
+        area3Btn.setImage(UIImage(named:"incheonBtnYellow"), for: .selected)
+        area4Btn.setImage(UIImage(named:"gangwonBtnDefault"), for: .normal)
+        area4Btn.setImage(UIImage(named:"gangwonBtnYellow"), for: .selected)
+        area5Btn.setImage(UIImage(named:"chungcheongBtnDefault"), for: .normal)
+        area5Btn.setImage(UIImage(named:"chungcheongBtnYellow"), for: .selected)
+        area6Btn.setImage(UIImage(named:"jeollaBtnDefault"), for: .normal)
+        area6Btn.setImage(UIImage(named:"jeollaBtnYellow"), for: .selected)
+        area7Btn.setImage(UIImage(named:"gyeongsangBtnDefault"), for: .normal)
+        area7Btn.setImage(UIImage(named:"gyeongsangBtnYellow"), for: .selected)
+        area8Btn.setImage(UIImage(named:"jejuBtnDefault"), for: .normal)
+        area8Btn.setImage(UIImage(named:"jejuBtnYellow"), for: .selected)
+        
+     
         
         resetItem = UIBarButtonItem(image:UIImage(named: "filterRefresh.png") , style: .plain, target: self, action: #selector(refreshClicked))
         resetItem.tintColor = UIColor.init(displayP3Red: 119/255, green: 119/255, blue: 119/2515, alpha: 1)
@@ -56,6 +73,7 @@ class FilterVC: UIViewController {
         navigationItem.rightBarButtonItems = [resetItem]
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,237 +83,163 @@ class FilterVC: UIViewController {
     
     @objc func refreshClicked(){
         
-        cell0 = true
-        cell1 = false
-        cell2 = false
-        cell3 = false
-        cell4 = false
-        cell5 = false
-        cell6 = false
-        cell7 = false
-        cell8 = false
+
     }
     
-
-    
-}
-
-extension FilterVC:UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    @IBAction func sliderAction(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
         
-        return self.area.count
+        maxDate.text = "\(currentValue)일"
+        
+        if(currentValue == 15){
+            maxDate.text = "\(currentValue)일 이상"
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AreaCollectionViewCell
+    
+    @IBAction func areaAllClickAction(_ sender: Any) {
         
+       allBtn.isSelected = true
+        area1Btn.isSelected = false
+         area2Btn.isSelected = false
+         area3Btn.isSelected = false
+         area4Btn.isSelected = false
+         area5Btn.isSelected = false
+         area6Btn.isSelected = false
+         area7Btn.isSelected = false
+         area8Btn.isSelected = false
         
-        cell.areaImage.image = self.area[indexPath.item]
-        //print(self.area[indexPath.row])
-        
-        return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-      
-        if (kind == UICollectionView.elementKindSectionFooter) {
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reusablefooter, for: indexPath) as! FooterCRView
-       
-            // Customize footerView here
-            return footer
-
-        } else if (kind == UICollectionView.elementKindSectionHeader) {
-            
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: resusableheader, for: indexPath) as! FilterCRView
-            
-            return header
-        }
-        fatalError()
-    }
-}
-    
- 
-    
-
-
-extension FilterVC: UICollectionViewDelegate{
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-
-        let cell = self.collectionView.cellForItem(at: indexPath) as! AreaCollectionViewCell
+    @IBAction func area1ClickAction(_ sender: Any) {
         
-      
-        
-        
-        if indexPath.row == 0 {
-            if cell0 == true{
-                cell.areaImage.image = UIImage(named: "wholeAreaBtnYellow")
-                cell0 = false
-
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "wholeAreaBtnDefault")
-                cell0 = true
-            }
-            
-            
-        }else if indexPath.row == 1 {
-            
-            if cell1 == false{
-                cell.areaImage.image = UIImage(named: "seoulBtnYellow")
-                
-                cell1 = true
-
-                
-               
-                
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "seoulBtnDefault")
-                cell1 = false
-            }
-        }else if indexPath.row == 2{
-            if cell2 == false{
-                cell.areaImage.image = UIImage(named: "gyeonggilBtnYellow")
-                cell2 = true
-                
-               
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "gyeonggilBtnDefault")
-                cell2 = false
-            }
-            
-        }else if indexPath.row == 3 {
-            if cell3 == false{
-                cell.areaImage.image = UIImage(named: "incheonBtnYellow")
-                cell3 = true
-
-                
-               
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "incheonBtnDefault")
-                cell3 = false
-            }
-            
-        }else if indexPath.row == 4 {
-            if cell4 == false{
-                cell.areaImage.image = UIImage(named: "gangwonBtnYellow")
-                cell4 = true
-
-                
-               
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "gangwonBtnDefault")
-                cell4 = false
-            }
-            
-        }
-        else if indexPath.row == 5{
-            if cell5 == false{
-                cell.areaImage.image = UIImage(named: "chungcheongBtnYellow")
-                cell5 = true
-
-                
-               
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "chungcheongBtnDefault")
-                cell5 = false
-            }
-            
-        }else if indexPath.row == 6{
-            if cell6 == false{
-                cell.areaImage.image = UIImage(named: "jeollaBtnYellow")
-                cell6 = true
-
-               
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "jeollaBtnDefault")
-                cell6 = false
-            }
-        }else if indexPath.row == 7{
-            if cell7 == false{
-                cell.areaImage.image = UIImage(named: "gyeongsangBtnYellow")
-                cell7 = true
-          
-                
-                
-            }else{
-                cell.areaImage.image = UIImage(named: "gyeongsangBtnDefault")
-                cell7 = false
-            }
-            
-        }else if indexPath.row == 8{
-            if cell8 == false{
-                cell.areaImage.image = UIImage(named: "jejuBtnYellow")
-                cell8 = true
-
-
-                
-              
-            }
-            else{
-                cell.areaImage.image = UIImage(named: "jejuBtnDefault")
-                cell8 = false
-            }
-        }
-        
+       area1Btn.isSelected = true
+        allBtn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
         
     }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    @IBAction func area2ClickAction(_ sender: Any) {
         
-        //TODO: 각 버튼이 선택될 경우에만 그 버튼이 true임을 앱이 아는 것 같다. 해결방법?
+        area2Btn.isSelected = true
+        allBtn.isSelected = false
+        area1Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
+    }
+    
+    @IBAction func area3ClickAction(_ sender: Any) {
         
-        let unselectedCell:AreaCollectionViewCell = collectionView.cellForItem(at: indexPath)! as! AreaCollectionViewCell
-        
-        if indexPath.row == 0 {
-            
-            unselectedCell.areaImage.image = UIImage(named: "wholeAreaBtnYellow")
-            cell0 = false
-            print("0 didnt click")
-  
-        }
-        if indexPath.row == 1{
-            
-            unselectedCell.areaImage.image = UIImage(named: "seoulBtnDefault")
-            cell1 = false
-            print("1 didnt click")
-        }
-        if indexPath.row == 2{
-            unselectedCell.areaImage.image = UIImage(named: "gyeonggilBtnDefault")
-            cell2 = false
-        }
-        if indexPath.row == 3 {
-            unselectedCell.areaImage.image = UIImage(named: "incheonBtnDefault")
-            cell3 = false
-        }
-        if indexPath.row == 4{
-            unselectedCell.areaImage.image = UIImage(named: "gangwonBtnDefault")
-            cell4 = false
-        }
-        if indexPath.row == 5{
-            unselectedCell.areaImage.image = UIImage(named: "chungcheongBtnDefault")
-            cell5 = false
-        }
-        if indexPath.row == 6{
-            unselectedCell.areaImage.image = UIImage(named: "jeollaBtnDefault")
-            cell6 = false
-        }
-        if indexPath.row == 7{
-            unselectedCell.areaImage.image = UIImage(named: "gyeongsangBtnDefault")
-            cell7 = false
-        }
-        if indexPath.row == 8{
-            unselectedCell.areaImage.image = UIImage(named: "jejuBtnDefault")
-            cell8 = false
-        }
-        
-        //        unselectedCell.contentView.dropShadow(color: UIColor.black, opacity: 0.16, offSet: CGSize.init(width: 0, height: 0.5), radius: 10, scale: true)
+        area3Btn.isSelected = true
+        allBtn.isSelected = false
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
         
     }
+    @IBAction func area4ClickAction(_ sender: Any) {
+        
+        area4Btn.isSelected = true
+        allBtn.isSelected = false
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
+        
+    }
+    
+    @IBAction func area5ClickAction(_ sender: Any) {
+        
+        area5Btn.isSelected = true
+        allBtn.isSelected = false
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
+        
+    }
+    
+    @IBAction func area6ClickAction(_ sender: Any) {
+        area6Btn.isSelected = true
+        allBtn.isSelected = false
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
+        
+    }
+    
+    @IBAction func area7ClickAction(_ sender: Any) {
+        
+        area7Btn.isSelected = true
+        allBtn.isSelected = false
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area8Btn.isSelected = false
+        
+    }
+    
+    @IBAction func area8ClickAction(_ sender: Any) {
+        
+        area8Btn.isSelected = true
+        allBtn.isSelected = false
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        
+    }
+    
+    
+    @IBAction func kindAction(_ sender: UIButton) {
+        dogBtn.setImage(UIImage(named:"filterDogIconGrey"), for: .normal)
+        dogBtn.setImage(UIImage(named:"filterDogIconYellow"), for: .selected)
+        catBtn.setImage(UIImage(named:"filterCatIconGrey"), for: .normal)
+        catBtn.setImage(UIImage(named:"filterCatIconYellow"), for: .selected)
+        
+        
+        if sender == dogBtn{
+            dogBtn.isSelected = true
+            catBtn.isSelected = false
+            dogLabel.textColor = UIColor.init(red: 1, green: 194/255, blue: 51/255, alpha: 1)
+            catLabel.textColor =  UIColor.init(red: 119/255, green: 119/255, blue: 119/255, alpha: 1)
+            
+        }else if sender == catBtn{
+            catBtn.isSelected = true
+            dogBtn.isSelected = false
+            catLabel.textColor = UIColor.init(red: 1, green: 194/255, blue: 51/255, alpha: 1)
+            dogLabel.textColor = UIColor.init(red: 119/255, green: 119/255, blue: 119/255, alpha: 1)
+            
+        }
+    }
+    
 }
