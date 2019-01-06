@@ -81,7 +81,7 @@ struct DuplicateService: APIManager, Requestable {
     
     func signUp(id: String, password: String, name: String, birth: String, phone: String, email: String, profileImgFile: UIImage, completion: @escaping () -> Void) {
         
-        let headers = [
+        let headers: HTTPHeaders = [
             "Content-Type" : "multipart/form-data"
         ]
         

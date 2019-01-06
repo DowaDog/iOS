@@ -549,6 +549,7 @@
 		F5508A3021D4D8DB00BE73FF /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				F566A47A21E23EE000FE958B /* MyPage */,
 				4C03252721E1E275001208D8 /* Find */,
 				F5609D9821E1D3270090E3B6 /* Common */,
 				F5609D9721E1D3180090E3B6 /* Login */,
@@ -627,6 +628,13 @@
 				F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		F566A47A21E23EE000FE958B /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		F58ADAA221DA2ECA00231B27 /* Adopt */ = {
