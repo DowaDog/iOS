@@ -414,15 +414,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eo-ny-QZZ" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
                                 <rect key="frame" x="56" y="338" width="263" height="41"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4y8-b6-Bck">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4y8-b6-Bck">
                                         <rect key="frame" x="16" y="6" width="231" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="LMu-m2-04k"/>
                                             <constraint firstAttribute="width" constant="231" id="dfo-VC-2nk"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -437,31 +437,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpN-Sh-o3H" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
                                 <rect key="frame" x="56" y="390" width="263" height="41"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="njV-9n-gyJ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="njV-9n-gyJ">
                                         <rect key="frame" x="16" y="6" width="231" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="3Y5-Hu-1eS"/>
+                                    <constraint firstAttribute="trailing" secondItem="njV-9n-gyJ" secondAttribute="trailing" constant="16" id="B1C-0N-mCj"/>
+                                    <constraint firstItem="njV-9n-gyJ" firstAttribute="leading" secondItem="HpN-Sh-o3H" secondAttribute="leading" constant="16" id="VcU-cl-cCT"/>
+                                    <constraint firstItem="njV-9n-gyJ" firstAttribute="top" secondItem="HpN-Sh-o3H" secondAttribute="top" constant="6" id="ql8-TU-zmW"/>
+                                    <constraint firstAttribute="bottom" secondItem="njV-9n-gyJ" secondAttribute="bottom" constant="6" id="xYA-8i-BM7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-a8-3Iu" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
-                                <rect key="frame" x="56" y="440" width="263" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-a8-3Iu" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
+                                <rect key="frame" x="56" y="442" width="263" height="41"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5Q-7a-26o">
-                                        <rect key="frame" x="16" y="4" width="239" height="31"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l5Q-7a-26o">
+                                        <rect key="frame" x="16" y="6" width="231" height="29"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="ao8-A3-7xa"/>
-                                            <constraint firstAttribute="width" constant="239" id="nXQ-d6-Gif"/>
+                                            <constraint firstAttribute="height" constant="29" id="ao8-A3-7xa"/>
+                                            <constraint firstAttribute="width" constant="231" id="nXQ-d6-Gif"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-8x-Czb">
@@ -481,6 +483,12 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="l5Q-7a-26o" secondAttribute="trailing" constant="16" id="8Wt-dt-qED"/>
+                                    <constraint firstAttribute="bottom" secondItem="l5Q-7a-26o" secondAttribute="bottom" constant="6" id="d02-Tc-MsL"/>
+                                    <constraint firstItem="l5Q-7a-26o" firstAttribute="top" secondItem="i8X-a8-3Iu" secondAttribute="top" constant="6" id="lr8-I6-AUs"/>
+                                    <constraint firstItem="l5Q-7a-26o" firstAttribute="leading" secondItem="i8X-a8-3Iu" secondAttribute="leading" constant="16" id="zjs-A3-AeL"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ios-CM-3a7" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
                                 <rect key="frame" x="56" y="492" width="263" height="41"/>
@@ -496,55 +504,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-R5-nX7">
-                                        <rect key="frame" x="199" y="5" width="52" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="4ib-R5-nX7" secondAttribute="height" multiplier="26:15" id="4tz-SY-W5M"/>
-                                            <constraint firstAttribute="width" constant="52" id="98u-f4-hMY"/>
-                                            <constraint firstAttribute="height" constant="30" id="ufB-7b-RMp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <state key="normal" title="인증">
-                                            <color key="titleColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="phoneCheckAction:" destination="Q1e-IH-1WM" eventType="touchUpInside" id="Juj-0u-Vbt"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opl-g8-Peo" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
-                                <rect key="frame" x="56" y="544" width="263" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증 번호를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yd2-EG-xDv">
-                                        <rect key="frame" x="16" y="4" width="188" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="29" id="OjQ-87-uSw"/>
-                                            <constraint firstAttribute="width" constant="188" id="ci9-W8-6J4"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=":00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0m-Fc-fqE">
-                                        <rect key="frame" x="224.5" y="10" width="21.5" height="16"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <color key="textColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsg-TF-2lt">
-                                        <rect key="frame" x="216" y="10" width="9" height="16"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <color key="textColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="U0m-Fc-fqE" firstAttribute="leading" secondItem="Xsg-TF-2lt" secondAttribute="trailing" constant="-0.5" id="5RP-5a-QO1"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKM-8n-2fG">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
@@ -586,14 +547,10 @@
                     <navigationItem key="navigationItem" id="IFr-Ao-Yjc"/>
                     <connections>
                         <outlet property="birthTextField" destination="njV-9n-gyJ" id="txx-WI-R2F"/>
-                        <outlet property="checkView" destination="opl-g8-Peo" id="W0F-8A-Dvg"/>
                         <outlet property="emailTextField" destination="RW4-u0-ZTt" id="Qe6-wT-hax"/>
-                        <outlet property="firstTimeLabel" destination="Xsg-TF-2lt" id="BhC-LJ-tVV"/>
                         <outlet property="nameTextField" destination="4y8-b6-Bck" id="NIi-WK-fed"/>
                         <outlet property="nextBtn" destination="AKM-8n-2fG" id="itK-H9-Hle"/>
                         <outlet property="phoneNumbTextField" destination="l5Q-7a-26o" id="XBQ-JW-1yt"/>
-                        <outlet property="timeLabel" destination="U0m-Fc-fqE" id="Ocq-QF-nR7"/>
-                        <outlet property="verifyBtn" destination="4ib-R5-nX7" id="t3c-OI-G6T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgX-Zu-SVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
