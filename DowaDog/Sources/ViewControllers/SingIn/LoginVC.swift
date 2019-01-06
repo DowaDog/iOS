@@ -13,16 +13,21 @@ class LoginVC: UIViewController {
     var emptyCheck = false
     
     @IBOutlet weak var idTextField: UITextField!
-    
     @IBOutlet weak var pwTextField: UITextField!
     
     @IBOutlet weak var loginBtn: UIButton!
     
-    
     @IBOutlet weak var aroundBtn: UIButton!
+    
+    var token = [Token]()
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackBtn()
         
         loginBtn.circleRadius()
         aroundBtn.circleRadius()
@@ -31,6 +36,8 @@ class LoginVC: UIViewController {
         idTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         
+        
+        initGestureRecognizer()
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -43,13 +50,8 @@ class LoginVC: UIViewController {
         if idTextField.text != "" {
             if pwTextField.text != ""{
                 emptyCheck = true
-                
-                
             }
         }
-        
-        
-        
     }
     
     
@@ -58,10 +60,47 @@ class LoginVC: UIViewController {
             self.showToast(controller: self, message: "아이디와 비밀버호를 모두 입력했는지 확인하세요!", seconds: 1.0)
         }
         else {
-            self.showToast(controller: self, message: "홈으로 이동 총총", seconds: 1.0)
+            
+            
+            guard let id = idTextField.text else { return }
+            guard let password = pwTextField.text else { return }
+            
+            LoginService.shared.login(id: id, password: password) { (data) in
+                
+                self.view.endEditing(true)
+                
+                UserDefaults.standard.set(data.accessToken?.data, forKey: "accessToken")
+                UserDefaults.standard.set(data.refreshToken?.data, forKey: "accessToken")
+                
+                let login = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeNav") as! UINavigationController
+                
+                self.present(login, animated: true, completion: nil)
+                
+                self.showToast(controller: self, message: "홈으로 이동 총총", seconds: 1.0)
+            }
         }
+    }
+}
+
+extension LoginVC: UIGestureRecognizerDelegate {
+    
+    func initGestureRecognizer() {
+        let textViewTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextView(_:)))
+        textViewTap.delegate = self
+        view.addGestureRecognizer(textViewTap)
+    }
+    
+    @objc func handleTapTextView(_ sender: UITapGestureRecognizer){
+        self.idTextField.resignFirstResponder()
+        self.pwTextField.resignFirstResponder()
     }
     
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if (touch.view?.isDescendant(of: idTextField))! || (touch.view?.isDescendant(of: pwTextField))! {
+            
+            return false
+        }
+        return true
+    }
 }
-
