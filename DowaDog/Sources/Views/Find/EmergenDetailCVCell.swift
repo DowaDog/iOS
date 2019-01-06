@@ -15,6 +15,7 @@ class EmergenDetailCVCell: UICollectionViewCell {
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var kindImage: UIImageView!
     
+    @IBOutlet weak var sexImage: UIImageView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var aboutLabel: UILabel!
     override func awakeFromNib() {

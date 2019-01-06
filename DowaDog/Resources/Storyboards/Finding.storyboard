@@ -669,6 +669,7 @@
                                             <outlet property="dayLabel" destination="6LU-pL-joc" id="xUQ-TB-zhv"/>
                                             <outlet property="heartBtn" destination="eVz-0J-B6I" id="NKx-ar-kub"/>
                                             <outlet property="kindImage" destination="eBu-cT-g8w" id="YBi-wS-gP9"/>
+                                            <outlet property="sexImage" destination="p9h-Ur-ea3" id="SPT-6k-1Yb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

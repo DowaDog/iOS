@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "manIcon1227.png",
       "idiom" : "universal",
+      "filename" : "manIcon1227.png",
       "scale" : "1x"
     },
     {
-      "filename" : "manIcon1227@2x.png",
       "idiom" : "universal",
+      "filename" : "manIcon1227@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "manIcon1227@3x.png",
       "idiom" : "universal",
+      "filename" : "manIcon1227@3x.png",
       "scale" : "3x"
     }
   ],
