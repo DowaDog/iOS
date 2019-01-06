@@ -441,7 +441,7 @@
                                         <rect key="frame" x="16" y="6" width="231" height="29"/>
                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -460,7 +460,7 @@
                                         <rect key="frame" x="16" y="6" width="179" height="29"/>
                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-8x-Czb">
                                         <rect key="frame" x="203" y="6" width="52" height="29"/>
@@ -499,7 +499,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="tel"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -565,10 +565,10 @@
                     <navigationItem key="navigationItem" id="IFr-Ao-Yjc"/>
                     <connections>
                         <outlet property="birthTextField" destination="njV-9n-gyJ" id="txx-WI-R2F"/>
-                        <outlet property="emailTextField" destination="RW4-u0-ZTt" id="Qe6-wT-hax"/>
+                        <outlet property="emailTextField" destination="l5Q-7a-26o" id="c2L-MM-hEz"/>
                         <outlet property="nameTextField" destination="4y8-b6-Bck" id="NIi-WK-fed"/>
                         <outlet property="nextBtn" destination="AKM-8n-2fG" id="itK-H9-Hle"/>
-                        <outlet property="phoneNumbTextField" destination="l5Q-7a-26o" id="XBQ-JW-1yt"/>
+                        <outlet property="phoneNumbTextField" destination="RW4-u0-ZTt" id="aRa-L0-kPJ"/>
                         <outlet property="topConstraint" destination="OWj-7R-fuF" id="LJw-ne-sS5"/>
                     </connections>
                 </viewController>

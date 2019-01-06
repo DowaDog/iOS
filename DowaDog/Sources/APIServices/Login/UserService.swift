@@ -18,20 +18,23 @@ struct UserService: APIManager, Requestable {
     ]
     
     // 이메일 중복검사 api
-    func duplicateEmail(email: String, completion: @escaping (User) -> Void) {
+    func duplicateEmail(email: String, completion: @escaping () -> Void) {
         let queryURL = signUpURL + "/duplicateEmail?email=\(email)"
         
         gettable(queryURL, body: nil, header: nil) { res in
             switch res {
             case .success(let value):
-                guard let duplicateEmail = value.data else {return}
+                
+                
+                
                 
                 print(".success=========================")
                 print("value: ")
                 print(value)
                 print(".success=========================")
                 
-                completion(duplicateEmail)
+                completion()
+                
             case .error(let error):
                 print(".error============================")
                 print("error: ")
@@ -41,5 +44,36 @@ struct UserService: APIManager, Requestable {
         }
     }
     
+    
+    func duplicateId(id: String, completion: @escaping () -> Void) {
+        
+        let queryURL = signUpURL + "/duplicateId?id=\(id)"
+
+        let body = [
+            "id" : id
+        ]
+        
+        gettable(queryURL, body: body, header: headers) {
+            res in
+            switch res {
+            case .success(let value):
+                
+                
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                completion()
+            case .error(let error):
+                
+                print(".error============================")
+                print("error: ")
+                print(error)
+                print(".error============================")
+                
+            }
+        }
+    }
     
 }

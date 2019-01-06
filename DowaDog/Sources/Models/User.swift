@@ -10,13 +10,41 @@ import ObjectMapper
 
 struct User: Mappable {
     
+    var id: String?
+    var password: String?
+    var name: String?
+    var birth: Date?
+    var phone: String?
     var email: String?
+    var gender: Character?
+    var deviceToken: String?
+    var type: String?
+    var profileImgFile: String?
+    var pushAllow: Bool?
     
     init?(map: Map) {
         
     }
     
     mutating func mapping(map: Map) {
+        id <- map["id"]
+        password <- map["password"]
+        name <- map["name"]
+        birth <- map["birth"]
+        phone <- map["phone"]
         email <- map["email"]
+        gender <- map["gender"]
+        deviceToken <- map["deviceToken"]
+        type <- map["type"]
+        profileImgFile <- map["profileImgFIle"]
+        pushAllow <- map["pushAllow"]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let dateString = map["birth"].currentValue as? String,
+            let _date = dateFormatter.date(from: dateString) {
+            birth = _date
+        }
     }
 }

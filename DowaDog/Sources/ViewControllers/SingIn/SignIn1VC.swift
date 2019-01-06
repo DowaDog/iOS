@@ -35,9 +35,6 @@ class SignIn1VC: UIViewController {
         
         initGestureRecognizer()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
@@ -78,24 +75,16 @@ class SignIn1VC: UIViewController {
     }
     
     
-    @IBAction func emailCheckAction(_ sender: Any) {
-        self.showToast(controller: self, message: "중복 여부 판단", seconds: 1.0)
-        
+    @IBAction func emailCheckAction(_ sender: UIButton) {
         
         guard let email = emailTextField.text else {return}
-        self.showToast(controller: self, message: "after guard", seconds: 1.0)
         
-        UserService.shared.duplicateEmail(email: email) { (data) in
-            self.showToast(controller: self, message: "통신", seconds: 1.0)
-            self.view.endEditing(true)
+        UserService.shared.duplicateEmail(email: email) {
+            
+            print("성공")
             
             self.emailCheck = true
-            
-            print("data =====================")
-            print(data)
-            print("data =====================")
         }
-        
         
         
         if emptyCheck == true {
