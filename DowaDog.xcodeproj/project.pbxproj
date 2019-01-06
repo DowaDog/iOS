@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03251F21E13FC0001208D8 /* PostCRView.swift */; };
+		4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252121E1400C001208D8 /* PostCVCell.swift */; };
 		4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BD21D8906700301D52 /* Filter.storyboard */; };
 		4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BF21D8909900301D52 /* Finding.storyboard */; };
 		4C0E95C221D890A900301D52 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95C121D890A900301D52 /* Login.storyboard */; };
@@ -106,6 +108,8 @@
 
 /* Begin PBXFileReference section */
 		4AF23DFCB82EAED1106940D1 /* Pods-DowaDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.release.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.release.xcconfig"; sourceTree = "<group>"; };
+		4C03251F21E13FC0001208D8 /* PostCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCRView.swift; sourceTree = "<group>"; };
+		4C03252121E1400C001208D8 /* PostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCVCell.swift; sourceTree = "<group>"; };
 		4C0E95BD21D8906700301D52 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		4C0E95BF21D8909900301D52 /* Finding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Finding.storyboard; sourceTree = "<group>"; };
 		4C0E95C121D890A900301D52 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -372,6 +376,8 @@
 				F524E9E721DF783E0001CA5A /* CommunityTwoTVC.swift */,
 				F524E9E921DF784E0001CA5A /* CommunityThreeTVC.swift */,
 				F524E9EB21DF78600001CA5A /* CommunityFourTVC.swift */,
+				4C03251F21E13FC0001208D8 /* PostCRView.swift */,
+				4C03252121E1400C001208D8 /* PostCVCell.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -766,6 +772,7 @@
 				F5609D6B21E11C6F0090E3B6 /* ImageCRView.swift in Sources */,
 				4CF5A64E21DCB33C00969511 /* CardVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
+				4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */,
 				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
 				F5609D8421E146150090E3B6 /* Requestable.swift in Sources */,
@@ -807,6 +814,7 @@
 				F5609D8821E146390090E3B6 /* ResponseArray.swift in Sources */,
 				F5609D7E21E143990090E3B6 /* APIManager.swift in Sources */,
 				4C0E95E721D8934600301D52 /* CustomUISlider.swift in Sources */,
+				4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */,
 				F5609D5921E11B240090E3B6 /* MyWantDogVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
