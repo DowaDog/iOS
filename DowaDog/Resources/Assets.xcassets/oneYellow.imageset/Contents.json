@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "signCameraIcon.png",
+      "filename" : "oneYellow.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "signCameraIcon@2x.png",
+      "filename" : "oneYellow@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "signCameraIcon@3x.png",
+      "filename" : "oneYellow@3x.png",
       "scale" : "3x"
     }
   ],
