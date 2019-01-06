@@ -16,6 +16,9 @@
         <array key="NanumSquareExtraBold.ttf">
             <string>NanumSquareEB</string>
         </array>
+        <array key="NanumSquareRegular.ttf">
+            <string>NanumSquareR</string>
+        </array>
     </customFonts>
     <scenes>
         <!--FilterVC-->
@@ -289,7 +292,7 @@
                                             <constraint firstAttribute="height" constant="21" id="hQ8-q7-fuQ"/>
                                             <constraint firstAttribute="width" constant="132" id="rxV-7O-ubt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
                                         <color key="textColor" red="0.45490837099999998" green="0.45489025119999998" blue="0.4549025297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -300,7 +303,7 @@
                                             <constraint firstAttribute="width" secondItem="AJG-zI-GdP" secondAttribute="height" multiplier="139:21" id="eNL-Rc-ve1"/>
                                             <constraint firstAttribute="height" constant="21" id="qHL-fk-hmN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
                                         <color key="textColor" red="0.45490837099999998" green="0.45489025119999998" blue="0.4549025297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
