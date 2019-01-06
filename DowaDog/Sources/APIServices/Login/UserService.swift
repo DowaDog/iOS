@@ -8,32 +8,30 @@
 
 import Alamofire
 
-struct LoginService: APIManager, Requestable {
+struct UserService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<TokenType<Token>>
-    static let shared = LoginService()
-    let loginURL = url("/api/auth/login")
+    typealias NetworkData = ResponseObject<User>
+    static let shared = UserService()
+    let signUpURL = url("/api/signup")
     let headers: HTTPHeaders = [
         "Content-Type" : "application/json"
     ]
     
-    //로그인 api
-    func login(id: String, password: String, completion: @escaping (TokenType<Token>) -> Void) {
-        let body = [
-            "id" : id,
-            "password" : password
-            ]
+    // 이메일 중복검사 api
+    func duplicateEmail(email: String, completion: @escaping (User) -> Void) {
+        let queryURL = signUpURL + "/duplicateEmail?email=\(email)"
         
-        postable(loginURL, body: body, header: headers) { res in
+        gettable(queryURL, body: nil, header: nil) { res in
             switch res {
             case .success(let value):
+                guard let duplicateEmail = value.data else {return}
+                
                 print(".success=========================")
                 print("value: ")
                 print(value)
                 print(".success=========================")
                 
-                guard let token = value.data else {return}
-                completion(token)
+                completion(duplicateEmail)
             case .error(let error):
                 print(".error============================")
                 print("error: ")

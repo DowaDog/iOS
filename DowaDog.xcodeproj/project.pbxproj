@@ -100,6 +100,8 @@
 		F5609D8A21E146480090E3B6 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8921E146480090E3B6 /* ResponseObject.swift */; };
 		F5609D9021E1A25D0090E3B6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8F21E1A25D0090E3B6 /* Token.swift */; };
 		F5609D9421E1AE600090E3B6 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9321E1AE600090E3B6 /* TokenType.swift */; };
+		F5609D9621E1D3140090E3B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9521E1D3140090E3B6 /* UserService.swift */; };
+		F5609D9A21E1D56D0090E3B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9921E1D56D0090E3B6 /* User.swift */; };
 		F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */; };
 		F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */; };
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
@@ -205,6 +207,8 @@
 		F5609D8921E146480090E3B6 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		F5609D8F21E1A25D0090E3B6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F5609D9321E1AE600090E3B6 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
+		F5609D9521E1D3140090E3B6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F5609D9921E1D56D0090E3B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocumentVC.swift; sourceTree = "<group>"; };
 		F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep1VC.swift; sourceTree = "<group>"; };
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -472,6 +476,7 @@
 			children = (
 				F5609D8F21E1A25D0090E3B6 /* Token.swift */,
 				F5609D8721E146390090E3B6 /* ResponseArray.swift */,
+				F5609D9921E1D56D0090E3B6 /* User.swift */,
 				F5609D9321E1AE600090E3B6 /* TokenType.swift */,
 				F5609D8921E146480090E3B6 /* ResponseObject.swift */,
 			);
@@ -529,6 +534,8 @@
 				F5609D8321E146150090E3B6 /* Requestable.swift */,
 				F5609D8121E146080090E3B6 /* NetworkResult.swift */,
 				4C03252321E1DC84001208D8 /* NewDogService.swift */,
+				F5609D9821E1D3270090E3B6 /* Common */,
+				F5609D9721E1D3180090E3B6 /* Login */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -585,6 +592,25 @@
 				F5609D7B21E11D610090E3B6 /* ScrapCell.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		F5609D9721E1D3180090E3B6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F5609D7F21E145F30090E3B6 /* LoginService.swift */,
+				F5609D9521E1D3140090E3B6 /* UserService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F5609D9821E1D3270090E3B6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F5609D7D21E143990090E3B6 /* APIManager.swift */,
+				F5609D8321E146150090E3B6 /* Requestable.swift */,
+				F5609D8121E146080090E3B6 /* NetworkResult.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F58ADAA221DA2ECA00231B27 /* Adopt */ = {
@@ -755,7 +781,9 @@
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
 				F5609D7A21E11D4D0090E3B6 /* MyWriteCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
+				F5609D9621E1D3140090E3B6 /* UserService.swift in Sources */,
 				F5609D6921E11C420090E3B6 /* FooterCRView.swift in Sources */,
+				F5609D9A21E1D56D0090E3B6 /* User.swift in Sources */,
 				4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */,
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
 				4C03252421E1DC84001208D8 /* NewDogService.swift in Sources */,
