@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03251F21E13FC0001208D8 /* PostCRView.swift */; };
 		4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252121E1400C001208D8 /* PostCVCell.swift */; };
-		4C03252421E1DC84001208D8 /* NewDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252321E1DC84001208D8 /* NewDogService.swift */; };
 		4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BD21D8906700301D52 /* Filter.storyboard */; };
 		4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BF21D8909900301D52 /* Finding.storyboard */; };
 		4C0E95C221D890A900301D52 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95C121D890A900301D52 /* Login.storyboard */; };
@@ -92,16 +91,16 @@
 		F5609D7821E11D2E0090E3B6 /* MyWantCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D7721E11D2E0090E3B6 /* MyWantCVCell.swift */; };
 		F5609D7A21E11D4D0090E3B6 /* MyWriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D7921E11D4D0090E3B6 /* MyWriteCell.swift */; };
 		F5609D7C21E11D610090E3B6 /* ScrapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D7B21E11D610090E3B6 /* ScrapCell.swift */; };
-		F5609D7E21E143990090E3B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D7D21E143990090E3B6 /* APIManager.swift */; };
-		F5609D8021E145F30090E3B6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D7F21E145F30090E3B6 /* LoginService.swift */; };
-		F5609D8221E146080090E3B6 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8121E146080090E3B6 /* NetworkResult.swift */; };
-		F5609D8421E146150090E3B6 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8321E146150090E3B6 /* Requestable.swift */; };
 		F5609D8821E146390090E3B6 /* ResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8721E146390090E3B6 /* ResponseArray.swift */; };
 		F5609D8A21E146480090E3B6 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8921E146480090E3B6 /* ResponseObject.swift */; };
 		F5609D9021E1A25D0090E3B6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8F21E1A25D0090E3B6 /* Token.swift */; };
 		F5609D9421E1AE600090E3B6 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9321E1AE600090E3B6 /* TokenType.swift */; };
 		F5609D9621E1D3140090E3B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9521E1D3140090E3B6 /* UserService.swift */; };
 		F5609D9A21E1D56D0090E3B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9921E1D56D0090E3B6 /* User.swift */; };
+		F5609D9C21E1E18A0090E3B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9B21E1E18A0090E3B6 /* APIManager.swift */; };
+		F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9D21E1E1A60090E3B6 /* Requestable.swift */; };
+		F5609DA021E1E1DA0090E3B6 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */; };
+		F5609DA221E1E1F00090E3B6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609DA121E1E1F00090E3B6 /* LoginService.swift */; };
 		F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */; };
 		F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */; };
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
@@ -113,7 +112,6 @@
 		4AF23DFCB82EAED1106940D1 /* Pods-DowaDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.release.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.release.xcconfig"; sourceTree = "<group>"; };
 		4C03251F21E13FC0001208D8 /* PostCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCRView.swift; sourceTree = "<group>"; };
 		4C03252121E1400C001208D8 /* PostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCVCell.swift; sourceTree = "<group>"; };
-		4C03252321E1DC84001208D8 /* NewDogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogService.swift; sourceTree = "<group>"; };
 		4C0E95BD21D8906700301D52 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		4C0E95BF21D8909900301D52 /* Finding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Finding.storyboard; sourceTree = "<group>"; };
 		4C0E95C121D890A900301D52 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -199,16 +197,16 @@
 		F5609D7721E11D2E0090E3B6 /* MyWantCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWantCVCell.swift; sourceTree = "<group>"; };
 		F5609D7921E11D4D0090E3B6 /* MyWriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWriteCell.swift; sourceTree = "<group>"; };
 		F5609D7B21E11D610090E3B6 /* ScrapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapCell.swift; sourceTree = "<group>"; };
-		F5609D7D21E143990090E3B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		F5609D7F21E145F30090E3B6 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		F5609D8121E146080090E3B6 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
-		F5609D8321E146150090E3B6 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		F5609D8721E146390090E3B6 /* ResponseArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseArray.swift; sourceTree = "<group>"; };
 		F5609D8921E146480090E3B6 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		F5609D8F21E1A25D0090E3B6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F5609D9321E1AE600090E3B6 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		F5609D9521E1D3140090E3B6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F5609D9921E1D56D0090E3B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F5609D9B21E1E18A0090E3B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F5609D9D21E1E1A60090E3B6 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		F5609DA121E1E1F00090E3B6 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocumentVC.swift; sourceTree = "<group>"; };
 		F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep1VC.swift; sourceTree = "<group>"; };
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -343,13 +341,6 @@
 			path = Find;
 			sourceTree = "<group>";
 		};
-		4CF5A63621DC917300969511 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		4CF5A64621DC9A1800969511 /* Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,7 +441,6 @@
 		F5508A2221D4D86600BE73FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4CF5A63621DC917300969511 /* API */,
 				F5508A3321D4D93A00BE73FF /* Storyboards */,
 				F5508A2321D4D89200BE73FF /* Fonts */,
 				F5508A1621D4D54400BE73FF /* Assets.xcassets */,
@@ -529,11 +519,6 @@
 		F5508A3021D4D8DB00BE73FF /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				F5609D7D21E143990090E3B6 /* APIManager.swift */,
-				F5609D7F21E145F30090E3B6 /* LoginService.swift */,
-				F5609D8321E146150090E3B6 /* Requestable.swift */,
-				F5609D8121E146080090E3B6 /* NetworkResult.swift */,
-				4C03252321E1DC84001208D8 /* NewDogService.swift */,
 				F5609D9821E1D3270090E3B6 /* Common */,
 				F5609D9721E1D3180090E3B6 /* Login */,
 			);
@@ -597,8 +582,8 @@
 		F5609D9721E1D3180090E3B6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F5609D7F21E145F30090E3B6 /* LoginService.swift */,
 				F5609D9521E1D3140090E3B6 /* UserService.swift */,
+				F5609DA121E1E1F00090E3B6 /* LoginService.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -606,9 +591,9 @@
 		F5609D9821E1D3270090E3B6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F5609D7D21E143990090E3B6 /* APIManager.swift */,
-				F5609D8321E146150090E3B6 /* Requestable.swift */,
-				F5609D8121E146080090E3B6 /* NetworkResult.swift */,
+				F5609D9B21E1E18A0090E3B6 /* APIManager.swift */,
+				F5609D9D21E1E1A60090E3B6 /* Requestable.swift */,
+				F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -768,6 +753,7 @@
 				4C0E95F021D893C400301D52 /* HeaderCRView.swift in Sources */,
 				F5609D4F21E11AC20090E3B6 /* AdoptListVC.swift in Sources */,
 				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
+				F5609DA021E1E1DA0090E3B6 /* NetworkResult.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
 				F5609D5B21E11B3B0090E3B6 /* MyWriteVC.swift in Sources */,
@@ -779,6 +765,7 @@
 				F5609D6321E11BA60090E3B6 /* FindMainVC.swift in Sources */,
 				F5609D7421E11D030090E3B6 /* MyDogCell.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
+				F5609DA221E1E1F00090E3B6 /* LoginService.swift in Sources */,
 				F5609D7A21E11D4D0090E3B6 /* MyWriteCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
 				F5609D9621E1D3140090E3B6 /* UserService.swift in Sources */,
@@ -786,28 +773,27 @@
 				F5609D9A21E1D56D0090E3B6 /* User.swift in Sources */,
 				4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */,
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
-				4C03252421E1DC84001208D8 /* NewDogService.swift in Sources */,
 				F5609D9021E1A25D0090E3B6 /* Token.swift in Sources */,
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				F5609D5721E11B170090E3B6 /* MyScrapVC.swift in Sources */,
+				F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */,
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
 				F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */,
 				F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */,
 				4CF5A64A21DCA0E100969511 /* Page1VC.swift in Sources */,
+				F5609D9C21E1E18A0090E3B6 /* APIManager.swift in Sources */,
 				F524E9EA21DF784E0001CA5A /* CommunityThreeTVC.swift in Sources */,
 				F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */,
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
 				F5609D5F21E11B7B0090E3B6 /* AboutNewDogVC.swift in Sources */,
-				F5609D8021E145F30090E3B6 /* LoginService.swift in Sources */,
 				F5609D6B21E11C6F0090E3B6 /* ImageCRView.swift in Sources */,
 				4CF5A64E21DCB33C00969511 /* CardVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
 				4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */,
 				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
-				F5609D8421E146150090E3B6 /* Requestable.swift in Sources */,
 				F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */,
 				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
 				F5609D5D21E11B6A0090E3B6 /* AboutEmergenVC.swift in Sources */,
@@ -815,7 +801,6 @@
 				F5609D6521E11BB70090E3B6 /* NewDogVC.swift in Sources */,
 				4C0E95E921D8935C00301D52 /* RoundView.swift in Sources */,
 				F5609D9421E1AE600090E3B6 /* TokenType.swift in Sources */,
-				F5609D8221E146080090E3B6 /* NetworkResult.swift in Sources */,
 				F524E9D821DDABBB0001CA5A /* AdoptDocStep4VC.swift in Sources */,
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
@@ -844,7 +829,6 @@
 				F524E9EE21E0AA2F0001CA5A /* CommunityDetailVC.swift in Sources */,
 				F5609D5121E11AD50090E3B6 /* LetterVC.swift in Sources */,
 				F5609D8821E146390090E3B6 /* ResponseArray.swift in Sources */,
-				F5609D7E21E143990090E3B6 /* APIManager.swift in Sources */,
 				4C0E95E721D8934600301D52 /* CustomUISlider.swift in Sources */,
 				4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */,
 				F5609D5921E11B240090E3B6 /* MyWantDogVC.swift in Sources */,

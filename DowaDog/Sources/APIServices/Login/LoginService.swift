@@ -22,7 +22,7 @@ struct LoginService: APIManager, Requestable {
         let body = [
             "id" : id,
             "password" : password
-            ]
+        ]
         
         postable(loginURL, body: body, header: headers) { res in
             switch res {
