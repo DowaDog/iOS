@@ -8,23 +8,36 @@
 
 import UIKit
 
+
 class EmergenDogVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var emergeDogList = [EmergenDog]()
+    
     @IBOutlet weak var navbar: UINavigationItem!
     var reuseIdentifier = "emergenCell"
-    var testImg = [(UIImage(named: "testcat.png")),
-                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png"))
-    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackBtn()
         collectionView.dataSource = self
         collectionView.delegate = self
+
         
         navbar.title = "긴급동물"
         self.setNavigationBarShadow()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        EmergeDogService.shared.getEmergeDogList(offset: 0, limit: 10) { [weak self]
+            (data) in
+            guard let `self` = self else {return}
+            
+            self.emergeDogList = data
+            self.collectionView.reloadData()
+        }
+    }
+        
     @IBAction func filterClickAction(_ sender: Any) {
         
         
@@ -34,19 +47,71 @@ class EmergenDogVC: UIViewController {
         navigationController?.pushViewController(filter, animated: true)
         
     }
+
 }
+
+
+
 extension EmergenDogVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.testImg.count
+        return emergeDogList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EmergenDetailCVCell
-        cell.animalImage.image = self.testImg[indexPath.item]
         
-        //        cell.areaImage.image = self.testImg[indexPath.item]
-        //print(self.area[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EmergenDetailCVCell
+
+        let emergedog = emergeDogList[indexPath.row]
+        
+        //남은 날짜 d-day 계산 부분
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        
+//        var cal = Calendar.current
+//        var date = Date()
+//        var currentDay = cal.component(.day, from: date)
+//
+//        let dday = currentDay - dateFormatter.emergedog.noticeEddt
+        
+        //하단에 들어가는 해당 동물 지역과 종
+        let region = emergedog.region
+        let kind = emergedog.kindCd
+        
+        cell.aboutLabel.text = "[\(region)]\(kind)"
+        
+        //강아지인지 고양이인지 판단
+        if emergedog.type == "dog"{
+            cell.kindImage.image = UIImage(named: "dogIcon1227")
+        }else if emergedog.type == "cat" {
+            cell.kindImage.image = UIImage(named: "catIcon1227")
+        }
+        //암컷 수컷 판단
+        if emergedog.sexCd == "F" {
+            cell.sexImage.image = UIImage(named: "womanIcon1227")
+        }
+        else if emergedog.sexCd == "M" {
+            cell.sexImage.image = UIImage(named: "manIcon1227")
+        }
+        
+//        let day = emergedog.noticeEddt
+//        cell.dayLabel.text = dateFormatter.string(from:emergedog.)
+//
+//          cell.dateLabel.text = dateFormatter.string(from: board.boardDate ?? Date())
+        
+        //하트 클릭여부 판단
+        cell.heartBtn.setImage(UIImage(named: "findingHeartBtnFill.png"), for: .selected)
+        cell.heartBtn.setImage(UIImage(named:"heartBtn"), for: .normal)
+        if emergedog.liked == false{
+            
+          cell.heartBtn.isSelected = true
+            
+        }else if emergedog.liked == true{
+            
+            cell.heartBtn.isSelected = false
+            
+        }
+        
         return cell
     }
     
@@ -61,6 +126,7 @@ extension EmergenDogVC: UICollectionViewDelegate{
                 
                 //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                 navigationController?.pushViewController(dvc, animated: true)
+                
             }
         }
         

@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03251F21E13FC0001208D8 /* PostCRView.swift */; };
 		4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252121E1400C001208D8 /* PostCVCell.swift */; };
-		4C03252921E1E2DE001208D8 /* NewDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252821E1E2DE001208D8 /* NewDogService.swift */; };
+		4C03253021E1FFFE001208D8 /* DogDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252F21E1FFFE001208D8 /* DogDetail.swift */; };
+		4C03253221E20C84001208D8 /* EmergenDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03253121E20C84001208D8 /* EmergenDog.swift */; };
+		4C03253421E21243001208D8 /* EmergeDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03253321E21243001208D8 /* EmergeDogService.swift */; };
+		4C03253621E21985001208D8 /* ImageViewURLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03253521E21985001208D8 /* ImageViewURLExtension.swift */; };
 		4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BD21D8906700301D52 /* Filter.storyboard */; };
 		4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BF21D8909900301D52 /* Finding.storyboard */; };
 		4C0E95C221D890A900301D52 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95C121D890A900301D52 /* Login.storyboard */; };
@@ -114,7 +117,10 @@
 		4AF23DFCB82EAED1106940D1 /* Pods-DowaDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.release.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.release.xcconfig"; sourceTree = "<group>"; };
 		4C03251F21E13FC0001208D8 /* PostCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCRView.swift; sourceTree = "<group>"; };
 		4C03252121E1400C001208D8 /* PostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCVCell.swift; sourceTree = "<group>"; };
-		4C03252821E1E2DE001208D8 /* NewDogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogService.swift; sourceTree = "<group>"; };
+		4C03252F21E1FFFE001208D8 /* DogDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetail.swift; sourceTree = "<group>"; };
+		4C03253121E20C84001208D8 /* EmergenDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDog.swift; sourceTree = "<group>"; };
+		4C03253321E21243001208D8 /* EmergeDogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergeDogService.swift; sourceTree = "<group>"; };
+		4C03253521E21985001208D8 /* ImageViewURLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewURLExtension.swift; sourceTree = "<group>"; };
 		4C0E95BD21D8906700301D52 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		4C0E95BF21D8909900301D52 /* Finding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Finding.storyboard; sourceTree = "<group>"; };
 		4C0E95C121D890A900301D52 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -242,7 +248,16 @@
 		4C03252721E1E275001208D8 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				4C03252821E1E2DE001208D8 /* NewDogService.swift */,
+				4C03253321E21243001208D8 /* EmergeDogService.swift */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		4C03252A21E1E3E7001208D8 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				4C03252F21E1FFFE001208D8 /* DogDetail.swift */,
+				4C03253121E20C84001208D8 /* EmergenDog.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -476,6 +491,7 @@
 		F5508A2C21D4D8BE00BE73FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C03252A21E1E3E7001208D8 /* Find */,
 				F5609D8F21E1A25D0090E3B6 /* Token.swift */,
 				F5609D8721E146390090E3B6 /* ResponseArray.swift */,
 				F5609D9921E1D56D0090E3B6 /* User.swift */,
@@ -507,6 +523,7 @@
 			children = (
 				F501E64921D4DFF6004CD703 /* HomeExtension.swift */,
 				4C0E95DF21D892A800301D52 /* YoonExtension.swift */,
+				4C03253521E21985001208D8 /* ImageViewURLExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -779,6 +796,7 @@
 				F5609D6321E11BA60090E3B6 /* FindMainVC.swift in Sources */,
 				F5609D7421E11D030090E3B6 /* MyDogCell.swift in Sources */,
 				4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */,
+				4C03253221E20C84001208D8 /* EmergenDog.swift in Sources */,
 				F5609DA221E1E1F00090E3B6 /* LoginService.swift in Sources */,
 				F5609D7A21E11D4D0090E3B6 /* MyWriteCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
@@ -789,7 +807,6 @@
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
 				F5609D9021E1A25D0090E3B6 /* Token.swift in Sources */,
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
-				4C03252921E1E2DE001208D8 /* NewDogService.swift in Sources */,
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				F5609D5721E11B170090E3B6 /* MyScrapVC.swift in Sources */,
 				F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */,
@@ -811,8 +828,10 @@
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
 				F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */,
 				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
+				4C03253421E21243001208D8 /* EmergeDogService.swift in Sources */,
 				F5609D5D21E11B6A0090E3B6 /* AboutEmergenVC.swift in Sources */,
 				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
+				4C03253021E1FFFE001208D8 /* DogDetail.swift in Sources */,
 				F5609D6521E11BB70090E3B6 /* NewDogVC.swift in Sources */,
 				4C0E95E921D8935C00301D52 /* RoundView.swift in Sources */,
 				F5609D9421E1AE600090E3B6 /* TokenType.swift in Sources */,
@@ -826,6 +845,7 @@
 				4C0E95CF21D8916200301D52 /* SignIn2VC.swift in Sources */,
 				F5609D4D21E11A5D0090E3B6 /* CustomNavigationBar.swift in Sources */,
 				F5609D5521E11AFC0090E3B6 /* MyPageMainVC.swift in Sources */,
+				4C03253621E21985001208D8 /* ImageViewURLExtension.swift in Sources */,
 				F5609D8A21E146480090E3B6 /* ResponseObject.swift in Sources */,
 				4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */,
 				4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */,
