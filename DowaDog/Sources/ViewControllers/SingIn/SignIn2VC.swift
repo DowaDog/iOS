@@ -73,6 +73,7 @@ class SignIn2VC: UIViewController {
     @IBAction func checkEmailAction(_ sender: Any) {
         self.showToast(controller: self, message: "중복 여부 판단", seconds: 1.0)
         
+        
         idCheck = true
         
         if emptyCheck == true {
@@ -82,4 +83,3 @@ class SignIn2VC: UIViewController {
     }
     
 }
-

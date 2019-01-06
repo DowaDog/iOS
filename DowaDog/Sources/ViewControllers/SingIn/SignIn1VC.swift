@@ -13,15 +13,15 @@ class SignIn1VC: UIViewController {
     var emailCheck = false
     var emptyCheck = false
     
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var birthTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var phoneNumbTextField: UITextField!
     
-    @IBOutlet weak var birthTextField: UITextField!
+    @IBOutlet var topConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var phoneNumbTextField: UITextField!
+    @IBOutlet var nextBtn: UIButton!
     
-    
-    @IBOutlet weak var nextBtn: UIButton!
-    @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -32,9 +32,19 @@ class SignIn1VC: UIViewController {
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         
         setBackBtn()
+        
+        initGestureRecognizer()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterForKeyboardNotifications()
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -70,7 +80,23 @@ class SignIn1VC: UIViewController {
     
     @IBAction func emailCheckAction(_ sender: Any) {
         self.showToast(controller: self, message: "중복 여부 판단", seconds: 1.0)
-        emailCheck = true
+        
+        
+        guard let email = emailTextField.text else {return}
+        self.showToast(controller: self, message: "after guard", seconds: 1.0)
+        
+        UserService.shared.duplicateEmail(email: email) { (data) in
+            self.showToast(controller: self, message: "통신", seconds: 1.0)
+            self.view.endEditing(true)
+            
+            self.emailCheck = true
+            
+            print("data =====================")
+            print(data)
+            print("data =====================")
+        }
+        
+        
         
         if emptyCheck == true {
             endCheck()
@@ -83,3 +109,59 @@ class SignIn1VC: UIViewController {
 
 
 
+extension SignIn1VC: UIGestureRecognizerDelegate {
+    
+    func initGestureRecognizer() {
+        let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
+        textFieldTap.delegate = self
+        view.addGestureRecognizer(textFieldTap)
+    }
+    
+    
+    @objc func handleTapTextField(_ sender: UITapGestureRecognizer){
+        self.nameTextField.resignFirstResponder()
+        self.birthTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if (touch.view?.isDescendant(of: nameTextField))! || (touch.view?.isDescendant(of: birthTextField))! || (touch.view?.isDescendant(of: emailTextField))! {
+            
+            return false
+        }
+        return true
+    }
+    
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.topConstraint.constant = -160
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.topConstraint.constant = 79
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+}
