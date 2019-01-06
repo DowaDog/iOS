@@ -26,8 +26,9 @@ class MyProfileVC: UIViewController {
         profileImage.circleImageView()
         
         self.title = "개인 정보 수정"
-        
     }
+    
+    
     @objc func confirmTapped(){
         //TODO: 확인 선택 시 일어날 액션
     }

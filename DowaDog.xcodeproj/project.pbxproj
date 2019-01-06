@@ -106,6 +106,8 @@
 		F5609DA021E1E1DA0090E3B6 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */; };
 		F5609DA221E1E1F00090E3B6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609DA121E1E1F00090E3B6 /* LoginService.swift */; };
 		F566A47921E221C300FE958B /* ResponseBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A47821E221C300FE958B /* ResponseBool.swift */; };
+		F566A47E21E2416700FE958B /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A47D21E2416700FE958B /* MyPageService.swift */; };
+		F566A48021E2422C00FE958B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A47F21E2422C00FE958B /* MyPage.swift */; };
 		F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */; };
 		F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */; };
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
@@ -217,6 +219,8 @@
 		F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		F5609DA121E1E1F00090E3B6 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		F566A47821E221C300FE958B /* ResponseBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBool.swift; sourceTree = "<group>"; };
+		F566A47D21E2416700FE958B /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
+		F566A47F21E2422C00FE958B /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocumentVC.swift; sourceTree = "<group>"; };
 		F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep1VC.swift; sourceTree = "<group>"; };
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 				4C03252A21E1E3E7001208D8 /* Find */,
 				F5609D8F21E1A25D0090E3B6 /* Token.swift */,
 				F5609D8721E146390090E3B6 /* ResponseArray.swift */,
+				F566A47F21E2422C00FE958B /* MyPage.swift */,
 				F5609D9921E1D56D0090E3B6 /* User.swift */,
 				F5609D9321E1AE600090E3B6 /* TokenType.swift */,
 				F566A47821E221C300FE958B /* ResponseBool.swift */,
@@ -633,6 +638,7 @@
 		F566A47A21E23EE000FE958B /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				F566A47D21E2416700FE958B /* MyPageService.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -835,6 +841,7 @@
 				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
 				F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */,
+				F566A48021E2422C00FE958B /* MyPage.swift in Sources */,
 				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
 				4C03253421E21243001208D8 /* EmergeDogService.swift in Sources */,
 				F5609D5D21E11B6A0090E3B6 /* AboutEmergenVC.swift in Sources */,
@@ -855,6 +862,7 @@
 				F5609D5521E11AFC0090E3B6 /* MyPageMainVC.swift in Sources */,
 				4C03253621E21985001208D8 /* ImageViewURLExtension.swift in Sources */,
 				F5609D8A21E146480090E3B6 /* ResponseObject.swift in Sources */,
+				F566A47E21E2416700FE958B /* MyPageService.swift in Sources */,
 				4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */,
 				4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */,
 				F5609D5321E11AE80090E3B6 /* MyDogDetailVC.swift in Sources */,

@@ -35,6 +35,20 @@ class MyPageMainVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("transfer=========")
+        MyPageService.shared.getMyPage() {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
+        print("transfer=========")
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "setting1_show" {
