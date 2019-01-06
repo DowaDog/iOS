@@ -35,8 +35,6 @@ extension Requestable {
                 completion(.error(err))
             }
         }
-        
-        
     }
     
     //서버에 post 요청을 보내는 함수

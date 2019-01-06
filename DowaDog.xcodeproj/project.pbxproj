@@ -96,12 +96,13 @@
 		F5609D8A21E146480090E3B6 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8921E146480090E3B6 /* ResponseObject.swift */; };
 		F5609D9021E1A25D0090E3B6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D8F21E1A25D0090E3B6 /* Token.swift */; };
 		F5609D9421E1AE600090E3B6 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9321E1AE600090E3B6 /* TokenType.swift */; };
-		F5609D9621E1D3140090E3B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9521E1D3140090E3B6 /* UserService.swift */; };
+		F5609D9621E1D3140090E3B6 /* DuplicateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9521E1D3140090E3B6 /* DuplicateService.swift */; };
 		F5609D9A21E1D56D0090E3B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9921E1D56D0090E3B6 /* User.swift */; };
 		F5609D9C21E1E18A0090E3B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9B21E1E18A0090E3B6 /* APIManager.swift */; };
 		F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9D21E1E1A60090E3B6 /* Requestable.swift */; };
 		F5609DA021E1E1DA0090E3B6 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */; };
 		F5609DA221E1E1F00090E3B6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609DA121E1E1F00090E3B6 /* LoginService.swift */; };
+		F566A47921E221C300FE958B /* ResponseBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A47821E221C300FE958B /* ResponseBool.swift */; };
 		F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */; };
 		F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */; };
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
@@ -203,12 +204,13 @@
 		F5609D8921E146480090E3B6 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		F5609D8F21E1A25D0090E3B6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F5609D9321E1AE600090E3B6 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
-		F5609D9521E1D3140090E3B6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F5609D9521E1D3140090E3B6 /* DuplicateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateService.swift; sourceTree = "<group>"; };
 		F5609D9921E1D56D0090E3B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5609D9B21E1E18A0090E3B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F5609D9D21E1E1A60090E3B6 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		F5609D9F21E1E1DA0090E3B6 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		F5609DA121E1E1F00090E3B6 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		F566A47821E221C300FE958B /* ResponseBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBool.swift; sourceTree = "<group>"; };
 		F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocumentVC.swift; sourceTree = "<group>"; };
 		F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep1VC.swift; sourceTree = "<group>"; };
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				F5609D8721E146390090E3B6 /* ResponseArray.swift */,
 				F5609D9921E1D56D0090E3B6 /* User.swift */,
 				F5609D9321E1AE600090E3B6 /* TokenType.swift */,
+				F566A47821E221C300FE958B /* ResponseBool.swift */,
 				F5609D8921E146480090E3B6 /* ResponseObject.swift */,
 			);
 			path = Models;
@@ -593,7 +596,7 @@
 		F5609D9721E1D3180090E3B6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F5609D9521E1D3140090E3B6 /* UserService.swift */,
+				F5609D9521E1D3140090E3B6 /* DuplicateService.swift */,
 				F5609DA121E1E1F00090E3B6 /* LoginService.swift */,
 			);
 			path = Login;
@@ -779,7 +782,7 @@
 				F5609DA221E1E1F00090E3B6 /* LoginService.swift in Sources */,
 				F5609D7A21E11D4D0090E3B6 /* MyWriteCell.swift in Sources */,
 				4C0E95EE21D893A800301D52 /* NewDogCVCell.swift in Sources */,
-				F5609D9621E1D3140090E3B6 /* UserService.swift in Sources */,
+				F5609D9621E1D3140090E3B6 /* DuplicateService.swift in Sources */,
 				F5609D6921E11C420090E3B6 /* FooterCRView.swift in Sources */,
 				F5609D9A21E1D56D0090E3B6 /* User.swift in Sources */,
 				4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */,
@@ -837,6 +840,7 @@
 				F5609D6121E11B890090E3B6 /* EmergenDogVC.swift in Sources */,
 				F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */,
 				4CF5A64C21DCA0ED00969511 /* Page2VC.swift in Sources */,
+				F566A47921E221C300FE958B /* ResponseBool.swift in Sources */,
 				F5609D7C21E11D610090E3B6 /* ScrapCell.swift in Sources */,
 				F524E9EE21E0AA2F0001CA5A /* CommunityDetailVC.swift in Sources */,
 				F5609D5121E11AD50090E3B6 /* LetterVC.swift in Sources */,

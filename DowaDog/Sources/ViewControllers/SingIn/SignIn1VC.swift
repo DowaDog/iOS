@@ -77,9 +77,13 @@ class SignIn1VC: UIViewController {
     
     @IBAction func emailCheckAction(_ sender: UIButton) {
         
+        self.view.endEditing(true)
+        
         guard let email = emailTextField.text else {return}
         
-        UserService.shared.duplicateEmail(email: email) {
+        DuplicateService.shared.duplicateEmail(email: email) { (data) in
+            
+            print(data)
             
             print("성공")
             
@@ -90,10 +94,20 @@ class SignIn1VC: UIViewController {
         if emptyCheck == true {
             endCheck()
         }
-        
-        
     }
+    
+    
+    
+    @IBAction func nextBtnAction(_ sender: UIButton) {
+        if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) {
+            performSegue(withIdentifier: "goStep2", sender: self)
+        }
+    }
+    
+    
 }
+
+
 
 
 
@@ -111,10 +125,11 @@ extension SignIn1VC: UIGestureRecognizerDelegate {
         self.nameTextField.resignFirstResponder()
         self.birthTextField.resignFirstResponder()
         self.emailTextField.resignFirstResponder()
+        self.phoneNumbTextField.resignFirstResponder()
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if (touch.view?.isDescendant(of: nameTextField))! || (touch.view?.isDescendant(of: birthTextField))! || (touch.view?.isDescendant(of: emailTextField))! {
+        if (touch.view?.isDescendant(of: nameTextField))! || (touch.view?.isDescendant(of: birthTextField))! || (touch.view?.isDescendant(of: emailTextField))! || (touch.view?.isDescendant(of: phoneNumbTextField))! {
             
             return false
         }
