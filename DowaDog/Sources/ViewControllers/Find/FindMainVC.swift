@@ -20,20 +20,17 @@ class FindMainVC: UIViewController {
     var emerImg = [(UIImage(named: "testcat.png")),
                    (UIImage(named: "testcat.png"))
     ]
+    
     var newImg = [(UIImage(named: "testcat.png")),
                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),
                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png"))
     ]
     
     
-    
     // sidemenu
     var blackScreen: UIView!
     @IBOutlet var sideMenuView: UIView!
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self

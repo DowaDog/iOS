@@ -25,7 +25,7 @@ class CommunityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigationBarShadow()
+//        self.setNavigationBarShadow()
 
         
         // sidemenu
