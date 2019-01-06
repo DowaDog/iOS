@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03251F21E13FC0001208D8 /* PostCRView.swift */; };
 		4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252121E1400C001208D8 /* PostCVCell.swift */; };
+		4C03252921E1E2DE001208D8 /* NewDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252821E1E2DE001208D8 /* NewDogService.swift */; };
 		4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BD21D8906700301D52 /* Filter.storyboard */; };
 		4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BF21D8909900301D52 /* Finding.storyboard */; };
 		4C0E95C221D890A900301D52 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95C121D890A900301D52 /* Login.storyboard */; };
@@ -112,6 +113,7 @@
 		4AF23DFCB82EAED1106940D1 /* Pods-DowaDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.release.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.release.xcconfig"; sourceTree = "<group>"; };
 		4C03251F21E13FC0001208D8 /* PostCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCRView.swift; sourceTree = "<group>"; };
 		4C03252121E1400C001208D8 /* PostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCVCell.swift; sourceTree = "<group>"; };
+		4C03252821E1E2DE001208D8 /* NewDogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogService.swift; sourceTree = "<group>"; };
 		4C0E95BD21D8906700301D52 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		4C0E95BF21D8909900301D52 /* Finding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Finding.storyboard; sourceTree = "<group>"; };
 		4C0E95C121D890A900301D52 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		4C03252721E1E275001208D8 /* Find */ = {
 			isa = PBXGroup;
 			children = (
+				4C03252821E1E2DE001208D8 /* NewDogService.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */,
 				F5609D9021E1A25D0090E3B6 /* Token.swift in Sources */,
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
+				4C03252921E1E2DE001208D8 /* NewDogService.swift in Sources */,
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				F5609D5721E11B170090E3B6 /* MyScrapVC.swift in Sources */,
 				F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */,
