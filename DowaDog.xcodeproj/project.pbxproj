@@ -79,6 +79,7 @@
 		F54B112D21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112C21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift */; };
 		F54B113121E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B113021E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift */; };
 		F54B113721E3C2F3000BA8DF /* AnimalDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B113621E3C2F3000BA8DF /* AnimalDetailService.swift */; };
+		F54B113D21E3DB71000BA8DF /* MyScrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B113C21E3DB71000BA8DF /* MyScrap.swift */; };
 		F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5508A0F21D4D54400BE73FF /* AppDelegate.swift */; };
 		F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1321D4D54400BE73FF /* Main.storyboard */; };
 		F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1621D4D54400BE73FF /* Assets.xcassets */; };
@@ -210,6 +211,7 @@
 		F54B112C21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalUserAdoptDetailService.swift; sourceTree = "<group>"; };
 		F54B113021E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalUserAdoptInoculationService.swift; sourceTree = "<group>"; };
 		F54B113621E3C2F3000BA8DF /* AnimalDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailService.swift; sourceTree = "<group>"; };
+		F54B113C21E3DB71000BA8DF /* MyScrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrap.swift; sourceTree = "<group>"; };
 		F5508A0C21D4D54400BE73FF /* DowaDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DowaDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5508A0F21D4D54400BE73FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5508A1421D4D54400BE73FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -707,6 +709,7 @@
 				F54B111C21E3114A000BA8DF /* MyCommunity.swift */,
 				F566A48A21E256F400FE958B /* InoculationList.swift */,
 				F566A48321E24DF100FE958B /* MyInfo.swift */,
+				F54B113C21E3DB71000BA8DF /* MyScrap.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				4C03253421E21243001208D8 /* EmergenDogService.swift in Sources */,
 				F54B112921E3471A000BA8DF /* EmergenDogContentArray.swift in Sources */,
 				F5609D5D21E11B6A0090E3B6 /* AboutEmergenVC.swift in Sources */,
+				F54B113D21E3DB71000BA8DF /* MyScrap.swift in Sources */,
 				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
 				4C03253021E1FFFE001208D8 /* DogDetail.swift in Sources */,
 				F5609D6521E11BB70090E3B6 /* NewDogVC.swift in Sources */,

@@ -10,7 +10,7 @@ import ObjectMapper
 
 struct DogDetail: Mappable {
     
-    var id:Int?
+    var id: Int?
     var type: String?
     var processState: String?
     var sexCd: Character?

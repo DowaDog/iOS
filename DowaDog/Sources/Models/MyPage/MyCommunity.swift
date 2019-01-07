@@ -10,7 +10,7 @@ import ObjectMapper
 
 struct MyCommunity<T: Mappable>: Mappable {
     
-    var id: Int32?
+    var id: Int?
     var title: String?
     var detail: String?
     var communityImgList: [T]?

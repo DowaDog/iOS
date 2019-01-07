@@ -8,37 +8,28 @@
 
 import ObjectMapper
 
-struct CommunityImgList: Mappable {
-    
+struct MyScrap: Mappable {
     
     var id: Int?
+    var title: String?
     var createdAt: Date?
-    var updatedAt: Date?
-    var filePath: String?
-    var originFileName: String?
     
-    
-    init?(map: Map) {}
+    init?(map: Map) {
+        
+    }
     
     mutating func mapping(map: Map) {
         
         id <- map["id"]
+        title <- map["title"]
         createdAt <- map["createdAt"]
-        updatedAt <- map["updatedAt"]
-        filePath <- map["filePath"]
-        originFileName <- map["originFileName"]
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
         
         if let dateString = map["createdAt"].currentValue as? String,
             let _date = dateFormatter.date(from: dateString) {
             createdAt = _date
-        }
-        
-        if let dateString = map["updatedAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            updatedAt = _date
         }
     }
 }

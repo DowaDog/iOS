@@ -11,7 +11,7 @@ import ObjectMapper
 struct MyLikeList: Mappable {
     
     
-    var id: Int32?
+    var id: Int?
     var type: String?
     var sexCd: Character?
     var kindCd: String?
