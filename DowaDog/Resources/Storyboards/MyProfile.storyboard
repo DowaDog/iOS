@@ -196,7 +196,11 @@
                         <viewLayoutGuide key="safeArea" id="sSD-ST-igW"/>
                     </view>
                     <connections>
-                        <outlet property="profileImage" destination="yDR-1f-0xE" id="4TL-Jj-nSj"/>
+                        <outlet property="birth" destination="T3e-dw-ZK1" id="KPV-i1-Lmo"/>
+                        <outlet property="email" destination="rTv-6Z-pak" id="iFn-hG-aWO"/>
+                        <outlet property="name" destination="Uhp-uG-pvv" id="Cn1-br-GXk"/>
+                        <outlet property="phone" destination="0eb-nP-kup" id="HjZ-2r-TGJ"/>
+                        <outlet property="profileImage" destination="yDR-1f-0xE" id="xTo-8w-PmA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgP-YX-3TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1167,10 +1171,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA1-lQ-dac">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mypageProfileImg" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-Zn-hyF">
                                 <rect key="frame" x="27" y="116" width="68" height="68"/>
                                 <constraints>
@@ -1508,6 +1508,10 @@
                                     <segue destination="cSG-KR-irf" kind="show" id="ppa-kN-EiZ"/>
                                 </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA1-lQ-dac">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1571,6 +1575,12 @@
                     <navigationItem key="navigationItem" id="72B-KC-i3f"/>
                     <connections>
                         <outlet property="coverView" destination="KA1-lQ-dac" id="iJ6-ax-uqQ"/>
+                        <outlet property="mailbotUpdated" destination="Kix-nD-PME" id="Jng-ze-uKk"/>
+                        <outlet property="userCommunity" destination="hwl-Bf-KKf" id="ft2-0r-r6T"/>
+                        <outlet property="userLike" destination="GfX-oZ-ufB" id="0yi-EU-Oxj"/>
+                        <outlet property="userName" destination="FgF-3S-DMQ" id="1K1-BH-lz5"/>
+                        <outlet property="userProfile" destination="mRM-Zn-hyF" id="vkD-9h-rw4"/>
+                        <outlet property="userScrap" destination="8zY-8F-jrz" id="RZa-t9-ZiY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lss-YE-if9" userLabel="First Responder" sceneMemberID="firstResponder"/>

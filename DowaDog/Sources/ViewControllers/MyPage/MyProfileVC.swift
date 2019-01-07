@@ -12,7 +12,12 @@ class MyProfileVC: UIViewController {
 
 
     var confirmItem : UIBarButtonItem!
+    
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var birth: UITextField!
+    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var email: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,21 +43,22 @@ class MyProfileVC: UIViewController {
             print("data ===================")
             print(data)
             print("data ===================")
+            
+        self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
+            self.name.text = self.gsno(data.data?.name)
+            self.birth.text = "\(data.data?.birth)"
+            self.phone.text = self.gsno(data.data?.phone)
+
         }
         print("transfer=========")
     }
-    
-    
-    
-    
-    
-    
-    
+
     
     @objc func confirmTapped(){
         
-        
         print("transfer=========")
+        
+        
         MyInfoEditService.shared.putMyInfo(name: "강태경", phone: "010-3068-1191", email: "perlyuy8@naver.com", birth: "1997-04-02", profileImgFile: UIImage(named: "xBtn")!) {
             (data) in
             
