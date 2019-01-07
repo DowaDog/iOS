@@ -19,13 +19,10 @@ class MyWriteVC: UIViewController {
         super.viewDidLoad()
         
         setBackBtn()
+        
+        
         boardTable.dataSource = self
         boardTable.delegate = self
-        
-        print("======확인=====")
-        print(myWriteList.count)
-              print("======확인=====")
-        
         
     }
     
@@ -43,14 +40,18 @@ class MyWriteVC: UIViewController {
         MyCommunityService.shared.getMyCommunity() { [weak self]
             (data) in
             guard let `self` = self else {return}
-            
+
             self.myWriteList = data
-           
+
             print("data ===================")
             print(data)
+            print(data.count)
+            print(self.myWriteList.count)
             print("data ===================")
         }
         print("transfer=========")
+        print("=======check=========")
+        print(myWriteList.count)
     }
     
     
@@ -59,17 +60,22 @@ class MyWriteVC: UIViewController {
 extension MyWriteVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        print("data Source==========================")
+        print(myWriteList.count)
+        print("data Source==========================")
+        
         return myWriteList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = boardTable.dequeueReusableCell(withIdentifier: "BoardCell") as! MyWriteCell
+        let cell = boardTable.dequeueReusableCell(withIdentifier: "writeCell") as! MyWriteCell
         
         let board = myWriteList[indexPath.row]
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "yyyy.MM.dd"
 
         cell.dateLabel.text = dateFormatter.string(from: board.updatedAt ?? Date())
         cell.titleLabel.text = gsno(board.title)

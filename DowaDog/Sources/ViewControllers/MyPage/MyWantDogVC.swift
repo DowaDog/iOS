@@ -38,6 +38,7 @@ class MyWantDogVC: UIViewController {
         
         
         print("transfer=========")
+        
         MyLikeListService.shared.getMyLikeList() { [weak self]
             
             (data) in
@@ -82,6 +83,11 @@ extension MyWantDogVC:UICollectionViewDataSource{
         }else{
                cell.genderImage.image = UIImage(named:"womanIcon1227")
         }
+//        var id = gino(likeDog.id)
+//        AnimalDetailService.shared.animalLike(animalIdx: <#T##Int#>, completion: <#T##(ResponseObject<DogDetail>) -> Void#>)
+//         DuplicateService.shared.duplicateId(id: id) { (data) in
+//
+//        }
         return cell
     }
     
