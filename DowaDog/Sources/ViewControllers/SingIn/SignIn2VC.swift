@@ -18,7 +18,7 @@ class SignIn2VC: UIViewController {
     var email:String?
     var numb:String?
     var profileImage: UIImage?
-
+    
     
     var emptyCheck = false
     var idCheck = false
@@ -41,9 +41,9 @@ class SignIn2VC: UIViewController {
         self.setBackBtn()
         
         initGestureRecognizer()
-     
+        
     }
-
+    
     
     func setTarget(){
         
@@ -71,14 +71,14 @@ class SignIn2VC: UIViewController {
                 if pwCheckTextField.text != "" {
                     
                     emptyCheck = true
-                        endCheck()
+                    endCheck()
                     
                 }
             }
         }
         
     }
-
+    
     func endCheck (){
         if emptyCheck == true && idCheck == true {
             
@@ -100,7 +100,7 @@ class SignIn2VC: UIViewController {
             
             if data.data == false{
                 
-                 self.simpleAlert(title: "", message: "아이디 사용 가능하개")
+                self.simpleAlert(title: "", message: "아이디 사용 가능하개")
                 self.idCheck = true
                 self.endCheck()
                 
@@ -110,8 +110,8 @@ class SignIn2VC: UIViewController {
                 self.simpleAlert(title: "", message: "아이디를 입력할 수 없어요! 다시 입력해주개")
                 self.idCheck = false
             }
-        
-        
+            
+            
         }
         
     }
@@ -119,13 +119,6 @@ class SignIn2VC: UIViewController {
     
     @IBAction func submitAction(_ sender: UIButton) {
         
-        DuplicateService.shared.signUp(id: "wook1234", password: "1234", name: "이승언", birth: "1994-10-04", phone: "010-1234-1234", email: "test1234@naver.com", profileImgFile: UIImage(named: "xBtn")!) {
-            (data) in
-            
-            print("data===================================")
-            print("data: ")
-            print(data)
-            print("data===================================")
         
         guard let id = idTextField.text else{return}
         guard let password = pwTextField.text else{return}
@@ -135,19 +128,20 @@ class SignIn2VC: UIViewController {
         guard let email = email else{return}
         guard let profile = profileImage else{return}
         //이미지 꼴 바꾸기 kingfisher
-
+        
         
         if pwCheckTextField.text == pwTextField.text{
-           
+            
             DuplicateService.shared.signUp(id: id, password: password, name: name, birth: birth, phone: phone, email: email, profileImgFile: profile) {
+                (data) in
                 
-                 print("회원가입")
+                print("회원가입")
                 
                 if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
                     
                     //present를 해줍니다.
                     self.present(dvc, animated: true)
-
+                    
                 }
             }
         } else if pwCheckTextField.text != pwTextField.text{
