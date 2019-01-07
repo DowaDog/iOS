@@ -14,6 +14,9 @@ class AdoptListVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    var adoptList = [AdoptList]()
+    
     var reusablecell = "MyDogCell"
     var header = "header"
     
@@ -33,18 +36,16 @@ class AdoptListVC: UIViewController {
         super.viewWillAppear(animated)
         
         
-        print("refresh=========")
-        
-        
         print("transfer=========")
-        AdoptListService.shared.getAdoptList() {
+        AdoptListService.shared.getAdoptList() { [weak self]
             (data) in
+            guard let `self` = self else {return}
             
-            print("data ===================")
-            print(data)
-            print("data ===================")
+            self.adoptList = data
+            self.collectionView.reloadData()
         }
         print("transfer=========")
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
