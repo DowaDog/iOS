@@ -107,7 +107,7 @@ class SignIn2VC: UIViewController {
             }
             else if data.data == true{
                 
-                self.simpleAlert(title: "", message: "아이디를 입력할 수 없어요! 다시 입력해주개")
+                self.simpleAlert(title: "", message: "사용할 수 없는 아이디에요! 다시 입력해주개")
                 self.idCheck = false
             }
             
