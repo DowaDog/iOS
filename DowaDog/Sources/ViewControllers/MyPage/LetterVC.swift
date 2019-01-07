@@ -36,6 +36,7 @@ class LetterVC: UIViewController {
         
         
         print("transfer=========")
+        
         MailboxService.shared.getMailbox() {
             (data) in
 //            self.mailList = data

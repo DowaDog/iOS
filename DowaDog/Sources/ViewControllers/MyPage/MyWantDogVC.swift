@@ -11,6 +11,8 @@ import UIKit
 
 class MyWantDogVC: UIViewController {
     
+//    var likeDogList = [MyLikeList]()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var reuseIdentifier = "wantCell"
     var testImg = [(UIImage(named: "testcat.png")),
@@ -37,7 +39,10 @@ class MyWantDogVC: UIViewController {
         
         print("transfer=========")
         MyLikeListService.shared.getMyLikeList() {
+            
             (data) in
+//            self.likeDogList = data
+//            self.collectionView.reloadData()
         
             
             
