@@ -26,6 +26,8 @@ class MyDogDetailVC: UIViewController {
     
     var confirmItem:UIBarButtonItem!
     
+    var inoculationList = [InoculationList]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +65,36 @@ class MyDogDetailVC: UIViewController {
         navigationItem.rightBarButtonItems = [ confirmItem ]
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AnimalUserAdoptDetailService.shared.getAdoptAnimalDetail(adoptAnimalIdx: 1) {
+            (data) in
+            
+            print("data======================")
+            print("data : ")
+            print(data)
+            print("data======================")
+        }
+        
+        AnimalUserAdoptInoculationService.shared.getAdoptAnimalInoculation(adoptAnimalIdx: 1) {
+            
+            (data) in
+            
+            print("data===================")
+            print("data : ")
+            print(data)
+            print("list")
+            self.inoculationList = data
+            print("data===================")
+            
+        }
+        
+    }
+    
+    
+    
     @objc func confirmTapped(){
         //TODO: 확인 선택 시 일어날 액션
     }

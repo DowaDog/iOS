@@ -8,19 +8,19 @@
 
 import Alamofire
 
-struct AnimalUserAdoptDetailService: APIManager, Requestable {
+struct AnimalUserAdoptInoculationService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<AdoptAnimalDetail<AnimalUserAdopt>>
-    static let shared = AnimalUserAdoptDetailService()
-    let adoptDetailURL = url("/api/normal/mypage/adoptAnimals")
+    typealias NetworkData = ResponseObject<AdoptAnimalDetail<InoculationList>>
+    static let shared = AnimalUserAdoptInoculationService()
+    let adoptInoculationURL = url("/api/normal/mypage/adoptAnimals")
     let headers: HTTPHeaders = [
         "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
     
     // 사용자 입양 동물 상세 조회
-    func getAdoptAnimalDetail(adoptAnimalIdx: Int?, completion: @escaping (AnimalUserAdopt) -> Void) {
+    func getAdoptAnimalInoculation(adoptAnimalIdx: Int?, completion: @escaping ([InoculationList]) -> Void) {
         
-        let queryURL = adoptDetailURL + "/\(adoptAnimalIdx)"
+        let queryURL = adoptInoculationURL + "/\(adoptAnimalIdx)"
         
         gettable(queryURL, body: nil, header: headers) { res in
             switch res {
@@ -32,7 +32,7 @@ struct AnimalUserAdoptDetailService: APIManager, Requestable {
                 print(".success=========================")
                 
                 
-                guard let data = value.data?.animalUserAdopt else {return}
+                guard let data = value.data?.inoculationList else {return}
                 
                 completion(data)
             case .error(let error):
