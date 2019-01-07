@@ -25,8 +25,23 @@ class LetterVC: UIViewController {
         collectionView.dataSource = self
     }
     
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        print("refresh=========")
+        
+        
+        print("transfer=========")
+        MailboxService.shared.getMailbox() {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
+        print("transfer=========")
+    }
 }
 
 extension LetterVC:UICollectionViewDataSource{
