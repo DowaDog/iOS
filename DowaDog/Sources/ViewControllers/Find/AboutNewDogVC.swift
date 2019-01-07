@@ -48,6 +48,19 @@ class AboutNewDogVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AnimalDetailService.shared.getAnimalDetail(animalIdx: 1) {
+            (data) in
+            
+            print("data ==========================")
+            print("data : ")
+            print(data)
+            print("data ==========================")
+        }
+    }
+    
     
     @objc func heartTapped(){
         if heartClick == false{
