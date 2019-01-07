@@ -10,12 +10,12 @@ import ObjectMapper
 
 struct AnimalUserAdopt: Mappable {
     
-    var id: Int32?
+    var id: Int?
     var name: String?
     var gender: Character?
     var kind: String?
     var birth: Date?
-    var weight: Int32?
+    var weight: Int?
     var neuterYn: Bool?
     var profileImg: String?
     var adoptType: String?
