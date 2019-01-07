@@ -18,5 +18,23 @@ class MyWriteVC: UIViewController {
         setBackBtn()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        print("refresh=========")
+        
+        
+        print("transfer=========")
+        MyCommunityService.shared.getMyCommunity() {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
+        print("transfer=========")
+    }
+    
     
 }

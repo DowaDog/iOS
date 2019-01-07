@@ -67,6 +67,8 @@
 		F54B111521E308B7000BA8DF /* MailboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111421E308B7000BA8DF /* MailboxService.swift */; };
 		F54B111721E308D9000BA8DF /* Mailbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111621E308D9000BA8DF /* Mailbox.swift */; };
 		F54B111921E3100C000BA8DF /* MyCommunityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111821E3100C000BA8DF /* MyCommunityService.swift */; };
+		F54B111B21E31075000BA8DF /* CommunityImgList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111A21E31075000BA8DF /* CommunityImgList.swift */; };
+		F54B111D21E3114A000BA8DF /* MyCommunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111C21E3114A000BA8DF /* MyCommunity.swift */; };
 		F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5508A0F21D4D54400BE73FF /* AppDelegate.swift */; };
 		F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1321D4D54400BE73FF /* Main.storyboard */; };
 		F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1621D4D54400BE73FF /* Assets.xcassets */; };
@@ -186,6 +188,8 @@
 		F54B111421E308B7000BA8DF /* MailboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxService.swift; sourceTree = "<group>"; };
 		F54B111621E308D9000BA8DF /* Mailbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailbox.swift; sourceTree = "<group>"; };
 		F54B111821E3100C000BA8DF /* MyCommunityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommunityService.swift; sourceTree = "<group>"; };
+		F54B111A21E31075000BA8DF /* CommunityImgList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityImgList.swift; sourceTree = "<group>"; };
+		F54B111C21E3114A000BA8DF /* MyCommunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommunity.swift; sourceTree = "<group>"; };
 		F5508A0C21D4D54400BE73FF /* DowaDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DowaDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5508A0F21D4D54400BE73FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5508A1421D4D54400BE73FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -669,6 +673,8 @@
 				F566A47F21E2422C00FE958B /* MyPage.swift */,
 				F566A48821E252AE00FE958B /* AdoptList.swift */,
 				F54B111621E308D9000BA8DF /* Mailbox.swift */,
+				F54B111A21E31075000BA8DF /* CommunityImgList.swift */,
+				F54B111C21E3114A000BA8DF /* MyCommunity.swift */,
 				F566A48A21E256F400FE958B /* Inoculation.swift */,
 				F566A48321E24DF100FE958B /* MyInfo.swift */,
 			);
@@ -895,6 +901,7 @@
 				F524E9E821DF783E0001CA5A /* CommunityTwoTVC.swift in Sources */,
 				F5609D6E21E11CA90090E3B6 /* MailCell.swift in Sources */,
 				4C0E95CF21D8916200301D52 /* SignIn2VC.swift in Sources */,
+				F54B111D21E3114A000BA8DF /* MyCommunity.swift in Sources */,
 				F5609D4D21E11A5D0090E3B6 /* CustomNavigationBar.swift in Sources */,
 				F5609D5521E11AFC0090E3B6 /* MyPageMainVC.swift in Sources */,
 				4C03253621E21985001208D8 /* ImageViewURLExtension.swift in Sources */,
@@ -912,6 +919,7 @@
 				F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */,
 				F524E9DA21DDE7210001CA5A /* AdoptDocEndVC.swift in Sources */,
 				F5609D6721E11C2B0090E3B6 /* FilterCRView.swift in Sources */,
+				F54B111B21E31075000BA8DF /* CommunityImgList.swift in Sources */,
 				F5609D6121E11B890090E3B6 /* EmergenDogVC.swift in Sources */,
 				F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */,
 				4CF5A64C21DCA0ED00969511 /* Page2VC.swift in Sources */,
