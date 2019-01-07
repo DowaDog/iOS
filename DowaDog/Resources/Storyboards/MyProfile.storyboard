@@ -1698,22 +1698,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 쓴글  제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZY-nz-1De">
-                                                    <rect key="frame" x="31" y="16" width="329" height="18"/>
+                                                    <rect key="frame" x="31" y="16" width="99.5" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="329" id="Lh9-rm-uyo"/>
-                                                        <constraint firstAttribute="height" constant="18" id="e93-AE-jIq"/>
-                                                        <constraint firstAttribute="width" secondItem="mZY-nz-1De" secondAttribute="height" multiplier="329:18" id="nBi-YS-dxU"/>
+                                                        <constraint firstAttribute="height" constant="18" id="o42-9x-nf6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="16"/>
                                                     <color key="textColor" red="0.28235718609999999" green="0.28234520549999997" blue="0.28235331180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.xx.xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prK-ik-P65">
-                                                    <rect key="frame" x="31" y="52" width="101" height="16"/>
+                                                    <rect key="frame" x="31" y="52" width="69" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="M1Y-kv-hRa"/>
-                                                        <constraint firstAttribute="width" secondItem="prK-ik-P65" secondAttribute="height" multiplier="101:16" id="Xje-nj-zfn"/>
-                                                        <constraint firstAttribute="width" constant="101" id="reC-bC-gd1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                                     <color key="textColor" red="0.6509893537" green="0.65096431970000002" blue="0.65098124739999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1745,7 +1741,7 @@
                         <viewLayoutGuide key="safeArea" id="sKF-l4-nQQ"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="0di-G5-sfw" id="TGZ-V0-SVY"/>
+                        <outlet property="boardTable" destination="0di-G5-sfw" id="0CM-oI-raX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eco-ig-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>
