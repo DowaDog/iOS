@@ -20,6 +20,9 @@ class MyPageMainVC: UIViewController {
     @IBOutlet weak var mailbotUpdated: UIImageView!
     
     
+    var str: String = "test1\ntest2"
+    var strArray: Array<String> = []
+    
     @IBOutlet weak var coverView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,12 @@ class MyPageMainVC: UIViewController {
         
         userProfile.circleImageView()
         
+        strArray = str.components(separatedBy: "\n")
+        
+        print("================Array====================")
+        print(strArray[0])
+        print(strArray[1])
+        print("================Array====================")
     }
     
     
