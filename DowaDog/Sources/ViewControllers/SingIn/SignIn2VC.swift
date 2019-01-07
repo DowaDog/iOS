@@ -22,6 +22,7 @@ class SignIn2VC: UIViewController {
     
     var emptyCheck = false
     var idCheck = false
+    @IBOutlet weak var profile: UIImageView!
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
@@ -42,6 +43,10 @@ class SignIn2VC: UIViewController {
         
         initGestureRecognizer()
         
+        profile.circleImageView()
+        
+        
+        
     }
     
     
@@ -50,11 +55,14 @@ class SignIn2VC: UIViewController {
         idTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         pwCheckTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+    
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
+        
+       profile.image = profileImage
     }
     
     override func viewWillDisappear(_ animated: Bool) {

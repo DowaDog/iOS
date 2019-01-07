@@ -68,6 +68,7 @@ class SignIn1VC: UIViewController {
                         //모든 텍스트 필드가 null이 아니라면
                         emptyCheck = true
                         print("emptycheck end")
+                        
                         endCheck()
                             
                         }
@@ -151,6 +152,8 @@ class SignIn1VC: UIViewController {
             dvc.email = email
             dvc.numb = numb
             dvc.profileImage = profile
+            
+            
             
             // segue.destination은 세그웨이 목적지 뷰컨트롤러를 의미합니다.
             // 위와같이 데이터전달을 수행할 수 있습니다.

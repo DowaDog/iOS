@@ -179,6 +179,7 @@
                         <outlet property="idTextField" destination="dsf-tH-WMV" id="0Iw-PF-gwS"/>
                         <outlet property="loginBtn" destination="6ds-dD-Vy4" id="Swj-S3-D4V"/>
                         <outlet property="pwTextField" destination="iFR-jf-1mQ" id="nLn-Dp-QPk"/>
+                        <outlet property="topConstraint" destination="BEp-d2-ym9" id="pZp-Uf-gSj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apb-2r-Llf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,6 +340,7 @@
                     <connections>
                         <outlet property="idTextField" destination="wY2-yY-7LA" id="diK-No-Vy4"/>
                         <outlet property="nextBtn" destination="Bwb-Fz-Bbm" id="eXJ-yq-kgk"/>
+                        <outlet property="profile" destination="juD-G8-G3M" id="u3P-Bx-g0w"/>
                         <outlet property="pwCheckTextField" destination="HnQ-zM-Loo" id="8FY-EQ-r6q"/>
                         <outlet property="pwTextField" destination="Gj4-OT-VHf" id="Xwk-3X-ZCt"/>
                         <outlet property="topConstraint" destination="M4n-VZ-fFL" id="kpk-Nt-Hhu"/>

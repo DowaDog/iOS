@@ -12,6 +12,7 @@ class LoginVC: UIViewController {
     
     var emptyCheck = false
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     
@@ -38,6 +39,17 @@ class LoginVC: UIViewController {
         
         
         initGestureRecognizer()
+        
+        setTarget()
+    }
+    
+    
+    func setTarget(){
+        
+        idTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        pwTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        
+        
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -105,6 +117,38 @@ extension LoginVC: UIGestureRecognizerDelegate {
     }
     
     
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.topConstraint.constant = -80
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.topConstraint.constant = 79
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
     
 }
+

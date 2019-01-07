@@ -10,7 +10,8 @@ import UIKit
 
 class MyProfileVC: UIViewController {
 
-
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
     var confirmItem : UIBarButtonItem!
     
     @IBOutlet weak var name: UITextField!
@@ -29,6 +30,8 @@ class MyProfileVC: UIViewController {
         
          setupTap()
         profileImage.circleImageView()
+        
+        initGestureRecognizer()
         
         self.title = "개인 정보 수정"
         
@@ -49,8 +52,8 @@ class MyProfileVC: UIViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy/MM/dd"
            
-            
-        self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
+
+            self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
             self.name.text = self.gsno(data.data?.name)
             self.birth.text = dateFormatter.string(from: data.data?.birth ?? Date())
             
@@ -140,5 +143,64 @@ extension MyProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDe
         profileImage.layer.cornerRadius = profileImage.layer.frame.size.height/2
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MyProfileVC: UIGestureRecognizerDelegate {
+    
+    func initGestureRecognizer() {
+        let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
+        textFieldTap.delegate = self
+        view.addGestureRecognizer(textFieldTap)
+    }
+    
+    
+    @objc func handleTapTextField(_ sender: UITapGestureRecognizer){
+        self.resignFirstResponder()
+        self.name.resignFirstResponder()
+        self.birth.resignFirstResponder()
+        self.phone.resignFirstResponder()
+        self.email.resignFirstResponder()
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if (touch.view?.isDescendant(of:name))! || (touch.view?.isDescendant(of: birth))! || (touch.view?.isDescendant(of: phone))! || (touch.view?.isDescendant(of: email))! {
+            
+            return false
+        }
+        return true
+    }
+    
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.topConstraint.constant = -5
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.topConstraint.constant = 79
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }

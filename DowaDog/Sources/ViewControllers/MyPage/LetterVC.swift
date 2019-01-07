@@ -9,9 +9,11 @@
 import UIKit
 
 class LetterVC: UIViewController {
-    
+
     var reusablecell = "MailCell"
     var header = "header"
+//    var mailList = ResponseArray<Mailbox>()
+    
     
     var testImg = [(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingCatImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png"))]
     
@@ -21,6 +23,7 @@ class LetterVC: UIViewController {
         setBackBtn()
         setNavigationBarShadow()
         self.title="편지"
+        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -35,6 +38,8 @@ class LetterVC: UIViewController {
         print("transfer=========")
         MailboxService.shared.getMailbox() {
             (data) in
+//            self.mailList = data
+            self.collectionView.reloadData()
             
             print("data ===================")
             print(data)

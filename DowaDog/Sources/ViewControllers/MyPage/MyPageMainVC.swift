@@ -27,6 +27,8 @@ class MyPageMainVC: UIViewController {
         setBackBtn()
         coverView.alpha = 0.0
         
+        userProfile.circleImageView()
+        
     }
     
     
@@ -76,8 +78,9 @@ class MyPageMainVC: UIViewController {
             
             
             self.userName.text = data.data?.userName
-            self.userProfile.imageFromUrl(data.data?.profileImg, defaultImgPath: "")
+            self.userProfile.imageFromUrl(self.gsno(data.data?.profileImg), defaultImgPath: "")
             self.userLike.text = "\(self.gino(data.data?.userLike))"
+            self.userScrap.text = "\(self.gino(data.data?.userScrap))"
             self.userCommunity.text = "\(self.gino(data.data?.userCommunity))"
            
             
