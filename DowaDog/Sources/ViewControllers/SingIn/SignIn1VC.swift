@@ -136,6 +136,9 @@ class SignIn1VC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "action_show" {
+            
+            let url = URL(string: "url_of_your_image")
+            // this downloads the image asynchronously if it's not cached yet
             let name = nameTextField.text
             let birth = birthTextField.text
             let email = emailTextField.text

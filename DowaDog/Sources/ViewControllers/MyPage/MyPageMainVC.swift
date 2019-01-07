@@ -10,12 +10,23 @@ import UIKit
 
 class MyPageMainVC: UIViewController {
     
+
+    
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userProfile: UIImageView!
+    @IBOutlet weak var userLike: UILabel!
+    @IBOutlet weak var userScrap: UILabel!
+    @IBOutlet weak var userCommunity: UILabel!
+    @IBOutlet weak var mailbotUpdated: UIImageView!
+    
+    
     @IBOutlet weak var coverView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackBtn()
         coverView.alpha = 0.0
+        
     }
     
     
@@ -40,6 +51,7 @@ class MyPageMainVC: UIViewController {
         
         
         print("refresh=========")
+        
         LoginService.shared.refresh() {
             (data) in
             
@@ -47,16 +59,37 @@ class MyPageMainVC: UIViewController {
             print(data)
             print("data ============")
             
+            
+            
         }
         print("refresh=========")
         
         print("transfer=========")
+        
         MyPageService.shared.getMyPage() {
             (data) in
 
             print("data ===================")
             print(data)
             print("data ===================")
+            
+            
+            
+            self.userName.text = data.data?.userName
+            self.userProfile.imageFromUrl(data.data?.profileImg, defaultImgPath: "")
+            self.userLike.text = "\(self.gino(data.data?.userLike))"
+            self.userCommunity.text = "\(self.gino(data.data?.userCommunity))"
+           
+            
+            
+            if data.data?.mailboxUpdated == true{
+                self.mailbotUpdated.image = UIImage(named: "mypageNewIconB")
+                
+            }else if data.data?.mailboxUpdated == false{
+                  self.mailbotUpdated.image = UIImage(named: "")
+            }
+            
+            
         }
         print("transfer=========")
     }
