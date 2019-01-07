@@ -134,6 +134,8 @@ class SignIn2VC: UIViewController {
             
             DuplicateService.shared.signUp(id: id, password: password, name: name, birth: birth, phone: phone, email: email, profileImgFile: profile) {
                 
+                (data) in
+                
                 print("회원가입")
                 
                 if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
