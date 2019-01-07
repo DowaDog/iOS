@@ -28,9 +28,42 @@ class MyProfileVC: UIViewController {
         self.title = "개인 정보 수정"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("transfer=========")
+        MyInfoService.shared.getMyInfo() {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
+        print("transfer=========")
+    }
+    
+    
+    
+    
+    
+    
+    
     
     @objc func confirmTapped(){
-        //TODO: 확인 선택 시 일어날 액션
+        
+        
+        print("transfer=========")
+        MyInfoService.shared.putMyInfo(name: "강태경", phone: "010-3068-1191", email: "perlyuy8@naver.com", birth: "1997-04-02", profileImgFile: UIImage(named: "xBtn")!) {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
+        print("transfer=========")
+        
+        
+        
     }
     
 

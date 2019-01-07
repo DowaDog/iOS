@@ -12,19 +12,51 @@ struct LoginService: APIManager, Requestable {
     
     typealias NetworkData = ResponseObject<TokenType<Token>>
     static let shared = LoginService()
-    let loginURL = url("/api/auth/login")
+    let loginURL = url("/api/auth")
     let headers: HTTPHeaders = [
         "Content-Type" : "application/json"
     ]
     
+    // refresh Token
+    func refresh(completion: @escaping (TokenType<Token>) -> Void) {
+        
+        let queryURL = loginURL + "/refresh"
+        
+        let headers: HTTPHeaders = [
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
+        ]
+        
+        postable(queryURL, body: nil, header: headers) { res in
+            switch res {
+            case .success(let value):
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                guard let token = value.data else {return}
+                completion(token)
+            case .error(let error):
+                print(".error============================")
+                print("error: ")
+                print(error)
+                print(".error============================")
+            }
+        }
+    }
+    
     // 로그인 api
     func login(id: String, password: String, completion: @escaping (TokenType<Token>) -> Void) {
+        
+        let queryURL = loginURL + "/login"
+        
         let body = [
             "id" : id,
             "password" : password
         ]
         
-        postable(loginURL, body: body, header: headers) { res in
+        postable(queryURL, body: body, header: headers) { res in
             switch res {
             case .success(let value):
                 print(".success=========================")

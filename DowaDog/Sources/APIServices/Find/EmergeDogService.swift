@@ -13,7 +13,7 @@ struct EmergeDogService: APIManager, Requestable{
     static let shared = EmergeDogService()
     let emergeDogURL = url("/api/normal/animals/emergency")
     let header: HTTPHeaders = [
-        "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmciLCJpc3MiOiJkb3dhZG9nIiwiZXhwIjoxNTc3OTg4NDcyfQ.dZfpU_OPSH6kaVSeumubeDDtmhuhW4w8D_pNUaMn7-U"
+        "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI5MjY0MX0.vYv4lH8y-Q_DAinNkJrg3-t3MY5c1qROmBADn-MIMs4"
     ]
     
     //모든 긴급 동물 게시글 조회 api

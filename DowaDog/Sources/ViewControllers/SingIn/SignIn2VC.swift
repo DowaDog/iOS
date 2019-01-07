@@ -87,6 +87,12 @@ class SignIn2VC: UIViewController {
     @IBAction func submitAction(_ sender: UIButton) {
         
         DuplicateService.shared.signUp(id: "wook1234", password: "1234", name: "이승언", birth: "1994-10-04", phone: "010-1234-1234", email: "test1234@naver.com", profileImgFile: UIImage(named: "xBtn")!) {
+            (data) in
+            
+            print("data===================================")
+            print("data: ")
+            print(data)
+            print("data===================================")
             
             print("회원가입")
         }

@@ -29,6 +29,24 @@ class AdoptListVC: UIViewController {
         collectionView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        print("refresh=========")
+        
+        
+        print("transfer=========")
+        AdoptListService.shared.getAdoptList() {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
+        print("transfer=========")
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "mydog_show" {

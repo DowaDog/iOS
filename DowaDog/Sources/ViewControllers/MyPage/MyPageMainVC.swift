@@ -38,10 +38,22 @@ class MyPageMainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        print("refresh=========")
+        LoginService.shared.refresh() {
+            (data) in
+            
+            print("data ============")
+            print(data)
+            print("data ============")
+            
+        }
+        print("refresh=========")
+        
         print("transfer=========")
         MyPageService.shared.getMyPage() {
             (data) in
-            
+
             print("data ===================")
             print(data)
             print("data ===================")
