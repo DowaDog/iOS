@@ -10,7 +10,7 @@ import Alamofire
 
 struct AdoptListService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<AnimalUserAdopt>
+    typealias NetworkData = ResponseArray<AnimalUserAdopt>
     static let shared = AdoptListService()
     let adoptListURL = url("/api/normal/mypage/adoptAnimals")
     let headers: HTTPHeaders = [
