@@ -8,7 +8,7 @@
 import ObjectMapper
 
 struct EmergenDog: Mappable {
- 
+    
     var id:Int?
     var type:String?
     var sexCd:String?
@@ -41,7 +41,7 @@ struct EmergenDog: Mappable {
         processState <- map["processState"]
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         if let dateEnd = map["noticeEddt"].currentValue as? String,
             let _date = dateFormatter.date(from: dateEnd) {

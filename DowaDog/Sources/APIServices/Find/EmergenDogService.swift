@@ -8,16 +8,16 @@
 
 import Alamofire
 
-struct EmergeDogService: APIManager, Requestable{
-    typealias NetworkData = ResponseArray<EmergenDog>
-    static let shared = EmergeDogService()
+struct EmergenDogService: APIManager, Requestable{
+    typealias NetworkData = ResponseObject<EmergenDogContentArray<EmergenDog>>
+    static let shared = EmergenDogService()
     let emergeDogURL = url("/api/normal/animals/emergency")
     let header: HTTPHeaders = [
         "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
     
     //모든 긴급 동물 게시글 조회 api
-    func getEmergeDogList(offset: Int? = 0, limit: Int? = 10, completion: @escaping ([EmergenDog]) -> Void) {
+    func getEmergenDogList(offset: Int? = 0, limit: Int? = 10, completion: @escaping ([EmergenDog]) -> Void) {
         
 //      let queryURL = emergeDogURL + "?offset=\(offset ?? 0)&limit=\(limit ?? 10)"
         
@@ -25,17 +25,15 @@ struct EmergeDogService: APIManager, Requestable{
             switch res {
             case .success(let value):
                 
-                print("success======================")
-                print("value : ")
+    
+                print(".success=========================")
+                print("value: ")
                 print(value)
-                print("success======================")
+                print(".success=========================")
+            
+                guard let data = value.data?.content else {return}
                 
-                
-                
-                guard let emergeDogList = value.data
-                    
-                else{return}
-                completion(emergeDogList)
+                completion(data)
             case .error(let error):
                 
                 print("error======================")

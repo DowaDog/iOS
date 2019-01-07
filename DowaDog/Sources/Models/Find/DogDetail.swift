@@ -8,27 +8,27 @@
 
 import ObjectMapper
 
-struct NewDog: Mappable {
-    var id:Int?
-    var type:String?
-    var processState:String?
-    var sex:String?
-    var startDate: Date?
-    var endDate:Date?
-    var region: String?
-    var mark:String?
-    var remainDateState:String?
-    var kind:String?
-    var age:String?
-    var weight:String?
-    var thumbnailImg:String?
-    var happenPlace: String?
-    var careName:String?
-    var careTel: String?
+struct DogDetail: Mappable {
     
-    var liked:Bool?
-    var educationState:Bool?
-    var storyImage:String? //다시 배열로 바꿈
+    var id:Int?
+    var type: String?
+    var processState: String?
+    var sexCd: Character?
+    var startDate: Date?
+    var endDate: Date?
+    var region: String?
+    var specialMark: String?
+    var remainDateState: Bool?
+    var kindCd: String?
+    var age: String?
+    var weight: String?
+    var thumbnailImg: String?
+    var happenPlace: String?
+    var careName: String?
+    var careTel: String?
+    var liked: Bool?
+    var educationState: Bool?
+    var animalStoryList: Array<String>?
     
     
     init?(map: Map) {
@@ -40,12 +40,11 @@ struct NewDog: Mappable {
         id <- map["id"]
         type <- map["type"]
         processState <- map["processState"]
-        sex <- map["sexCd"]
-        
+        sexCd <- map["sexCd"]
         region <- map["region"]
-        mark <- map["specialMark"]
+        specialMark <- map["specialMark"]
         remainDateState <- map["remainDateState"]
-        kind <- map["kindCd"]
+        kindCd <- map["kindCd"]
         age <- map["age"]
         weight <- map["weight"]
         thumbnailImg <- map["thumbnailImg"]
@@ -54,10 +53,10 @@ struct NewDog: Mappable {
         careTel <- map["careTel"]
         liked <- map["liked"]
         educationState <- map["educationState"]
-        storyImage <- map["animalStoryList"]
+        animalStoryList <- map["animalStoryList"]
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         if let dateStart = map["noticeStdt"].currentValue as? String,
             let _date = dateFormatter.date(from: dateStart) {
