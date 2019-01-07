@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct Inoculation: Mappable {
+struct InoculationList: Mappable {
     
     var code: String?
     var codeName: String?
