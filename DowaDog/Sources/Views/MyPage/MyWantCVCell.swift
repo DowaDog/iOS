@@ -31,9 +31,16 @@ class MyWantCVCell: UICollectionViewCell {
         self.layer.shadowRadius = 3
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
+        
+        heartBtn.isSelected == true
     }
     
     @IBAction func heartClickedAction(_ sender: Any) {
-          
+        if heartBtn.isSelected == true{
+            heartBtn.isSelected = false
+        }
+        if heartBtn.isSelected == false{
+            heartBtn.isSelected = true
+        }
     }
 }
