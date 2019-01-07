@@ -1124,6 +1124,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="mailImage" destination="zM2-tJ-VI0" id="XLP-n8-ffS"/>
+                                            <outlet property="updatedImage" destination="vXF-66-Ugh" id="qRk-Bf-HoS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

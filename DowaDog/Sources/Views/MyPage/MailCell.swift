@@ -12,4 +12,6 @@ class MailCell: UICollectionViewCell {
     
     
     @IBOutlet weak var mailImage: UIImageView!
+    @IBOutlet weak var updatedImage: UIImageView!
+    
 }

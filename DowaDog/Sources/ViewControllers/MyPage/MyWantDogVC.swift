@@ -60,13 +60,28 @@ class MyWantDogVC: UIViewController {
 extension MyWantDogVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.testImg.count
+        return myLikeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyWantCVCell
-        cell.animalImage.image = self.testImg[indexPath.item]
+       let likeDog = myLikeList[indexPath.row]
         
+        cell.animalImage.imageFromUrl(self.gsno((likeDog.thumbnailImg)), defaultImgPath: "")
+        
+        cell.heartBtn.setImage(UIImage(named:"likedAnimalHeartBtnFill.png"), for: .selected)
+        
+        if likeDog.type == "dog"{
+            cell.kindImage.image = UIImage(named: "dogIcon1227.png")
+        }else{
+              cell.kindImage.image = UIImage(named: "catIcon1227.png")
+        }
+        
+        if likeDog.sexCd == "M"{
+            cell.genderImage.image = UIImage(named:"womanIcon1227")
+        }else{
+               cell.genderImage.image = UIImage(named:"womanIcon1227")
+        }
         return cell
     }
     
