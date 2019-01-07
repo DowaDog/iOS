@@ -10,10 +10,12 @@ import Alamofire
 
 struct AnimalUserAdoptDetailService: APIManager, Requestable {
     
+    
     typealias NetworkData = ResponseObject<AdoptAnimalDetail<AnimalUserAdopt>>
     static let shared = AnimalUserAdoptDetailService()
     let adoptDetailURL = url("/api/normal/mypage/adoptAnimals")
     let headers: HTTPHeaders = [
+        "Content-Type" : "application/json",
         "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
     
@@ -43,4 +45,17 @@ struct AnimalUserAdoptDetailService: APIManager, Requestable {
             }
         }
     }
+    
+    // 수정 필요
+//    func putAdoptAnimalDetail(adoptAnimalIdx: Int?, name: String, gender: Character, kind: String, birth: Date, weight: Double, neuterYn: Bool,   completion: @escaping (AnimalUserAdopt) -> Void) {
+//
+//        let queryURL = adoptDetailURL + "/\(adoptAnimalIdx)"
+//
+//        let body = [
+//            "name" : name
+//        ]
+//
+//        puttable(queryURL, body: body)
+//    }
+
 }

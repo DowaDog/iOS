@@ -19,6 +19,7 @@ struct AnimalUserAdopt: Mappable {
     var neuterYn: Bool?
     var profileImg: String?
     var adoptType: String?
+    var inoculationArray: Array<String>?
     
 
     init?(map: Map) {}
@@ -34,6 +35,7 @@ struct AnimalUserAdopt: Mappable {
         neuterYn <- map["neuterYn"]
         profileImg <- map["profileImg"]
         adoptType <- map["adoptType"]
+        inoculationArray <- map["inoculationArray"]
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
