@@ -10,37 +10,20 @@ import ObjectMapper
 
 struct Mailbox: Mappable {
     
-    
-    var createdAt: Date?
-    var updatedAt: Date?
-    var id: Int32?
     var title: String?
+    var detail: String?
     var type: String?
+    var imgPath: String?
     var complete: Bool?
     
     init?(map: Map) {}
     
     mutating func mapping(map: Map) {
         
-        createdAt <- map["createdAt"]
-        updatedAt <- map["updatedAt"]
-        id <- map["id"]
         title <- map["title"]
+        detail <- map["detail"]
         type <- map["type"]
+        imgPath <- map["imgPath"]
         complete <- map["complete"]
-        
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
-        
-        if let dateString = map["createdAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            createdAt = _date
-        }
-        
-        if let dateString = map["updatedAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            updatedAt = _date
-        }
     }
 }
