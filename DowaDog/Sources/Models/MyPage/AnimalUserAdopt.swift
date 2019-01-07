@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct AdoptList: Mappable {
+struct AnimalUserAdopt: Mappable {
     
     var id: Int32?
     var name: String?

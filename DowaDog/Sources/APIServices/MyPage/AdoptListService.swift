@@ -10,7 +10,7 @@ import Alamofire
 
 struct AdoptListService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseArray<AdoptList>
+    typealias NetworkData = ResponseObject<AnimalUserAdopt>
     static let shared = AdoptListService()
     let adoptListURL = url("/api/normal/mypage/adoptAnimals")
     let headers: HTTPHeaders = [
@@ -18,7 +18,7 @@ struct AdoptListService: APIManager, Requestable {
     ]
     
     // 사용자 입양 동물 리스트 조회
-    func getAdoptList(completion: @escaping ([AdoptList]) -> Void) {
+    func getAdoptList(completion: @escaping ([AnimalUserAdopt]) -> Void) {
         
         gettable(adoptListURL, body: nil, header: headers) { res in
             switch res {

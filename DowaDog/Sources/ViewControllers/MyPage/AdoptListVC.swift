@@ -15,7 +15,7 @@ class AdoptListVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    var adoptList = [AdoptList]()
+    var animalUserAdoptList = [AnimalUserAdopt]()
     
     var reusablecell = "MyDogCell"
     var header = "header"
@@ -41,7 +41,7 @@ class AdoptListVC: UIViewController {
             (data) in
             guard let `self` = self else {return}
             
-            self.adoptList = data
+            self.animalUserAdoptList = data
             self.collectionView.reloadData()
         }
         print("transfer=========")

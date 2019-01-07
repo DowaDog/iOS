@@ -75,6 +75,7 @@
 		F54B112521E328A9000BA8DF /* MyInfoEditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112421E328A9000BA8DF /* MyInfoEditService.swift */; };
 		F54B112721E340D8000BA8DF /* AnimalStoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112621E340D8000BA8DF /* AnimalStoryList.swift */; };
 		F54B112921E3471A000BA8DF /* EmergenDogContentArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112821E3471A000BA8DF /* EmergenDogContentArray.swift */; };
+		F54B112B21E36AA7000BA8DF /* AdoptAnimalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112A21E36AA7000BA8DF /* AdoptAnimalDetail.swift */; };
 		F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5508A0F21D4D54400BE73FF /* AppDelegate.swift */; };
 		F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1321D4D54400BE73FF /* Main.storyboard */; };
 		F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1621D4D54400BE73FF /* Assets.xcassets */; };
@@ -122,8 +123,8 @@
 		F566A48221E24D9A00FE958B /* MyInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A48121E24D9A00FE958B /* MyInfoService.swift */; };
 		F566A48421E24DF100FE958B /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A48321E24DF100FE958B /* MyInfo.swift */; };
 		F566A48621E251C100FE958B /* AdoptListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A48521E251C100FE958B /* AdoptListService.swift */; };
-		F566A48921E252AE00FE958B /* AdoptList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A48821E252AE00FE958B /* AdoptList.swift */; };
-		F566A48B21E256F400FE958B /* Inoculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A48A21E256F400FE958B /* Inoculation.swift */; };
+		F566A48921E252AE00FE958B /* AnimalUserAdopt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A48821E252AE00FE958B /* AnimalUserAdopt.swift */; };
+		F566A48B21E256F400FE958B /* InoculationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A48A21E256F400FE958B /* InoculationList.swift */; };
 		F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */; };
 		F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */; };
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
@@ -202,6 +203,7 @@
 		F54B112421E328A9000BA8DF /* MyInfoEditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoEditService.swift; sourceTree = "<group>"; };
 		F54B112621E340D8000BA8DF /* AnimalStoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalStoryList.swift; sourceTree = "<group>"; };
 		F54B112821E3471A000BA8DF /* EmergenDogContentArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDogContentArray.swift; sourceTree = "<group>"; };
+		F54B112A21E36AA7000BA8DF /* AdoptAnimalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptAnimalDetail.swift; sourceTree = "<group>"; };
 		F5508A0C21D4D54400BE73FF /* DowaDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DowaDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5508A0F21D4D54400BE73FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5508A1421D4D54400BE73FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -251,8 +253,8 @@
 		F566A48121E24D9A00FE958B /* MyInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoService.swift; sourceTree = "<group>"; };
 		F566A48321E24DF100FE958B /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
 		F566A48521E251C100FE958B /* AdoptListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptListService.swift; sourceTree = "<group>"; };
-		F566A48821E252AE00FE958B /* AdoptList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptList.swift; sourceTree = "<group>"; };
-		F566A48A21E256F400FE958B /* Inoculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inoculation.swift; sourceTree = "<group>"; };
+		F566A48821E252AE00FE958B /* AnimalUserAdopt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalUserAdopt.swift; sourceTree = "<group>"; };
+		F566A48A21E256F400FE958B /* InoculationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InoculationList.swift; sourceTree = "<group>"; };
 		F5788A9521D8EE5800B96BB8 /* AdoptDocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocumentVC.swift; sourceTree = "<group>"; };
 		F58ADAA021DA045C00231B27 /* AdoptDocStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep1VC.swift; sourceTree = "<group>"; };
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -688,12 +690,13 @@
 			isa = PBXGroup;
 			children = (
 				F566A47F21E2422C00FE958B /* MyPage.swift */,
-				F566A48821E252AE00FE958B /* AdoptList.swift */,
+				F566A48821E252AE00FE958B /* AnimalUserAdopt.swift */,
+				F54B112A21E36AA7000BA8DF /* AdoptAnimalDetail.swift */,
 				F54B111621E308D9000BA8DF /* Mailbox.swift */,
 				F54B111A21E31075000BA8DF /* CommunityImgList.swift */,
 				F54B112021E3144F000BA8DF /* MyLikeList.swift */,
 				F54B111C21E3114A000BA8DF /* MyCommunity.swift */,
-				F566A48A21E256F400FE958B /* Inoculation.swift */,
+				F566A48A21E256F400FE958B /* InoculationList.swift */,
 				F566A48321E24DF100FE958B /* MyInfo.swift */,
 			);
 			path = MyPage;
@@ -856,7 +859,7 @@
 				F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */,
 				F5609DA021E1E1DA0090E3B6 /* NetworkResult.swift in Sources */,
 				F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */,
-				F566A48B21E256F400FE958B /* Inoculation.swift in Sources */,
+				F566A48B21E256F400FE958B /* InoculationList.swift in Sources */,
 				F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */,
 				F5609D5B21E11B3B0090E3B6 /* MyWriteVC.swift in Sources */,
 				F5609D7821E11D2E0090E3B6 /* MyWantCVCell.swift in Sources */,
@@ -890,6 +893,7 @@
 				F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */,
 				4CF5A64A21DCA0E100969511 /* Page1VC.swift in Sources */,
 				F5609D9C21E1E18A0090E3B6 /* APIManager.swift in Sources */,
+				F54B112B21E36AA7000BA8DF /* AdoptAnimalDetail.swift in Sources */,
 				F524E9EA21DF784E0001CA5A /* CommunityThreeTVC.swift in Sources */,
 				F54B111521E308B7000BA8DF /* MailboxService.swift in Sources */,
 				F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */,
@@ -936,7 +940,7 @@
 				F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */,
 				F5609D7221E11CEF0090E3B6 /* MailCRView.swift in Sources */,
 				4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */,
-				F566A48921E252AE00FE958B /* AdoptList.swift in Sources */,
+				F566A48921E252AE00FE958B /* AnimalUserAdopt.swift in Sources */,
 				F54B111921E3100C000BA8DF /* MyCommunityService.swift in Sources */,
 				F524E9DC21DE153B0001CA5A /* AdoptDirectVC.swift in Sources */,
 				F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */,
