@@ -43,6 +43,7 @@ class AdoptListVC: UIViewController {
             
             self.animalUserAdoptList = data
             self.collectionView.reloadData()
+            //animalUserAdoptList에 데이터 넣었음
         }
         print("transfer=========")
         
@@ -61,7 +62,7 @@ class AdoptListVC: UIViewController {
 
 extension AdoptListVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testImg.count
+        return animalUserAdoptList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -75,8 +76,23 @@ extension AdoptListVC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! MyDogCell
+          let myDog = animalUserAdoptList[indexPath.row]
         
-        cell.cardImage.image = self.testImg[indexPath.item]
+//        id <- map["id"]
+//        name <- map["name"]
+//        gender <- map["gender"]
+//        kind <- map["kind"]
+//        birth <- map["birth"]
+//        weight <- map["weight"]
+//        neuterYn <- map["neuterYn"]
+//        profileImg <- map["profileImg"]
+//        adoptType <- map["adoptType"]
+
+        cell.cardImage.imageFromUrl(gsno(myDog.profileImg), defaultImgPath: "")
+        let label = "\(myDog.kind)|\(myDog.birth)|\(myDog.gender)"
+        cell.dogName.text = myDog.name
+        cell.aboutLabel.text = label
+        
         return cell
         
     }

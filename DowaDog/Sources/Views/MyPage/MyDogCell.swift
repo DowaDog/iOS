@@ -13,9 +13,7 @@ class MyDogCell: UICollectionViewCell {
     @IBOutlet weak var cardImage: UIImageView!
     
     @IBOutlet weak var dogName: UILabel!
-    
-    @IBOutlet weak var dogInfo: UILabel!
-    
+    @IBOutlet weak var aboutLabel: UILabel!
     @IBOutlet weak var kindImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
