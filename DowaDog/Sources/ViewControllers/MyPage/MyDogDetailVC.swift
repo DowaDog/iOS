@@ -16,7 +16,6 @@ class MyDogDetailVC: UIViewController {
     @IBOutlet weak var femaleBtn: UIButton!
     @IBOutlet weak var doBtn: UIButton!
     @IBOutlet weak var undoBtn: UIButton!
-    
     @IBOutlet weak var inject1Btn: UIButton!
     @IBOutlet weak var inject2Btn: UIButton!
     @IBOutlet weak var inject3Btn: UIButton!
