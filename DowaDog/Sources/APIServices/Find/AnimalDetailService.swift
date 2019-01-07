@@ -44,5 +44,29 @@ struct AnimalDetailService: APIManager, Requestable{
         }
     }
     
+    func animalLike(animalIdx: Int, completion: @escaping (ResponseObject<DogDetail>) -> Void) {
+        
+        let queryURL = dogDetailURL + "/\(animalIdx)/likes"
+        
+        postable(queryURL, body: nil, header: header) { res in
+            switch res {
+            case .success(let value):
+                
+                
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                completion(value)
+            case .error(let error):
+                
+                print("error======================")
+                print("error : ")
+                print(error)
+                print("error======================")
+            }
+        }
+    }
     
 }

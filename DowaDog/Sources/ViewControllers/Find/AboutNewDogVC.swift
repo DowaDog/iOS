@@ -63,6 +63,19 @@ class AboutNewDogVC: UIViewController {
     
     
     @objc func heartTapped(){
+        
+        AnimalDetailService.shared.animalLike(animalIdx: 1) {
+            (data) in
+            
+            print("data ==========================")
+            print("data : ")
+            print(data)
+            print("data ==========================")
+        }
+        
+        
+        
+        
         if heartClick == false{
             heartItem.image = UIImage(named: "heartBtnFill")
             heartClick = true
