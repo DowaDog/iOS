@@ -18,7 +18,7 @@ struct MailboxService: APIManager, Requestable {
     ]
     
     // 마이페이지 조회
-    func getMailbox(completion: @escaping (ResponseArray<Mailbox>) -> Void) {
+    func getMailbox(completion: @escaping ([Mailbox]) -> Void) {
         
         gettable(myMailboxURL, body: nil, header: headers) { res in
             switch res {
@@ -29,7 +29,10 @@ struct MailboxService: APIManager, Requestable {
                 print(value)
                 print(".success=========================")
                 
-                completion(value)
+                
+                guard let data = value.data else { return }
+                
+                completion(data)
             case .error(let error):
                 print(".error============================")
                 print("error: ")

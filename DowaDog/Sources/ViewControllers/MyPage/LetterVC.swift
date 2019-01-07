@@ -14,6 +14,8 @@ class LetterVC: UIViewController {
     var header = "header"
 //    var mailList = ResponseArray<Mailbox>()
     
+    var mailboxList = [Mailbox]()
+    
     
     var testImg = [(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingCatImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png"))]
     
@@ -45,6 +47,8 @@ class LetterVC: UIViewController {
             print("data ===================")
             print(data)
             print("data ===================")
+            
+            self.mailboxList = data
         }
         print("transfer=========")
     }
