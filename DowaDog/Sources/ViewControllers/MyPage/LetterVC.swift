@@ -41,14 +41,15 @@ class LetterVC: UIViewController {
         
         MailboxService.shared.getMailbox() {
             (data) in
-//            self.mailList = data
+            
+            self.mailboxList = data
             self.collectionView.reloadData()
             
             print("data ===================")
             print(data)
             print("data ===================")
             
-            self.mailboxList = data
+
         }
         print("transfer=========")
     }
