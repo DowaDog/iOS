@@ -18,7 +18,7 @@ struct MyLikeListService: APIManager, Requestable {
     ]
     
     // 사용자 입양 동물 리스트 조회
-    func getMyLikeList(completion: @escaping (ResponseArray<MyLikeList>) -> Void) {
+    func getMyLikeList(completion: @escaping ([MyLikeList]) -> Void) {
         
         gettable(myLikeListURL, body: nil, header: headers) { res in
             switch res {
@@ -29,7 +29,9 @@ struct MyLikeListService: APIManager, Requestable {
                 print(value)
                 print(".success=========================")
                 
-                completion(value)
+                guard let data = value.data else {return}
+                
+                completion(data)
             case .error(let error):
                 print(".error============================")
                 print("error: ")
