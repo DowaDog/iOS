@@ -14,7 +14,7 @@ struct AnimalUserAdopt: Mappable {
     var name: String?
     var gender: Character?
     var kind: String?
-    var birth: Date?
+    var birth: String?
     var weight: Int?
     var neuterYn: Bool?
     var profileImg: String?
@@ -36,13 +36,5 @@ struct AnimalUserAdopt: Mappable {
         profileImg <- map["profileImg"]
         adoptType <- map["adoptType"]
         inoculationArray <- map["inoculationArray"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let dateString = map["birth"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            birth = _date
-        }
     }
 }

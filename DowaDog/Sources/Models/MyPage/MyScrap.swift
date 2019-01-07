@@ -12,7 +12,7 @@ struct MyScrap: Mappable {
     
     var id: Int?
     var title: String?
-    var createdAt: Date?
+    var createdAt: String?
     
     init?(map: Map) {
         
@@ -23,13 +23,5 @@ struct MyScrap: Mappable {
         id <- map["id"]
         title <- map["title"]
         createdAt <- map["createdAt"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
-        
-        if let dateString = map["createdAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            createdAt = _date
-        }
     }
 }

@@ -12,7 +12,7 @@ struct MyInfo: Mappable {
     
     var name: String?
     var thumbnailImg: String?
-    var birth: Date?
+    var birth: String?
     var phone: String?
     
     init?(map: Map) {
@@ -25,13 +25,5 @@ struct MyInfo: Mappable {
         thumbnailImg <- map["thumbnailImg"]
         birth <- map["birth"]
         phone <- map["phone"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let dateString = map["birth"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            birth = _date
-        }
     }
 }

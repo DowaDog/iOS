@@ -13,7 +13,7 @@ struct User: Mappable {
     var id: String?
     var password: String?
     var name: String?
-    var birth: Date?
+    var birth: String?
     var phone: String?
     var email: String?
     var gender: Character?
@@ -38,13 +38,5 @@ struct User: Mappable {
         type <- map["type"]
         profileImgFile <- map["profileImgFIle"]
         pushAllow <- map["pushAllow"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let dateString = map["birth"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            birth = _date
-        }
     }
 }

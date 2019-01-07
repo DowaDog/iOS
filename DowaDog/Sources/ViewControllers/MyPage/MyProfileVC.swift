@@ -55,7 +55,7 @@ class MyProfileVC: UIViewController {
 
             self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
             self.name.text = self.gsno(data.data?.name)
-            self.birth.text = dateFormatter.string(from: data.data?.birth ?? Date())
+//            self.birth.text = dateFormatter.string(from: data.data?.birth ?? Date())
             
             self.phone.text = self.gsno(data.data?.phone)
 

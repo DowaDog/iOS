@@ -16,7 +16,7 @@ struct MyLikeList: Mappable {
     var sexCd: Character?
     var kindCd: String?
     var region: String?
-    var noticeEddt: Date?
+    var noticeEddt: String?
     var liked: Bool?
     var remainDateState: Bool?
     var education: Bool?
@@ -38,13 +38,5 @@ struct MyLikeList: Mappable {
         education <- map["education"]
         thumbnailImg <- map["thumbnailImg"]
         processState <- map["processState"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let dateString = map["noticeEddt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            noticeEddt = _date
-        }
     }
 }
