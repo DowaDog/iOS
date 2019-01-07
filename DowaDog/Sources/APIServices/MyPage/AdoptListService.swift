@@ -10,7 +10,7 @@ import Alamofire
 
 struct AdoptListService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseArray<AdoptList<Inoculation>>
+    typealias NetworkData = ResponseArray<AdoptList>
     static let shared = AdoptListService()
     let adoptListURL = url("/api/normal/mypage/adoptAnimals")
     let headers: HTTPHeaders = [
@@ -18,7 +18,7 @@ struct AdoptListService: APIManager, Requestable {
     ]
     
     // 사용자 입양 동물 리스트 조회
-    func getAdoptList(completion: @escaping (ResponseArray<AdoptList<Inoculation>>) -> Void) {
+    func getAdoptList(completion: @escaping ([AdoptList]) -> Void) {
         
         gettable(adoptListURL, body: nil, header: headers) { res in
             switch res {
@@ -29,7 +29,10 @@ struct AdoptListService: APIManager, Requestable {
                 print(value)
                 print(".success=========================")
                 
-                completion(value)
+                
+                guard let data = value.data else {return}
+                
+                completion(data)
             case .error(let error):
                 print(".error============================")
                 print("error: ")

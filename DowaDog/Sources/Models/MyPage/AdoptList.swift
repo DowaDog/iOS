@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct AdoptList<T: Mappable>: Mappable {
+struct AdoptList: Mappable {
     
     var id: Int32?
     var name: String?
@@ -19,7 +19,6 @@ struct AdoptList<T: Mappable>: Mappable {
     var neuterYn: Bool?
     var profileImg: String?
     var adoptType: String?
-    var inoculationArray: [T]?
     
 
     init?(map: Map) {}
@@ -35,7 +34,6 @@ struct AdoptList<T: Mappable>: Mappable {
         neuterYn <- map["neuterYn"]
         profileImg <- map["profileImg"]
         adoptType <- map["adoptType"]
-        inoculationArray <- map["inoculationArray"]
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
