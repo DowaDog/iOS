@@ -43,10 +43,15 @@ class MyProfileVC: UIViewController {
             print("data ===================")
             print(data)
             print("data ===================")
+        
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+           
             
         self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
             self.name.text = self.gsno(data.data?.name)
-            self.birth.text = "\(data.data?.birth)"
+            self.birth.text = dateFormatter.string(from: data.data?.birth ?? Date())
+            
             self.phone.text = self.gsno(data.data?.phone)
 
         }
