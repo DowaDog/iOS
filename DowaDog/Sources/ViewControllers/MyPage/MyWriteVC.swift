@@ -12,6 +12,9 @@ class MyWriteVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var myWriteList = [MyCommunity<CommunityImgList>]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,12 +25,16 @@ class MyWriteVC: UIViewController {
         super.viewWillAppear(animated)
         
         
+        
         print("refresh=========")
         
         
         print("transfer=========")
-        MyCommunityService.shared.getMyCommunity() {
+        MyCommunityService.shared.getMyCommunity() { [weak self]
             (data) in
+            guard let `self` = self else {return}
+            
+            self.myWriteList = data
             
             print("data ===================")
             print(data)

@@ -18,7 +18,7 @@ struct MyCommunityService: APIManager, Requestable {
     ]
     
     // 마이페이지 조회
-    func getMyCommunity(completion: @escaping (ResponseArray<MyCommunity<CommunityImgList>>) -> Void) {
+    func getMyCommunity(completion: @escaping ([MyCommunity<CommunityImgList>]) -> Void) {
         
         gettable(myCommunityURL, body: nil, header: headers) { res in
             switch res {
@@ -29,7 +29,9 @@ struct MyCommunityService: APIManager, Requestable {
                 print(value)
                 print(".success=========================")
                 
-                completion(value)
+                guard let data = value.data else {return}
+                
+                completion(data)
             case .error(let error):
                 print(".error============================")
                 print("error: ")
