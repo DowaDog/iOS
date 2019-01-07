@@ -76,6 +76,7 @@
 		F54B112721E340D8000BA8DF /* AnimalStoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112621E340D8000BA8DF /* AnimalStoryList.swift */; };
 		F54B112921E3471A000BA8DF /* EmergenDogContentArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112821E3471A000BA8DF /* EmergenDogContentArray.swift */; };
 		F54B112B21E36AA7000BA8DF /* AdoptAnimalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112A21E36AA7000BA8DF /* AdoptAnimalDetail.swift */; };
+		F54B112D21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112C21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift */; };
 		F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5508A0F21D4D54400BE73FF /* AppDelegate.swift */; };
 		F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1321D4D54400BE73FF /* Main.storyboard */; };
 		F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1621D4D54400BE73FF /* Assets.xcassets */; };
@@ -204,6 +205,7 @@
 		F54B112621E340D8000BA8DF /* AnimalStoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalStoryList.swift; sourceTree = "<group>"; };
 		F54B112821E3471A000BA8DF /* EmergenDogContentArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDogContentArray.swift; sourceTree = "<group>"; };
 		F54B112A21E36AA7000BA8DF /* AdoptAnimalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptAnimalDetail.swift; sourceTree = "<group>"; };
+		F54B112C21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalUserAdoptDetailService.swift; sourceTree = "<group>"; };
 		F5508A0C21D4D54400BE73FF /* DowaDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DowaDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5508A0F21D4D54400BE73FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5508A1421D4D54400BE73FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 				F566A48121E24D9A00FE958B /* MyInfoService.swift */,
 				F54B111421E308B7000BA8DF /* MailboxService.swift */,
 				F54B112421E328A9000BA8DF /* MyInfoEditService.swift */,
+				F54B112C21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift */,
 				F566A48521E251C100FE958B /* AdoptListService.swift */,
 				F54B111E21E31428000BA8DF /* MyLikeListService.swift */,
 				F54B111821E3100C000BA8DF /* MyCommunityService.swift */,
@@ -946,6 +949,7 @@
 				F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */,
 				F524E9DA21DDE7210001CA5A /* AdoptDocEndVC.swift in Sources */,
 				F5609D6721E11C2B0090E3B6 /* FilterCRView.swift in Sources */,
+				F54B112D21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift in Sources */,
 				F54B111B21E31075000BA8DF /* CommunityImgList.swift in Sources */,
 				F5609D6121E11B890090E3B6 /* EmergenDogVC.swift in Sources */,
 				F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */,
