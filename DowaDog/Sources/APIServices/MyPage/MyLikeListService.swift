@@ -8,19 +8,19 @@
 
 import Alamofire
 
-struct MyCommunityService: APIManager, Requestable {
+struct MyLikeListService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseArray<MyCommunity<CommunityImgList>>
-    static let shared = MyCommunityService()
-    let myCommunityURL = url("/api/normal/mypage/community")
+    typealias NetworkData = ResponseArray<MyLikeList>
+    static let shared = MyLikeListService()
+    let myLikeListURL = url("/api/normal/mypage/likes")
     let headers: HTTPHeaders = [
         "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
     
-    // 마이페이지 조회
-    func getMyCommunity(completion: @escaping (ResponseArray<MyCommunity<CommunityImgList>>) -> Void) {
+    // 사용자 입양 동물 리스트 조회
+    func getMyLikeList(completion: @escaping (ResponseArray<MyLikeList>) -> Void) {
         
-        gettable(myCommunityURL, body: nil, header: headers) { res in
+        gettable(myLikeListURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
                 

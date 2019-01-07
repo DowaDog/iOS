@@ -27,6 +27,25 @@ class MyWantDogVC: UIViewController {
         self.setBackBtn()
         self.setNavigationBarShadow()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        print("refresh=========")
+        
+        
+        print("transfer=========")
+        MyLikeListService.shared.getMyLikeList() {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
+        print("transfer=========")
+    }
+    
 }
 
 extension MyWantDogVC:UICollectionViewDataSource{

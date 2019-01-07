@@ -301,9 +301,6 @@
                                                                 <constraint firstAttribute="width" constant="22" id="sJz-ai-tE3"/>
                                                             </constraints>
                                                             <state key="normal" image="likedAnimalHeartBtnFill"/>
-                                                            <connections>
-                                                                <action selector="heartClickAction:" destination="mHC-7V-4HK" eventType="touchUpInside" id="qXZ-vJ-KVZ"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -335,9 +332,7 @@
                                             <outlet property="aboutLabel" destination="RLY-2b-xuT" id="C4K-gP-aXV"/>
                                             <outlet property="animalImage" destination="VPG-7f-dXN" id="2mw-Hb-WlI"/>
                                             <outlet property="backView" destination="ISi-MH-G2Z" id="aGS-WJ-lvj"/>
-                                            <outlet property="cellBackgroundView" destination="ISi-MH-G2Z" id="RmX-gF-u6g"/>
                                             <outlet property="dayLabel" destination="2Vg-fC-I3A" id="5Rl-0r-k2X"/>
-                                            <outlet property="emerImage" destination="VPG-7f-dXN" id="b6l-IS-zna"/>
                                             <outlet property="genderImage" destination="3an-qb-Umv" id="jwL-cl-BgA"/>
                                             <outlet property="heartBtn" destination="C6f-9Z-k3j" id="Mfu-5C-MXu"/>
                                             <outlet property="kindImage" destination="aUI-EQ-xws" id="fSm-I8-Crc"/>

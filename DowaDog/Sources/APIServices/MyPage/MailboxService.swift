@@ -12,7 +12,7 @@ struct MailboxService: APIManager, Requestable {
     
     typealias NetworkData = ResponseArray<Mailbox>
     static let shared = MailboxService()
-    let myPageURL = url("/api/normal/mypage/mailboxes")
+    let myMailboxURL = url("/api/normal/mypage/mailboxes")
     let headers: HTTPHeaders = [
         "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
@@ -20,7 +20,7 @@ struct MailboxService: APIManager, Requestable {
     // 마이페이지 조회
     func getMailbox(completion: @escaping (ResponseArray<Mailbox>) -> Void) {
         
-        gettable(myPageURL, body: nil, header: headers) { res in
+        gettable(myMailboxURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
                 
