@@ -39,6 +39,8 @@ class MyWantDogVC: UIViewController {
         MyLikeListService.shared.getMyLikeList() {
             (data) in
             
+            
+            
             print("data ===================")
             print(data)
             print("data ===================")

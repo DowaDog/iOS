@@ -31,6 +31,8 @@ class MyProfileVC: UIViewController {
         profileImage.circleImageView()
         
         self.title = "개인 정보 수정"
+        
+        email.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
