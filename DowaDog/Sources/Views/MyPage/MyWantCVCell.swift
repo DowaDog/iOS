@@ -32,4 +32,8 @@ class MyWantCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
     }
+    
+    @IBAction func heartClickedAction(_ sender: Any) {
+          
+    }
 }
