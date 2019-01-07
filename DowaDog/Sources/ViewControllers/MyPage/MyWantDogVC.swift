@@ -11,7 +11,7 @@ import UIKit
 
 class MyWantDogVC: UIViewController {
     
-//    var likeDogList = [MyLikeList]()
+    var myLikeList = [MyLikeList]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     var reuseIdentifier = "wantCell"
@@ -38,13 +38,15 @@ class MyWantDogVC: UIViewController {
         
         
         print("transfer=========")
-        MyLikeListService.shared.getMyLikeList() {
+        MyLikeListService.shared.getMyLikeList() { [weak self]
             
             (data) in
-//            self.likeDogList = data
-//            self.collectionView.reloadData()
-        
+
+            guard let `self` = self else {return}
             
+            self.myLikeList = data
+            
+            self.collectionView.reloadData()
             
             print("data ===================")
             print(data)
