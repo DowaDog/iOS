@@ -41,14 +41,15 @@ class LetterVC: UIViewController {
         
         MailboxService.shared.getMailbox() {
             (data) in
-//            self.mailList = data
+            
+            self.mailboxList = data
             self.collectionView.reloadData()
             
             print("data ===================")
             print(data)
             print("data ===================")
             
-            self.mailboxList = data
+
         }
         print("transfer=========")
     }
@@ -56,7 +57,7 @@ class LetterVC: UIViewController {
 
 extension LetterVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testImg.count
+        return mailboxList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -72,6 +73,10 @@ extension LetterVC:UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! MailCell
         
         cell.mailImage.image = self.testImg[indexPath.item]
+        let mail = mailboxList[indexPath.row]
+//        self.userProfile.imageFromUrl(self.gsno(data.data?.profileImg), defaultImgPath: "")
+//        cell.mailImage.imageFromUrl(mail., defaultImgPath: <#T##String#>)
+        
         return cell
         
     }

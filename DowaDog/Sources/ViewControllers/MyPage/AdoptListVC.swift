@@ -88,6 +88,7 @@ extension AdoptListVC:UICollectionViewDataSource{
 //        profileImg <- map["profileImg"]
 //        adoptType <- map["adoptType"]
 
+        
         cell.cardImage.imageFromUrl(gsno(myDog.profileImg), defaultImgPath: "")
         let label = "\(myDog.kind)|\(myDog.birth)|\(myDog.gender)"
         cell.dogName.text = myDog.name
