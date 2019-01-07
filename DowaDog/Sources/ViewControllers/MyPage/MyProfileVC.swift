@@ -53,7 +53,7 @@ class MyProfileVC: UIViewController {
         
         
         print("transfer=========")
-        MyInfoService.shared.putMyInfo(name: "강태경", phone: "010-3068-1191", email: "perlyuy8@naver.com", birth: "1997-04-02", profileImgFile: UIImage(named: "xBtn")!) {
+        MyInfoEditService.shared.putMyInfo(name: "강태경", phone: "010-3068-1191", email: "perlyuy8@naver.com", birth: "1997-04-02", profileImgFile: UIImage(named: "xBtn")!) {
             (data) in
             
             print("data ===================")
@@ -61,9 +61,6 @@ class MyProfileVC: UIViewController {
             print("data ===================")
         }
         print("transfer=========")
-        
-        
-        
     }
     
 
