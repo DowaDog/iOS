@@ -39,6 +39,7 @@ class Page1VC: UIViewController {
             
             
             
+            
             self.educationList = data
         }
     }
@@ -47,13 +48,20 @@ class Page1VC: UIViewController {
 extension Page1VC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.testImg.count
+        return educationList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! Page1CVCell
-        cell.cardImage.image = self.testImg[indexPath.item]
+        let education = educationList[indexPath.item]
+        cell.cardImage.imageFromUrl(gsno(education.imgPath), defaultImgPath: "")
+//        cell.cardImage.image = self.testImg[indexPath.item]
         
+        if education.educated == true{
+            cell.readCheck.image = UIImage(named:"completedContents")
+        }else if education.educated == false{
+             cell.readCheck.image = UIImage(named:"uncompletedContents")
+        }
         return cell
     }
     
