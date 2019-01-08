@@ -69,7 +69,7 @@ class MyDogDetailVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        AnimalUserAdoptDetailService.shared.getAdoptAnimalDetail(adoptAnimalIdx: 1) {
+        AnimalUserAdoptDetailService.shared.getAdoptAnimalDetail(adoptAnimalIdx: 12) {
             (data) in
             
             print("data======================")
@@ -78,7 +78,7 @@ class MyDogDetailVC: UIViewController {
             print("data======================")
         }
         
-        AnimalUserAdoptInoculationService.shared.getAdoptAnimalInoculation(adoptAnimalIdx: 1) {
+        AnimalUserAdoptInoculationService.shared.getAdoptAnimalInoculation(adoptAnimalIdx: 12) {
             
             (data) in
             
@@ -93,12 +93,22 @@ class MyDogDetailVC: UIViewController {
         
     }
     
+    let inoculationArray: Array<String> = ["I3", "I5"]
     
     
     @objc func confirmTapped(){
         //TODO: 확인 선택 시 일어날 액션
         
-        
+        AnimalUserAdoptDetailService.shared.putAdoptAnimalDetail(adoptAnimalIdx: 12, name: "희야4", gender: "M", kind: "갈색푸들5", weight: "4.4", neuterYn: true, profileImgFile: UIImage(named: "xBtn")!, age: "4", inoculationArray: ["I1", "I2"]) {
+            (data) in
+            
+            // inoculationArray 에 ["I1", "I2"] 라고 해당 항목을 보내주면 트루로 바뀜
+            // inoculationArray 에 inoculataionArray: inoculataionArray 처럼 변수형으로 사용해도 작동함.
+            
+            print("data==========confirm==========")
+            print(data)
+            print("data==========confirm==========")
+        }
         
         
         
