@@ -18,6 +18,7 @@ class AboutEmergenVC: UIViewController {
     var heart: UIBarButtonItem!
     var id : Int!
 
+    @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var regionKind: UILabel!
     @IBOutlet weak var about: UILabel!
     @IBOutlet weak var gender: UILabel!
@@ -58,23 +59,57 @@ class AboutEmergenVC: UIViewController {
             print(data)
             print("data ===================")
             
-            self.age.text  = "\(self.gsno(data.age))"
+            self.age.text  = "\(self.gsno(data.age))살"
             
             let region = self.gsno(data.region)
             let kind = self.gsno(data.kindCd)
+            
             self.regionKind.text =  "[\(region)]\(kind)"
+            self.mainImg.imageFromUrl(self.gsno(data.thumbnailImg), defaultImgPath: "")
+            
+            //남녀 판단
             if data.sexCd == "M" {
+                
                 self.gender.text = "남아"
-                //라벨도 바뀨기
                 self.genderIcon.image = UIImage(named: "manIcon1227")
             }else if data.sexCd == "F"{
                 self.gender.text = "여아"
                 self.genderIcon.image = UIImage(named: "womanIcon1227")
             }else{
+                self.gender.text = "미등록"
             
             }
+            self.about.text = self.gsno(data.specialMark)
             
+            //type 판단
+            if data.type == "dog" {
+                self.kindIcon.image = UIImage(named: "findingdetailDogIcon")
+            }else if data.type == "cat"{
+                     self.kindIcon.image = UIImage(named: "catIcon1227")
+                
+            }
             
+            self.weight.text = "\(self.gsno(data.weight))kg"
+
+            var  start:String!
+            var end:String!
+            
+            if data.startDate == nil{
+                 start = "미등록"
+            }else{
+                start = data.startDate
+            }
+            
+            if  data.endDate == nil{
+                end =  "미등록"
+            }else{
+                end = data.endDate
+            }
+            
+            self.noticeTerm.text =  "\(self.gsno(start))-\(self.gsno(end))"
+            self.findPlace.text = self.gsno(data.happenPlace)
+            self.protectPlace.text = self.gsno(data.careName)
+            self.phoneNumb.setTitle(self.gsno(data.careTel), for: .normal)
             
             
         }

@@ -11,6 +11,15 @@ import UIKit
 
 class FilterVC: UIViewController {
     
+    var type:String?
+    var region:String?
+    var remainNoticeDate:Int?
+    var story:Bool?
+    var searchWord:String?
+    var page:Int?
+    var limit:Int?
+    
+    
     @IBOutlet weak var slider: CustomUISlider!
     @IBOutlet weak var dogBtn: UIButton!
     @IBOutlet weak var catBtn: UIButton!
@@ -30,11 +39,14 @@ class FilterVC: UIViewController {
     @IBOutlet weak var catLabel: UILabel!
     
     
+    @IBOutlet weak var sendBtn: UIButton!
     var resetItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn()
+        
+        sendBtn.isEnabled = false
         
         allBtn.isSelected = true
         area1Btn.isSelected = false
@@ -82,7 +94,23 @@ class FilterVC: UIViewController {
    
     
     @objc func refreshClicked(){
+
+        sendBtn.isEnabled = false
+        sendBtn.backgroundColor = UIColor.init(displayP3Red: 266/255, green: 266/255, blue: 266/255, alpha: 1)
         
+        dogBtn.isSelected = false
+        catBtn.isSelected = false
+        
+        //버튼
+        allBtn.isSelected = true
+        area1Btn.isSelected = false
+        area2Btn.isSelected = false
+        area3Btn.isSelected = false
+        area4Btn.isSelected = false
+        area5Btn.isSelected = false
+        area6Btn.isSelected = false
+        area7Btn.isSelected = false
+        area8Btn.isSelected = false
 
     }
     
@@ -229,17 +257,42 @@ class FilterVC: UIViewController {
         
         if sender == dogBtn{
             dogBtn.isSelected = true
+            
             catBtn.isSelected = false
             dogLabel.textColor = UIColor.init(red: 1, green: 194/255, blue: 51/255, alpha: 1)
             catLabel.textColor =  UIColor.init(red: 119/255, green: 119/255, blue: 119/255, alpha: 1)
+
+                sendBtn.isEnabled = true
+               sendBtn.backgroundColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
             
-        }else if sender == catBtn{
+        }
+        else if sender == catBtn{
+            
+            
             catBtn.isSelected = true
             dogBtn.isSelected = false
             catLabel.textColor = UIColor.init(red: 1, green: 194/255, blue: 51/255, alpha: 1)
             dogLabel.textColor = UIColor.init(red: 119/255, green: 119/255, blue: 119/255, alpha: 1)
             
+            
+                sendBtn.isEnabled = true
+                sendBtn.backgroundColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
+            }
+            
         }
+    
+    
+    @IBAction func filterAction(_ sender: Any) {
+        
+        if catBtn.isSelected == true{
+            type = "고양이"
+        }else if dogBtn.isSelected == true{
+            type = "개"
+        }else{
+            type = "기타"
+        }
+        //    EmergenDogService.shared.findAnimalList(type: <#T##String?#>, region: <#T##String?#>, remainNoticeDate: <#T##Int?#>, story: <#T##Bool?#>, searchWord: <#T##String?#>, page: <#T##Int?#>, limit: <#T##Int?#>, completion: <#T##([EmergenDog]) -> Void#>)
+        //}
     }
     
 }
