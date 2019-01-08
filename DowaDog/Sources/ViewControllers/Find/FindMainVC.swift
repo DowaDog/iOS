@@ -49,9 +49,16 @@ class FindMainVC: UIViewController,sendBackDelegate {
             
         }
         
-        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
+        
+        
+        EmergenDogService.shared.findAnimalList(type: "", region: "", remainNoticeDate: 15, searchWord: "", page: 0, limit:10){
             (data) in
             
+            print("test===")
+            print(self.getType)
+            print(self.getRegion)
+            print(self.getRemainNoticeDate)
+            print("test===")
             
         }
     }
@@ -202,14 +209,26 @@ class FindMainVC: UIViewController,sendBackDelegate {
         }
     }
     
-    func dataReceived(type:  String, region:String, remainNoticeDate: Int){
+    func dataReceived(type: String, region: String, remainNoticeDate: Int){
         getType = type
         getRegion = region
         getRemainNoticeDate = remainNoticeDate
         
-        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
+        
+        print(type)
+        print(region)
+        print(remainNoticeDate)
+        print(getType)
+        print(getRegion)
+        print(getRemainNoticeDate)
+        
+        
+        
+        
+        EmergenDogService.shared.findAnimalList(type: "개", region: "서울", remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
             (data) in
 
+            
         }
         
     }
