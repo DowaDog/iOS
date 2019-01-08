@@ -38,6 +38,7 @@ class Page1VC: UIViewController {
             print("education==============================")
             
             
+            
             self.educationList = data
         }
     }
@@ -62,6 +63,15 @@ extension Page1VC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = self.collectionView.cellForItem(at: indexPath) as!Page1CVCell
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
             
