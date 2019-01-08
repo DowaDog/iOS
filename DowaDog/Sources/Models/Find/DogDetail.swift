@@ -14,8 +14,8 @@ struct DogDetail: Mappable {
     var type: String?
     var processState: String?
     var sexCd: Character?
-    var startDate: Date?
-    var endDate: Date?
+    var startDate: String?
+    var endDate: String?
     var region: String?
     var specialMark: String?
     var remainDateState: Bool?
@@ -54,17 +54,5 @@ struct DogDetail: Mappable {
         liked <- map["liked"]
         educationState <- map["educationState"]
         animalStoryList <- map["animalStoryList"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let dateStart = map["noticeStdt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateStart) {
-            startDate = _date
-        }
-        if let dateEnd = map["noticeEddt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateEnd) {
-            endDate = _date
-        }
     }
 }

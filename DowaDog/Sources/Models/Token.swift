@@ -11,8 +11,8 @@ import ObjectMapper
 struct Token: Mappable {
     
     var data: String?
-    var now: Int64?
-    var expiredAt: Int64?
+    var now: Int?
+    var expiredAt: Int?
     
     init?(map: Map) {}
     

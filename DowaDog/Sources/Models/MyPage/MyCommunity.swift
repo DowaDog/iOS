@@ -17,8 +17,8 @@ struct MyCommunity<T: Mappable>: Mappable {
     var today: Bool?
     var userId: String?
     var userProfileImg: String?
-    var createdAt: Date?
-    var updatedAt: Date?
+    var createdAt: String?
+    var updatedAt: String?
     var auth: Bool?
     
     init?(map: Map) {}
@@ -35,17 +35,5 @@ struct MyCommunity<T: Mappable>: Mappable {
         createdAt <- map["createdAt"]
         updatedAt <- map["updatedAt"]
         auth <- map["auth"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
-        
-        if let dateString = map["createdAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            createdAt = _date
-        }
-        if let dateString = map["updatedAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            updatedAt = _date
-        }
     }
 }

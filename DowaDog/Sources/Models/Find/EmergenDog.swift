@@ -14,7 +14,7 @@ struct EmergenDog: Mappable {
     var sexCd:String?
     var kindCd:String?
     var region:String?
-    var noticeEddt:Date?
+    var noticeEddt:String?
     var liked:Bool?
     var remainDateState:Bool?
     var education:Bool?
@@ -38,15 +38,6 @@ struct EmergenDog: Mappable {
         thumbnailImg <- map["thumbnailImg"]
         liked <- map["liked"]
         education <- map["educationState"]
-        processState <- map["processState"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let dateEnd = map["noticeEddt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateEnd) {
-            noticeEddt = _date
-        }
-        
+        processState <- map["processState"]        
     }
 }

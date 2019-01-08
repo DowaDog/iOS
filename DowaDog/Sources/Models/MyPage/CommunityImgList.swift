@@ -12,8 +12,8 @@ struct CommunityImgList: Mappable {
     
     
     var id: Int?
-    var createdAt: Date?
-    var updatedAt: Date?
+    var createdAt: String?
+    var updatedAt: String?
     var filePath: String?
     var originFileName: String?
     
@@ -27,18 +27,5 @@ struct CommunityImgList: Mappable {
         updatedAt <- map["updatedAt"]
         filePath <- map["filePath"]
         originFileName <- map["originFileName"]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
-        
-        if let dateString = map["createdAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            createdAt = _date
-        }
-        
-        if let dateString = map["updatedAt"].currentValue as? String,
-            let _date = dateFormatter.date(from: dateString) {
-            updatedAt = _date
-        }
     }
 }
