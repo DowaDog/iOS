@@ -12,7 +12,7 @@ struct AnimalDetailService: APIManager, Requestable{
     typealias NetworkData = ResponseObject<DogDetail>
     static let shared = AnimalDetailService()
     let dogDetailURL = url("/api/normal/animals")
-    let header: HTTPHeaders = [
+    let headers: HTTPHeaders = [
         "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
     
@@ -21,7 +21,7 @@ struct AnimalDetailService: APIManager, Requestable{
         
         let queryURL = dogDetailURL + "/\(animalIdx)"
         
-        gettable(queryURL, body: nil, header: header) { res in
+        gettable(queryURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
                 
@@ -48,7 +48,7 @@ struct AnimalDetailService: APIManager, Requestable{
         
         let queryURL = dogDetailURL + "/\(animalIdx)/likes"
         
-        postable(queryURL, body: nil, header: header) { res in
+        postable(queryURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
                 
