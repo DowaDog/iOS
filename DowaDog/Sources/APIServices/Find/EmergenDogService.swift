@@ -44,16 +44,52 @@ struct EmergenDogService: APIManager, Requestable{
         }
     }
     
+    
+    
+    
+    
+    func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
+        
+        let queryURL = emergenDogURL +
+            "?type=\(type ?? "")" +
+            "&region=\(region ?? "")" +
+            "&remainNoticeDate=\(remainNoticeDate ?? 15)" +
+            "&searchWord=\(searchWord ?? "")" +
+            "&page=\(page ?? 0)" +
+            "&limit=\(limit ?? 10)"
+        
+        gettable(queryURL, body: nil, header: headers) { res in
+            switch res {
+            case .success(let value):
+                
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                guard let data = value.data?.content else {return}
+                
+                completion(data)
+            case .error(let error):
+                
+                print("error======================")
+                print("error : ")
+                print(error)
+                print("error======================")
+            }
+        }
+    }
+    
     func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, story: Bool?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
         
         let queryURL = emergenDogURL +
-            "?type=\(type)" +
-            "&region=\(region)" +
-            "&remainNoticeDate=\(remainNoticeDate)" +
-            "&story=\(story)" +
-            "&searchWord=\(searchWord)" +
-            "&page=\(page)" +
-            "&limit=\(limit)"
+            "?type=\(type ?? "")" +
+            "&region=\(region ?? "")" +
+            "&remainNoticeDate=\(remainNoticeDate ?? 15)" +
+            "&story=\(story ?? true)" +
+            "&searchWord=\(searchWord ?? "")" +
+            "&page=\(page ?? 0)" +
+            "&limit=\(limit ?? 10)"
         
         gettable(queryURL, body: nil, header: headers) { res in
             switch res {
