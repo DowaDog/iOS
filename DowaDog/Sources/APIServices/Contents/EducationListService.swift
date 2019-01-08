@@ -68,4 +68,57 @@ struct EducationListService: APIManager, Requestable{
             }
         }
     }
+    
+    // 카드뉴스 교육이수 완료 등록
+    func contentComplete(contentIdx: Int, completion: @escaping (ResponseObject<ContentArray<Education>>) -> Void) {
+        
+        let queryURL = educationURL + "/\(contentIdx)/complete"
+        
+        postable(queryURL, body: nil, header: headers) {
+            res in
+            
+            switch res {
+            case .success(let value):
+                
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                completion(value)
+            case .error(let error):
+                print(".error============================")
+                print("error: ")
+                print(error)
+                print(".error============================")
+            }
+        }
+    }
+    
+    // 카드뉴스 스크랩
+    
+    func contentScrap(contentIdx: Int, completion: @escaping (ResponseObject<ContentArray<Education>>) -> Void) {
+        
+        let queryURL = educationURL + "/\(contentIdx)/scrap"
+        
+        postable(queryURL, body: nil, header: headers) {
+            res in
+            
+            switch res {
+            case .success(let value):
+                
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                completion(value)
+            case .error(let error):
+                print(".error============================")
+                print("error: ")
+                print(error)
+                print(".error============================")
+            }
+        }
+    }
 }

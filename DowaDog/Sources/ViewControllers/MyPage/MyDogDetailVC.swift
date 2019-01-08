@@ -97,6 +97,12 @@ class MyDogDetailVC: UIViewController {
     
     @objc func confirmTapped(){
         //TODO: 확인 선택 시 일어날 액션
+        
+        
+        
+        
+        
+        
     }
     
     
