@@ -11,6 +11,8 @@ import UIKit
 class FindMainVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var emergenDogList = [EmergenDog]()
+    
     @IBOutlet weak var filterBtn: UIButton!
     
     var  reusablecell = "cell1"
@@ -25,6 +27,20 @@ class FindMainVC: UIViewController {
                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),
                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png"))
     ]
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        EmergenDogService.shared.getEmergenDogList(offset: 0, limit: 10) { [weak self]
+            (data) in
+            guard let `self` = self else {return}
+            
+            self.emergenDogList = data
+            self.collectionView.reloadData()
+            
+            
+        }
+    }
+    
     
     
     // sidemenu
@@ -55,7 +71,7 @@ class FindMainVC: UIViewController {
     
     func setBlackScreen() {
         blackScreen=UIView(frame: self.view.bounds)
-        blackScreen.alpha = 0
+        blackScreen.alpha = 0 
         blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
         self.navigationController?.view.addSubview(blackScreen)
         let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
@@ -178,7 +194,7 @@ extension FindMainVC:UICollectionViewDataSource{
             
         }
         else if section == 1 {
-            returnValue = emerImg.count
+            returnValue = emergenDogList.count
         }
         else if section == 2 {
             returnValue =  newImg.count
@@ -199,7 +215,70 @@ extension FindMainVC:UICollectionViewDataSource{
         if section == 0{
             return UICollectionViewCell()
         } else if section == 1 {
-            cell.emerImage.image = emerImg[indexPath.item]
+            
+            
+                let emergenDog = emergenDogList[indexPath.row]
+            //데이터 집어넣기 여기서
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd"
+            
+            let getDate = gsno(emergenDog.noticeEddt)//마감날짜
+            var strArray: Array<String> = []
+            strArray =  getDate.components(separatedBy:"-")
+            
+            let endDate  = strArray[2]
+            
+            let cal = Calendar.current
+            let date = Date()
+            let currentDate = cal.component(.day, from: date)
+            
+            
+            //
+            let dday = Int(endDate) ?? Int() - Int(currentDate)
+            let Dday = "D-\(dday)"
+            //현재 날짜(currentData)가 분명 int값인데 계산에 먹히지를 않음
+            
+            //하단에 들어가는 해당 동물 지역과 종
+            let region = gsno(emergenDog.region)
+            let kind = gsno(emergenDog.kindCd)
+            
+            cell.emerImage.imageFromUrl(gsno( emergenDog.thumbnailImg ), defaultImgPath: "")
+            cell.aboutLabel.text = "[\(region)]\(kind)"
+            
+            cell.dayLabel.text = Dday
+            
+            //강아지인지 고양이인지 판단
+            if emergenDog.type == "dog"{
+                cell.kindImage.image = UIImage(named: "dogIcon1227")
+            }else if emergenDog.type == "cat" {
+                cell.kindImage.image = UIImage(named: "catIcon1227")
+            }
+            //암컷 수컷 판단
+            if emergenDog.sexCd == "F" {
+             
+            
+            }
+            else if emergenDog.sexCd == "M" {
+                   cell.genderImage.image = UIImage(named: "manIcon1227")
+             
+            }
+            
+            
+            //하트 클릭여부 판단
+            cell.heartBtn.setImage(UIImage(named: "findingHeartBtnFill.png"), for: .selected)
+            cell.heartBtn.setImage(UIImage(named:"heartBtn"), for: .normal)
+            if emergenDog.liked == false{
+                
+                cell.heartBtn.isSelected = true
+                
+            }else if emergenDog.liked == true{
+                
+                cell.heartBtn.isSelected = false
+                
+            }
+        
+            
         } else if section == 2 {
             cell.emerImage.image = newImg[indexPath.item]
         }
