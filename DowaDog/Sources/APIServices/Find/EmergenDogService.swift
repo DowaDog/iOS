@@ -48,15 +48,15 @@ struct EmergenDogService: APIManager, Requestable{
     
     
     
-    func findAnimalList(type: String, region: String, remainNoticeDate: Int, searchWord: String, page: Int, limit: Int, completion: @escaping ([EmergenDog]) -> Void) {
+    func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
         
         let queryURL = emergenDogURL +
-            "?type=\(type)" +
-            "&region=\(region)" +
-            "&remainNoticeDate=\(remainNoticeDate)" +
-            "&searchWord=\(searchWord)" +
-            "&page=\(page)" +
-            "&limit=\(limit)"
+            "?type=\(type ?? "")" +
+            "&region=\(region ?? "전체지역")" +
+            "&remainNoticeDate=\(remainNoticeDate ?? 8)" +
+            "&searchWord=\(searchWord ?? "")" +
+            "&page=\(page ?? 0)" +
+            "&limit=\(limit ?? 10)"
          let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         gettable(encodingURL, body: nil, header: headers) { res in
@@ -81,16 +81,17 @@ struct EmergenDogService: APIManager, Requestable{
         }
     }
     
-    func findAnimalList(type: String, region: String, remainNoticeDate: Int, story: Bool, searchWord: String, page: Int, limit: Int, completion: @escaping ([EmergenDog]) -> Void) {
+    func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, story: Bool?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
         
         let queryURL = emergenDogURL +
-            "?type=\(type)" +
-            "&region=\(region)" +
-            "&remainNoticeDate=\(remainNoticeDate)" +
-            "&story=\(story)" +
-            "&searchWord=\(searchWord)" +
-            "&page=\(page)" +
-            "&limit=\(limit)"
+            "?type=\(type ?? "")" +
+            "&region=\(region ?? "전체지역")" +
+            "&remainNoticeDate=\(remainNoticeDate ?? 8)" +
+            "&story=\(story ?? true)" +
+            "&searchWord=\(searchWord ?? "")" +
+            "&page=\(page ?? 0)" +
+            "&limit=\(limit ?? 10)"
+        
          let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         gettable(encodingURL, body: nil, header: headers) { res in
