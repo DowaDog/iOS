@@ -34,6 +34,12 @@ class AdoptDocStep1VC: UIViewController {
         profileImage.layer.cornerRadius = profileImage.layer.frame.size.height/2
     }
     
+    
+    
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
     }
@@ -58,6 +64,8 @@ class AdoptDocStep1VC: UIViewController {
     
     @IBAction func personalEditAction(_ sender: Any) {
         let dvc = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyProfileNav") as! UINavigationController
+        
+        // 윤영씨, push 로 구현해야할 것 같습니다.
         
         self.present(dvc, animated: true, completion: nil)
 //        self.show(dvc, sender: self)

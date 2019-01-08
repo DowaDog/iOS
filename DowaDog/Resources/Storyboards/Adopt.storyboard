@@ -791,7 +791,7 @@
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="현재 신청자가 키우고 계신 경우," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-VO-NnZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 신청자가 키우고 계신 경우," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-VO-NnZ">
                                 <rect key="frame" x="28" y="377" width="210" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="Wka-Cc-WX8"/>
@@ -801,7 +801,7 @@
                                 <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="반려동물의 정보를 입력해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGA-Ui-nlf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물의 정보를 입력해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGA-Ui-nlf">
                                 <rect key="frame" x="28" y="404" width="216" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="216" id="HCu-X7-xhj"/>
@@ -811,7 +811,7 @@
                                 <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3P-Ot-9Vp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3P-Ot-9Vp">
                                 <rect key="frame" x="28" y="442" width="319" height="145"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
@@ -824,6 +824,7 @@
                             <constraint firstItem="Ill-6S-P3A" firstAttribute="top" secondItem="ezb-T3-GrC" secondAttribute="bottom" constant="25" id="2XC-xT-RL1"/>
                             <constraint firstItem="ezb-T3-GrC" firstAttribute="top" secondItem="oC4-XR-k3q" secondAttribute="bottom" constant="25" id="4dR-rP-X2C"/>
                             <constraint firstItem="J3P-Ot-9Vp" firstAttribute="top" secondItem="VGA-Ui-nlf" secondAttribute="bottom" constant="20" id="59f-gy-WiU"/>
+                            <constraint firstItem="NNy-VO-NnZ" firstAttribute="top" secondItem="EuN-Kw-x5d" secondAttribute="bottom" constant="29" id="8j2-vQ-Uid"/>
                             <constraint firstItem="ezb-T3-GrC" firstAttribute="centerX" secondItem="cvD-5z-Wcy" secondAttribute="centerX" id="A6G-f1-AVV"/>
                             <constraint firstItem="cvD-5z-Wcy" firstAttribute="trailing" secondItem="bYg-ay-jDx" secondAttribute="trailing" id="AC6-pN-tFe"/>
                             <constraint firstItem="bYg-ay-jDx" firstAttribute="leading" secondItem="cvD-5z-Wcy" secondAttribute="leading" id="AC8-xT-rJ8"/>

@@ -125,6 +125,24 @@ class AdoptDocStep4VC: UIViewController {
 
     @IBAction func nextBtnAction(_ sender: UIButton) {
         if nextBtn.backgroundColor == selectColor {
+            
+            AdoptService.shared.requestOnline(animalIdx: 8, phone: "010-9910-0433", email: "creator_wookeon@naver.com", address: "서울특별시 구로구", job: "백수", havePet: false, regType: "online", petInfo: "귀엽고 깜찍하게", adoptType: "adopt") {
+                (data) in
+                
+                
+                
+                print("data====================")
+                print(data)
+                print("data====================")
+            }
+            
+            
+            
+            
+            
+            
+            
+            
             performSegue(withIdentifier: "goEnd", sender: self)
         }
     }
