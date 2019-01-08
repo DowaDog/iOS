@@ -33,11 +33,12 @@ class MyWantDogVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+
         print("refresh=========")
         
         
         print("transfer=========")
+        
         MyLikeListService.shared.getMyLikeList() { [weak self]
             
             (data) in
@@ -82,6 +83,28 @@ extension MyWantDogVC:UICollectionViewDataSource{
         }else{
                cell.genderImage.image = UIImage(named:"womanIcon1227")
         }
+        
+        let  id = gino( likeDog.id)
+        
+        
+        cell.heartBtn.setImage(UIImage(named:"likedAnimalHeartBtnFill.png"), for: .normal)
+        cell.heartBtn.setImage(UIImage(named: "heartBtn"), for: .selected)
+        
+        
+//        if cell.heartBtn.isSelected == false{
+//
+//            AnimalDetailService.shared.animalLike(animalIdx: id){ (data) in
+//
+//                print("data++++++++++++++++++++")
+//
+//                print(data)
+//
+//                data.data?.liked \
+//
+//
+//            }
+//        }
+       
         return cell
     }
     

@@ -12,13 +12,26 @@ class AboutEmergenVC: UIViewController {
     var heartClcik = false
     @IBOutlet weak var popupView: UIView!
     
-    @IBOutlet weak var phoneNumb: UIButton!
-    
     @IBOutlet weak var coverView: UIView!
     
     var numb : String!
     var heart: UIBarButtonItem!
+    var id : Int!
+
+    @IBOutlet weak var regionKind: UILabel!
+    @IBOutlet weak var about: UILabel!
+    @IBOutlet weak var gender: UILabel!
+    @IBOutlet weak var genderIcon: UIImageView!
+    @IBOutlet weak var kindIcon: UIImageView!
+    @IBOutlet weak var weight: UILabel!
+    @IBOutlet weak var age: UILabel!
+    @IBOutlet weak var noticeNumb: UILabel!
+    @IBOutlet weak var noticeTerm: UILabel!
+    @IBOutlet weak var findPlace: UILabel!
+    @IBOutlet weak var protectPlace: UILabel!
+    @IBOutlet weak var phoneNumb: UIButton!
     
+    @IBOutlet weak var dDay: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +46,41 @@ class AboutEmergenVC: UIViewController {
         popupView.alpha = 0.0
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("transfer=========")
+        
+        AnimalDetailService.shared.getAnimalDetail(animalIdx: id) {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+            
+            self.age.text  = "\(self.gsno(data.age))"
+            
+            let region = self.gsno(data.region)
+            let kind = self.gsno(data.kindCd)
+            self.regionKind.text =  "[\(region)]\(kind)"
+            if data.sexCd == "M" {
+                self.gender.text = "남아"
+                //라벨도 바뀨기
+                self.genderIcon.image = UIImage(named: "manIcon1227")
+            }else if data.sexCd == "F"{
+                self.gender.text = "여아"
+                self.genderIcon.image = UIImage(named: "womanIcon1227")
+            }else{
+            
+            }
+            
+            
+            
+            
+        }
+        print("transfer=========")
+    }
+
     
     @objc func heartTapped(){
         if heartClcik == false{

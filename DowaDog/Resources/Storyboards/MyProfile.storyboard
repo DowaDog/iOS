@@ -401,28 +401,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="321" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogIcon1227" translatesAutoresizingMaskIntoConstraints="NO" id="beX-Be-5GD">
-                                                    <rect key="frame" x="110" y="81" width="18" height="15"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="beX-Be-5GD" secondAttribute="height" multiplier="6:5" id="QRE-SR-e8M"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPageAdoptingCatImg" translatesAutoresizingMaskIntoConstraints="NO" id="lQM-Pa-u6B">
                                                     <rect key="frame" x="0.0" y="0.0" width="321" height="135"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강아지 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qK-5K-tsT">
-                                                    <rect key="frame" x="15" y="78" width="96" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogIcon1227" translatesAutoresizingMaskIntoConstraints="NO" id="beX-Be-5GD">
+                                                    <rect key="frame" x="110" y="81" width="18" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="qOa-Ce-kDj"/>
+                                                        <constraint firstAttribute="width" constant="18" id="Vhs-qg-E4Z"/>
+                                                        <constraint firstAttribute="height" constant="15" id="bQ2-Vm-YfI"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강아지 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qK-5K-tsT">
+                                                    <rect key="frame" x="15" y="78" width="96" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="9XL-1G-2jf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="20"/>
                                                     <color key="textColor" red="0.26277512311935425" green="0.26267054677009583" blue="0.26666760444641113" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u9-1Q-8qA">
-                                                    <rect key="frame" x="15" y="100" width="29" height="13"/>
+                                                    <rect key="frame" x="15" y="100" width="233" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="Y4l-GJ-e6d"/>
+                                                        <constraint firstAttribute="width" constant="233" id="a4u-RV-lev"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                                     <color key="textColor" red="0.26274910569190979" green="0.26273781061172485" blue="0.26274549961090088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -431,16 +433,16 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="lQM-Pa-u6B" firstAttribute="leading" secondItem="beX-Be-5GD" secondAttribute="trailing" constant="-128" id="2Rs-9S-Sfz"/>
-                                            <constraint firstItem="7qK-5K-tsT" firstAttribute="top" secondItem="lQM-Pa-u6B" secondAttribute="bottom" constant="-57" id="63Y-7i-3i0"/>
+                                            <constraint firstItem="7qK-5K-tsT" firstAttribute="leading" secondItem="mXr-2R-DLS" secondAttribute="leading" constant="15" id="3tS-Ua-foU"/>
+                                            <constraint firstItem="3u9-1Q-8qA" firstAttribute="leading" secondItem="mXr-2R-DLS" secondAttribute="leading" constant="15" id="4Dl-6q-AHZ"/>
+                                            <constraint firstItem="beX-Be-5GD" firstAttribute="top" secondItem="lQM-Pa-u6B" secondAttribute="bottom" constant="-54" id="BLE-GJ-2Xb"/>
                                             <constraint firstItem="lQM-Pa-u6B" firstAttribute="leading" secondItem="mXr-2R-DLS" secondAttribute="leading" id="JN3-DT-c3R"/>
-                                            <constraint firstItem="3u9-1Q-8qA" firstAttribute="top" secondItem="7qK-5K-tsT" secondAttribute="bottom" constant="1" id="LbB-AS-OIo"/>
                                             <constraint firstItem="lQM-Pa-u6B" firstAttribute="top" secondItem="mXr-2R-DLS" secondAttribute="top" id="Onp-Py-9AG"/>
-                                            <constraint firstItem="lQM-Pa-u6B" firstAttribute="leading" secondItem="7qK-5K-tsT" secondAttribute="trailing" constant="-111" id="PcR-nw-0CA"/>
+                                            <constraint firstItem="3u9-1Q-8qA" firstAttribute="top" secondItem="7qK-5K-tsT" secondAttribute="bottom" constant="-1" id="Pyt-hI-Spt"/>
+                                            <constraint firstItem="7qK-5K-tsT" firstAttribute="top" secondItem="mXr-2R-DLS" secondAttribute="top" constant="78" id="agH-aM-N2J"/>
                                             <constraint firstAttribute="bottom" secondItem="lQM-Pa-u6B" secondAttribute="bottom" id="ahJ-iK-fHG"/>
                                             <constraint firstAttribute="trailing" secondItem="lQM-Pa-u6B" secondAttribute="trailing" id="cOq-2S-Y0I"/>
-                                            <constraint firstItem="lQM-Pa-u6B" firstAttribute="leading" secondItem="3u9-1Q-8qA" secondAttribute="trailing" constant="-44" id="oEP-kZ-6ah"/>
-                                            <constraint firstItem="beX-Be-5GD" firstAttribute="top" secondItem="lQM-Pa-u6B" secondAttribute="bottom" constant="-54" id="u2g-8B-ac2"/>
+                                            <constraint firstItem="beX-Be-5GD" firstAttribute="leading" secondItem="7qK-5K-tsT" secondAttribute="trailing" constant="-1" id="kRC-UR-zKS"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="aboutLabel" destination="3u9-1Q-8qA" id="WiU-t1-VRp"/>
@@ -1687,7 +1689,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.85099190469999997" green="0.85095977779999998" blue="0.85098159309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="pq0-fy-SG8" customClass="MyWriteCell" customModule="DowaDog" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="writeCell" rowHeight="84" id="pq0-fy-SG8" customClass="MyWriteCell" customModule="DowaDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pq0-fy-SG8" id="kwC-gC-mK0">
@@ -1695,22 +1697,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 쓴글  제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZY-nz-1De">
-                                                    <rect key="frame" x="31" y="16" width="329" height="18"/>
+                                                    <rect key="frame" x="31" y="16" width="99.5" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="329" id="Lh9-rm-uyo"/>
-                                                        <constraint firstAttribute="height" constant="18" id="e93-AE-jIq"/>
-                                                        <constraint firstAttribute="width" secondItem="mZY-nz-1De" secondAttribute="height" multiplier="329:18" id="nBi-YS-dxU"/>
+                                                        <constraint firstAttribute="height" constant="18" id="o42-9x-nf6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="16"/>
                                                     <color key="textColor" red="0.28235718609999999" green="0.28234520549999997" blue="0.28235331180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.xx.xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prK-ik-P65">
-                                                    <rect key="frame" x="31" y="52" width="101" height="16"/>
+                                                    <rect key="frame" x="31" y="52" width="69" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="M1Y-kv-hRa"/>
-                                                        <constraint firstAttribute="width" secondItem="prK-ik-P65" secondAttribute="height" multiplier="101:16" id="Xje-nj-zfn"/>
-                                                        <constraint firstAttribute="width" constant="101" id="reC-bC-gd1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
                                                     <color key="textColor" red="0.6509893537" green="0.65096431970000002" blue="0.65098124739999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1742,7 +1740,7 @@
                         <viewLayoutGuide key="safeArea" id="sKF-l4-nQQ"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="0di-G5-sfw" id="TGZ-V0-SVY"/>
+                        <outlet property="boardTable" destination="0di-G5-sfw" id="0CM-oI-raX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eco-ig-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>

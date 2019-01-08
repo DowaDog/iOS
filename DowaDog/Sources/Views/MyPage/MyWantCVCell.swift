@@ -31,5 +31,6 @@ class MyWantCVCell: UICollectionViewCell {
         self.layer.shadowRadius = 3
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
+        
     }
 }

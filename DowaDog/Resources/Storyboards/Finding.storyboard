@@ -893,28 +893,6 @@
             </objects>
             <point key="canvasLocation" x="870" y="211"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Vla-eY-X5o">
-            <objects>
-                <viewController id="Nfc-2l-Bbl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kSd-uH-jsN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWr-W0-jND">
-                                <rect key="frame" x="135" y="205" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="OCK-uA-OhH"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z8m-wp-8wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-256" y="-954"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mxa-cU-YjC">
             <objects>
@@ -1303,9 +1281,21 @@
                         <viewLayoutGuide key="safeArea" id="fXY-xl-aOg"/>
                     </view>
                     <connections>
+                        <outlet property="about" destination="759-jp-QUr" id="Hdd-Hu-GAs"/>
+                        <outlet property="age" destination="5me-61-hxO" id="Ipa-PR-f94"/>
                         <outlet property="coverView" destination="TZm-Ux-iX2" id="MNE-69-IJr"/>
-                        <outlet property="phoneNumb" destination="noO-mK-cht" id="pVU-8j-RN4"/>
+                        <outlet property="dDay" destination="lBN-mc-aNc" id="5bJ-Kf-Fay"/>
+                        <outlet property="findPlace" destination="YKr-M4-Nov" id="vcw-Gc-fB0"/>
+                        <outlet property="gender" destination="DsW-k1-cjk" id="2dw-ED-5gN"/>
+                        <outlet property="genderIcon" destination="Z4v-Hr-kx7" id="lkp-L4-2jF"/>
+                        <outlet property="kindIcon" destination="QMY-v2-gdd" id="PZ7-Tb-2xe"/>
+                        <outlet property="noticeNumb" destination="NEk-SB-fTk" id="18S-bQ-9Om"/>
+                        <outlet property="noticeTerm" destination="cPo-Mf-5lQ" id="H2Z-rY-lKY"/>
+                        <outlet property="phoneNumb" destination="noO-mK-cht" id="Ka2-cl-0kv"/>
                         <outlet property="popupView" destination="ZVn-9j-pjC" id="VxX-I0-eW4"/>
+                        <outlet property="protectPlace" destination="tqM-aS-hm8" id="HHa-pZ-e6x"/>
+                        <outlet property="regionKind" destination="3JZ-Ty-Ykz" id="5Mg-zm-39C"/>
+                        <outlet property="weight" destination="cH5-er-4gX" id="8Cv-2X-3FP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rls-gK-92u" userLabel="First Responder" sceneMemberID="firstResponder"/>

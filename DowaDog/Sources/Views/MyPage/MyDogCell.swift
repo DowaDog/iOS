@@ -17,6 +17,7 @@ class MyDogCell: UICollectionViewCell {
     @IBOutlet weak var kindImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        cardImage.roundRadius()
     }
 }
 
