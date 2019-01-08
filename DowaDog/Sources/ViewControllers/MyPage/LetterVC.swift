@@ -51,6 +51,14 @@ class LetterVC: UIViewController {
             
 
         }
+        
+        MailboxService.shared.readMailbox() {
+            (data) in
+            
+            print("data ===================")
+            print(data)
+            print("data ===================")
+        }
         print("transfer=========")
     }
 }
