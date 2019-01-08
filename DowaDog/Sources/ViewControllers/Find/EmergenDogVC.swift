@@ -26,6 +26,8 @@ class EmergenDogVC: UIViewController {
         
         navbar.title = "긴급동물"
         self.setNavigationBarShadow()
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,6 +37,8 @@ class EmergenDogVC: UIViewController {
             
             self.emergenDogList = data
             self.collectionView.reloadData()
+            
+
         }
     }
     
@@ -65,20 +69,38 @@ extension EmergenDogVC:UICollectionViewDataSource{
         let emergenDog = emergenDogList[indexPath.row]
         
         //남은 날짜 d-day 계산 부분
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd"
+
+        
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"
+
+           let getDate = gsno(emergenDog.noticeEddt)//마감날짜
+        var strArray: Array<String> = []
+        strArray =  getDate.components(separatedBy:"-")
+
+        let endDate  = strArray[2]
         
-        //        var cal = Calendar.current
-        //        var date = Date()
-        //        var currentDay = cal.component(.day, from: date)
-        //
-        //        let dday = currentDay - dateFormatter.emergedog.noticeEddt
+        let cal = Calendar.current
+        let date = Date()
+        let currentDate = cal.component(.day, from: date)
         
+
+//
+        let dday = Int(endDate) ?? Int() - Int(currentDate)
+        let Dday = "D-\(dday)"
+//현재 날짜(currentData)가 분명 int값인데 계산에 먹히지를 않음
+
         //하단에 들어가는 해당 동물 지역과 종
-        let region = emergenDog.region
-        let kind = emergenDog.kindCd
+        let region = gsno(emergenDog.region)
+        let kind = gsno(emergenDog.kindCd)
         
+    cell.animalImage.imageFromUrl(self.gsno(emergenDog.thumbnailImg)   , defaultImgPath: "")
         cell.aboutLabel.text = "[\(region)]\(kind)"
+        
+        cell.dayLabel.text = Dday
         
         //강아지인지 고양이인지 판단
         if emergenDog.type == "dog"{
@@ -93,11 +115,7 @@ extension EmergenDogVC:UICollectionViewDataSource{
         else if emergenDog.sexCd == "M" {
             cell.sexImage.image = UIImage(named: "manIcon1227")
         }
-        
-        //        let day = emergedog.noticeEddt
-        //        cell.dayLabel.text = dateFormatter.string(from:emergedog.)
-        //
-        //          cell.dateLabel.text = dateFormatter.string(from: board.boardDate ?? Date())
+
         
         //하트 클릭여부 판단
         cell.heartBtn.setImage(UIImage(named: "findingHeartBtnFill.png"), for: .selected)
@@ -121,13 +139,16 @@ extension EmergenDogVC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = self.collectionView.cellForItem(at: indexPath) as!EmergenDetailCVCell
-        if indexPath.row == 0{
+        
+        let emergenDog = emergenDogList[indexPath.row]
+
             if let dvc = storyboard?.instantiateViewController(withIdentifier: "AboutEmergenVC") as? AboutEmergenVC {
+              
+                dvc.id = gino(emergenDog.id)
                 
                 //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                 navigationController?.pushViewController(dvc, animated: true)
-                
-            }
+
         }
         
     }

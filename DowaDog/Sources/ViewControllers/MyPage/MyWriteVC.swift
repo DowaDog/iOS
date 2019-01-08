@@ -14,6 +14,7 @@ class MyWriteVC: UIViewController {
     
     var myWriteList = [MyCommunity<CommunityImgList>]()
     
+    var writeData = ["gggggg", "ssssdssss"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,20 +66,21 @@ extension MyWriteVC : UITableViewDataSource {
         print(myWriteList.count)
         print("data Source==========================")
         
-        return myWriteList.count
+        return writeData.count
+//        return myWriteList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = boardTable.dequeueReusableCell(withIdentifier: "writeCell") as! MyWriteCell
         
-        let board = myWriteList[indexPath.row]
-        
+//        let board = myWriteList[indexPath.row]
+        cell.titleLabel.text = writeData[indexPath.row]
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
 
-        cell.dateLabel.text = dateFormatter.string(from: board.updatedAt ?? Date())
-        cell.titleLabel.text = gsno(board.title)
+//        cell.dateLabel.text = dateFormatter.string(from: board.updatedAt ?? Date())
+//        cell.titleLabel.text = gsno(board.title)
         
         return cell
     }

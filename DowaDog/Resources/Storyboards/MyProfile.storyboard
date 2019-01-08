@@ -316,9 +316,6 @@
                                                                 <constraint firstAttribute="width" constant="22" id="sJz-ai-tE3"/>
                                                             </constraints>
                                                             <state key="normal" image="likedAnimalHeartBtnFill"/>
-                                                            <connections>
-                                                                <action selector="heartClickedAction:" destination="mHC-7V-4HK" eventType="touchUpInside" id="1wV-L6-sQq"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
