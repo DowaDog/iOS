@@ -8,16 +8,17 @@
 
 import UIKit
 
+protocol sendBackDelegate{
+    func dataReceived(type: String, region:String, remainNoticeData:Int)
+}
 
 class FilterVC: UIViewController {
     
-    var type:String?
-    var region:String?
-    var remainNoticeDate:Int?
-    var story:Bool?
-    var searchWord:String?
-    var page:Int?
-    var limit:Int?
+    var putType:String  = "개"
+    var putRegion:String = "전체 지역"
+    var putRemainNoticeDate:Int = 300
+
+    var delegate : sendBackDelegate?
     
     
     @IBOutlet weak var slider: CustomUISlider!
@@ -122,6 +123,8 @@ class FilterVC: UIViewController {
         if(currentValue == 15){
             maxDate.text = "\(currentValue)일 이상"
         }
+        putRemainNoticeDate = currentValue
+        
     }
     
     
@@ -285,14 +288,37 @@ class FilterVC: UIViewController {
     @IBAction func filterAction(_ sender: Any) {
         
         if catBtn.isSelected == true{
-            type = "고양이"
+            putType = "고양이"
         }else if dogBtn.isSelected == true{
-            type = "개"
+            putType = "개"
         }else{
-            type = "기타"
+             putType = "기타"
         }
-        //    EmergenDogService.shared.findAnimalList(type: <#T##String?#>, region: <#T##String?#>, remainNoticeDate: <#T##Int?#>, story: <#T##Bool?#>, searchWord: <#T##String?#>, page: <#T##Int?#>, limit: <#T##Int?#>, completion: <#T##([EmergenDog]) -> Void#>)
-        //}
+        
+        if allBtn.isSelected == true{
+            putRegion = "전체 지역"
+        }else if area1Btn.isSelected == true{
+            putRegion  = "서울"
+        }else if area2Btn.isSelected == true{
+            putRegion  = "경기"
+        }else if area3Btn.isSelected == true{
+             putRegion  = "인천"
+        }else if area4Btn.isSelected == true{
+             putRegion  = "강원"
+        }else if area5Btn.isSelected == true{
+             putRegion  = "충청"
+        }else if area6Btn.isSelected == true{
+             putRegion = "전라"
+        }else if area7Btn.isSelected == true{
+             putRegion  = "경상"
+        }else if area8Btn.isSelected == true{
+             putRegion  = "제주"
+        }
+
+        delegate?.dataReceived(type: putType, region: putRegion, remainNoticeData: putRemainNoticeDate)
+        
+        dismiss(animated: true, completion: nil)
+ 
     }
     
 }

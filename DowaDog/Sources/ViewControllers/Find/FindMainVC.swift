@@ -10,17 +10,14 @@ import UIKit
 
 class FindMainVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-//    EmergenDogService.shared.findAnimalList(type: <#T##String?#>, region: <#T##String?#>, remainNoticeDate: <#T##Int?#>, story: <#T##Bool?#>, searchWord: <#T##String?#>, page: <#T##Int?#>, limit: <#T##Int?#>, completion: <#T##([EmergenDog]) -> Void#>)
-//}
-    var type:String?
-    var region:String?
-    var remainNoticeDate:Int?
-    var story:Bool?
-    var searchWord:String?
-    var page:Int?
-    var limit:Int?
 
-    
+    var getType:String = ""
+    var getRegion:String=""
+    var getRemainNoticeDate:Int = 15
+    var searchWord:String = ""
+    var page:Int = 0
+    var limit:Int = 10
+
     
     var emergenDogList = [EmergenDog]()
     
@@ -39,6 +36,7 @@ class FindMainVC: UIViewController {
                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png"))
     ]
 
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
@@ -51,8 +49,9 @@ class FindMainVC: UIViewController {
             
         }
         
-        EmergenDogService.shared.findAnimalList(type: type, region: region, remainNoticeDate: remainNoticeDate, story: story, searchWord: searchWord, page: page, limit: limit){
+        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
             (data) in
+            
             
         }
     }
@@ -172,32 +171,54 @@ class FindMainVC: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    
+
     
     @IBAction func searchClickAction(_ sender: Any) {
-        //
-        //        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
-        //
-        //        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-        //        navigationController?.pushViewController(filter, animated: true)
-        //    }
+        
+                let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
+        
+                //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+                navigationController?.pushViewController(filter, animated: true)
+        
+        
+       
+//        if segue.identifier == "showSecondView"{
+//
+//            let secondVC = segue.destination as! SecondViewController
+//            secondVC.data = textField.text!
+//            secondVC.delegate = self
+//
+//        }
+    }
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "action_show"{
+            
+            let filterVC = segue.destination as! FilterVC
+//            filterVC.delegate = self as! sendBackDelegate
+ 
+        }
     }
     
-    @IBAction func filterClickAction(_ sender: Any) {
+    func dataReceived(type:  String, region:String, remainNoticeDate: Int){
+        getType = type
+        getRegion = region
+        getRemainNoticeDate = remainNoticeDate
         
-        
-        
-        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
-        
-        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-        navigationController?.pushViewController(filter, animated: true)
-    }
-}
+        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
+            (data) in
 
+        }
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+
+    }
+
+}
 
 extension FindMainVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -250,7 +271,7 @@ extension FindMainVC:UICollectionViewDataSource{
             let currentDate = cal.component(.day, from: date)
             
             
-            //
+            
             let dday = Int(endDate) ?? Int() - Int(currentDate)
             let Dday = "D-\(dday)"
             //현재 날짜(currentData)가 분명 int값인데 계산에 먹히지를 않음
@@ -314,9 +335,13 @@ extension FindMainVC:UICollectionViewDataSource{
             let view = collectionView.dequeueReusableSupplementaryView(ofKind:UICollectionView.elementKindSectionHeader,
                                                                        withReuseIdentifier: resusableheader,
                                                                        for: indexPath) as! HeaderCRView
+           
+            view.headerLabel.isHidden = false
             view.headerLabel.text = "긴급"
-            view.moreBtn.setTitle("더보기", for: .normal)
-            view.backgroundColor = UIColor.init(displayP3Red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+            view.nextBtn.setTitle("더보기", for: .normal)
+            view.nextBtn.tintColor = UIColor.init(displayP3Red: 112/255, green: 112/255, blue: 112.255, alpha: 1)
+          view.nextBtn.isHidden = false
+
             return view
             
             
@@ -325,7 +350,8 @@ extension FindMainVC:UICollectionViewDataSource{
                                                                        withReuseIdentifier: resusableheader,
                                                                        for: indexPath) as! HeaderCRView
             view.headerLabel.text = "새로 구조된 아이들"
-            view.moreBtn.isHidden = true
+
+            view.nextBtn.isHidden = true
             return view
             
         }
