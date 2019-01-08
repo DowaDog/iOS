@@ -13,7 +13,6 @@
 		4C03253221E20C84001208D8 /* EmergenDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03253121E20C84001208D8 /* EmergenDog.swift */; };
 		4C03253421E21243001208D8 /* EmergenDogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03253321E21243001208D8 /* EmergenDogService.swift */; };
 		4C03253621E21985001208D8 /* ImageViewURLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03253521E21985001208D8 /* ImageViewURLExtension.swift */; };
-		4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BD21D8906700301D52 /* Filter.storyboard */; };
 		4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95BF21D8909900301D52 /* Finding.storyboard */; };
 		4C0E95C221D890A900301D52 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95C121D890A900301D52 /* Login.storyboard */; };
 		4C0E95C421D890BD00301D52 /* Adopt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E95C321D890BD00301D52 /* Adopt.storyboard */; };
@@ -152,7 +151,6 @@
 		4C03253121E20C84001208D8 /* EmergenDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDog.swift; sourceTree = "<group>"; };
 		4C03253321E21243001208D8 /* EmergenDogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDogService.swift; sourceTree = "<group>"; };
 		4C03253521E21985001208D8 /* ImageViewURLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewURLExtension.swift; sourceTree = "<group>"; };
-		4C0E95BD21D8906700301D52 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		4C0E95BF21D8909900301D52 /* Finding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Finding.storyboard; sourceTree = "<group>"; };
 		4C0E95C121D890A900301D52 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		4C0E95C321D890BD00301D52 /* Adopt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Adopt.storyboard; sourceTree = "<group>"; };
@@ -670,7 +668,6 @@
 				F5508A1821D4D54400BE73FF /* LaunchScreen.storyboard */,
 				F527A08521D6591E00BC20DE /* Community.storyboard */,
 				F524E9DF21DF553A0001CA5A /* Info.storyboard */,
-				4C0E95BD21D8906700301D52 /* Filter.storyboard */,
 				4C0E95BF21D8909900301D52 /* Finding.storyboard */,
 				4C0E95C121D890A900301D52 /* Login.storyboard */,
 				4C0E95C321D890BD00301D52 /* Adopt.storyboard */,
@@ -826,7 +823,6 @@
 				F527A08621D6591E00BC20DE /* Community.storyboard in Resources */,
 				F5508A2B21D4D8B100BE73FF /* NanumSquareBold.ttf in Resources */,
 				F524E9E021DF553A0001CA5A /* Info.storyboard in Resources */,
-				4C0E95BE21D8906700301D52 /* Filter.storyboard in Resources */,
 				4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */,
 				4C0E95C621D890CB00301D52 /* MyProfile.storyboard in Resources */,
 				F5508A2821D4D8B100BE73FF /* NanumSquareRegular.ttf in Resources */,

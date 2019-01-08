@@ -11,5 +11,6 @@ import UIKit
 class HeaderCRView: UICollectionReusableView {
     
     @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var moreBtn: UIButton!
+
+    @IBOutlet weak var nextBtn: UIButton!
 }
