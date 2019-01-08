@@ -7,7 +7,7 @@
 //
 import ObjectMapper
 
-struct EmergenDogContentArray<T: Mappable> : Mappable {
+struct ContentArray<T: Mappable> : Mappable {
     
     var content: [T]?
     

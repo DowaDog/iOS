@@ -13,12 +13,34 @@ class Page1VC: UIViewController {
     var reuseIdentifier = "Page1CVCell"
     var testImg = [(UIImage(named: "contentTest.png")), (UIImage(named: "contentTest.png")), (UIImage(named:"contentTest.png")), (UIImage(named: "contentTest.png")),(UIImage(named: "contentTest.png"))]
     
+    
+    var educationList = [Education]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        EducationListService.shared.getEducationList() { [weak self]
+            (data) in
+            guard let `self` = self else {return}
+            
+            
+            print("education==============================")
+            print("data: ")
+            print(data)
+            print("education==============================")
+            
+            
+            
+            self.educationList = data
+        }
     }
 }
    
@@ -41,6 +63,15 @@ extension Page1VC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = self.collectionView.cellForItem(at: indexPath) as!Page1CVCell
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
             

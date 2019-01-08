@@ -12,6 +12,8 @@ class CardVC: UIViewController {
     var scrapClick = false
     var scrapItem: UIBarButtonItem!
     
+    var contentList = [Content]()
+    
     
     @IBOutlet weak var completeBtn: UIButton!
     
@@ -36,6 +38,31 @@ class CardVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        EducationDetailContentService.shared.getContentDetail(contentIdx: 24) {
+            (data) in
+            
+            print("CardVC content==============================")
+            print("data: ")
+            print(data)
+            print("CardVc content==============================")
+            
+            self.contentList = data
+        }
+        
+        EducationDetailEduService.shared.getContentDetail(contentIdx: 24) {
+            (data) in
+            
+            
+            print("CardVc education==============================")
+            print("data: ")
+            print(data)
+            print("CardVc education==============================")
+        }
+        
+    }
     
     @objc func heartTapped(){
         if scrapClick == false{

@@ -9,10 +9,10 @@
 import Alamofire
 
 struct EmergenDogService: APIManager, Requestable{
-    typealias NetworkData = ResponseObject<EmergenDogContentArray<EmergenDog>>
+    typealias NetworkData = ResponseObject<ContentArray<EmergenDog>>
     static let shared = EmergenDogService()
     let emergeDogURL = url("/api/normal/animals/emergency")
-    let header: HTTPHeaders = [
+    let headers: HTTPHeaders = [
         "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
     
@@ -21,7 +21,7 @@ struct EmergenDogService: APIManager, Requestable{
         
 //      let queryURL = emergeDogURL + "?offset=\(offset ?? 0)&limit=\(limit ?? 10)"
         
-        gettable(emergeDogURL, body: nil, header: header) { res in
+        gettable(emergeDogURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
                 

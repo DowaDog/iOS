@@ -47,6 +47,12 @@
 		F501E64621D4DFA9004CD703 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F501E64521D4DFA9004CD703 /* Home.storyboard */; };
 		F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501E64921D4DFF6004CD703 /* HomeExtension.swift */; };
 		F501E64C21D4E169004CD703 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501E64B21D4E169004CD703 /* HomeVC.swift */; };
+		F511E26C21E4847D004E462F /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E26B21E4847D004E462F /* Content.swift */; };
+		F511E26E21E48535004E462F /* Edu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E26D21E48535004E462F /* Edu.swift */; };
+		F511E27021E487FD004E462F /* ContentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E26F21E487FD004E462F /* ContentDetail.swift */; };
+		F511E27221E48984004E462F /* EducationListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E27121E48984004E462F /* EducationListService.swift */; };
+		F511E27421E48997004E462F /* EducationDetailContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E27321E48997004E462F /* EducationDetailContentService.swift */; };
+		F511E27621E48A85004E462F /* EducationDetailEduService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E27521E48A85004E462F /* EducationDetailEduService.swift */; };
 		F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */; };
 		F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */; };
 		F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */; };
@@ -74,13 +80,14 @@
 		F54B112321E31915000BA8DF /* UIVIewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112221E31915000BA8DF /* UIVIewController+Extensions.swift */; };
 		F54B112521E328A9000BA8DF /* MyInfoEditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112421E328A9000BA8DF /* MyInfoEditService.swift */; };
 		F54B112721E340D8000BA8DF /* AnimalStoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112621E340D8000BA8DF /* AnimalStoryList.swift */; };
-		F54B112921E3471A000BA8DF /* EmergenDogContentArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112821E3471A000BA8DF /* EmergenDogContentArray.swift */; };
 		F54B112B21E36AA7000BA8DF /* AdoptAnimalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112A21E36AA7000BA8DF /* AdoptAnimalDetail.swift */; };
 		F54B112D21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B112C21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift */; };
 		F54B113121E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B113021E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift */; };
 		F54B113721E3C2F3000BA8DF /* AnimalDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B113621E3C2F3000BA8DF /* AnimalDetailService.swift */; };
 		F54B113D21E3DB71000BA8DF /* MyScrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B113C21E3DB71000BA8DF /* MyScrap.swift */; };
 		F54B114121E3DF09000BA8DF /* MyScrapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B114021E3DF09000BA8DF /* MyScrapService.swift */; };
+		F54B114521E4689F000BA8DF /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B114421E4689F000BA8DF /* Education.swift */; };
+		F54B114721E46989000BA8DF /* ContentArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B114621E46989000BA8DF /* ContentArray.swift */; };
 		F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5508A0F21D4D54400BE73FF /* AppDelegate.swift */; };
 		F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1321D4D54400BE73FF /* Main.storyboard */; };
 		F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5508A1621D4D54400BE73FF /* Assets.xcassets */; };
@@ -180,6 +187,12 @@
 		F501E64521D4DFA9004CD703 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		F501E64921D4DFF6004CD703 /* HomeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeExtension.swift; sourceTree = "<group>"; };
 		F501E64B21D4E169004CD703 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F511E26B21E4847D004E462F /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		F511E26D21E48535004E462F /* Edu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edu.swift; sourceTree = "<group>"; };
+		F511E26F21E487FD004E462F /* ContentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetail.swift; sourceTree = "<group>"; };
+		F511E27121E48984004E462F /* EducationListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationListService.swift; sourceTree = "<group>"; };
+		F511E27321E48997004E462F /* EducationDetailContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDetailContentService.swift; sourceTree = "<group>"; };
+		F511E27521E48A85004E462F /* EducationDetailEduService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDetailEduService.swift; sourceTree = "<group>"; };
 		F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3AdoptVC.swift; sourceTree = "<group>"; };
 		F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocSelectStep3VC.swift; sourceTree = "<group>"; };
 		F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3TempVC.swift; sourceTree = "<group>"; };
@@ -207,13 +220,14 @@
 		F54B112221E31915000BA8DF /* UIVIewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extensions.swift"; sourceTree = "<group>"; };
 		F54B112421E328A9000BA8DF /* MyInfoEditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoEditService.swift; sourceTree = "<group>"; };
 		F54B112621E340D8000BA8DF /* AnimalStoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalStoryList.swift; sourceTree = "<group>"; };
-		F54B112821E3471A000BA8DF /* EmergenDogContentArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDogContentArray.swift; sourceTree = "<group>"; };
 		F54B112A21E36AA7000BA8DF /* AdoptAnimalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptAnimalDetail.swift; sourceTree = "<group>"; };
 		F54B112C21E3953E000BA8DF /* AnimalUserAdoptDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalUserAdoptDetailService.swift; sourceTree = "<group>"; };
 		F54B113021E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalUserAdoptInoculationService.swift; sourceTree = "<group>"; };
 		F54B113621E3C2F3000BA8DF /* AnimalDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailService.swift; sourceTree = "<group>"; };
 		F54B113C21E3DB71000BA8DF /* MyScrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrap.swift; sourceTree = "<group>"; };
 		F54B114021E3DF09000BA8DF /* MyScrapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrapService.swift; sourceTree = "<group>"; };
+		F54B114421E4689F000BA8DF /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
+		F54B114621E46989000BA8DF /* ContentArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentArray.swift; sourceTree = "<group>"; };
 		F5508A0C21D4D54400BE73FF /* DowaDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DowaDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5508A0F21D4D54400BE73FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5508A1421D4D54400BE73FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -306,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				4C03252F21E1FFFE001208D8 /* DogDetail.swift */,
-				F54B112821E3471A000BA8DF /* EmergenDogContentArray.swift */,
 				F54B112621E340D8000BA8DF /* AnimalStoryList.swift */,
 				4C03253121E20C84001208D8 /* EmergenDog.swift */,
 			);
@@ -475,6 +488,27 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		F54B114321E4683C000BA8DF /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				F54B114421E4689F000BA8DF /* Education.swift */,
+				F511E26B21E4847D004E462F /* Content.swift */,
+				F511E26D21E48535004E462F /* Edu.swift */,
+				F511E26F21E487FD004E462F /* ContentDetail.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		F54B114821E46B2F000BA8DF /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				F511E27121E48984004E462F /* EducationListService.swift */,
+				F511E27321E48997004E462F /* EducationDetailContentService.swift */,
+				F511E27521E48A85004E462F /* EducationDetailEduService.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
 		F5508A0321D4D54400BE73FF = {
 			isa = PBXGroup;
 			children = (
@@ -542,10 +576,12 @@
 		F5508A2C21D4D8BE00BE73FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F54B114321E4683C000BA8DF /* Contents */,
 				F566A48721E2526300FE958B /* MyPage */,
 				4C03252A21E1E3E7001208D8 /* Find */,
 				F5609D8F21E1A25D0090E3B6 /* Token.swift */,
 				F5609D8721E146390090E3B6 /* ResponseArray.swift */,
+				F54B114621E46989000BA8DF /* ContentArray.swift */,
 				F5609D9921E1D56D0090E3B6 /* User.swift */,
 				F5609D9321E1AE600090E3B6 /* TokenType.swift */,
 				F566A47821E221C300FE958B /* ResponseBool.swift */,
@@ -602,6 +638,7 @@
 		F5508A3021D4D8DB00BE73FF /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				F54B114821E46B2F000BA8DF /* Contents */,
 				F566A47A21E23EE000FE958B /* MyPage */,
 				4C03252721E1E275001208D8 /* Find */,
 				F5609D9821E1D3270090E3B6 /* Common */,
@@ -900,6 +937,7 @@
 				F566A48421E24DF100FE958B /* MyInfo.swift in Sources */,
 				F5609D5721E11B170090E3B6 /* MyScrapVC.swift in Sources */,
 				F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */,
+				F511E27021E487FD004E462F /* ContentDetail.swift in Sources */,
 				F54B112721E340D8000BA8DF /* AnimalStoryList.swift in Sources */,
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
@@ -912,6 +950,7 @@
 				F54B112B21E36AA7000BA8DF /* AdoptAnimalDetail.swift in Sources */,
 				F524E9EA21DF784E0001CA5A /* CommunityThreeTVC.swift in Sources */,
 				F54B111521E308B7000BA8DF /* MailboxService.swift in Sources */,
+				F511E27421E48997004E462F /* EducationDetailContentService.swift in Sources */,
 				F5788A9621D8EE5800B96BB8 /* AdoptDocumentVC.swift in Sources */,
 				4C0E95D121D8917C00301D52 /* LoginVC.swift in Sources */,
 				F5609D5F21E11B7B0090E3B6 /* AboutNewDogVC.swift in Sources */,
@@ -923,11 +962,11 @@
 				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
 				F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */,
+				F511E27621E48A85004E462F /* EducationDetailEduService.swift in Sources */,
 				F566A48021E2422C00FE958B /* MyPage.swift in Sources */,
 				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
 				F54B111721E308D9000BA8DF /* Mailbox.swift in Sources */,
 				4C03253421E21243001208D8 /* EmergenDogService.swift in Sources */,
-				F54B112921E3471A000BA8DF /* EmergenDogContentArray.swift in Sources */,
 				F5609D5D21E11B6A0090E3B6 /* AboutEmergenVC.swift in Sources */,
 				F54B113D21E3DB71000BA8DF /* MyScrap.swift in Sources */,
 				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
@@ -939,6 +978,8 @@
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
+				F54B114521E4689F000BA8DF /* Education.swift in Sources */,
+				F511E26C21E4847D004E462F /* Content.swift in Sources */,
 				4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */,
 				F524E9E821DF783E0001CA5A /* CommunityTwoTVC.swift in Sources */,
 				F5609D6E21E11CA90090E3B6 /* MailCell.swift in Sources */,
@@ -947,6 +988,7 @@
 				F5609D4D21E11A5D0090E3B6 /* CustomNavigationBar.swift in Sources */,
 				F54B111F21E31428000BA8DF /* MyLikeListService.swift in Sources */,
 				F5609D5521E11AFC0090E3B6 /* MyPageMainVC.swift in Sources */,
+				F511E26E21E48535004E462F /* Edu.swift in Sources */,
 				F54B112121E3144F000BA8DF /* MyLikeList.swift in Sources */,
 				4C03253621E21985001208D8 /* ImageViewURLExtension.swift in Sources */,
 				F5609D8A21E146480090E3B6 /* ResponseObject.swift in Sources */,
@@ -980,6 +1022,8 @@
 				4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */,
 				F566A48621E251C100FE958B /* AdoptListService.swift in Sources */,
 				F5609D5921E11B240090E3B6 /* MyWantDogVC.swift in Sources */,
+				F511E27221E48984004E462F /* EducationListService.swift in Sources */,
+				F54B114721E46989000BA8DF /* ContentArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
