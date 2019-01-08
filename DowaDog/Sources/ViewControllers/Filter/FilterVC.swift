@@ -9,7 +9,7 @@
 import UIKit
 
 protocol sendBackDelegate{
-    func dataReceived(type: String, region:String, remainNoticeData:Int)
+    func dataReceived(type: String, region:String, remainNoticeDate:Int)
 }
 
 class FilterVC: UIViewController {
@@ -315,7 +315,7 @@ class FilterVC: UIViewController {
              putRegion  = "제주"
         }
 
-        delegate?.dataReceived(type: putType, region: putRegion, remainNoticeData: putRemainNoticeDate)
+        delegate?.dataReceived(type: putType, region: putRegion, remainNoticeDate: putRemainNoticeDate)
         
         dismiss(animated: true, completion: nil)
  

@@ -130,6 +130,17 @@ extension EmergenDogVC:UICollectionViewDataSource{
             
         }
         
+//        cell.btnCounter.tag = indexPath.item
+//        cell.btnCounter.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
+        
+//        cell.heartBtn = indexPath.item
+        
+        
+        func buttonClicked(_ sender: UIButton) {
+            //Here sender.tag will give you the tapped Button index from the cell
+            //You can identify the button from the tag
+        }
+        
         return cell
     }
     
