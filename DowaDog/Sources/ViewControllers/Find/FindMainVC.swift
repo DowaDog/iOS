@@ -10,6 +10,17 @@ import UIKit
 
 class FindMainVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+//    EmergenDogService.shared.findAnimalList(type: <#T##String?#>, region: <#T##String?#>, remainNoticeDate: <#T##Int?#>, story: <#T##Bool?#>, searchWord: <#T##String?#>, page: <#T##Int?#>, limit: <#T##Int?#>, completion: <#T##([EmergenDog]) -> Void#>)
+//}
+    var type:String?
+    var region:String?
+    var remainNoticeDate:Int?
+    var story:Bool?
+    var searchWord:String?
+    var page:Int?
+    var limit:Int?
+
+    
     
     var emergenDogList = [EmergenDog]()
     
@@ -30,13 +41,18 @@ class FindMainVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        EmergenDogService.shared.getEmergenDogList(offset: 0, limit: 10) { [weak self]
+        EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
             (data) in
             guard let `self` = self else {return}
             
             self.emergenDogList = data
             self.collectionView.reloadData()
             
+            
+        }
+        
+        EmergenDogService.shared.findAnimalList(type: type, region: region, remainNoticeDate: remainNoticeDate, story: story, searchWord: searchWord, page: page, limit: limit){
+            (data) in
             
         }
     }

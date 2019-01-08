@@ -44,6 +44,9 @@
                                                 <state key="normal" title="확인">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="filterAction:" destination="xGu-NU-64P" eventType="touchUpInside" id="5zZ-Mz-7fd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJU-oW-zB3">
                                                 <rect key="frame" x="27" y="433" width="100" height="100"/>
@@ -374,6 +377,7 @@
                         <outlet property="dogBtn" destination="ehM-e4-LHh" id="2Vz-Tw-5Ja"/>
                         <outlet property="dogLabel" destination="nRV-qH-LwZ" id="d18-kO-EEp"/>
                         <outlet property="maxDate" destination="kfu-wG-ZOA" id="rdA-vC-Hpv"/>
+                        <outlet property="sendBtn" destination="sdE-3p-gE5" id="pJ6-je-Yp7"/>
                         <outlet property="slider" destination="Gqg-Da-sOi" id="24s-f5-ksp"/>
                     </connections>
                 </viewController>
