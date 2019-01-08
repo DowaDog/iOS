@@ -82,7 +82,7 @@ extension AdoptListVC:UICollectionViewDataSource{
 //        name <- map["name"]
 //        gender <- map["gender"]
 //        kind <- map["kind"]
-//        birth <- map["birth"]
+//        birth <- map["age"]
 //        weight <- map["weight"]
 //        neuterYn <- map["neuterYn"]
 //        profileImg <- map["profileImg"]
@@ -90,7 +90,7 @@ extension AdoptListVC:UICollectionViewDataSource{
 
         
         cell.cardImage.imageFromUrl(gsno(myDog.profileImg), defaultImgPath: "")
-        let label = "\(myDog.kind)|\(myDog.birth)|\(myDog.gender)"
+        let label = "\(myDog.kind)|\(myDog.age)|\(myDog.gender)"
         cell.dogName.text = myDog.name
         cell.aboutLabel.text = label
         

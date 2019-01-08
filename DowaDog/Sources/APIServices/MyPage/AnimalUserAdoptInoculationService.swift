@@ -18,7 +18,7 @@ struct AnimalUserAdoptInoculationService: APIManager, Requestable {
     ]
     
     // 사용자 입양 동물 상세 조회
-    func getAdoptAnimalInoculation(adoptAnimalIdx: Int?, completion: @escaping ([InoculationList]) -> Void) {
+    func getAdoptAnimalInoculation(adoptAnimalIdx: Int, completion: @escaping ([InoculationList]) -> Void) {
         
         let queryURL = adoptInoculationURL + "/\(adoptAnimalIdx)"
         

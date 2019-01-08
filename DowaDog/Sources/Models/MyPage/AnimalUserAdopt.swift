@@ -14,8 +14,8 @@ struct AnimalUserAdopt: Mappable {
     var name: String?
     var gender: Character?
     var kind: String?
-    var birth: String?
-    var weight: Int?
+    var age: String?
+    var weight: String?
     var neuterYn: Bool?
     var profileImg: String?
     var adoptType: String?
@@ -30,7 +30,7 @@ struct AnimalUserAdopt: Mappable {
         name <- map["name"]
         gender <- map["gender"]
         kind <- map["kind"]
-        birth <- map["birth"]
+        age <- map["age"]
         weight <- map["weight"]
         neuterYn <- map["neuterYn"]
         profileImg <- map["profileImg"]
