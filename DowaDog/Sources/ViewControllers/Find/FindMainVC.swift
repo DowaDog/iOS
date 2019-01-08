@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FindMainVC: UIViewController {
+class FindMainVC: UIViewController,sendBackDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
 
     var getType:String = ""
@@ -197,7 +197,7 @@ class FindMainVC: UIViewController {
         if segue.identifier == "action_show"{
             
             let filterVC = segue.destination as! FilterVC
-//            filterVC.delegate = self as! sendBackDelegate
+            filterVC.delegate = self
  
         }
     }
@@ -368,7 +368,21 @@ extension FindMainVC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         let section = indexPath.section
-        if section == 2{
+        if section == 1{
+            
+            let cell = self.collectionView.cellForItem(at: indexPath) as!EmergenCVCell
+            
+            let emergenDog = emergenDogList[indexPath.row]
+            
+            if let dvc = storyboard?.instantiateViewController(withIdentifier: "AboutEmergenVC") as? AboutEmergenVC {
+                
+                dvc.id = gino(emergenDog.id)
+                
+                //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+                navigationController?.pushViewController(dvc, animated: true)
+                
+            }
+        }else if section == 2{
             
             let cell = self.collectionView.cellForItem(at: indexPath) as! EmergenCVCell
             if indexPath.row == 0{

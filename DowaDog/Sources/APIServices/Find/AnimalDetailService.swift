@@ -44,6 +44,7 @@ struct AnimalDetailService: APIManager, Requestable{
         }
     }
     
+    //유기동물 좋아요 
     func animalLike(animalIdx: Int, completion: @escaping (ResponseObject<DogDetail>) -> Void) {
         
         let queryURL = dogDetailURL + "/\(animalIdx)/likes"
