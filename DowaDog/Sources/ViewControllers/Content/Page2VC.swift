@@ -14,12 +14,34 @@ class Page2VC: UIViewController {
     var reuseIdentifier = "Page2CVCell"
     var testImg = [(UIImage(named: "contentTest.png")), (UIImage(named: "contentTest.png")), (UIImage(named:"contentTest.png")), (UIImage(named: "contentTest.png")),(UIImage(named: "contentTest.png"))]
     
+    var knowledgeList = [Education]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        EducationListService.shared.getKnowledgeList(page: 0, limit: 10) { [weak self]
+            (data) in
+            guard let `self` = self else {return}
+            
+            
+            print("knowledge==============================")
+            print("data: ")
+            print(data)
+            print("knowledge==============================")
+            
+            
+            self.knowledgeList = data
+            
+            self.collectionView.reloadData()
+        }
     }
 }
 

@@ -31,9 +31,14 @@ class Page1VC: UIViewController {
             (data) in
             guard let `self` = self else {return}
             
-            self.educationList = data
             
-//            self.collectionView.reloadData()
+            print("education==============================")
+            print("data: ")
+            print(data)
+            print("education==============================")
+            
+            
+            self.educationList = data
         }
     }
 }
