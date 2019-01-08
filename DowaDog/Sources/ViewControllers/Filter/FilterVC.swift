@@ -314,7 +314,8 @@ class FilterVC: UIViewController {
         }else if area8Btn.isSelected == true{
              putRegion  = "제주"
         }
-
+        
+        
         delegate?.dataReceived(type: putType, region: putRegion, remainNoticeDate: putRemainNoticeDate)
         
         dismiss(animated: true, completion: nil)
