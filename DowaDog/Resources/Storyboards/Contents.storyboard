@@ -665,6 +665,9 @@
                                         <state key="normal" title="이수 완료">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="completeBtnAction:" destination="hjT-KO-9HF" eventType="touchUpInside" id="aJT-Uv-55U"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

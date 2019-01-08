@@ -23,7 +23,7 @@ class CardVC: UIViewController {
         navBarBackgroundAlpha = 0
         setBackBtn()
         
-        scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(heartTapped))
+        scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(scrapTapped))
         scrapItem.tintColor = UIColor.white
         
         navigationItem.rightBarButtonItems = [scrapItem]
@@ -34,8 +34,6 @@ class CardVC: UIViewController {
         self.view.addGestureRecognizer(panGestureRecongnizer)
         
         panGestureRecongnizer.delegate = self
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +62,20 @@ class CardVC: UIViewController {
         
     }
     
-    @objc func heartTapped(){
+    @objc func scrapTapped(){
+        
+        EducationListService.shared.contentScrap(contentIdx: 25) {
+            (data) in
+            
+            print("scrap==================")
+            print("data: ")
+            print(data)
+            print("scrap==================")
+        }
+        
+        
+        
+        
         if scrapClick == false{
             scrapItem.image = UIImage(named: "categoryScrabBtn.png")
             scrapClick = true
@@ -97,17 +108,35 @@ class CardVC: UIViewController {
                 
             })
             
-        }else if (offsetY <= 276 ){
+        } else if (offsetY <= 276 ){
             UIView.animate(withDuration: 0.4, animations: {
                 self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
                 self.scrapItem.tintColor = UIColor.white
-            })
+                })
             
+            }
         }
-        
     }
     
-}
+    @IBAction func completeBtnAction(_ sender: UIButton) {
+        
+        EducationListService.shared.contentComplete(contentIdx: 25) {
+            (data) in
+            
+            print("complete==================")
+            print("data: ")
+            print(data)
+            print("complete==================")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
 extension CardVC : UIGestureRecognizerDelegate{
     

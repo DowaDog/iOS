@@ -53,7 +53,7 @@ struct EmergenDogService: APIManager, Requestable{
         let queryURL = emergenDogURL +
             "?type=\(type ?? "")" +
             "&region=\(region ?? "")" +
-            "&remainNoticeDate=\(remainNoticeDate ?? 15)" +
+            "&remainNoticeDate=\(remainNoticeDate ?? 300)" +
             "&searchWord=\(searchWord ?? "")" +
             "&page=\(page ?? 0)" +
             "&limit=\(limit ?? 10)"
@@ -85,7 +85,7 @@ struct EmergenDogService: APIManager, Requestable{
         let queryURL = emergenDogURL +
             "?type=\(type ?? "")" +
             "&region=\(region ?? "")" +
-            "&remainNoticeDate=\(remainNoticeDate ?? 15)" +
+            "&remainNoticeDate=\(remainNoticeDate ?? 300)" +
             "&story=\(story ?? true)" +
             "&searchWord=\(searchWord ?? "")" +
             "&page=\(page ?? 0)" +
