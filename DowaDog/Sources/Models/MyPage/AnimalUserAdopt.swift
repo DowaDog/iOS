@@ -12,7 +12,7 @@ struct AnimalUserAdopt: Mappable {
     
     var id: Int?
     var name: String?
-    var gender: Character?
+    var gender: String?
     var kind: String?
     var age: String?
     var weight: String?

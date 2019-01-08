@@ -16,7 +16,7 @@ struct User: Mappable {
     var birth: String?
     var phone: String?
     var email: String?
-    var gender: Character?
+    var gender: String?
     var deviceToken: String?
     var type: String?
     var profileImgFile: String?

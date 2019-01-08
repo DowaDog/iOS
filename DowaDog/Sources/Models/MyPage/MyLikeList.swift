@@ -13,7 +13,7 @@ struct MyLikeList: Mappable {
     
     var id: Int?
     var type: String?
-    var sexCd: Character?
+    var sexCd: String?
     var kindCd: String?
     var region: String?
     var noticeEddt: String?

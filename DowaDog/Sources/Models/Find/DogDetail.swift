@@ -13,7 +13,7 @@ struct DogDetail: Mappable {
     var id: Int?
     var type: String?
     var processState: String?
-    var sexCd: Character?
+    var sexCd: String?
     var startDate: String?
     var endDate: String?
     var region: String?
