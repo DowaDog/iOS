@@ -57,23 +57,29 @@ struct AnimalUserAdoptDetailService: APIManager, Requestable {
             "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
         ]
         
-        let data = try! JSONSerialization.data(withJSONObject: inoculationArray, options: .prettyPrinted)
-        let jsonString = String(data: data, encoding: .utf8)!
-        
-        let ns = String(neuterYn)
+        let neuterYnString = String(neuterYn)
         
         Alamofire.upload(multipartFormData: { (multipart) in
             multipart.append(name.data(using: .utf8)!, withName: "name")
             multipart.append(gender.data(using: .utf8)!, withName: "gender")
             multipart.append(kind.data(using: .utf8)!, withName: "kind")
             multipart.append(weight.data(using: .utf8)!, withName: "weight")
-            multipart.append(ns.data(using: .utf8)!, withName: "neuterYn")
+            multipart.append(neuterYnString.data(using: .utf8)!, withName: "neuterYn")
         multipart.append(profileImgFile.jpegData(compressionQuality: 0.5)!, withName: "profileImgFile", fileName: "image.jpeg", mimeType: "image/jpeg")
-            multipart.append(jsonString.data(using: .utf8)!, withName: "inoculationArray")
+            
+            print("test=========")
+            print(inoculationArray)
+            print("inoculation Count : \(inoculationArray.count)")
+            
+            for i in 0..<inoculationArray.count {
+                if let data = inoculationArray[i].data(using: .utf8) {
+                    multipart.append(data, withName: "inoculationArray")
+                }
+            }
             
             multipart.append(age.data(using: .utf8)!, withName: "age")
             
-        }, to: adoptDetailURL, method: .put,
+        }, to: queryURL, method: .put,
            headers: headers) { (result) in
             switch result {
             case .success(let upload, _, _):
