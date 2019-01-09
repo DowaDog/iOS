@@ -12,8 +12,8 @@ class FindMainVC: UIViewController,sendBackDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
 
     var getType:String = ""
-    var getRegion:String=""
-    var getRemainNoticeDate:Int = 15
+    var getRegion:String = ""
+    var getRemainNoticeDate:Int?
     var searchWord:String = ""
     var page:Int = 0
     var limit:Int = 10
