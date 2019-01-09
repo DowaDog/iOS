@@ -377,11 +377,7 @@ extension FindMainVC:UICollectionViewDataSource{
             let region = gsno(newDog.region)
             let kind = gsno(newDog.kindCd)
             
-            
-            let testURL = gsno(newDog.thumbnailImg)
-            let test2URL = testURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-            
-            cell.emerImage.imageFromUrl(test2URL, defaultImgPath: "")
+            cell.emerImage.imageFromUrl(gsno(newDog.thumbnailImg), defaultImgPath: "")
             cell.aboutLabel.text = "[\(region)]\(kind)"
             
             cell.dayLabel.text = Dday
