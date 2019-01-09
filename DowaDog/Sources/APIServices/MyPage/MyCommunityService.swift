@@ -10,7 +10,7 @@ import Alamofire
 
 struct MyCommunityService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseArray<MyCommunity<CommunityImgList>>
+    typealias NetworkData = ResponseArray<Community<CommunityImgList>>
     static let shared = MyCommunityService()
     let myCommunityURL = url("/api/normal/mypage/community")
     let headers: HTTPHeaders = [
@@ -18,7 +18,7 @@ struct MyCommunityService: APIManager, Requestable {
     ]
     
     // 마이페이지 조회
-    func getMyCommunity(completion: @escaping ([MyCommunity<CommunityImgList>]) -> Void) {
+    func getMyCommunity(completion: @escaping ([Community<CommunityImgList>]) -> Void) {
         
         gettable(myCommunityURL, body: nil, header: headers) { res in
             switch res {

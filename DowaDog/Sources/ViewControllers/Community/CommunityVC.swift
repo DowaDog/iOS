@@ -11,10 +11,9 @@ import UIKit
 class CommunityVC: UIViewController {
     
     
-//    var CommunityList = [Community]()
+    var communityList = [Community<CommunityImgList>]()
 
     @IBOutlet var communityTableView: UITableView!
-    
     
     // sidemenu
     var blackScreen: UIView!
@@ -38,15 +37,21 @@ class CommunityVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // 통신
-//        BoardService.shared.getBoardList(offset: nil, limit: nil) {[weak self]
-//            (data) in
-//            guard let `self` = self else {return}
-//
-//            self.boardList = data
-//
-//            self.tableView.reloadData()
-//        }
+        
+        
+        CommunityListService.shared.getCommunityList(page: 0, limit: 10) {[weak self]
+            (data) in
+            guard let `self` = self else {return}
+
+            self.communityList = data
+            
+            
+            print("data================")
+            print(data)
+            print("data================")
+
+            self.communityTableView.reloadData()
+        }
     }
     
     

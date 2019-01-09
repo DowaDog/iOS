@@ -12,7 +12,7 @@ class MyWriteVC: UIViewController {
     
     @IBOutlet weak var boardTable: UITableView!
     
-    var myWriteList = [MyCommunity<CommunityImgList>]()
+    var myWriteList = [Community<CommunityImgList>]()
     
     var writeData = ["gggggg", "ssssdssss"]
     

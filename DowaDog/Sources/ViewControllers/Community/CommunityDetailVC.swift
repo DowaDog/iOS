@@ -25,6 +25,9 @@ class CommunityDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        setDetailView()
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -32,6 +35,19 @@ class CommunityDetailVC: UIViewController {
 //        self.setNavigationBarShadow()
     
 
+    }
+    
+    
+    func setDetailView() {
+        CommunityDetailService.shared.getCommunityDetail(communityIdx: 198) {
+            (data) in
+            
+            print("data============================")
+            print(data)
+            print("data============================")
+            
+        }
+        
     }
 
 }

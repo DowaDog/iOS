@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-struct MyCommunity<T: Mappable>: Mappable {
+struct Community<T: Mappable>: Mappable {
     
     var id: Int?
     var title: String?
