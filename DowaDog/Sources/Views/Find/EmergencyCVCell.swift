@@ -11,6 +11,7 @@ import UIKit
 class EmergenCVCell: UICollectionViewCell {
     var isClick = false
     
+  
     @IBOutlet weak var cellBackgroundView: UIView!
     
     @IBOutlet weak var dayLabel: UILabel!
@@ -25,7 +26,15 @@ class EmergenCVCell: UICollectionViewCell {
     
     @IBOutlet weak var aboutLabel: UILabel!
     
-    @IBAction func heartClickAction(_ sender: Any) {
+    
+    
+    
+    
+    
+    @IBAction func heartClickAction(_ sender: UIButton) {
+        
+        
+        
         if isClick == false{
             heartBtn.setImage(UIImage(named: "likedAnimalHeartBtnFill.png"), for: UIControl.State.normal)
             isClick = true
@@ -33,8 +42,17 @@ class EmergenCVCell: UICollectionViewCell {
             heartBtn.setImage(UIImage(named: "heartBtn.png"), for: UIControl.State.normal)
             isClick  = false
         }
+
         
+        
+//        let contentView = sender.superview
+//        let cell = contentView?.sender.superview
+//
+        
+//        let cell = sender.superview as!  UICollectionViewCell
+//        let indexPath = self.super.indexPath(for: cell)
     }
+    
     override func awakeFromNib() {
         super .awakeFromNib()
         cellBackgroundView.roundRadius()
@@ -45,6 +63,34 @@ class EmergenCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
         
+        
+        
+        
+        
+        
+        
+        
+        
+//        self.heartBtn.tag = indexPath.row
+        
+        //
+        //        let section = indexPath?.section
+        //
+        //        if section == 1{
+        //
+        //            let emergen = emergenDogList[indexPath!.item]
+        //            let emergenId = emergen.id
+        //
+        //            AnimalDetailService.shared.animalLike(animalIdx: emergenId ?? 1){_ in
+        //            }
+        //        }else if section == 2{
+        //            let new = newDogList[indexPath!.item]
+        //            let newId = new.id
+        //
+        //            AnimalDetailService.shared.animalLike(animalIdx: newId ?? 1){_ in
+        //
+        //            }
+        //        }
         
     }
     

@@ -35,6 +35,7 @@
 		4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */; };
 		4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */; };
 		4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */; };
+		4C446BB921E6518D00CCC2C5 /* StoryDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C446BB821E6518D00CCC2C5 /* StoryDogVC.swift */; };
 		4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */; };
 		4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */; };
 		4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64721DC9A2700969511 /* Page2CVCell.swift */; };
@@ -181,6 +182,7 @@
 		4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorUICVLayoutAttributes.swift; sourceTree = "<group>"; };
 		4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDetailCVCell.swift; sourceTree = "<group>"; };
 		4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogDetailCVCell.swift; sourceTree = "<group>"; };
+		4C446BB821E6518D00CCC2C5 /* StoryDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDogVC.swift; sourceTree = "<group>"; };
 		4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMSTestViewController.swift; path = DowaDog/Sources/ViewControllers/SMSTestViewController.swift; sourceTree = SOURCE_ROOT; };
 		4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1CVCell.swift; sourceTree = "<group>"; };
 		4CF5A64721DC9A2700969511 /* Page2CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CVCell.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				F5609D6021E11B890090E3B6 /* EmergenDogVC.swift */,
 				F5609D6221E11BA60090E3B6 /* FindMainVC.swift */,
 				F5609D6421E11BB70090E3B6 /* NewDogVC.swift */,
+				4C446BB821E6518D00CCC2C5 /* StoryDogVC.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -1048,6 +1051,7 @@
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
+				4C446BB921E6518D00CCC2C5 /* StoryDogVC.swift in Sources */,
 				F54B114521E4689F000BA8DF /* Education.swift in Sources */,
 				F511E26C21E4847D004E462F /* Content.swift in Sources */,
 				4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */,
