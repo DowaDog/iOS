@@ -37,20 +37,18 @@ class EmergenDogVC: UIViewController {
             
             self.emergenDogList = data
             self.collectionView.reloadData()
-
         }
-//        EmergenDogService.shared.findAnimalList(type: "", region: "", remainNoticeDate: <#T##Int?#>, story: <#T##Bool?#>, searchWord: <#T##String?#>, page: <#T##Int?#>, limit: <#T##Int?#>, completion: <#T##([EmergenDog]) -> Void#>)
     }
-    
-    @IBAction func filterClickAction(_ sender: Any) {
-        
-        
-        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
-        
-        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-        navigationController?.pushViewController(filter, animated: true)
-        
-    }
+//    
+//    @IBAction func filterClickAction(_ sender: Any) {
+//
+//
+//        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
+//
+//        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+//        navigationController?.pushViewController(filter, animated: true)
+//
+//    }
     
 }
 
@@ -103,9 +101,9 @@ extension EmergenDogVC:UICollectionViewDataSource{
         cell.dayLabel.text = Dday
         
         //강아지인지 고양이인지 판단
-        if emergenDog.type == "dog"{
+        if emergenDog.type == "개"{
             cell.kindImage.image = UIImage(named: "dogIcon1227")
-        }else if emergenDog.type == "cat" {
+        }else if emergenDog.type == "고양이" {
             cell.kindImage.image = UIImage(named: "catIcon1227")
         }
         //암컷 수컷 판단

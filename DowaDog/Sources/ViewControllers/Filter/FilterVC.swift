@@ -318,8 +318,6 @@ class FilterVC: UIViewController {
         
         delegate?.dataReceived(type: putType, region: putRegion, remainNoticeDate: putRemainNoticeDate)
         
-        dismiss(animated: true, completion: nil)
- 
+         navigationController?.popViewController(animated: true)
     }
-    
 }

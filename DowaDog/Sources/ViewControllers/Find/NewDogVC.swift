@@ -10,6 +10,7 @@ import UIKit
 
 class NewDogVC: UIViewController {
     
+    var emergenDogList = [EmergenDog]()
     @IBOutlet weak var navbar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     var reuseIdentifier = "newdogCell"
@@ -39,12 +40,15 @@ class NewDogVC: UIViewController {
 extension NewDogVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.testImg.count
+        return emergenDogList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! NewDogDetailCVCell
-        cell.animalImage.image = self.testImg[indexPath.item]
+        let newDog = emergenDogList[indexPath.item]
+//        cell.animalImage.image = self.testImg[indexPath.item]
+        
+        cell.animalImage.imageFromUrl(gsno(newDog.thumbnailImg), defaultImgPath: "")
         
         return cell
     }

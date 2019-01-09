@@ -56,10 +56,6 @@
 		F511E27E21E5374F004E462F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E27D21E5374F004E462F /* User.swift */; };
 		F511E28221E53767004E462F /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E28121E53767004E462F /* TokenType.swift */; };
 		F511E28621E53E2D004E462F /* AdoptService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E28521E53E2D004E462F /* AdoptService.swift */; };
-		F511E28821E5BC7D004E462F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F511E28721E5BC7D004E462F /* Search.storyboard */; };
-		F511E28B21E5BD9D004E462F /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E28A21E5BD9D004E462F /* SearchVC.swift */; };
-		F511E28D21E5C690004E462F /* NoSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E28C21E5C690004E462F /* NoSearchVC.swift */; };
-		F511E28F21E5C6AB004E462F /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E28E21E5C6AB004E462F /* SearchResultVC.swift */; };
 		F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */; };
 		F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */; };
 		F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */; };
@@ -200,10 +196,6 @@
 		F511E27D21E5374F004E462F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F511E28121E53767004E462F /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		F511E28521E53E2D004E462F /* AdoptService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptService.swift; sourceTree = "<group>"; };
-		F511E28721E5BC7D004E462F /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		F511E28A21E5BD9D004E462F /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
-		F511E28C21E5C690004E462F /* NoSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchVC.swift; sourceTree = "<group>"; };
-		F511E28E21E5C6AB004E462F /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3AdoptVC.swift; sourceTree = "<group>"; };
 		F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocSelectStep3VC.swift; sourceTree = "<group>"; };
 		F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3TempVC.swift; sourceTree = "<group>"; };
@@ -475,16 +467,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		F511E28921E5BD1E004E462F /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				F511E28A21E5BD9D004E462F /* SearchVC.swift */,
-				F511E28C21E5C690004E462F /* NoSearchVC.swift */,
-				F511E28E21E5C6AB004E462F /* SearchResultVC.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		F524E9E121DF55AC0001CA5A /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,7 +636,6 @@
 		F5508A2F21D4D8D200BE73FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F511E28921E5BD1E004E462F /* Search */,
 				F524E9E121DF55AC0001CA5A /* Info */,
 				4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */,
 				4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */,
@@ -704,7 +685,6 @@
 				F5508A1321D4D54400BE73FF /* Main.storyboard */,
 				F501E64521D4DFA9004CD703 /* Home.storyboard */,
 				F5508A1821D4D54400BE73FF /* LaunchScreen.storyboard */,
-				F511E28721E5BC7D004E462F /* Search.storyboard */,
 				F527A08521D6591E00BC20DE /* Community.storyboard */,
 				F524E9DF21DF553A0001CA5A /* Info.storyboard */,
 				4C0E95BF21D8909900301D52 /* Finding.storyboard */,
@@ -873,7 +853,6 @@
 				F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */,
 				4C0E95C421D890BD00301D52 /* Adopt.storyboard in Resources */,
 				F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */,
-				F511E28821E5BC7D004E462F /* Search.storyboard in Resources */,
 				F501E64621D4DFA9004CD703 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,7 +1010,6 @@
 				F566A47E21E2416700FE958B /* MyPageService.swift in Sources */,
 				4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */,
 				4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */,
-				F511E28F21E5C6AB004E462F /* SearchResultVC.swift in Sources */,
 				F5609D5321E11AE80090E3B6 /* MyDogDetailVC.swift in Sources */,
 				F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */,
 				F5609D7221E11CEF0090E3B6 /* MailCRView.swift in Sources */,
@@ -1039,7 +1017,6 @@
 				4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */,
 				F54B113721E3C2F3000BA8DF /* AnimalDetailService.swift in Sources */,
 				F566A48921E252AE00FE958B /* AnimalUserAdopt.swift in Sources */,
-				F511E28B21E5BD9D004E462F /* SearchVC.swift in Sources */,
 				F54B111921E3100C000BA8DF /* MyCommunityService.swift in Sources */,
 				F524E9DC21DE153B0001CA5A /* AdoptDirectVC.swift in Sources */,
 				F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */,
@@ -1050,7 +1027,6 @@
 				F5609D6121E11B890090E3B6 /* EmergenDogVC.swift in Sources */,
 				F501E64A21D4DFF6004CD703 /* HomeExtension.swift in Sources */,
 				4CF5A64C21DCA0ED00969511 /* Page2VC.swift in Sources */,
-				F511E28D21E5C690004E462F /* NoSearchVC.swift in Sources */,
 				F511E28621E53E2D004E462F /* AdoptService.swift in Sources */,
 				F566A47921E221C300FE958B /* ResponseBool.swift in Sources */,
 				F5609D7C21E11D610090E3B6 /* ScrapCell.swift in Sources */,
