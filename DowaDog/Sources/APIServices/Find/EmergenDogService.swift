@@ -18,7 +18,7 @@ struct EmergenDogService: APIManager, Requestable{
     
     //모든 긴급 동물 게시글 조회 api
     func getEmergenDogList(page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
-
+        
         let queryURL = emergenDogURL + "/emergency?page=\(page ?? 0)&limit=\(limit ?? 100)"
         let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
@@ -26,12 +26,12 @@ struct EmergenDogService: APIManager, Requestable{
             switch res {
             case .success(let value):
                 
-    
+                
                 print(".success=========================")
                 print("value: ")
                 print(value)
                 print(".success=========================")
-            
+                
                 guard let data = value.data?.content else {return}
                 
                 completion(data)
@@ -57,8 +57,8 @@ struct EmergenDogService: APIManager, Requestable{
             "&remainNoticeDate=\(remainNoticeDate ?? 8)" +
             "&searchWord=\(searchWord ?? "")" +
             "&page=\(page ?? 0)" +
-            "&limit=\(limit ?? 10)"
-         let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        "&limit=\(limit ?? 10)"
+        let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         gettable(encodingURL, body: nil, header: headers) { res in
             switch res {
@@ -91,24 +91,24 @@ struct EmergenDogService: APIManager, Requestable{
             "&story=\(story ?? true)" +
             "&searchWord=\(searchWord ?? "")" +
             "&page=\(page ?? 0)" +
-            "&limit=\(limit ?? 10)"
+        "&limit=\(limit ?? 10)"
         
-         let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         gettable(encodingURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
-            
+                
                 print(".success=========================")
                 print("value: ")
                 print(value)
                 print(".success=========================")
-            
+                
                 guard let data = value.data?.content else {return}
-            
+                
                 completion(data)
             case .error(let error):
-            
+                
                 print("error======================")
                 print("error : ")
                 print(error)

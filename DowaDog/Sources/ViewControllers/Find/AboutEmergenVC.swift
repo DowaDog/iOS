@@ -70,10 +70,10 @@ class AboutEmergenVC: UIViewController {
             //남녀 판단
             if data.sexCd == "M" {
                 
-                self.gender.text = "남아"
+                self.gender.text = "수컷"
                 self.genderIcon.image = UIImage(named: "manIcon1227")
             }else if data.sexCd == "F"{
-                self.gender.text = "여아"
+                self.gender.text = "암컷"
                 self.genderIcon.image = UIImage(named: "womanIcon1227")
             }else{
                 self.gender.text = "미등록"
@@ -82,9 +82,9 @@ class AboutEmergenVC: UIViewController {
             self.about.text = self.gsno(data.specialMark)
             
             //type 판단
-            if data.type == "dog" {
-                self.kindIcon.image = UIImage(named: "findingdetailDogIcon")
-            }else if data.type == "cat"{
+            if data.type == "개" {
+                self.kindIcon.image = UIImage(named: "dogIcon1227")
+            }else if data.type == "고양이"{
                      self.kindIcon.image = UIImage(named: "catIcon1227")
                 
             }
