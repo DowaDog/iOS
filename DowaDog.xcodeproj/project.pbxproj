@@ -66,6 +66,8 @@
 		F511E2A821E602D8004E462F /* CommunityImgList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2A721E602D8004E462F /* CommunityImgList.swift */; };
 		F511E2AA21E602FD004E462F /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2A921E602FD004E462F /* Community.swift */; };
 		F511E2AC21E63942004E462F /* CommunityDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2AB21E63942004E462F /* CommunityDetailService.swift */; };
+		F511E2AE21E674EE004E462F /* CommunityWriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2AD21E674EE004E462F /* CommunityWriteService.swift */; };
+		F511E2B021E67D37004E462F /* CommunityWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2AF21E67D37004E462F /* CommunityWrite.swift */; };
 		F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */; };
 		F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */; };
 		F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */; };
@@ -214,6 +216,8 @@
 		F511E2A721E602D8004E462F /* CommunityImgList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityImgList.swift; sourceTree = "<group>"; };
 		F511E2A921E602FD004E462F /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		F511E2AB21E63942004E462F /* CommunityDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailService.swift; sourceTree = "<group>"; };
+		F511E2AD21E674EE004E462F /* CommunityWriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWriteService.swift; sourceTree = "<group>"; };
+		F511E2AF21E67D37004E462F /* CommunityWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWrite.swift; sourceTree = "<group>"; };
 		F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3AdoptVC.swift; sourceTree = "<group>"; };
 		F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocSelectStep3VC.swift; sourceTree = "<group>"; };
 		F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3TempVC.swift; sourceTree = "<group>"; };
@@ -507,6 +511,7 @@
 			children = (
 				F511E2A221E6017B004E462F /* CommunityListService.swift */,
 				F511E2AB21E63942004E462F /* CommunityDetailService.swift */,
+				F511E2AD21E674EE004E462F /* CommunityWriteService.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				F511E2A721E602D8004E462F /* CommunityImgList.swift */,
+				F511E2AF21E67D37004E462F /* CommunityWrite.swift */,
 				F511E2A921E602FD004E462F /* Community.swift */,
 			);
 			path = Community;
@@ -1041,6 +1047,7 @@
 				F54B111721E308D9000BA8DF /* Mailbox.swift in Sources */,
 				4C03253421E21243001208D8 /* EmergenDogService.swift in Sources */,
 				F5609D5D21E11B6A0090E3B6 /* AboutEmergenVC.swift in Sources */,
+				F511E2B021E67D37004E462F /* CommunityWrite.swift in Sources */,
 				F54B113D21E3DB71000BA8DF /* MyScrap.swift in Sources */,
 				F511E2A021E5EA66004E462F /* keywordButton.swift in Sources */,
 				4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */,
@@ -1094,6 +1101,7 @@
 				F511E28621E53E2D004E462F /* AdoptService.swift in Sources */,
 				F566A47921E221C300FE958B /* ResponseBool.swift in Sources */,
 				F5609D7C21E11D610090E3B6 /* ScrapCell.swift in Sources */,
+				F511E2AE21E674EE004E462F /* CommunityWriteService.swift in Sources */,
 				F54B112321E31915000BA8DF /* UIVIewController+Extensions.swift in Sources */,
 				F524E9EE21E0AA2F0001CA5A /* CommunityDetailVC.swift in Sources */,
 				F5609D5121E11AD50090E3B6 /* LetterVC.swift in Sources */,

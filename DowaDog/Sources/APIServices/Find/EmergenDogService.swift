@@ -50,7 +50,7 @@ struct EmergenDogService: APIManager, Requestable{
         
         let queryURL = emergenDogURL +
             "?type=\(type ?? "")" +
-            "&region=\(region ?? "전체지역")" +
+            "&region=\(region ?? "")" +
             "&remainNoticeDate=\(remainNoticeDate ?? 8)" +
             "&searchWord=\(searchWord ?? "")" +
             "&page=\(page ?? 0)" +

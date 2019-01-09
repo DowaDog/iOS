@@ -105,6 +105,7 @@ class CommunityVC: UIViewController {
             self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
         })
     }
+    
     @IBAction func sideNavBtnAction(_ sender: UIButton) {
         
         if let btnTitle = sender.titleLabel?.text {
@@ -151,6 +152,15 @@ class CommunityVC: UIViewController {
             }
         }
     }
+    
+    
+    
+    @IBAction func writeBtnAction(_ sender: UIButton) {
+        
+        
+        
+    }
+    
 }
 
 
