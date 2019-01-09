@@ -20,8 +20,9 @@ struct EmergenDogService: APIManager, Requestable{
     func getEmergenDogList(page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
 
         let queryURL = emergenDogURL + "/emergency?page=\(page ?? 0)&limit=\(limit ?? 100)"
+        let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
-        gettable(queryURL, body: nil, header: headers) { res in
+        gettable(encodingURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
                 
