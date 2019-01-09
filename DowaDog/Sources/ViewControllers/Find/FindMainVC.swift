@@ -45,6 +45,10 @@ class FindMainVC: UIViewController,sendBackDelegate {
             guard let `self` = self else {return}
             
             self.emergenDogList = data
+            
+            
+            
+            
             self.collectionView.reloadData()
             
             
@@ -63,6 +67,11 @@ class FindMainVC: UIViewController,sendBackDelegate {
             
             self.newDogList = data
             self.collectionView.reloadData()
+            
+            
+            
+            
+            
             
         }
     }
@@ -368,7 +377,11 @@ extension FindMainVC:UICollectionViewDataSource{
             let region = gsno(newDog.region)
             let kind = gsno(newDog.kindCd)
             
-            cell.emerImage.imageFromUrl(gsno( newDog.thumbnailImg ), defaultImgPath: "")
+            
+            let testURL = gsno(newDog.thumbnailImg)
+            let test2URL = testURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            
+            cell.emerImage.imageFromUrl(test2URL, defaultImgPath: "")
             cell.aboutLabel.text = "[\(region)]\(kind)"
             
             cell.dayLabel.text = Dday
