@@ -28,14 +28,15 @@ class EmergenDetailCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
         
+        heartBtn.setImage(UIImage(named: "likedAnimalHeartBtnFill.png"), for: UIControl.State.selected)
+          heartBtn.setImage(UIImage(named: "heartBtn.png"), for: UIControl.State.normal)
     }
+    
     @IBAction func heartClickAction(_ sender: Any) {
-        if isClick == false{
-            heartBtn.setImage(UIImage(named: "likedAnimalHeartBtnFill.png"), for: UIControl.State.normal)
-            isClick = true
+        if heartBtn.isSelected == false{
+            heartBtn.isSelected = true
         }else{
-            heartBtn.setImage(UIImage(named: "heartBtn.png"), for: UIControl.State.normal)
-            isClick  = false
+            heartBtn.isSelected = false
         }
         
     }

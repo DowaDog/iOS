@@ -17,6 +17,8 @@ class FindMainVC: UIViewController,sendBackDelegate {
     var searchWord:String = ""
     var page:Int = 0
     var limit:Int = 10
+    
+    var heartId:Int?
 
     
     var emergenDogList = [EmergenDog]()
@@ -40,16 +42,16 @@ class FindMainVC: UIViewController,sendBackDelegate {
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+         self.collectionView?.reloadData()
+        
         EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
             (data) in
             guard let `self` = self else {return}
             
             self.emergenDogList = data
-            
-            
-            
-            
-            self.collectionView.reloadData()
+
+            self.collectionView?.reloadData()
             
             
         }
@@ -66,7 +68,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
             print("test===")
             
             self.newDogList = data
-            self.collectionView.reloadData()
+            self.collectionView?.reloadData()
             
             
             
@@ -76,6 +78,19 @@ class FindMainVC: UIViewController,sendBackDelegate {
         }
     }
     
+    @IBAction func heartClicked(_ sender: UIButton) {
+//
+//        print("1")
+//        print(heartId)
+//        AnimalDetailService.shared.animalLike(animalIdx: heartId ?? 1){
+//            (data) in
+//
+//            //요기부터 작업
+//            print(data)
+//
+//        }
+
+    }
     
     
     // sidemenu
@@ -120,6 +135,10 @@ class FindMainVC: UIViewController,sendBackDelegate {
     @IBAction func xBtnAction(_ sender: Any) {
         hideMenu()
     }
+    @IBAction func storyAction(_ sender: Any) {
+        
+    }
+    
     
     
     @objc func blackScreenTapAction(sender: UITapGestureRecognizer) {
@@ -209,6 +228,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
 //            secondVC.delegate = self
 //
 //        }
+        
     }
 
 
@@ -243,6 +263,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
             
             self.newDogList = data
             self.collectionView.reloadData()
+            
         }
         
     }
@@ -339,17 +360,19 @@ extension FindMainVC:UICollectionViewDataSource{
             
             //하트 클릭여부 판단
             cell.heartBtn.setImage(UIImage(named: "findingHeartBtnFill.png"), for: .selected)
+            
             cell.heartBtn.setImage(UIImage(named:"heartBtn"), for: .normal)
+            
             if emergenDog.liked == false{
-                
-                cell.heartBtn.isSelected = true
-                
-            }else if emergenDog.liked == true{
                 
                 cell.heartBtn.isSelected = false
                 
+            }else if emergenDog.liked == true{
+                
+                cell.heartBtn.isSelected = true
+                
             }
-        
+
             
         } else if section == 2 {
             let newDog = newDogList[indexPath.item]
@@ -402,22 +425,21 @@ extension FindMainVC:UICollectionViewDataSource{
             
             
             //하트 클릭여부 판단
-            cell.heartBtn.setImage(UIImage(named: "findingHeartBtnFill.png"), for: .selected)
+            cell.heartBtn.setImage(UIImage(named: "findingHeartBtnFill"), for: .selected)
             cell.heartBtn.setImage(UIImage(named:"heartBtn"), for: .normal)
-            if newDog.liked == false{
-                
-                cell.heartBtn.isSelected = true
-                
-            }else if newDog.liked == true{
-                
+            
+            if gbno(newDog.liked) == false{
                 cell.heartBtn.isSelected = false
-                
+
+            }else if gbno(newDog.liked) == true{
+                cell.heartBtn.isSelected = true
             }
 
         }
         return cell
         
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
@@ -473,6 +495,8 @@ extension FindMainVC: UICollectionViewDelegate{
             if let dvc = storyboard?.instantiateViewController(withIdentifier: "AboutEmergenVC") as? AboutEmergenVC {
                 
                 dvc.id = gino(emergenDog.id)
+                
+                
                 
                 //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                 navigationController?.pushViewController(dvc, animated: true)

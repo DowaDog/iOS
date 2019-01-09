@@ -45,10 +45,7 @@ struct EmergenDogService: APIManager, Requestable{
         }
     }
     
-    
-    
-    
-    
+
     func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
         
         let queryURL = emergenDogURL +

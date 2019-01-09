@@ -14,6 +14,8 @@ import UIKit
 class AboutNewDogVC: UIViewController {
     var heartClick = false
     
+    var id:Int!
+    
     @IBOutlet weak var adoptBtn: UIButton!
     
     @IBOutlet weak var scroll: UIScrollView!
@@ -23,6 +25,25 @@ class AboutNewDogVC: UIViewController {
     
     
     @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var animalImage: UIImageView!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var processState: UILabel!
+    @IBOutlet weak var weight: UILabel!
+    @IBOutlet weak var noticeTerm: UILabel!
+    @IBOutlet weak var type: UIImageView!
+    
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var aboutLabel: UILabel!
+    
+    @IBOutlet weak var age: UILabel!
+    @IBOutlet weak var gender: UIImageView!
+    @IBOutlet weak var protectPlace: UILabel!
+    @IBOutlet weak var regionKind: UILabel!
+    @IBOutlet weak var phoneNumb: UIButton!
+    @IBOutlet weak var findPlace: UILabel!
+    @IBOutlet weak var storyImage: UIImageView!
+    
+    
     var heartItem: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -42,7 +63,6 @@ class AboutNewDogVC: UIViewController {
         let panGestureRecongnizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))
         
         self.view.addGestureRecognizer(panGestureRecongnizer)
-        
         panGestureRecongnizer.delegate = self
         
         
@@ -51,26 +71,83 @@ class AboutNewDogVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        AnimalDetailService.shared.getAnimalDetail(animalIdx: 1) {
+        AnimalDetailService.shared.getAnimalDetail(animalIdx: id) {
             (data) in
             
             print("data ==========================")
             print("data : ")
             print(data)
             print("data ==========================")
+            
+            self.animalImage.imageFromUrl(data.thumbnailImg, defaultImgPath: "communityNoimg")
+            self.age.text  = "\(self.gsno(data.age))살"
+            
+            let region = self.gsno(data.region)
+            let kind = self.gsno(data.kindCd)
+            
+            self.regionKind.text =  "[\(region)]\(kind)"
+            self.mainImg.imageFromUrl(self.gsno(data.thumbnailImg), defaultImgPath: "")
+            
+            //남녀 판단
+            if data.sexCd == "M" {
+                
+                self.gender.text = "수컷"
+                self.genderIcon.image = UIImage(named: "manIcon1227")
+            }else if data.sexCd == "F"{
+                self.gender.text = "암컷"
+                self.genderIcon.image = UIImage(named: "womanIcon1227")
+            }else{
+                self.gender.text = "미등록"
+                
+            }
+            self.about.text = self.gsno(data.specialMark)
+            
+            //type 판단
+            if data.type == "개" {
+                self.kindIcon.image = UIImage(named: "dogIcon1227")
+            }else if data.type == "고양이"{
+                self.kindIcon.image = UIImage(named: "catIcon1227")
+                
+            }
+            
+            self.weight.text = "\(self.gsno(data.weight))kg"
+            
+            var  start:String!
+            var end:String!
+            
+            if data.startDate == nil{
+                start = "미등록"
+            }else{
+                start = data.startDate
+            }
+            
+            if  data.endDate == nil{
+                end =  "미등록"
+            }else{
+                end = data.endDate
+            }
+            
+            self.noticeTerm.text =  "\(self.gsno(start))-\(self.gsno(end))"
+            self.findPlace.text = self.gsno(data.happenPlace)
+            self.protectPlace.text = self.gsno(data.careName)
+            self.phoneNumb.setTitle(self.gsno(data.careTel), for: .normal)
+            
+            
+            
         }
     }
     
     
     @objc func heartTapped(){
         
-        AnimalDetailService.shared.animalLike(animalIdx: 1) {
+        AnimalDetailService.shared.animalLike(animalIdx: id) {
             (data) in
             
             print("data ==========================")
             print("data : ")
             print(data)
             print("data ==========================")
+            
         }
         
         
@@ -155,8 +232,7 @@ class AboutNewDogVC: UIViewController {
         //이거 실제 디바이스에서는 되는지 승언 오빠 핸드폰으로 확인하기
         //데이터 받아올 때 -나 스페이스 제외해서 넣기
     }
-    
-    
+
 }
 extension AboutNewDogVC : UIGestureRecognizerDelegate{
     
