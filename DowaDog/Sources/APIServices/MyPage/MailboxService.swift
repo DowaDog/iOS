@@ -41,4 +41,27 @@ struct MailboxService: APIManager, Requestable {
             }
         }
     }
+    
+    func readMailbox(completion: @escaping (ResponseArray<Mailbox>) -> Void) {
+        
+        let queryURL = myMailboxURL + "/readings"
+        
+        gettable(queryURL, body: nil, header: headers) { res in
+            switch res {
+            case .success(let value):
+                
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                completion(value)
+            case .error(let error):
+                print(".error============================")
+                print("error: ")
+                print(error)
+                print(".error============================")
+            }
+        }
+    }
 }
