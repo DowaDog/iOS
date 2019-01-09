@@ -701,6 +701,7 @@
         <!--New DogVC-->
         <scene sceneID="cvM-JY-cMa">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QlK-yc-WYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="NewDogVC" id="SkM-my-gN0" customClass="NewDogVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6GI-Vr-43X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -848,13 +849,13 @@
                         <outlet property="navbar" destination="c6c-7c-TIx" id="x2n-Xq-KKP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QlK-yc-WYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1728.8" y="210.94452773613196"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rKa-wt-8YG">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="92A-rE-PbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="r5B-JF-mTd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gX7-6Z-CJN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -864,7 +865,6 @@
                         <segue destination="SkM-my-gN0" kind="relationship" relationship="rootViewController" id="Tz5-Oe-LRc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="92A-rE-PbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="870" y="211"/>
         </scene>

@@ -57,6 +57,7 @@ struct EmergenDogService: APIManager, Requestable{
             "&searchWord=\(searchWord)" +
             "&page=\(page)" +
             "&limit=\(limit)"
+        
          let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         gettable(encodingURL, body: nil, header: headers) { res in

@@ -20,6 +20,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
 
     
     var emergenDogList = [EmergenDog]()
+    var newDogList = [EmergenDog]()
     
     @IBOutlet weak var filterBtn: UIButton!
     
@@ -51,7 +52,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
         
         
         
-        EmergenDogService.shared.findAnimalList(type: "", region: "", remainNoticeDate: 15, searchWord: "", page: 0, limit:10){
+        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: 15, searchWord: "", page: 0, limit:10){
             (data) in
             
             print("test===")
@@ -59,6 +60,9 @@ class FindMainVC: UIViewController,sendBackDelegate {
             print(self.getRegion)
             print(self.getRemainNoticeDate)
             print("test===")
+            
+            self.newDogList = data
+            self.collectionView.reloadData()
             
         }
     }
@@ -225,10 +229,11 @@ class FindMainVC: UIViewController,sendBackDelegate {
         
         
         
-        EmergenDogService.shared.findAnimalList(type: "개", region: "서울", remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
+        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
             (data) in
-
             
+            self.newDogList = data
+            self.collectionView.reloadData()
         }
         
     }
@@ -253,7 +258,7 @@ extension FindMainVC:UICollectionViewDataSource{
             returnValue = emergenDogList.count
         }
         else if section == 2 {
-            returnValue =  newImg.count
+            returnValue =  newDogList.count
             //            returnValue = self.sectionDataSource.count
         }
         return returnValue
@@ -305,19 +310,21 @@ extension FindMainVC:UICollectionViewDataSource{
             cell.dayLabel.text = Dday
             
             //강아지인지 고양이인지 판단
-            if emergenDog.type == "dog"{
+            if emergenDog.type == "개"{
                 cell.kindImage.image = UIImage(named: "dogIcon1227")
-            }else if emergenDog.type == "cat" {
+            }else if emergenDog.type == "고양이" {
                 cell.kindImage.image = UIImage(named: "catIcon1227")
             }
+            
             //암컷 수컷 판단
             if emergenDog.sexCd == "F" {
-             
-            
+             cell.genderImage.image = UIImage(named: "womanIcon1227")
             }
             else if emergenDog.sexCd == "M" {
                    cell.genderImage.image = UIImage(named: "manIcon1227")
              
+            }else{
+                     cell.genderImage.image = UIImage(named: "디폴트이미지받을것임")
             }
             
             
@@ -336,7 +343,68 @@ extension FindMainVC:UICollectionViewDataSource{
         
             
         } else if section == 2 {
-            cell.emerImage.image = newImg[indexPath.item]
+            let newDog = newDogList[indexPath.item]
+            ////
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd"
+            
+            let getDate = gsno(newDog.noticeEddt)//마감날짜
+            var strArray: Array<String> = []
+            strArray =  getDate.components(separatedBy:"-")
+            
+            let endDate  = strArray[2]
+            
+            let cal = Calendar.current
+            let date = Date()
+            let currentDate = cal.component(.day, from: date)
+            
+            
+            
+            let dday = Int(endDate) ?? Int() - Int(currentDate)
+            let Dday = "D-\(dday)"
+            //현재 날짜(currentData)가 분명 int값인데 계산에 먹히지를 않음
+            
+            //하단에 들어가는 해당 동물 지역과 종
+            let region = gsno(newDog.region)
+            let kind = gsno(newDog.kindCd)
+            
+            cell.emerImage.imageFromUrl(gsno( newDog.thumbnailImg ), defaultImgPath: "")
+            cell.aboutLabel.text = "[\(region)]\(kind)"
+            
+            cell.dayLabel.text = Dday
+            
+            //강아지인지 고양이인지 판단
+            if newDog.type == "개"{
+                cell.kindImage.image = UIImage(named: "dogIcon1227")
+            }else if newDog.type == "고양이" {
+                cell.kindImage.image = UIImage(named: "catIcon1227")
+            }
+            //암컷 수컷 판단
+            if newDog.sexCd == "F" {
+                 cell.genderImage.image = UIImage(named: "womanIcon1227")
+                
+            }
+            else if newDog.sexCd == "M" {
+                cell.genderImage.image = UIImage(named: "manIcon1227")
+                
+            }else{
+                cell.genderImage.image = UIImage(named: "디폴트이미지받을것임")
+            }
+            
+            
+            //하트 클릭여부 판단
+            cell.heartBtn.setImage(UIImage(named: "findingHeartBtnFill.png"), for: .selected)
+            cell.heartBtn.setImage(UIImage(named:"heartBtn"), for: .normal)
+            if newDog.liked == false{
+                
+                cell.heartBtn.isSelected = true
+                
+            }else if newDog.liked == true{
+                
+                cell.heartBtn.isSelected = false
+                
+            }
+
         }
         return cell
         
@@ -404,12 +472,15 @@ extension FindMainVC: UICollectionViewDelegate{
         }else if section == 2{
             
             let cell = self.collectionView.cellForItem(at: indexPath) as! EmergenCVCell
-            if indexPath.row == 0{
-                if let dvc = storyboard?.instantiateViewController(withIdentifier: "NewDogVC") as? NewDogVC {
-                    
+            
+            let newDog = newDogList[indexPath.item]
+            
+            if let dvc = storyboard?.instantiateViewController(withIdentifier: "AboutEmergenVC") as?AboutEmergenVC {
+                
+                    dvc.id = gino(newDog.id)
                     //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                     navigationController?.pushViewController(dvc, animated: true)
-                }
+                
             }
             
             
