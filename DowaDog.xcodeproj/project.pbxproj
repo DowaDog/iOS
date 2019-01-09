@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C00D46421E668ED0051AC37 /* StoryImageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C00D46321E668ED0051AC37 /* StoryImageCVCell.swift */; };
+		4C00D46621E669000051AC37 /* StoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C00D46521E669000051AC37 /* StoryHeader.swift */; };
+		4C00D46821E670E10051AC37 /* StoryDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C00D46721E670E10051AC37 /* StoryDogVC.swift */; };
 		4C03252021E13FC0001208D8 /* PostCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03251F21E13FC0001208D8 /* PostCRView.swift */; };
 		4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252121E1400C001208D8 /* PostCVCell.swift */; };
 		4C03253021E1FFFE001208D8 /* DogDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03252F21E1FFFE001208D8 /* DogDetail.swift */; };
@@ -35,7 +38,6 @@
 		4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */; };
 		4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */; };
 		4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */; };
-		4C446BB921E6518D00CCC2C5 /* StoryDogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C446BB821E6518D00CCC2C5 /* StoryDogVC.swift */; };
 		4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */; };
 		4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */; };
 		4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64721DC9A2700969511 /* Page2CVCell.swift */; };
@@ -156,6 +158,9 @@
 
 /* Begin PBXFileReference section */
 		4AF23DFCB82EAED1106940D1 /* Pods-DowaDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DowaDog.release.xcconfig"; path = "Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog.release.xcconfig"; sourceTree = "<group>"; };
+		4C00D46321E668ED0051AC37 /* StoryImageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryImageCVCell.swift; sourceTree = "<group>"; };
+		4C00D46521E669000051AC37 /* StoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeader.swift; sourceTree = "<group>"; };
+		4C00D46721E670E10051AC37 /* StoryDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDogVC.swift; sourceTree = "<group>"; };
 		4C03251F21E13FC0001208D8 /* PostCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCRView.swift; sourceTree = "<group>"; };
 		4C03252121E1400C001208D8 /* PostCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCVCell.swift; sourceTree = "<group>"; };
 		4C03252F21E1FFFE001208D8 /* DogDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetail.swift; sourceTree = "<group>"; };
@@ -184,7 +189,6 @@
 		4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorUICVLayoutAttributes.swift; sourceTree = "<group>"; };
 		4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDetailCVCell.swift; sourceTree = "<group>"; };
 		4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogDetailCVCell.swift; sourceTree = "<group>"; };
-		4C446BB821E6518D00CCC2C5 /* StoryDogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDogVC.swift; sourceTree = "<group>"; };
 		4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMSTestViewController.swift; path = DowaDog/Sources/ViewControllers/SMSTestViewController.swift; sourceTree = SOURCE_ROOT; };
 		4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1CVCell.swift; sourceTree = "<group>"; };
 		4CF5A64721DC9A2700969511 /* Page2CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CVCell.swift; sourceTree = "<group>"; };
@@ -386,7 +390,7 @@
 				F5609D6021E11B890090E3B6 /* EmergenDogVC.swift */,
 				F5609D6221E11BA60090E3B6 /* FindMainVC.swift */,
 				F5609D6421E11BB70090E3B6 /* NewDogVC.swift */,
-				4C446BB821E6518D00CCC2C5 /* StoryDogVC.swift */,
+				4C00D46721E670E10051AC37 /* StoryDogVC.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -449,6 +453,8 @@
 				4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */,
 				4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */,
 				4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */,
+				4C00D46321E668ED0051AC37 /* StoryImageCVCell.swift */,
+				4C00D46521E669000051AC37 /* StoryHeader.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -1023,6 +1029,7 @@
 				F54B112521E328A9000BA8DF /* MyInfoEditService.swift in Sources */,
 				F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */,
 				4CF5A64A21DCA0E100969511 /* Page1VC.swift in Sources */,
+				4C00D46421E668ED0051AC37 /* StoryImageCVCell.swift in Sources */,
 				F5609D9C21E1E18A0090E3B6 /* APIManager.swift in Sources */,
 				F54B114121E3DF09000BA8DF /* MyScrapService.swift in Sources */,
 				F511E27E21E5374F004E462F /* User.swift in Sources */,
@@ -1046,6 +1053,7 @@
 				F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */,
 				F54B111721E308D9000BA8DF /* Mailbox.swift in Sources */,
 				4C03253421E21243001208D8 /* EmergenDogService.swift in Sources */,
+				4C00D46821E670E10051AC37 /* StoryDogVC.swift in Sources */,
 				F5609D5D21E11B6A0090E3B6 /* AboutEmergenVC.swift in Sources */,
 				F511E2B021E67D37004E462F /* CommunityWrite.swift in Sources */,
 				F54B113D21E3DB71000BA8DF /* MyScrap.swift in Sources */,
@@ -1058,7 +1066,6 @@
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
-				4C446BB921E6518D00CCC2C5 /* StoryDogVC.swift in Sources */,
 				F54B114521E4689F000BA8DF /* Education.swift in Sources */,
 				F511E26C21E4847D004E462F /* Content.swift in Sources */,
 				4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */,
@@ -1070,6 +1077,7 @@
 				F5609D4D21E11A5D0090E3B6 /* CustomNavigationBar.swift in Sources */,
 				F54B111F21E31428000BA8DF /* MyLikeListService.swift in Sources */,
 				F5609D5521E11AFC0090E3B6 /* MyPageMainVC.swift in Sources */,
+				4C00D46621E669000051AC37 /* StoryHeader.swift in Sources */,
 				F511E26E21E48535004E462F /* Edu.swift in Sources */,
 				F54B112121E3144F000BA8DF /* MyLikeList.swift in Sources */,
 				4C03253621E21985001208D8 /* ImageViewURLExtension.swift in Sources */,
