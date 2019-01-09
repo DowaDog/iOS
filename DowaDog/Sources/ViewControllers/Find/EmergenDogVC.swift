@@ -39,17 +39,7 @@ class EmergenDogVC: UIViewController {
             self.collectionView.reloadData()
         }
     }
-//    
-//    @IBAction func filterClickAction(_ sender: Any) {
-//
-//
-//        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
-//
-//        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-//        navigationController?.pushViewController(filter, animated: true)
-//
-//    }
-    
+
 }
 
 

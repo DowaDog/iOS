@@ -11,4 +11,10 @@ import UIKit
 class ImageCRView: UICollectionReusableView {
     
     @IBOutlet weak var mainImage: UIImageView!
+    
+    @IBAction func storyAction(_ sender: Any) {
+        
+       
+
+    }
 }
