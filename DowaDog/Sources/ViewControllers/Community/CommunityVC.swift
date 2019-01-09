@@ -156,9 +156,7 @@ class CommunityVC: UIViewController {
     
     
     @IBAction func writeBtnAction(_ sender: UIButton) {
-        
-        
-        
+        performSegue(withIdentifier: "goCommunityWriteVC", sender: self)
     }
     
 }

@@ -8,15 +8,18 @@
 
 import ObjectMapper
 
-struct CommunityWrite<T: Mappable>: Mappable {
+struct CommunityWrite: Mappable {
     
     var id: Int?
     var createdAt: String?
     var updatedAt: String?
     var title: String?
     var detail: String?
-    var communityImgList: [T]?
+    var communityImgList: Array<CommunityImgList>?
+    var user: Array<User>?
+    var removeImgArray: Array<Int>?
     var today: Bool?
+    
     
     init?(map: Map) {}
     
@@ -28,6 +31,9 @@ struct CommunityWrite<T: Mappable>: Mappable {
         title <- map["title"]
         detail <- map["detail"]
         communityImgList <- map["communityImgList"]
+        user <- map["user"]
+        removeImgArray <- map["removeImgArray"]
         today <- map["today"]
+        
     }
 }

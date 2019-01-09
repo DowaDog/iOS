@@ -1,24 +1,16 @@
 import Alamofire
 
 struct CommunityWriteService: APIManager, Requestable{
-    typealias NetworkData = ResponseObject<CommunityWrite<CommunityImgList>>
+    typealias NetworkData = ResponseObject<CommunityWrite>
     static let shared = CommunityWriteService()
     let communityURL = url("/api/normal/community")
-
-
-
     let headers: HTTPHeaders = [
         "Content-Type": "multipart/form-data",
         "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
     ]
 
     
-    func writeCommunityWrite(title: String, detail: String, communityImgFiles: Array<UIImage>, completion: @escaping (CommunityWrite<CommunityImgList>) -> Void) {
-        
-        let headers: HTTPHeaders = [
-            "Content-Type": "multipart/form-data",
-            "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
-        ]
+    func writeCommunityWrite(title: String, detail: String, communityImgFiles: Array<UIImage>, completion: @escaping (CommunityWrite) -> Void) {
         
         Alamofire.upload(multipartFormData: { (multipart) in
             multipart.append(title.data(using: .utf8)!, withName: "title")
@@ -32,7 +24,7 @@ struct CommunityWriteService: APIManager, Requestable{
             switch result {
             case .success(let upload, _, _):
                 
-                upload.responseObject { (res: DataResponse<CommunityWrite<CommunityImgList>>) in
+                upload.responseObject { (res: DataResponse<CommunityWrite>) in
                     switch res.result {
                     case .success(let value):
                         
@@ -44,7 +36,6 @@ struct CommunityWriteService: APIManager, Requestable{
                         
                         
                         completion(value)
-                        
                     case .failure(let error):
                         
                         print(".error============================")
