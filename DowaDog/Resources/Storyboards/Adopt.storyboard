@@ -27,7 +27,7 @@
         <!--AdoptVC-->
         <scene sceneID="7Nw-i2-PNW">
             <objects>
-                <viewController id="SSt-qS-jWt" customClass="AdoptVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptVC" id="SSt-qS-jWt" customClass="AdoptVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l5h-X5-rJ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -658,10 +658,10 @@
             </objects>
             <point key="canvasLocation" x="1828" y="-474"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Adopt Nav-->
         <scene sceneID="SxV-AB-bvK">
             <objects>
-                <navigationController storyboardIdentifier="AdoptNav" automaticallyAdjustsScrollViewInsets="NO" id="mkF-Ul-KHi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AdoptNav" automaticallyAdjustsScrollViewInsets="NO" id="mkF-Ul-KHi" customClass="AdoptNav" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Re1-TX-auM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

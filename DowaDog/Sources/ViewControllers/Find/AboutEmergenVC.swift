@@ -178,16 +178,16 @@ class AboutEmergenVC: UIViewController {
                     
                     self.coverView.alpha = 1.0
                     self.alertView.alpha = 1.0
-                    
-                    
+
                 })
                
             }else {
                 
-                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "BoardNavigation") as! UINavigationController
+                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptVC") as! UINavigationController
                 // Main 은 Main.storyboard, 뒤에껀 넘어갈 view 의 Storyboard identifier, as 뒤는 클래스
                 
-                self.present(adopt, animated: true, completion: nil)
+             
+                self.navigationController?.pushViewController(adopt, animated: true)
             }
             
         }
