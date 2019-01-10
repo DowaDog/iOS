@@ -46,11 +46,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-sn-FCW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-sn-FCW">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="AYG-sn-FCW" secondAttribute="height" multiplier="125:93" id="YZM-hY-ghW"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncompletedContents" translatesAutoresizingMaskIntoConstraints="NO" id="N1V-bP-psk">
                                                     <rect key="frame" x="300" y="0.0" width="27" height="25"/>
@@ -522,10 +519,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oej-tq-SPC">
-                                        <rect key="frame" x="242" y="35" width="15" height="15"/>
+                                        <rect key="frame" x="242" y="21" width="29" height="29"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="PFE-Rt-e2n"/>
-                                            <constraint firstAttribute="width" constant="15" id="sIQ-QC-Ju0"/>
+                                            <constraint firstAttribute="height" constant="29" id="PFE-Rt-e2n"/>
+                                            <constraint firstAttribute="width" constant="29" id="sIQ-QC-Ju0"/>
                                         </constraints>
                                         <state key="normal" image="xBtn"/>
                                         <connections>
@@ -563,7 +560,7 @@
                                     <constraint firstItem="vrV-na-JmR" firstAttribute="leading" secondItem="EMt-ZB-otf" secondAttribute="leading" constant="30" id="mny-Xx-yqA"/>
                                     <constraint firstItem="1RR-0l-mLl" firstAttribute="top" secondItem="vrV-na-JmR" secondAttribute="bottom" constant="14" id="o0t-ov-AYR"/>
                                     <constraint firstItem="ij6-II-vtD" firstAttribute="top" secondItem="i4O-r8-bg5" secondAttribute="bottom" constant="61" id="qTS-5P-m5x"/>
-                                    <constraint firstItem="oej-tq-SPC" firstAttribute="top" secondItem="EMt-ZB-otf" secondAttribute="top" constant="35" id="rgG-TS-mxZ"/>
+                                    <constraint firstItem="oej-tq-SPC" firstAttribute="top" secondItem="EMt-ZB-otf" secondAttribute="top" constant="21" id="rgG-TS-mxZ"/>
                                     <constraint firstItem="srx-B3-JU3" firstAttribute="top" secondItem="3Je-af-dcH" secondAttribute="bottom" constant="14" id="sEW-TH-vu5"/>
                                     <constraint firstItem="vrV-na-JmR" firstAttribute="top" secondItem="9Q7-TP-UKD" secondAttribute="bottom" constant="14" id="w8O-Ah-Rr8"/>
                                     <constraint firstItem="OeT-vR-Xpl" firstAttribute="top" secondItem="ij6-II-vtD" secondAttribute="bottom" constant="14" id="xZG-R7-30z"/>
@@ -745,11 +742,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymK-Dq-M9H">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymK-Dq-M9H">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="375" id="M7C-fv-8L0"/>
-                                                        <constraint firstAttribute="width" secondItem="ymK-Dq-M9H" secondAttribute="height" multiplier="125:93" id="fti-ZQ-w46"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncompletedContents" translatesAutoresizingMaskIntoConstraints="NO" id="ABw-q1-XXC">

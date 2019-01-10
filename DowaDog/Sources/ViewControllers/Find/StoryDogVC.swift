@@ -17,6 +17,8 @@ class StoryDogVC: UIViewController {
     @IBOutlet weak var popupView: UIView!
     
     @IBOutlet weak var adoptBtn: UIButton!
+    
+    var lastPage = 0
 
     var age:String?
     var tel:String?

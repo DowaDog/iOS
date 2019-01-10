@@ -26,25 +26,25 @@ class Page1VC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getData()
+    }
+
+func getData(){
+    EducationListService.shared.getEducationList() { [weak self]
+        (data) in
+        guard let `self` = self else {return}
         
-        EducationListService.shared.getEducationList() { [weak self]
-            (data) in
-            guard let `self` = self else {return}
-            
-            
-            print("education==============================")
-            print("data: ")
-            print(data)
-            print("education==============================")
-            
-            
-            
-            
-            self.educationList = data
+        
+        print("education==============================")
+        print("data: ")
+        print(data)
+        print("education==============================")
+        
+        self.educationList = data
+        self.collectionView.reloadData()
         }
     }
 }
-   
 extension Page1VC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -53,9 +53,11 @@ extension Page1VC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! Page1CVCell
+        
+        
         let education = educationList[indexPath.item]
         cell.cardImage.imageFromUrl(gsno(education.imgPath), defaultImgPath: "")
-//        cell.cardImage.image = self.testImg[indexPath.item]
+
         
         if education.educated == true{
             cell.readCheck.image = UIImage(named:"completedContents")
@@ -71,16 +73,7 @@ extension Page1VC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = self.collectionView.cellForItem(at: indexPath) as!Page1CVCell
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
             
             //네비게이션 컨트롤러를 이용하여 push를 해줍니다.

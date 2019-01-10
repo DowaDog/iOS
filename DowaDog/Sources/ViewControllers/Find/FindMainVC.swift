@@ -20,6 +20,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
     
     var heartId:Int?
 
+    var lastPage = 0
     
     var emergenDogList = [EmergenDog]()
     var newDogList = [EmergenDog]()
@@ -31,25 +32,28 @@ class FindMainVC: UIViewController,sendBackDelegate {
     var resusableheader = "header"
     
    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-         self.collectionView?.reloadData()
-        
-        EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
-            (data) in
-            guard let `self` = self else {return}
-            
-            self.emergenDogList = data
-
-            self.collectionView?.reloadData()
-            
-            
+        getEmergenData()
+        getData()
+  
         }
         
+        func getEmergenData(){
+            EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
+                (data) in
+                guard let `self` = self else {return}
+                
+                self.emergenDogList = data
+                
+                self.collectionView?.reloadData()
+        }
+    }
         
-        
-        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: 15, searchWord: "", page: 0, limit:10){
+    func getData(){
+        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: 15, searchWord: "", page: lastPage, limit:10){
             (data) in
             
             print("test===")
@@ -58,10 +62,13 @@ class FindMainVC: UIViewController,sendBackDelegate {
             print(self.getRemainNoticeDate)
             print("test===")
             
-            self.newDogList = data
-            self.collectionView?.reloadData()
-
             
+            self.newDogList  = self.newDogList + data
+            self.lastPage += 1
+            
+            self.collectionView?.reloadData()
+            
+
         }
     }
     
@@ -449,10 +456,16 @@ extension FindMainVC:UICollectionViewDataSource{
 }
 
 extension FindMainVC: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if !(indexPath.row + 1 < self.newDogList.count) {
+            getData()
+        }
+   
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events

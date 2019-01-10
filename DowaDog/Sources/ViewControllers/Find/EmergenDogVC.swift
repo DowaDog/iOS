@@ -25,16 +25,11 @@ class EmergenDogVC: UIViewController {
         self.setBackBtn()
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        
+
         
         navbar.title = "긴급동물"
         self.setNavigationBarShadow()
-        
-//        self.collectionView.setNeedsLayout()
-//        self.collectionView.layoutIfNeeded()
-        
-        
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
