@@ -16,6 +16,13 @@ extension UIViewController {
         return value_
     }//func gsno
     
+    func gano(_ value: Array<Any>?) -> Array<Any>{
+        guard let value_ = value else {
+            return []
+        }
+        return value_
+    }//func gano
+    
     func gino(_ value:Int?) -> Int{
         guard let value_ = value else {
             return 0

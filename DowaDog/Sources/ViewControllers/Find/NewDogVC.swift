@@ -14,10 +14,8 @@ class NewDogVC: UIViewController {
 
     @IBOutlet weak var navbar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var reuseIdentifier = "newdogCell"
-    var testImg = [(UIImage(named: "testcat.png")),
-                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),(UIImage(named: "testcat.png"))
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +26,7 @@ class NewDogVC: UIViewController {
 
         self.setBackBtn()
         self.setNavigationBarShadow()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +34,12 @@ class NewDogVC: UIViewController {
         EmergenDogService.shared.findAnimalList(type: "", region: "", remainNoticeDate: 300, story: true, searchWord: "", page: 0, limit: 10) {
             (data) in
 
+            print("---여기--------------")
+            print(data)
+            print("---여기--------------")
+            
             self.storyDogList = data
+            self.collectionView.reloadData()
 
 
         }
@@ -126,7 +130,9 @@ extension NewDogVC: UICollectionViewDelegate{
         
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "StoryDogVC") as?StoryDogVC {
             
+               let storyDog = storyDogList[indexPath.item]
             //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+            dvc.id = storyDog.id
             navigationController?.pushViewController(dvc, animated: true)
             
     }

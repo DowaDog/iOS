@@ -12,6 +12,9 @@ class AboutEmergenVC: UIViewController {
     var heartClcik = false
     @IBOutlet weak var popupView: UIView!
     
+    @IBOutlet weak var alertView: UIView!
+    
+    @IBOutlet weak var notice2View: UIView!
     @IBOutlet weak var coverView: UIView!
     
     var numb : String!
@@ -34,17 +37,22 @@ class AboutEmergenVC: UIViewController {
     
     @IBOutlet weak var dDay: UILabel!
     
+    @IBOutlet weak var noticeView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackBtn()
         
         heart = UIBarButtonItem(image:UIImage(named: "heartBtnLine.png") , style: .plain, target: self, action: #selector(heartTapped))
-        heart.tintColor = UIColor.init(displayP3Red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
-        
+        heart.tintColor = UIColor.white
         navigationItem.rightBarButtonItems = [heart]
         
         coverView.alpha = 0.0
         popupView.alpha = 0.0
+        alertView.alpha = 0.0
+        noticeView.roundRadius()
+        notice2View.roundRadius()
+        
+         self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +66,12 @@ class AboutEmergenVC: UIViewController {
             print("data ===================")
             print(data)
             print("data ===================")
+            
+            if data.liked == true{
+                self.heartClcik = true
+            }else if data.liked == false{
+                self.heartClcik = false
+            }
             
             self.age.text  = "\(self.gsno(data.age))살"
             
@@ -118,6 +132,17 @@ class AboutEmergenVC: UIViewController {
 
     
     @objc func heartTapped(){
+        
+        AnimalDetailService.shared.animalLike(animalIdx: id) {
+            (data) in
+            
+            print("data ==========================")
+            print("data : ")
+            print(data)
+            print("data ==========================")
+            
+            
+        }
         if heartClcik == false{
             heart.image = UIImage(named: "heartBtnFill")
             heartClcik = true
@@ -136,11 +161,44 @@ class AboutEmergenVC: UIViewController {
     
     @IBAction func okBtnAction(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
+            
             self.coverView.alpha = 0.0
             self.popupView.alpha = 0.0
             
         })
         
+    }
+    
+    @IBAction func adoptAction(_ sender: Any) {
+        
+        AnimalDetailService.shared.getAnimalDetail(animalIdx: id) {
+            (data) in
+            if data.educationState == false{
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                    self.coverView.alpha = 1.0
+                    self.alertView.alpha = 1.0
+                    
+                    
+                })
+               
+            }else {
+                
+                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "BoardNavigation") as! UINavigationController
+                // Main 은 Main.storyboard, 뒤에껀 넘어갈 view 의 Storyboard identifier, as 뒤는 클래스
+                
+                self.present(adopt, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    @IBAction func ok2Action(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.coverView.alpha = 0.0
+            self.alertView.alpha = 0.0
+            
+        })
     }
     
     
@@ -164,6 +222,7 @@ class AboutEmergenVC: UIViewController {
             }
         }
     }
+    
 }
 
 extension UIAlertController {

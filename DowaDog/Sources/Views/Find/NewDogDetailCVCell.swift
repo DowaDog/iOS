@@ -35,14 +35,18 @@ class NewDogDetailCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
         
+        self.heartBtn.isEnabled = false
+        
+        
+        
     }
     @IBAction func heartClickAction(_ sender: Any) {
-        if isClick == false{
-            heartBtn.setImage(UIImage(named: "likedAnimalHeartBtnFill.png"), for: UIControl.State.normal)
-            isClick = true
-        }else{
-            heartBtn.setImage(UIImage(named: "heartBtn.png"), for: UIControl.State.normal)
-            isClick  = false
-        }
+//        if isClick == false{
+//            heartBtn.setImage(UIImage(named: "likedAnimalHeartBtnFill.png"), for: UIControl.State.normal)
+//            isClick = true
+//        }else{
+//            heartBtn.setImage(UIImage(named: "heartBtn.png"), for: UIControl.State.normal)
+//            isClick  = false
+//        }
     }
 }
