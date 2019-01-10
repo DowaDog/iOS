@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: refresh 못함
 
 class EmergenDogVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,6 +18,8 @@ class EmergenDogVC: UIViewController {
     @IBOutlet weak var navbar: UINavigationItem!
     var reuseIdentifier = "emergenCell"
     
+    var lastPage = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackBtn()
@@ -24,24 +27,33 @@ class EmergenDogVC: UIViewController {
         collectionView.delegate = self
         
         
+        
         navbar.title = "긴급동물"
         self.setNavigationBarShadow()
+        
+//        self.collectionView.setNeedsLayout()
+//        self.collectionView.layoutIfNeeded()
         
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        EmergenDogService.shared.getEmergenDogList(page: 0, limit: 10) { [weak self]
+        getBoard()
+    }
+
+    func getBoard() {
+        EmergenDogService.shared.getEmergenDogList(page: lastPage, limit: 10) { [weak self]
             (data) in
             guard let `self` = self else {return}
             print("---여기--------------")
             print(data)
             print("---여기--------------")
-            self.emergenDogList = data
+            self.emergenDogList  = self.emergenDogList + data
             self.collectionView.reloadData()
+            
+            self.lastPage += 1
         }
     }
-
 }
 
 
@@ -120,11 +132,7 @@ extension EmergenDogVC:UICollectionViewDataSource{
             
         }
         
-//        cell.btnCounter.tag = indexPath.item
-//        cell.btnCounter.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
-        
-//        cell.heartBtn = indexPath.item
-        
+
         
         func buttonClicked(_ sender: UIButton) {
             //Here sender.tag will give you the tapped Button index from the cell
@@ -137,7 +145,17 @@ extension EmergenDogVC:UICollectionViewDataSource{
 }
 
 extension EmergenDogVC: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if !(indexPath.row + 1 < self.emergenDogList.count) {
+            getBoard()
+        }
+        
+        
+    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         
         let cell = self.collectionView.cellForItem(at: indexPath) as!EmergenDetailCVCell
         
@@ -153,19 +171,11 @@ extension EmergenDogVC: UICollectionViewDelegate{
         }
         
     }
-    
-    
+
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        
-        
-        
-        //        if indexPath.row == 0{
-        //            cell0 = false
-        //            unselectedCell.areaImage.image = UIImage(named: "wholeAreaBtnYellow")
-        //
-        //        }
+
         
     }
 }

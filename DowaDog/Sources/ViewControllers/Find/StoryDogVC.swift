@@ -38,6 +38,8 @@ class StoryDogVC: UIViewController {
     var heartClick:Bool?
     
     @IBOutlet weak var noticeView: UIView!
+    @IBOutlet weak var alertView: UIView!
+    
     
     var viewDidLayoutSubviewsForTheFirstTime = true
     
@@ -197,6 +199,31 @@ class StoryDogVC: UIViewController {
         
         //이거 실제 디바이스에서는 되는지 승언 오빠 핸드폰으로 확인하기
         //데이터 받아올 때 -나 스페이스 제외해서 넣기
+    }
+    
+    @IBAction func adoptAction(_ sender: Any) {
+        
+        
+        AnimalDetailService.shared.getAnimalDetail(animalIdx: id) {
+            (data) in
+            if data.educationState == false{
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                    self.coverView.alpha = 1.0
+                    self.alertView.alpha = 1.0
+                    
+                })
+                
+            }else {
+                
+                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptVC") as! UINavigationController
+                // Main 은 Main.storyboard, 뒤에껀 넘어갈 view 의 Storyboard identifier, as 뒤는 클래스
+                
+                
+                self.navigationController?.pushViewController(adopt, animated: true)
+            }
+            
+        }
     }
     
 }
