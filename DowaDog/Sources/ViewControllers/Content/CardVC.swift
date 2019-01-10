@@ -17,16 +17,20 @@ class CardVC: UIViewController {
     
     @IBOutlet weak var completeBtn: UIButton!
     
+    
     @IBOutlet weak var scroll: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navBarBackgroundAlpha = 0
         setBackBtn()
+        
         
         scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(scrapTapped))
         scrapItem.tintColor = UIColor.white
         
         navigationItem.rightBarButtonItems = [scrapItem]
+        
         
         
         let panGestureRecongnizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))

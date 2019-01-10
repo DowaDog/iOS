@@ -26,11 +26,7 @@ class EmergenCVCell: UICollectionViewCell {
     
     @IBOutlet weak var aboutLabel: UILabel!
     
-    
-    
-    
-    
-    
+
     @IBAction func heartClickAction(_ sender: UIButton) {
         
         
