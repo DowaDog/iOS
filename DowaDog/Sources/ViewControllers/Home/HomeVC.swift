@@ -13,39 +13,24 @@ class HomeVC: UIViewController {
     // 0 -> -428
     @IBOutlet var cardViewConstraint: NSLayoutConstraint!
 
-    @IBOutlet var blackScreen2: UIView!
     
+    
+    
+    
+    // Swipe
     @IBOutlet var upSwipe: UISwipeGestureRecognizer!
     @IBOutlet var downSwipe: UISwipeGestureRecognizer!
     @IBOutlet var leftSwipe: UISwipeGestureRecognizer!
     @IBOutlet var rightSwipe: UISwipeGestureRecognizer!
     
 
+    
+    
+    // GuidView
     @IBOutlet var guideView: UIView!
     @IBOutlet var guideImageView: UIImageView!
-    @IBOutlet var guideViewNextBtn: UIButton!
     @IBOutlet var guideIndicator: UIImageView!
-    
-    @IBOutlet var cardView: UIImageView!
-
-    @IBOutlet var sideMenuView: UIView!
-    var blackScreen: UIView!
-    
-    @IBOutlet var newFamBtn: UIButton!
-    
-    @IBOutlet var new: UIImageView!
-    @IBOutlet var stateImageView: UIImageView!
-    
-    let stateImageArray: Array<UIImage> = [
-        UIImage(named: "mainSlideNonadoptImg")!,
-        UIImage(named: "mainSlideFailImg")!,
-        UIImage(named: "mainSlide1StepImg")!,
-        UIImage(named: "mainSlide2StepImg")!,
-        UIImage(named: "mainSlide3StepImg")!,
-        UIImage(named: "mainSlide4StepImg")!,
-        UIImage(named: "mainSlide5StepImg")!
-        ]
-
+    @IBOutlet var guideViewNextBtn: UIButton!
     let guideImageArray: Array<UIImage> = [
         UIImage(named: "325")!,
         UIImage(named: "324")!,
@@ -54,7 +39,6 @@ class HomeVC: UIViewController {
         UIImage(named: "321")!,
         UIImage(named: "320")!
     ]
-    
     let guideIndicatorArray: Array<UIImage> = [
         UIImage(named: "popupOneIndicate")!,
         UIImage(named: "popupTwoIndicate")!,
@@ -63,15 +47,61 @@ class HomeVC: UIViewController {
         UIImage(named: "popupFiveIndicate")!,
         UIImage(named: "popupSixIndicate")!
     ]
+    @IBOutlet var blackScreen2: UIView!
+    
+    
+    
+    
+    // cardView
+    @IBOutlet var cardView: UIImageView!
+    @IBOutlet var stateImageView: UIImageView!
+    let stateImageArray: Array<UIImage> = [
+        UIImage(named: "mainSlideNonadoptImg")!,
+        UIImage(named: "mainSlideFailImg")!,
+        UIImage(named: "mainSlide1StepImg")!,
+        UIImage(named: "mainSlide2StepImg")!,
+        UIImage(named: "mainSlide3StepImg")!,
+        UIImage(named: "mainSlide4StepImg")!,
+        UIImage(named: "mainSlide5StepImg")!
+    ]
+    
+    
+    @IBOutlet var sideMenuView: UIView!
+    var blackScreen: UIView!
+    
+    
+    
+    
+    
+    @IBOutlet var newFamBtn: UIButton!
+    
+    @IBOutlet var new: UIImageView!
+    
+    
+
+    
+    
+    
+    
 
 
     
     // flag
-    var newFlag: Bool = true
-    var state: Int = 0
-    var guideState: Int = 0
-    var guideViewFlag: Bool = false
-    var blackFlag: Bool = false
+    var newFlag: Bool?                                                              // 카드뷰 new indicator
+    var state: Array<String> = ["NO", "S0", "S1", "S2", "S3", "COMPLETE", "DENY"]   // 카드뷰 state Array
+    
+    
+    
+    var guideState: Int = 0                 // 가이드뷰 스테이트
+    var guideViewFlag: Bool = false         // 가이드뷰 확인
+    var blackFlag: Bool = false             // 
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,11 +126,37 @@ class HomeVC: UIViewController {
             new.alpha = 0
             showGuideView()
         } else {
-            if newFlag == true {
+            if newFlag == false {
                 new.alpha = 1
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        HomeService.shared.getHome() {
+            (data) in
+            
+            print("data: =========================")
+            print(data)
+            print("data: =========================")
+            
+            
+            self.newFlag = self.gbno(data.data?.userCheck)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func setGuideView() {
         guideView.layer.cornerRadius = 15
@@ -164,6 +220,12 @@ class HomeVC: UIViewController {
         blackScreen2.addGestureRecognizer(tapGestRecognizer2)
     }
     
+    
+    
+    
+    
+    
+    
     // sideMenu 를 뷰 최상단으로 지정
     func setSideMenu() {
         sideMenuView.frame = UIApplication.shared.keyWindow!.frame
@@ -182,6 +244,25 @@ class HomeVC: UIViewController {
         blackScreen.addGestureRecognizer(tapGestRecognizer)
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Open sideMenu
     func showMenu() {
         UIView.animate(withDuration: 0.4, animations: {
@@ -192,19 +273,6 @@ class HomeVC: UIViewController {
             self.sideMenuView.transform = .identity
         })
     }
-    
-    func hideCardView() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.navigationController?.navigationBar.layer.zPosition = 1
-
-            self.blackScreen2.alpha = 0
-            self.cardViewConstraint.constant = -428
-            print("down")
-
-            self.view.layoutIfNeeded()
-        })
-    }
-    
     // Close sideMenu
     func hideMenu() {
         UIView.animate(withDuration: 0.4, animations: {
@@ -215,6 +283,9 @@ class HomeVC: UIViewController {
             self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
         })
     }
+    
+    
+    
     
     
     @IBAction func sideNavBtnAction(_ sender: UIButton) {
@@ -236,9 +307,9 @@ class HomeVC: UIViewController {
             case "입양하기":
                 hideMenu()
                 
-                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptNav") as! UINavigationController
+                let finding = UIStoryboard(name: "Finding", bundle: nil).instantiateViewController(withIdentifier: "FindingNav") as! UINavigationController
                 
-                self.present(adopt, animated: true, completion: nil)
+                self.present(finding, animated: true, completion: nil)
                 
                 break
             case "커뮤니티":
@@ -249,24 +320,52 @@ class HomeVC: UIViewController {
                 self.present(community, animated: true, completion: nil)
                 break
             case "컨텐츠":
-                print("Contents")
+                hideMenu()
+                
+                let contents = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentsNav") as! UINavigationController
+                
+                self.present(contents, animated: true, completion: nil)
                 break
             case "마이페이지":
-                print("MyPage")
+                hideMenu()
+                
+                let myProfile = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyProfileNav") as! UINavigationController
+                
+                self.present(myProfile, animated: true, completion: nil)
                 break
-            case "입양 안내":
-                print("Guide")
+            case "기다릴개와 함께할개":
+                hideMenu()
+                
+                let support = UIStoryboard(name: "Support", bundle: nil).instantiateViewController(withIdentifier: "SupportNav") as! UINavigationController
+                
+                self.present(support, animated: true, completion: nil)
                 break
             default:
-                print("Default")
+                hideMenu()
                 break
-            }         
+            }
         }
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // 카드뷰 스와이프
     @IBAction func upSwipeAction(_ sender: UISwipeGestureRecognizer) {
 
-        
+        HomeService.shared.getNews() {
+            (data) in
+            
+            print("data: =========================")
+            print(data)
+            print("data: =========================")
+        }
         
         UIView.animate(withDuration: 0.3, animations: {
             
@@ -285,7 +384,7 @@ class HomeVC: UIViewController {
             self.view.layoutIfNeeded()
         })
     }
-    
+    // 카드뷰 스와이프
     @IBAction func downSwipeAction(_ sender: UISwipeGestureRecognizer) {
 
         
@@ -302,8 +401,44 @@ class HomeVC: UIViewController {
             self.view.layoutIfNeeded()
         })
     }
+    func hideCardView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.navigationController?.navigationBar.layer.zPosition = 1
+            
+            self.blackScreen2.alpha = 0
+            self.cardViewConstraint.constant = -428
+            self.view.layoutIfNeeded()
+        })
+    }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // 가이드뷰 스와이프 액션
     @IBAction func leftSwipeAction(_ sender: UISwipeGestureRecognizer) {
 
         if guideState < 5 {
@@ -330,13 +465,8 @@ class HomeVC: UIViewController {
                 self.new.alpha = 1
             })
         }
-       
-
-        
-        print("left")
     }
-    
-    
+    // 가이드뷰 스와이프 액션
     @IBAction func rightSwipeAction(_ sender: UISwipeGestureRecognizer) {
 
         if guideState > 0 {
@@ -357,13 +487,8 @@ class HomeVC: UIViewController {
                 guideViewNextBtn.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
             }
         }
-        
-        print("right")
     }
-    
-    
-    
-    
+    // 가이드 뷰 액션
     @IBAction func guideViewNextBtnAction(_ sender: UIButton) {
 
         if guideState < 5 {
@@ -394,14 +519,29 @@ class HomeVC: UIViewController {
     
     
     
+    
+    
+    
     //unwind Point
-    @IBAction func unwindAction(_ sender: UIStoryboardSegue) {
-        
-        
-        
-    }
+    @IBAction func unwindAction(_ sender: UIStoryboardSegue) {}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 가이드뷰 하단 모서리 둥글게 설정
 extension UIButton {
     func roundedButton(){
         let maskPath1 = UIBezierPath(
