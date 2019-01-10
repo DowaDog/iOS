@@ -672,9 +672,11 @@
                         <outlet property="communityTableView" destination="dbV-vL-dlG" id="kVH-A7-nLz"/>
                         <outlet property="sideMenuView" destination="JPt-nl-css" id="5L1-Ae-yeI"/>
                         <segue destination="2qP-00-jEL" kind="presentation" identifier="goCommunityWriteVC" id="whV-yZ-8uF"/>
+                        <segue destination="ndD-bA-WnA" kind="unwind" identifier="unwindToHome" unwindAction="unwindAction:" id="vis-MM-DYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOa-oj-lf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ndD-bA-WnA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="756" y="186.65667166416793"/>
         </scene>

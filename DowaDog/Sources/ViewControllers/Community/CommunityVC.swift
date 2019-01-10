@@ -35,6 +35,9 @@ class CommunityVC: UIViewController {
 //        communityTableView.dataSource = self
     }
 
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -106,12 +109,18 @@ class CommunityVC: UIViewController {
         })
     }
     
+    
+    
+    
+    
     @IBAction func sideNavBtnAction(_ sender: UIButton) {
         
         if let btnTitle = sender.titleLabel?.text {
             switch (btnTitle) {
             case "홈":
                 hideMenu()
+
+                performSegue(withIdentifier: "unwindToHome", sender: self)
                 
                 break
             case "기다릴개 란?":
