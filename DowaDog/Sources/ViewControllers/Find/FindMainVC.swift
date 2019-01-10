@@ -38,11 +38,10 @@ class FindMainVC: UIViewController,sendBackDelegate {
         
         getEmergenData()
         getData()
-  
-        }
+    }
         
-        func getEmergenData(){
-            EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
+    func getEmergenData(){
+        EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
                 (data) in
                 guard let `self` = self else {return}
                 
@@ -53,8 +52,9 @@ class FindMainVC: UIViewController,sendBackDelegate {
     }
         
     func getData(){
-        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: 15, searchWord: "", page: lastPage, limit:10){
+        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: 15, searchWord: "", page: lastPage, limit:10){ [weak self]
             (data) in
+            guard let `self` = self else {return}
             
             print("test===")
             print(self.getType)
@@ -64,23 +64,12 @@ class FindMainVC: UIViewController,sendBackDelegate {
             
             
             self.newDogList  = self.newDogList + data
-            self.lastPage += 1
+//            self.lastPage += 1
             
             self.collectionView?.reloadData()
-            
-
         }
     }
     
-    @IBAction func heartClicked(_ sender: UIButton) {
-
-
-    }
-    
-    
-    // sidemenu
-    var blackScreen: UIView!
-    @IBOutlet var sideMenuView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,111 +78,13 @@ class FindMainVC: UIViewController,sendBackDelegate {
         filterBtn.roundRadius()
         
         
-        // sidemenu
-        setBlackScreen()
-        setSideMenu()
-        
-        
     }
     
-    // sidemenu
-    func setSideMenu() {
-        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
-        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
-        
-        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
-    }
-    
-    func setBlackScreen() {
-        blackScreen=UIView(frame: self.view.bounds)
-        blackScreen.alpha = 0 
-        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        self.navigationController?.view.addSubview(blackScreen)
-        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
-        blackScreen.addGestureRecognizer(tapGestRecognizer)
-    }
-    
-    @IBAction func menuTapped(_ sender: Any) {
-        showMenu()
-    }
-    
-    @IBAction func xBtnAction(_ sender: Any) {
-        hideMenu()
-    }
+   
     @IBAction func storyAction(_ sender: Any) {
         
     }
     
-    
-    
-    @objc func blackScreenTapAction(sender: UITapGestureRecognizer) {
-        hideMenu()
-    }
-    
-    func showMenu() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 1
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
-            self.sideMenuView.transform = .identity
-        })
-    }
-    func hideMenu() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 0
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
-            self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
-        })
-    }
-    @IBAction func sideNavBtnAction(_ sender: UIButton) {
-        
-        if let btnTitle = sender.titleLabel?.text {
-            switch (btnTitle) {
-            case "홈":
-                hideMenu()
-                
-                break
-            case "기다릴개 란?":
-                hideMenu()
-                
-                let info = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "InfoNav") as! UINavigationController
-                
-                self.present(info, animated: true, completion: nil)
-                
-                break
-            case "입양하기":
-                hideMenu()
-                
-                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptNav") as! UINavigationController
-                
-                self.present(adopt, animated: true, completion: nil)
-                
-                break
-            case "커뮤니티":
-                hideMenu()
-                
-                let community = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityNav") as! UINavigationController
-                
-                self.present(community, animated: true, completion: nil)
-                break
-            case "컨텐츠":
-                print("Contents")
-                break
-            case "마이페이지":
-                print("MyPage")
-                break
-            case "입양 안내":
-                print("Guide")
-                break
-            default:
-                print("Default")
-                break
-            }
-        }
-    }
     
 
     
@@ -203,10 +94,6 @@ class FindMainVC: UIViewController,sendBackDelegate {
         
                 //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                 navigationController?.pushViewController(filter, animated: true)
-        
-        
-
-        
     }
 
 
@@ -214,9 +101,8 @@ class FindMainVC: UIViewController,sendBackDelegate {
         
         if segue.identifier == "action_show"{
             
-            let filterVC = segue.destination as! FilterVC
-            filterVC.delegate = self
- 
+            let newFilterVC = segue.destination as! NewFilterVC
+            newFilterVC.delegate = self
         }
     }
     
@@ -231,26 +117,33 @@ class FindMainVC: UIViewController,sendBackDelegate {
         print(remainNoticeDate)
         print(getType)
         print(getRegion)
-        print(getRemainNoticeDate)
+        print(gino(getRemainNoticeDate))
         
-        
-        
-        
-        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){
+        EmergenDogService.shared.findAnimalList(type: getType, region: getRegion, remainNoticeDate: getRemainNoticeDate, searchWord: "", page: 0, limit:10){ [weak self]
             (data) in
+            guard let `self` = self else {return}
             
             self.newDogList = data
             self.collectionView.reloadData()
-            
         }
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 extension FindMainVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -267,7 +160,6 @@ extension FindMainVC:UICollectionViewDataSource{
         }
         else if section == 2 {
             returnValue =  newDogList.count
-            //            returnValue = self.sectionDataSource.count
         }
         return returnValue
     }
@@ -419,6 +311,17 @@ extension FindMainVC:UICollectionViewDataSource{
     }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let section = indexPath.section
@@ -454,6 +357,15 @@ extension FindMainVC:UICollectionViewDataSource{
     }
     
 }
+
+
+
+
+
+
+
+
+
 
 extension FindMainVC: UICollectionViewDelegate{
     
@@ -509,6 +421,19 @@ extension FindMainVC: UICollectionViewDelegate{
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 extension FindMainVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (view.frame.width - 45) / 2

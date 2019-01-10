@@ -372,7 +372,7 @@ class HomeVC: UIViewController {
             self.new.isHidden = true
             
             self.blackFlag = true
-            self.stateImageView.image = self.stateImageArray[self.state]
+//            self.stateImageView.image = self.stateImageArray[self.state]
             self.stateImageView.alpha = 1
             self.navigationController?.navigationBar.layer.zPosition = -1
 

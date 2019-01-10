@@ -45,7 +45,7 @@ struct EmergenDogService: APIManager, Requestable{
         }
     }
     
-
+    // Search without story
     func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
         
         let queryURL = emergenDogURL +
@@ -79,6 +79,7 @@ struct EmergenDogService: APIManager, Requestable{
         }
     }
     
+    // Search with story
     func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, story: Bool?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
         
         let queryURL = emergenDogURL +

@@ -26,7 +26,6 @@
 		4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95D221D891BC00301D52 /* MainPageVC.swift */; };
 		4C0E95D721D8920D00301D52 /* AdoptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95D621D8920D00301D52 /* AdoptVC.swift */; };
 		4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95D921D8924900301D52 /* MyProfileVC.swift */; };
-		4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95DC21D8927300301D52 /* FilterVC.swift */; };
 		4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95DF21D892A800301D52 /* YoonExtension.swift */; };
 		4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95E421D8932F00301D52 /* AreaCollectionViewCell.swift */; };
 		4C0E95E721D8934600301D52 /* CustomUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95E621D8934600301D52 /* CustomUISlider.swift */; };
@@ -72,6 +71,8 @@
 		F511E2B021E67D37004E462F /* CommunityWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2AF21E67D37004E462F /* CommunityWrite.swift */; };
 		F511E2B321E74BED004E462F /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2B221E74BED004E462F /* HomeService.swift */; };
 		F511E2B621E74C2F004E462F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2B521E74C2F004E462F /* Home.swift */; };
+		F511E2BC21E78CD7004E462F /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F511E2BB21E78CD7004E462F /* Alert.storyboard */; };
+		F511E2BE21E78F24004E462F /* NewFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2BD21E78F24004E462F /* NewFilterVC.swift */; };
 		F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */; };
 		F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */; };
 		F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */; };
@@ -179,7 +180,6 @@
 		4C0E95D221D891BC00301D52 /* MainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageVC.swift; sourceTree = "<group>"; };
 		4C0E95D621D8920D00301D52 /* AdoptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptVC.swift; sourceTree = "<group>"; };
 		4C0E95D921D8924900301D52 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
-		4C0E95DC21D8927300301D52 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		4C0E95DF21D892A800301D52 /* YoonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoonExtension.swift; sourceTree = "<group>"; };
 		4C0E95E421D8932F00301D52 /* AreaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C0E95E621D8934600301D52 /* CustomUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUISlider.swift; sourceTree = "<group>"; };
@@ -226,6 +226,8 @@
 		F511E2AF21E67D37004E462F /* CommunityWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWrite.swift; sourceTree = "<group>"; };
 		F511E2B221E74BED004E462F /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		F511E2B521E74C2F004E462F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F511E2BB21E78CD7004E462F /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		F511E2BD21E78F24004E462F /* NewFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilterVC.swift; sourceTree = "<group>"; };
 		F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3AdoptVC.swift; sourceTree = "<group>"; };
 		F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocSelectStep3VC.swift; sourceTree = "<group>"; };
 		F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3TempVC.swift; sourceTree = "<group>"; };
@@ -423,7 +425,7 @@
 		4C0E95DB21D8926300301D52 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				4C0E95DC21D8927300301D52 /* FilterVC.swift */,
+				F511E2BD21E78F24004E462F /* NewFilterVC.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -781,6 +783,7 @@
 				4C0E95C121D890A900301D52 /* Login.storyboard */,
 				F524E9DF21DF553A0001CA5A /* Info.storyboard */,
 				4C0E95BF21D8909900301D52 /* Finding.storyboard */,
+				F511E2BB21E78CD7004E462F /* Alert.storyboard */,
 				4C0E95C321D890BD00301D52 /* Adopt.storyboard */,
 				4C0E95C521D890CB00301D52 /* MyProfile.storyboard */,
 				4C0E95F121D894B000301D52 /* Contents.storyboard */,
@@ -941,6 +944,7 @@
 				F5508A1A21D4D54400BE73FF /* LaunchScreen.storyboard in Resources */,
 				4C0E95C221D890A900301D52 /* Login.storyboard in Resources */,
 				F5508A1721D4D54400BE73FF /* Assets.xcassets in Resources */,
+				F511E2BC21E78CD7004E462F /* Alert.storyboard in Resources */,
 				4C0E95C421D890BD00301D52 /* Adopt.storyboard in Resources */,
 				F5508A1521D4D54400BE73FF /* Main.storyboard in Resources */,
 				F511E29121E5DF7D004E462F /* Search.storyboard in Resources */,
@@ -1088,7 +1092,6 @@
 				4C0E95E921D8935C00301D52 /* RoundView.swift in Sources */,
 				F524E9D821DDABBB0001CA5A /* AdoptDocStep4VC.swift in Sources */,
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
-				4C0E95DD21D8927300301D52 /* FilterVC.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
 				F54B114521E4689F000BA8DF /* Education.swift in Sources */,
 				F511E26C21E4847D004E462F /* Content.swift in Sources */,
@@ -1113,6 +1116,7 @@
 				F511E29B21E5E9D5004E462F /* SearchResultVC.swift in Sources */,
 				4C0E95DA21D8924900301D52 /* MyProfileVC.swift in Sources */,
 				F5609D5321E11AE80090E3B6 /* MyDogDetailVC.swift in Sources */,
+				F511E2BE21E78F24004E462F /* NewFilterVC.swift in Sources */,
 				F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */,
 				F5609D7221E11CEF0090E3B6 /* MailCRView.swift in Sources */,
 				F54B113121E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift in Sources */,
