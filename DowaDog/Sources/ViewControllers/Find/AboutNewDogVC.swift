@@ -41,7 +41,6 @@ class AboutNewDogVC: UIViewController {
     @IBOutlet weak var regionKind: UILabel!
     @IBOutlet weak var phoneNumb: UIButton!
     @IBOutlet weak var findPlace: UILabel!
-    @IBOutlet weak var storyImage: UIImageView!
     
     
     var heartItem: UIBarButtonItem!
@@ -78,62 +77,7 @@ class AboutNewDogVC: UIViewController {
             print("data : ")
             print(data)
             print("data ==========================")
-//
-//            self.animalImage.imageFromUrl(data.thumbnailImg, defaultImgPath: "communityNoimg")
-//            self.age.text  = "\(self.gsno(data.age))살"
-//
-//            let region = self.gsno(data.region)
-//            let kind = self.gsno(data.kindCd)
-//
-//            self.regionKind.text =  "[\(region)]\(kind)"
-//            self.mainImg.imageFromUrl(self.gsno(data.thumbnailImg), defaultImgPath: "")
-//
-//            //남녀 판단
-//            if data.sexCd == "M" {
-//
-//                self.gender.text = "수컷"
-//                self.genderIcon.image = UIImage(named: "manIcon1227")
-//            }else if data.sexCd == "F"{
-//                self.gender.text = "암컷"
-//                self.genderIcon.image = UIImage(named: "womanIcon1227")
-//            }else{
-//                self.gender.text = "미등록"
-//
-//            }
-//            self.about.text = self.gsno(data.specialMark)
-//
-//            //type 판단
-//            if data.type == "개" {
-//                self.kindIcon.image = UIImage(named: "dogIcon1227")
-//            }else if data.type == "고양이"{
-//                self.kindIcon.image = UIImage(named: "catIcon1227")
-//
-//            }
-//
-//            self.weight.text = "\(self.gsno(data.weight))kg"
-//
-//            var  start:String!
-//            var end:String!
-//
-//            if data.startDate == nil{
-//                start = "미등록"
-//            }else{
-//                start = data.startDate
-//            }
-//
-//            if  data.endDate == nil{
-//                end =  "미등록"
-//            }else{
-//                end = data.endDate
-//            }
-//
-//            self.noticeTerm.text =  "\(self.gsno(start))-\(self.gsno(end))"
-//            self.findPlace.text = self.gsno(data.happenPlace)
-//            self.protectPlace.text = self.gsno(data.careName)
-//            self.phoneNumb.setTitle(self.gsno(data.careTel), for: .normal)
-//
-//
-//
+
         }
     }
     
@@ -149,9 +93,7 @@ class AboutNewDogVC: UIViewController {
             print("data ==========================")
             
         }
-        
-        
-        
+ 
         
         if heartClick == false{
             heartItem.image = UIImage(named: "heartBtnFill")
@@ -176,8 +118,7 @@ class AboutNewDogVC: UIViewController {
         let velocity = sender.velocity(in: scroll)
         
         if abs(velocity.x) > abs(velocity.y) {
-            
-            //            velocity.x < 0 ? print("left") :  print("right")
+
             
         }
             

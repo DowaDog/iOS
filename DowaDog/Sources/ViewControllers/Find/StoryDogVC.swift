@@ -15,6 +15,8 @@ class StoryDogVC: UIViewController {
     @IBOutlet weak var coverView: UIView!
     
     @IBOutlet weak var popupView: UIView!
+    
+    @IBOutlet weak var adoptBtn: UIButton!
 
     var age:String?
     var tel:String?
@@ -31,18 +33,57 @@ class StoryDogVC: UIViewController {
     var gender:String?
     var weight:String?
     var about:String?
+    var storyArray: Array<String> = []
     
+    var heartClick:Bool?
     
+    @IBOutlet weak var noticeView: UIView!
     
-    
-    var storyImageList : [String]! = []
+    var viewDidLayoutSubviewsForTheFirstTime = true
     
     var id:Int!
     
+    var heartItem:UIBarButtonItem!
     
     var  reusablecell = "storyCell"
     var resusableheader = "storyHeader"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setBackBtn()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        heartItem = UIBarButtonItem(image:UIImage(named: "heartBtnLine.png") , style: .plain, target: self, action: #selector(heartTapped))
+        self.heartItem.tintColor = UIColor.init(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
+        
+        navigationItem.rightBarButtonItems = [heartItem]
+
+        let panGestureRecongnizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))
+        
+    collectionView.addGestureRecognizer(panGestureRecongnizer)
+        panGestureRecongnizer.delegate = self
+
+        collectionView.delaysContentTouches = true
+        
+        self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
+        
+        adoptBtn.alpha = 0.0
+        
+        popupView.alpha = 0.0
+        coverView.alpha = 0.0
+        
+       noticeView.roundRadius()
+        
+        
+
+    }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+      
+    }
+    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -55,36 +96,110 @@ class StoryDogVC: UIViewController {
             print(data)
             print("data ===================")
             
-            self.age = data.age
-            self.tel = data.careTel
-           self.care = data.careName
-            self.end = data.endDate
-            self.start = data.startDate
-            self.happen = data.happenPlace
-            self.dogkind =  data.kindCd
-            self.like = data.liked
-            self.state = data.processState
-            self.region = data.region
-            self.image = data.thumbnailImg
             
-            self.storyImageList = data.animalStoryList
-            self.type = data.type
-            self.gender = data.sexCd
-            self.weight = data.weight
-            self.about = data.specialMark
+            self.storyArray = self.gano(data.animalStoryList) as! Array<String>
             
-
+            self.collectionView.reloadData()
+            
+            
+            if data.liked == true{
+                self.heartClick = true
+                
+            }else if data.liked == false{
+                self.heartClick = false
+                
+            }
         }
         print("transfer=========")
         
+    }
+
+    @objc func panAction (_ sender : UIPanGestureRecognizer){
         
+        let velocity = sender.velocity(in: collectionView)
+        
+        if abs(velocity.x) > abs(velocity.y) {
+
+            
+        }
+            
+        else if abs(velocity.y) > abs(velocity.x) {
+            if velocity.y<0{
+                self.adoptBtn.alpha = 0.0
+                
+            }else{
+                self.adoptBtn.alpha = 1.0
+                
+            }
+
+        }
+        
+        let offsetY = collectionView.contentOffset.y
+        if ( offsetY > 170) {
+            UIView.animate(withDuration: 0.4, animations: {
+                self.navBarBackgroundAlpha = 1//navbar 투명하게 setup
+
+                self.heartItem.tintColor = UIColor.init(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
+
+            })
+
+        }else if (offsetY <= 170 ){
+            UIView.animate(withDuration: 0.4, animations: {
+                self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
+                self.heartItem.tintColor = UIColor.white
+            })
+
+        }
+        
+    }
+
+    @objc func heartTapped(){
+        AnimalDetailService.shared.animalLike(animalIdx: id) {
+            (data) in
+            
+            print("data ==========================")
+            print("data : ")
+            print(data)
+            print("data ==========================")
+            
+        
+        }
+        
+        if heartClick == false{
+            
+            heartItem.image = UIImage(named: "heartBtnFill")
+            heartClick = true
+            UIView.animate(withDuration: 0.5, animations: {
+                self.coverView.alpha = 0.5
+                self.popupView.alpha = 1.0
+                
+            })
+            
+        }else{
+            heartItem.image = UIImage(named: "heartBtnLine.png")
+            heartClick = false
+        }
         
     }
     
+    @IBAction func likeOkBtnAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.coverView.alpha = 0.0
+            self.popupView.alpha = 0.0
+            
+        })
+    }
+    
+    
+    @IBAction func callAction(_ sender: Any) {
+        guard let number = URL(string: "tel://" + "01056472489") else { return }
+        UIApplication.shared.open(number)
+        
+        //이거 실제 디바이스에서는 되는지 승언 오빠 핸드폰으로 확인하기
+        //데이터 받아올 때 -나 스페이스 제외해서 넣기
+    }
     
 }
-
-
 extension StoryDogVC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -92,31 +207,23 @@ extension StoryDogVC:UICollectionViewDataSource{
         var returnValue = Int()
         
         
-        returnValue = storyImageList.count
+        returnValue = storyArray.count
         
         return returnValue
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! StoryImageCVCell
         
-        
-        
-        let section = indexPath.section
-        
-        
-        
-        if section == 0{
-            return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCell", for: indexPath) as! StoryImageCVCell
+
+
             
-        } else if section == 1 {
-            
-            
-            let story = storyImageList[indexPath.row]
+        
+            let story = self.storyArray[indexPath.item]
             //데이터 집어넣기 여기서
-            cell.storyImage.imageFromUrl(gsno(story), defaultImgPath: "")
-            
-        }
+            cell.storyImage.imageFromUrl(story, defaultImgPath: "communityNoimg")
+        
+
         return cell
         
     }
@@ -124,74 +231,79 @@ extension StoryDogVC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: resusableheader, for: indexPath) as! StoryHeader
+        
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind:kind,withReuseIdentifier: resusableheader,for: indexPath) as! StoryHeader
     
-        view.mainImage.imageFromUrl(gsno(image), defaultImgPath: "communityNoimg")
-        view.aboutLabel.text = gsno(about)
-        view.age.text = "\(self.gsno(age))살"
-        
-        let getRegion = self.gsno(region)
-        let getKind = self.gsno(dogkind)
-        
-        view.regionKind.text = "[\(getRegion)]\(getKind)"
+        AnimalDetailService.shared.getAnimalDetail(animalIdx: id){
+            (data) in
+            
+            view.mainImage.imageFromUrl(self.gsno(data.thumbnailImg), defaultImgPath: "communityNoimg")
+            view.aboutLabel.text = self.gsno(data.specialMark)
+            view.age.text = "\(self.gsno(data.age))살"
+            
+            let getRegion = self.gsno(data.region)
+            let getKind = self.gsno(data.kindCd)
+            
+            view.regionKind.text = "[\(getRegion)]\(getKind)"
+            
+            //남녀 판단
+            if data.sexCd == "M" {
+                
+                view.genderLabel.text = "수컷"
+                view.genderIcon.image = UIImage(named: "manIcon1227")
+            }else if data.sexCd  == "F"{
+                view.genderLabel.text = "암컷"
+                view.genderIcon.image = UIImage(named: "womanIcon1227")
+            }else{
+                view.genderLabel.text = "-"
+                view.genderIcon.image = UIImage(named:"중성화사진")
+            }
+            
+            //type 판단
+            if data.type == "개" {
+                view.typeIcon.image = UIImage(named: "dogIcon1227")
+            }else if data.type  == "고양이" {
+                view.typeIcon.image = UIImage(named: "catIcon1227")
+            }
+            view.weight.text =  "\(self.gsno(data.weight))kg"
+            
+            var  startText:String!
+            var endText:String!
+            
+            if data.startDate == nil{
+                startText = "-"
+            }else{
+                startText = data.startDate
+            }
+            
+            if  data.endDate == nil{
+                endText =  "-"
+            }else{
+                endText = data.endDate
+            }
+            
+            
+            view.remainTerm.text = "\(self.gsno(startText))-\(self.gsno(endText))"
+            view.findPlace.text = self.gsno(data.happenPlace)
+            
+            if data.processState == "notice"{
+                view.processState.text = "공고중"
+                
+            }else if data.processState == "adopt"{
+                view.processState.text = "입양 완료"
+                
+            }else if data.processState == "step" {
+                view.processState.text = "입양 진행중"
+                
+            }else{
+                view.processState.text = "-"
+            }
+            
+          view.protectPlace.text = data.careName
+            view.phoneNumb.setTitle(data.careTel, for: .normal)
+        }
 
-        //남녀 판단
-        if gender == "M" {
-            
-            view.genderLabel.text = "수컷"
-            view.genderIcon.image = UIImage(named: "manIcon1227")
-        }else if gender == "F"{
-           view.genderLabel.text = "암컷"
-           view.genderIcon.image = UIImage(named: "womanIcon1227")
-        }else{
-           view.genderLabel.text = "-"
-            view.genderIcon.image = UIImage(named:"중성화사진")
-        }
-        view.aboutLabel.text = self.gsno(about)
-        
-        //type 판단
-        if type == "개" {
-            view.typeIcon.image = UIImage(named: "dogIcon1227")
-        }else if type  == "고양이" {
-           view.typeIcon.image = UIImage(named: "catIcon1227")
-        }
-        view.weight.text =  "\(gsno(weight))kg"
 
-        var  startText:String!
-        var endText:String!
-        
-        if start == nil{
-            startText = "-"
-        }else{
-            startText = start
-        }
-        
-        if  end  == nil{
-            endText =  "-"
-        }else{
-            endText = end
-        }
-        
-        
-        view.remainTerm.text = "\(self.gsno(startText))-\(self.gsno(endText))"
-        view.findPlace.text = self.gsno(happen)
-        
-        if state == "notice"{
-            view.processState.text = "공고중"
-            
-        }else if state == "adopt"{
-            view.processState.text = "입양 완료"
-            
-        }else if state == "step" {
-            view.processState.text = "입양 진행중"
-            
-        }else{
-            view.processState.text = "-"
-        }
-
-        view.processState.text = care
-        view.phoneNumb.setTitle(tel, for: .normal)
-        
         return view
 
     }
@@ -214,3 +326,12 @@ extension StoryDogVC: UICollectionViewDelegate{
     }
 }
 
+extension StoryDogVC : UIGestureRecognizerDelegate{
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+        
+        return true
+        
+    }
+    
+}

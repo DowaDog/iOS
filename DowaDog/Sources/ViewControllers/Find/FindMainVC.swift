@@ -30,15 +30,6 @@ class FindMainVC: UIViewController,sendBackDelegate {
     var   reusablecell2 = "cell2"
     var resusableheader = "header"
     
-    var emerImg = [(UIImage(named: "testcat.png")),
-                   (UIImage(named: "testcat.png"))
-    ]
-    
-    var newImg = [(UIImage(named: "testcat.png")),
-                  (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),
-                  (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png"))
-    ]
-
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -69,26 +60,13 @@ class FindMainVC: UIViewController,sendBackDelegate {
             
             self.newDogList = data
             self.collectionView?.reloadData()
-            
-            
-            
-            
-            
+
             
         }
     }
     
     @IBAction func heartClicked(_ sender: UIButton) {
-//
-//        print("1")
-//        print(heartId)
-//        AnimalDetailService.shared.animalLike(animalIdx: heartId ?? 1){
-//            (data) in
-//
-//            //요기부터 작업
-//            print(data)
-//
-//        }
+
 
     }
     
@@ -220,14 +198,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
                 navigationController?.pushViewController(filter, animated: true)
         
         
-       
-//        if segue.identifier == "showSecondView"{
-//
-//            let secondVC = segue.destination as! SecondViewController
-//            secondVC.data = textField.text!
-//            secondVC.delegate = self
-//
-//        }
+
         
     }
 

@@ -34,7 +34,9 @@ class EmergenDogVC: UIViewController {
         EmergenDogService.shared.getEmergenDogList(page: 0, limit: 10) { [weak self]
             (data) in
             guard let `self` = self else {return}
-            
+            print("---여기--------------")
+            print(data)
+            print("---여기--------------")
             self.emergenDogList = data
             self.collectionView.reloadData()
         }
