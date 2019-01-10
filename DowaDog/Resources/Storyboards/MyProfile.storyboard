@@ -1167,7 +1167,7 @@
         <!--Navigation Controller-->
         <scene sceneID="w7Y-gt-gl4">
             <objects>
-                <navigationController id="lMm-kR-mE2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MyProfileNav" id="lMm-kR-mE2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cmK-w1-nQV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

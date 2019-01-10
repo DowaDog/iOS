@@ -10,7 +10,7 @@ struct CommunityWriteService: APIManager, Requestable{
     ]
 
     
-    func writeCommunityWrite(title: String, detail: String, communityImgFiles: Array<UIImage>, completion: @escaping (CommunityWrite) -> Void) {
+    func writeCommunityWrite(title: String, detail: String, communityImgFiles: Array<UIImage>, completion: @escaping (ResponseObject<CommunityWrite>) -> Void) {
         
         Alamofire.upload(multipartFormData: { (multipart) in
             multipart.append(title.data(using: .utf8)!, withName: "title")
@@ -24,7 +24,7 @@ struct CommunityWriteService: APIManager, Requestable{
             switch result {
             case .success(let upload, _, _):
                 
-                upload.responseObject { (res: DataResponse<CommunityWrite>) in
+                upload.responseObject { (res: DataResponse<ResponseObject<CommunityWrite>>) in
                     switch res.result {
                     case .success(let value):
                         

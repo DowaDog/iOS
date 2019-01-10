@@ -125,9 +125,9 @@ class CommunityVC: UIViewController {
             case "입양하기":
                 hideMenu()
                 
-                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptNav") as! UINavigationController
+                let finding = UIStoryboard(name: "Finding", bundle: nil).instantiateViewController(withIdentifier: "FindingNav") as! UINavigationController
                 
-                self.present(adopt, animated: true, completion: nil)
+                self.present(finding, animated: true, completion: nil)
                 
                 break
             case "커뮤니티":
@@ -138,22 +138,32 @@ class CommunityVC: UIViewController {
                 self.present(community, animated: true, completion: nil)
                 break
             case "컨텐츠":
-                print("Contents")
+                hideMenu()
+                
+                let contents = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentsNav") as! UINavigationController
+                
+                self.present(contents, animated: true, completion: nil)
                 break
             case "마이페이지":
-                print("MyPage")
+                hideMenu()
+                
+                let myProfile = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyProfileNav") as! UINavigationController
+                
+                self.present(myProfile, animated: true, completion: nil)
                 break
-            case "입양 안내":
-                print("Guide")
+            case "기다릴개와 함께할개":
+                hideMenu()
+                
+                let support = UIStoryboard(name: "Support", bundle: nil).instantiateViewController(withIdentifier: "SupportNav") as! UINavigationController
+                
+                self.present(support, animated: true, completion: nil)
                 break
             default:
-                print("Default")
+                hideMenu()
                 break
             }
         }
     }
-    
-    
     
     @IBAction func writeBtnAction(_ sender: UIButton) {
         performSegue(withIdentifier: "goCommunityWriteVC", sender: self)

@@ -535,7 +535,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Oau-Mb-5yk">
             <objects>
-                <navigationController id="X5T-zT-gGZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FindingNav" id="X5T-zT-gGZ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pyN-9e-7eC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

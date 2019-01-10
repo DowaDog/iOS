@@ -117,29 +117,32 @@ class CommunityWriteVC: UIViewController {
     // 확인 버튼 액션
     @IBAction func submitBtnAction(_ sender: UIButton) {
         
-        guard let title = titleTextField.text else {return}
-        guard let detail = contentTextView.text else {return}
-        
-        CommunityWriteService.shared.writeCommunityWrite(title: title, detail: detail, communityImgFiles: uploadImgArray) {
-            (data) in
+        if titleTextField.text == "" {
+            self.simpleAlert(title: "오류", message: "제목을 입력하세요.")
+        } else if contentTextView.text == "" || contentTextView.text == placeholder {
+            self.simpleAlert(title: "오류", message: "내용을 입력하세요.")
+        } else {
             
-            print("data=========================")
-            print(data)
-            print("data=========================")
+            guard let title = titleTextField.text else {return}
+            guard let detail = contentTextView.text else {return}
             
-//            self.dismiss(animated: true, completion: nil)
+            CommunityWriteService.shared.writeCommunityWrite(title: title, detail: detail, communityImgFiles: uploadImgArray) {
+                (data) in
+                
+                print("data=========================")
+                print(data)
+                print("data=========================")
+                
+                self.dismiss(animated: true, completion: nil)
+            }
         }
-        
-        
     }
     // 취소 버튼 액션
     @IBAction func cancleBtnAction(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.simpleAlertwithHandler(title: "경고", message: "글 작성을 취소하겠습니까?", okHandler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }, cancleHandler: nil)
     }
-    
-    
-    
-    
     
     // set button Array
     func setBtnArray() {

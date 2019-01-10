@@ -435,7 +435,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bnB-8o-LTH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aV8-vJ-XzJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchNav" automaticallyAdjustsScrollViewInsets="NO" id="aV8-vJ-XzJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sgl-Nl-tOS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
