@@ -70,6 +70,8 @@
 		F511E2AC21E63942004E462F /* CommunityDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2AB21E63942004E462F /* CommunityDetailService.swift */; };
 		F511E2AE21E674EE004E462F /* CommunityWriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2AD21E674EE004E462F /* CommunityWriteService.swift */; };
 		F511E2B021E67D37004E462F /* CommunityWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2AF21E67D37004E462F /* CommunityWrite.swift */; };
+		F511E2B321E74BED004E462F /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2B221E74BED004E462F /* HomeService.swift */; };
+		F511E2B621E74C2F004E462F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511E2B521E74C2F004E462F /* Home.swift */; };
 		F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */; };
 		F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */; };
 		F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */; };
@@ -222,6 +224,8 @@
 		F511E2AB21E63942004E462F /* CommunityDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailService.swift; sourceTree = "<group>"; };
 		F511E2AD21E674EE004E462F /* CommunityWriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWriteService.swift; sourceTree = "<group>"; };
 		F511E2AF21E67D37004E462F /* CommunityWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWrite.swift; sourceTree = "<group>"; };
+		F511E2B221E74BED004E462F /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		F511E2B521E74C2F004E462F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		F524E9D121DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3AdoptVC.swift; sourceTree = "<group>"; };
 		F524E9D321DD20A90001CA5A /* AdoptDocSelectStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocSelectStep3VC.swift; sourceTree = "<group>"; };
 		F524E9D521DD214D0001CA5A /* AdoptDocStep3TempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep3TempVC.swift; sourceTree = "<group>"; };
@@ -532,6 +536,22 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
+		F511E2B121E74BE0004E462F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F511E2B221E74BED004E462F /* HomeService.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F511E2B421E74C1F004E462F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F511E2B521E74C2F004E462F /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		F524E9E121DF55AC0001CA5A /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +679,7 @@
 		F5508A2C21D4D8BE00BE73FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F511E2B421E74C1F004E462F /* Home */,
 				F511E2A421E601BC004E462F /* Community */,
 				F511E27A21E53737004E462F /* Login */,
 				F54B114321E4683C000BA8DF /* Contents */,
@@ -722,6 +743,7 @@
 		F5508A3021D4D8DB00BE73FF /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				F511E2B121E74BE0004E462F /* Home */,
 				F511E2A121E60169004E462F /* Community */,
 				F511E27921E53720004E462F /* Adopt */,
 				F54B114821E46B2F000BA8DF /* Contents */,
@@ -1030,6 +1052,7 @@
 				F58ADAA121DA045C00231B27 /* AdoptDocStep1VC.swift in Sources */,
 				4CF5A64A21DCA0E100969511 /* Page1VC.swift in Sources */,
 				4C00D46421E668ED0051AC37 /* StoryImageCVCell.swift in Sources */,
+				F511E2B321E74BED004E462F /* HomeService.swift in Sources */,
 				F5609D9C21E1E18A0090E3B6 /* APIManager.swift in Sources */,
 				F54B114121E3DF09000BA8DF /* MyScrapService.swift in Sources */,
 				F511E27E21E5374F004E462F /* User.swift in Sources */,
@@ -1047,6 +1070,7 @@
 				4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */,
 				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
+				F511E2B621E74C2F004E462F /* Home.swift in Sources */,
 				F524E9D621DD214D0001CA5A /* AdoptDocStep3TempVC.swift in Sources */,
 				F511E27621E48A85004E462F /* EducationDetailEduService.swift in Sources */,
 				F566A48021E2422C00FE958B /* MyPage.swift in Sources */,
