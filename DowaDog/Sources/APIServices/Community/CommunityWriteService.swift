@@ -16,7 +16,7 @@ struct CommunityWriteService: APIManager, Requestable{
             multipart.append(title.data(using: .utf8)!, withName: "title")
             multipart.append(detail.data(using: .utf8)!, withName: "detail")
             for i in 0..<communityImgFiles.count {
-                multipart.append(communityImgFiles[i].jpegData(compressionQuality: 0.5)!, withName: "communityImgFiles", fileName: "image.jpeg", mimeType: "image/jpeg")
+                multipart.append(communityImgFiles[i].jpegData(compressionQuality: 0.5)!, withName: "communityImgFiles", fileName: "image\(i).jpeg", mimeType: "image/jpeg")
             }
         }, to: communityURL, method: .post, headers: headers) {
             (result) in

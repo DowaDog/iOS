@@ -21,6 +21,8 @@ class CommunityTwoTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.height/2
+        self.profileImage.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
