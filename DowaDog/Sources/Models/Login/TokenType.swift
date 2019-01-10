@@ -8,10 +8,10 @@
 
 import ObjectMapper
 
-struct TokenType<T: Mappable>: Mappable {
+struct TokenType: Mappable {
     
-    var accessToken: T?
-    var refreshToken: T?
+    var accessToken: Token?
+    var refreshToken: Token?
     
     init?(map: Map) {}
     

@@ -77,6 +77,24 @@ extension UIViewController {
     @objc func pop(){
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func isValidEmailAddress(email: String) -> Bool {
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
+        return emailTest.evaluate(with: email)
+    }
+    
+    func isValidId(id: String) -> Bool {
+        
+        let idRegEx = "[A-Z0-9a-z._%+-]{2,}"
+        
+        let idTest = NSPredicate(format:"SELF MATCHES %@", idRegEx)
+        
+        return idTest.evaluate(with: id)
+    }
 }
 
 extension UIView {

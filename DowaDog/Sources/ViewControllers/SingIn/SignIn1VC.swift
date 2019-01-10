@@ -17,6 +17,8 @@ class SignIn1VC: UIViewController {
     
     var emailCheck = false
     var emptyCheck = false
+    
+    
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet var nameTextField: UITextField!
@@ -27,12 +29,14 @@ class SignIn1VC: UIViewController {
     @IBOutlet var nextBtn: UIButton!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         nextBtn.isEnabled = false
+        
+        self.setNavigationBarShadow()
 
         setBackBtn()
+        
         
         setupTap()
         
@@ -80,28 +84,33 @@ class SignIn1VC: UIViewController {
 
     @IBAction func emailCheckAction(_ sender: UIButton) {
         
-        self.view.endEditing(true)
-        
-        guard let email = emailTextField.text
-            else { return }
+        let test = isValidEmailAddress(email: emailTextField.text!)
         
         
-        DuplicateService.shared.duplicateEmail(email: email) { (data) in
+        
+        if test {
+            guard let email = emailTextField.text
+                else { return }
             
-            print(data)
-            print("성공")
             
-            if data.data == false{
-                self.simpleAlert(title: "", message: "중복 확인 완료했개!")
-                self.emailCheck = true
-                self.endCheck()
-
-            }else if data.data == true{
-                    self.simpleAlert(title: "", message: "이미 등록된 이메일입니다. 다시 입력해주세요!")
-                self.emailCheck = false
+            DuplicateService.shared.duplicateEmail(email: email) { (data) in
                 
+                if data.data == false{
+                    self.simpleAlert(title: "성공", message: "등록 가능한 이메일입니다.")
+                    self.emailCheck = true
+                    self.endCheck()
+                    
+                } else if data.data == true{
+                    self.simpleAlert(title: "실패", message: "이미 등록된 이메일입니다. 다시 입력해주세요!")
+                    self.emailCheck = false
+                    
+                }
             }
+        } else {
+            self.simpleAlert(title: "경고", message: "올바르지 않은 이메일 형식입니다.")
         }
+        
+        self.view.endEditing(true)
     }
 
     @IBAction func nextBtnAction(_ sender: UIButton) {
@@ -138,8 +147,6 @@ class SignIn1VC: UIViewController {
         
         if segue.identifier == "action_show" {
             
-            let url = URL(string: "url_of_your_image")
-            // this downloads the image asynchronously if it's not cached yet
             let name = nameTextField.text
             let birth = birthTextField.text
             let email = emailTextField.text
@@ -172,33 +179,17 @@ class SignIn1VC: UIViewController {
     
     
     @objc func imageTapped() {
-        print("tap")
         let picker = UIImagePickerController()
         picker.delegate = self
         
-        let actionSheet = UIAlertController(title: "Photo sourse", message: "Choose a source", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                picker.sourceType = .camera
-                picker.allowsEditing = true
-                picker.showsCameraControls = true
-                self.present(picker, animated: true)
-            } else {
-                print("not available")
-            }
-        }))
+
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
         
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
-            picker.sourceType = .photoLibrary
-            picker.allowsEditing = true
-            self.present(picker, animated: true)
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancle", style: .cancel))
-        self.present(actionSheet, animated: true)
+        self.present(picker, animated: true)
     }
     
-    
+   
 }
 
 extension SignIn1VC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

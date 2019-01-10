@@ -37,6 +37,7 @@ class SignIn2VC: UIViewController {
         super.viewDidLoad()
         nextBtn.isEnabled = true
         
+        self.setNavigationBarShadow()
         setTarget()
         
         self.setBackBtn()
@@ -98,28 +99,32 @@ class SignIn2VC: UIViewController {
     
     @IBAction func checkIdAction(_ sender: Any) {
         
-        guard let id = idTextField.text else {return}
+        let test = isValidId(id: idTextField.text!)
         
-        DuplicateService.shared.duplicateId(id: id) { (data) in
+        if test {
+            guard let id = idTextField.text else {return}
             
-            print(data)
-            
-            print("성공")
-            
-            if data.data == false{
+            DuplicateService.shared.duplicateId(id: id) { (data) in
                 
-                self.simpleAlert(title: "", message: "아이디 사용 가능하개")
-                self.idCheck = true
-                self.endCheck()
+                print(data)
                 
+                print("성공")
+                
+                if data.data == false{
+                    
+                    self.simpleAlert(title: "성공", message: "사용 가능한 아이디입니다.")
+                    self.idCheck = true
+                    self.endCheck()
+                    
+                }
+                else if data.data == true{
+                    
+                    self.simpleAlert(title: "실패", message: "이미 사용중인 아이디입니다.")
+                    self.idCheck = false
+                }
             }
-            else if data.data == true{
-                
-                self.simpleAlert(title: "", message: "사용할 수 없는 아이디에요! 다시 입력해주개")
-                self.idCheck = false
-            }
-            
-            
+        } else {
+            self.simpleAlert(title: "실패", message: "올바른 형태의 아이디를 입력하세요.")
         }
         
     }
@@ -141,21 +146,16 @@ class SignIn2VC: UIViewController {
         if pwCheckTextField.text == pwTextField.text{
             
             DuplicateService.shared.signUp(id: id, password: password, name: name, birth: birth, phone: phone, email: email, profileImgFile: profile) {
-                
                 (data) in
                 
-                print("회원가입")
                 
-                if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
-                    
-                    //present를 해줍니다.
-                    self.present(dvc, animated: true)
-                    
-                }
+                self.simpleAlert(title: "회원가입 성공!", message: "로그인하세요.")
+                
+                self.performSegue(withIdentifier: "goToLoginVC", sender: self)
             }
         } else if pwCheckTextField.text != pwTextField.text{
             
-            simpleAlert(title: "", message: "패스워드가 일치하지 않개!")
+            simpleAlert(title: "회원가입 실패", message: "패스워드가 일치하지 않습니다.")
         }
     }
 }
