@@ -218,7 +218,7 @@ class StoryDogVC: UIViewController {
                 
             }else {
                 
-                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptVC") as! UINavigationController
+                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptVC") as! UIViewController
                 // Main 은 Main.storyboard, 뒤에껀 넘어갈 view 의 Storyboard identifier, as 뒤는 클래스
                 
                 
@@ -232,109 +232,119 @@ class StoryDogVC: UIViewController {
 extension StoryDogVC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        var returnValue = Int()
-        
-        
-        returnValue = storyArray.count
-        
-        return returnValue
+//
+//        var returnValue = Int()
+//
+//        if section == 0{
+//            returnValue = 0
+//        }
+//        else if section == 1 {
+//            returnValue = storyArray.count
+//////        }
+//        return returnValue
+        return storyArray.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCell", for: indexPath) as! StoryImageCVCell
-
-
-            
         
+//        let section = indexPath.section
+//
+//        if section == 0{
+//            return UICollectionViewCell()
+//
+//        } else if section == 1 {
+//
             let story = self.storyArray[indexPath.item]
             //데이터 집어넣기 여기서
             cell.storyImage.imageFromUrl(story, defaultImgPath: "communityNoimg")
-        
-
+//        }
         return cell
-        
     }
+    
     
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
+         let section = indexPath.section
         
         let view = collectionView.dequeueReusableSupplementaryView(ofKind:kind,withReuseIdentifier: resusableheader,for: indexPath) as! StoryHeader
-    
-        AnimalDetailService.shared.getAnimalDetail(animalIdx: id){
-            (data) in
-            
-            view.mainImage.imageFromUrl(self.gsno(data.thumbnailImg), defaultImgPath: "communityNoimg")
-            view.aboutLabel.text = self.gsno(data.specialMark)
-            view.age.text = "\(self.gsno(data.age))살"
-            
-            let getRegion = self.gsno(data.region)
-            let getKind = self.gsno(data.kindCd)
-            
-            view.regionKind.text = "[\(getRegion)]\(getKind)"
-            
-            //남녀 판단
-            if data.sexCd == "M" {
+        
+            AnimalDetailService.shared.getAnimalDetail(animalIdx: id){
+                (data) in
                 
-                view.genderLabel.text = "수컷"
-                view.genderIcon.image = UIImage(named: "manIcon1227")
-            }else if data.sexCd  == "F"{
-                view.genderLabel.text = "암컷"
-                view.genderIcon.image = UIImage(named: "womanIcon1227")
-            }else{
-                view.genderLabel.text = "-"
-                view.genderIcon.image = UIImage(named:"중성화사진")
-            }
-            
-            //type 판단
-            if data.type == "개" {
-                view.typeIcon.image = UIImage(named: "dogIcon1227")
-            }else if data.type  == "고양이" {
-                view.typeIcon.image = UIImage(named: "catIcon1227")
-            }
-            view.weight.text =  "\(self.gsno(data.weight))kg"
-            
-            var  startText:String!
-            var endText:String!
-            
-            if data.startDate == nil{
-                startText = "-"
-            }else{
-                startText = data.startDate
-            }
-            
-            if  data.endDate == nil{
-                endText =  "-"
-            }else{
-                endText = data.endDate
-            }
-            
-            
-            view.remainTerm.text = "\(self.gsno(startText))-\(self.gsno(endText))"
-            view.findPlace.text = self.gsno(data.happenPlace)
-            
-            if data.processState == "notice"{
-                view.processState.text = "공고중"
+                view.mainImage.imageFromUrl(self.gsno(data.thumbnailImg), defaultImgPath: "communityNoimg")
+                view.aboutLabel.text = self.gsno(data.specialMark)
+                view.age.text = "\(self.gsno(data.age))살"
                 
-            }else if data.processState == "adopt"{
-                view.processState.text = "입양 완료"
+                let getRegion = self.gsno(data.region)
+                let getKind = self.gsno(data.kindCd)
                 
-            }else if data.processState == "step" {
-                view.processState.text = "입양 진행중"
+                view.regionKind.text = "[\(getRegion)]\(getKind)"
                 
-            }else{
-                view.processState.text = "-"
+                //남녀 판단
+                if data.sexCd == "M" {
+                    
+                    view.genderLabel.text = "수컷"
+                    view.genderIcon.image = UIImage(named: "manIcon1227")
+                }else if data.sexCd  == "F"{
+                    view.genderLabel.text = "암컷"
+                    view.genderIcon.image = UIImage(named: "womanIcon1227")
+                }else{
+                    view.genderLabel.text = "-"
+                    view.genderIcon.image = UIImage(named:"중성화사진")
+                }
+                
+                //type 판단
+                if data.type == "개" {
+                    view.typeIcon.image = UIImage(named: "dogIcon1227")
+                }else if data.type  == "고양이" {
+                    view.typeIcon.image = UIImage(named: "catIcon1227")
+                }
+                view.weight.text =  "\(self.gsno(data.weight))kg"
+                
+                var  startText:String!
+                var endText:String!
+                
+                if data.startDate == nil{
+                    startText = "-"
+                }else{
+                    startText = data.startDate
+                }
+                
+                if  data.endDate == nil{
+                    endText =  "-"
+                }else{
+                    endText = data.endDate
+                }
+                
+                
+                view.remainTerm.text = "\(self.gsno(startText))-\(self.gsno(endText))"
+                view.findPlace.text = self.gsno(data.happenPlace)
+                
+                if data.processState == "notice"{
+                    view.processState.text = "공고중"
+                    
+                }else if data.processState == "adopt"{
+                    view.processState.text = "입양 완료"
+                    
+                }else if data.processState == "step" {
+                    view.processState.text = "입양 진행중"
+                    
+                }else{
+                    view.processState.text = "-"
+                }
+                
+                view.protectPlace.text = data.careName
+                view.phoneNumb.setTitle(data.careTel, for: .normal)
             }
             
-          view.protectPlace.text = data.careName
-            view.phoneNumb.setTitle(data.careTel, for: .normal)
-        }
-
-
+        
+        
         return view
-
+        
     }
 }
 

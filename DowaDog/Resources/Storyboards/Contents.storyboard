@@ -33,37 +33,31 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3WK-sl-TQf">
-                                    <size key="itemSize" width="375" height="279"/>
+                                    <size key="itemSize" width="375" height="377"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Page1CVCell" id="Bh9-wO-NXr" customClass="Page1CVCell" customModule="DowaDog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="377"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="377"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-sn-FCW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncompletedContents" translatesAutoresizingMaskIntoConstraints="NO" id="N1V-bP-psk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uncompletedContents" translatesAutoresizingMaskIntoConstraints="NO" id="N1V-bP-psk">
                                                     <rect key="frame" x="300" y="0.0" width="27" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3U3-ss-YVc">
+                                                    <rect key="frame" x="27" y="0.0" width="321" height="377"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="AYG-sn-FCW" secondAttribute="bottom" id="6wG-Zo-lhM"/>
-                                            <constraint firstItem="AYG-sn-FCW" firstAttribute="top" secondItem="N1V-bP-psk" secondAttribute="bottom" constant="-25" id="Wkk-vn-7yL"/>
-                                            <constraint firstItem="N1V-bP-psk" firstAttribute="leading" secondItem="AYG-sn-FCW" secondAttribute="trailing" constant="-75" id="WvB-wv-kag"/>
-                                            <constraint firstItem="AYG-sn-FCW" firstAttribute="top" secondItem="Bh9-wO-NXr" secondAttribute="top" id="i8c-oc-GB4"/>
-                                            <constraint firstItem="AYG-sn-FCW" firstAttribute="leading" secondItem="Bh9-wO-NXr" secondAttribute="leading" id="usO-hg-php"/>
-                                            <constraint firstAttribute="trailing" secondItem="AYG-sn-FCW" secondAttribute="trailing" id="xq4-1l-tvO"/>
-                                        </constraints>
                                         <connections>
-                                            <outlet property="cardImage" destination="AYG-sn-FCW" id="frs-fX-SE5"/>
                                             <outlet property="readCheck" destination="N1V-bP-psk" id="8kt-Pu-OSy"/>
                                         </connections>
                                     </collectionViewCell>

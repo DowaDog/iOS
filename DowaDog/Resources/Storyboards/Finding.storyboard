@@ -883,7 +883,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BOW-qm-TeR">
                                 <rect key="frame" x="0.0" y="26" width="375" height="1474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ckd-1d-lcL">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="ckd-1d-lcL">
                                     <size key="itemSize" width="375" height="500"/>
                                     <size key="headerReferenceSize" width="357" height="730"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -897,7 +897,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f1B-FW-OHy">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f1B-FW-OHy">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="375" id="35F-9N-5Gk"/>
@@ -1418,7 +1418,7 @@
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="adoptBtn" destination="P0k-K2-xSW" id="WJR-kM-kjf"/>
-                        <outlet property="alertView" destination="RUa-7S-dFs" id="Yyy-jc-AvE"/>
+                        <outlet property="alertView" destination="RUa-7S-dFs" id="LY7-cE-dT0"/>
                         <outlet property="collectionView" destination="BOW-qm-TeR" id="AYX-73-f6a"/>
                         <outlet property="coverView" destination="NSs-r6-JKO" id="Rde-PM-u4F"/>
                         <outlet property="noticeView" destination="nF7-jG-IrJ" id="j7q-ek-fA2"/>
