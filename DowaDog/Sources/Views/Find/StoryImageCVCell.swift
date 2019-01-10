@@ -10,5 +10,6 @@ import UIKit
 
 class StoryImageCVCell: UICollectionViewCell {
     @IBOutlet weak var storyImage: UIImageView!
+
     
 }
