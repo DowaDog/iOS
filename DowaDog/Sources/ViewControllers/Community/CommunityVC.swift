@@ -197,6 +197,17 @@ extension CommunityVC: UITableViewDataSource {
         
         let community = communityList[indexPath.row]
         
+        let date = Date()
+        
+        
+        print(date)
+        print(date)
+        print(date)
+        print(date)
+        print(date)
+        print(date)
+        
+        
         switch (community.communityImgList?.count) {
         case 0:
             oneTVC.uploadImage1.image = UIImage(named: "communityNoimg")!
