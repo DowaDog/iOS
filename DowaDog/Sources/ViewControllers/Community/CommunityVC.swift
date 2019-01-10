@@ -197,15 +197,13 @@ extension CommunityVC: UITableViewDataSource {
         
         let community = communityList[indexPath.row]
         
-        let date = Date()
+        let date: String = gsno(community.createdAt)
         
+        let fmt = DateFormatter()
+        fmt.dateFormat = "yyyy년 MM월 dd일"
         
-        print(date)
-        print(date)
-        print(date)
-        print(date)
-        print(date)
-        print(date)
+        let beforeDate: Date = fmt.date(from: date) ?? Date()
+        let afterDate: String = fmt.string(from: beforeDate)
         
         
         switch (community.communityImgList?.count) {
@@ -213,7 +211,8 @@ extension CommunityVC: UITableViewDataSource {
             oneTVC.uploadImage1.image = UIImage(named: "communityNoimg")!
             oneTVC.title.text = community.title
             oneTVC.profileImage.imageFromUrl(gsno(community.userProfileImg), defaultImgPath: "")
-            oneTVC.writeTime.text = "윤영아 수정해줘"
+            oneTVC.writeTime.text = afterDate
+//            oneTVC.writeTime.text = gsno(community.createdAt)
             oneTVC.userId.text = community.userId
             
             return oneTVC
@@ -221,7 +220,8 @@ extension CommunityVC: UITableViewDataSource {
             oneTVC.uploadImage1.imageFromUrl(gsno(community.communityImgList![0].filePath), defaultImgPath: "")
             oneTVC.title.text = community.title
             oneTVC.profileImage.imageFromUrl(gsno(community.userProfileImg), defaultImgPath: "")
-            oneTVC.writeTime.text = "윤영아 수정해줘"
+            oneTVC.writeTime.text = afterDate
+//            oneTVC.writeTime.text = gsno(community.createdAt)
             oneTVC.userId.text = community.userId
             
             return oneTVC
@@ -230,7 +230,8 @@ extension CommunityVC: UITableViewDataSource {
             twoTVC.uploadImage2.imageFromUrl(gsno(community.communityImgList![1].filePath), defaultImgPath: "")
             twoTVC.title.text = community.title
             twoTVC.profileImage.imageFromUrl(gsno(community.userProfileImg), defaultImgPath: "")
-            twoTVC.writeTime.text = "윤영아 수정해줘"
+            twoTVC.writeTime.text = afterDate
+//            twoTVC.writeTime.text = gsno(community.createdAt)
             twoTVC.userId.text = community.userId
             
             return twoTVC
@@ -240,7 +241,8 @@ extension CommunityVC: UITableViewDataSource {
             threeTVC.uploadImage3.imageFromUrl(gsno(community.communityImgList![2].filePath), defaultImgPath: "")
             threeTVC.title.text = community.title
             threeTVC.profileImage.imageFromUrl(gsno(community.userProfileImg), defaultImgPath: "")
-            threeTVC.writeTime.text = "윤영아 수정해줘"
+            threeTVC.writeTime.text = afterDate
+//            threeTVC.writeTime.text = gsno(community.createdAt)
             threeTVC.userId.text = community.userId
             
             return threeTVC
@@ -250,7 +252,8 @@ extension CommunityVC: UITableViewDataSource {
             fourTVC.uploadImage3.imageFromUrl(gsno(community.communityImgList![2].filePath), defaultImgPath: "")
             fourTVC.title.text = community.title
             fourTVC.profileImage.imageFromUrl(gsno(community.userProfileImg), defaultImgPath: "")
-            fourTVC.writeTime.text = "윤영아 수정해줘"
+            fourTVC.writeTime.text = afterDate
+//            fourTVC.writeTime.text = gsno(community.createdAt)
             fourTVC.userId.text = community.userId
             
             return fourTVC
@@ -258,7 +261,8 @@ extension CommunityVC: UITableViewDataSource {
             oneTVC.uploadImage1.imageFromUrl(gsno(community.communityImgList![0].filePath), defaultImgPath: "")
             oneTVC.title.text = community.title
             oneTVC.profileImage.imageFromUrl(gsno(community.userProfileImg), defaultImgPath: "")
-            oneTVC.writeTime.text = "윤영아 수정해줘"
+            oneTVC.writeTime.text = afterDate
+            oneTVC.writeTime.text = gsno(community.createdAt)
             oneTVC.userId.text = community.userId
             
             return oneTVC

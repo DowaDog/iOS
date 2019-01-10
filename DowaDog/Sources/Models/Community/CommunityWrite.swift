@@ -16,7 +16,7 @@ struct CommunityWrite: Mappable {
     var title: String?
     var detail: String?
     var communityImgList: Array<CommunityImgList>?
-    var user: Array<User>?
+    var user: User?
     var removeImgArray: Array<Int>?
     var today: Bool?
     
