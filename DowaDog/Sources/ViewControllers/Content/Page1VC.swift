@@ -11,9 +11,9 @@ import UIKit
 class Page1VC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var reuseIdentifier = "Page1CVCell"
-    var testImg = [(UIImage(named: "contentTest.png")), (UIImage(named: "contentTest.png")), (UIImage(named:"contentTest.png")), (UIImage(named: "contentTest.png")),(UIImage(named: "contentTest.png"))]
     
     
+
     var educationList = [Education]()
     
     override func viewDidLoad() {
@@ -27,6 +27,8 @@ class Page1VC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getData()
+        
+        
     }
 
 func getData(){
@@ -42,6 +44,8 @@ func getData(){
         
         self.educationList = data
         self.collectionView.reloadData()
+        
+        
         }
     }
 }
@@ -56,13 +60,18 @@ extension Page1VC:UICollectionViewDataSource{
         
         
         let education = educationList[indexPath.item]
-        cell.cardImage.imageFromUrl(gsno(education.imgPath), defaultImgPath: "")
+        
+        cell.cardImage?.imageFromUrl(gsno(education.imgPath), defaultImgPath: "")
 
+        cell.bigTitle.text = gsno(education.title)
+        cell.littleTitle.text = gsno(education.subtitle)
+        
+        
         
         if education.educated == true{
-            cell.readCheck.image = UIImage(named:"completedContents")
+            cell.readCheck?.image = UIImage(named:"completedContents")
         }else if education.educated == false{
-             cell.readCheck.image = UIImage(named:"uncompletedContents")
+            cell.readCheck?.image = UIImage(named:"uncompletedContents")
         }
         return cell
     }
@@ -70,16 +79,34 @@ extension Page1VC:UICollectionViewDataSource{
 }
 
 extension Page1VC: UICollectionViewDelegate{
+    
+   
+
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = self.collectionView.cellForItem(at: indexPath) as!Page1CVCell
-
-        if let dvc = storyboard?.instantiateViewController(withIdentifier: "CardVC") as? CardVC {
-            
-            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-            navigationController?.pushViewController(dvc, animated: true)
-        }
         
+        EducationListService.shared.getEducationList() { [weak self]
+            (data) in
+            guard let `self` = self else {return}
+            
+
+            self.educationList = data
+            self.collectionView.reloadData()
+            
+            let education = self.educationList[indexPath.item]
+            
+            if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ContentDetailVC") as? ContentDetailVC {
+                
+                dvc.id = education.id
+                
+                    //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+                self.navigationController?.pushViewController(dvc, animated: true)
+            }
+            
+        }
+      
 
     }
     

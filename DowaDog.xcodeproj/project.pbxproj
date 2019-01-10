@@ -38,6 +38,9 @@
 		4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */; };
 		4C0E95F821D8B9BC00301D52 /* EmergenDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */; };
 		4C0E95FC21D9222400301D52 /* NewDogDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */; };
+		4C15B3F921E78C360046692B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B3F821E78C360046692B /* ContentCell.swift */; };
+		4C15B3FB21E78C570046692B /* ContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B3FA21E78C570046692B /* ContentHeader.swift */; };
+		4C15B3FD21E78C9D0046692B /* ContentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B3FC21E78C9D0046692B /* ContentDetailVC.swift */; };
 		4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */; };
 		4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */; };
 		4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64721DC9A2700969511 /* Page2CVCell.swift */; };
@@ -191,6 +194,9 @@
 		4C0E95F321D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorUICVLayoutAttributes.swift; sourceTree = "<group>"; };
 		4C0E95F721D8B9BC00301D52 /* EmergenDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergenDetailCVCell.swift; sourceTree = "<group>"; };
 		4C0E95FB21D9222400301D52 /* NewDogDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogDetailCVCell.swift; sourceTree = "<group>"; };
+		4C15B3F821E78C360046692B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		4C15B3FA21E78C570046692B /* ContentHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeader.swift; sourceTree = "<group>"; };
+		4C15B3FC21E78C9D0046692B /* ContentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailVC.swift; sourceTree = "<group>"; };
 		4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMSTestViewController.swift; path = DowaDog/Sources/ViewControllers/SMSTestViewController.swift; sourceTree = SOURCE_ROOT; };
 		4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1CVCell.swift; sourceTree = "<group>"; };
 		4CF5A64721DC9A2700969511 /* Page2CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CVCell.swift; sourceTree = "<group>"; };
@@ -406,6 +412,7 @@
 				4CF5A64921DCA0E100969511 /* Page1VC.swift */,
 				4CF5A64B21DCA0ED00969511 /* Page2VC.swift */,
 				4CF5A64D21DCB33C00969511 /* CardVC.swift */,
+				4C15B3FC21E78C9D0046692B /* ContentDetailVC.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -468,6 +475,8 @@
 			children = (
 				4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */,
 				4CF5A64721DC9A2700969511 /* Page2CVCell.swift */,
+				4C15B3F821E78C360046692B /* ContentCell.swift */,
+				4C15B3FA21E78C570046692B /* ContentHeader.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -1097,8 +1106,10 @@
 				F5609D6E21E11CA90090E3B6 /* MailCell.swift in Sources */,
 				F511E2AC21E63942004E462F /* CommunityDetailService.swift in Sources */,
 				4C0E95CF21D8916200301D52 /* SignIn2VC.swift in Sources */,
+				4C15B3F921E78C360046692B /* ContentCell.swift in Sources */,
 				F511E28221E53767004E462F /* TokenType.swift in Sources */,
 				F5609D4D21E11A5D0090E3B6 /* CustomNavigationBar.swift in Sources */,
+				4C15B3FD21E78C9D0046692B /* ContentDetailVC.swift in Sources */,
 				F54B111F21E31428000BA8DF /* MyLikeListService.swift in Sources */,
 				F5609D5521E11AFC0090E3B6 /* MyPageMainVC.swift in Sources */,
 				4C00D46621E669000051AC37 /* StoryHeader.swift in Sources */,
@@ -1115,6 +1126,7 @@
 				F5609D5321E11AE80090E3B6 /* MyDogDetailVC.swift in Sources */,
 				F524E9D421DD20A90001CA5A /* AdoptDocSelectStep3VC.swift in Sources */,
 				F5609D7221E11CEF0090E3B6 /* MailCRView.swift in Sources */,
+				4C15B3FB21E78C570046692B /* ContentHeader.swift in Sources */,
 				F54B113121E3999C000BA8DF /* AnimalUserAdoptInoculationService.swift in Sources */,
 				4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */,
 				F54B113721E3C2F3000BA8DF /* AnimalDetailService.swift in Sources */,
