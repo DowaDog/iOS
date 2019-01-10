@@ -12,7 +12,7 @@ class Page2VC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var reuseIdentifier = "Page2CVCell"
-    var testImg = [(UIImage(named: "contentTest.png")), (UIImage(named: "contentTest.png")), (UIImage(named:"contentTest.png")), (UIImage(named: "contentTest.png")),(UIImage(named: "contentTest.png"))]
+
     
     var knowledgeList = [Education]()
     
@@ -48,12 +48,14 @@ class Page2VC: UIViewController {
 extension Page2VC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.testImg.count
+        return knowledgeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! Page2CVCell
-        cell.cardImage.image = self.testImg[indexPath.item]
+        
+        let knowledge = knowledgeList[indexPath.row]
+        cell.cardImage.imageFromUrl(gsno(knowledge.imgPath), defaultImgPath: "")
         
         return cell
     }

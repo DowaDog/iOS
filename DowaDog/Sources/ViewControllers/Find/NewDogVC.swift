@@ -15,6 +15,8 @@ class NewDogVC: UIViewController {
     @IBOutlet weak var navbar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var lastPage = 0
+    
     var reuseIdentifier = "newdogCell"
 
     override func viewDidLoad() {
@@ -29,20 +31,25 @@ class NewDogVC: UIViewController {
         
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-
-        EmergenDogService.shared.findAnimalList(type: "", region: "", remainNoticeDate: 300, story: true, searchWord: "", page: 0, limit: 10) {
+    func getData(){
+        EmergenDogService.shared.findAnimalList(type: "", region: "", remainNoticeDate: 300, story: true, searchWord: "", page: lastPage, limit: 10) {
             (data) in
-
+            
             print("---여기--------------")
             print(data)
             print("---여기--------------")
             
-            self.storyDogList = data
+            self.storyDogList  = self.storyDogList + data
+            self.lastPage += 1
+            
             self.collectionView.reloadData()
-
-
+            
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+
+       getData()
+        
     }
 
 }
@@ -126,6 +133,13 @@ extension NewDogVC:UICollectionViewDataSource{
 }
 
 extension NewDogVC: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if !(indexPath.row + 1 < self.storyDogList.count) {
+            getData()
+        }
+        
+        
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "StoryDogVC") as?StoryDogVC {
