@@ -137,6 +137,56 @@
                                     <constraint firstAttribute="height" constant="470" id="xeP-8z-DvT"/>
                                 </constraints>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="용인 보호소" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTO-pA-KwW">
+                                <rect key="frame" x="142" y="337" width="193" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="3zT-Ml-ejt"/>
+                                    <constraint firstAttribute="height" constant="18" id="Y6P-HR-2uZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                <color key="textColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12월 25일 (화)  오후 5시" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpk-Le-KoI">
+                                <rect key="frame" x="142" y="386" width="193" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="dIi-xx-5aC"/>
+                                    <constraint firstAttribute="width" constant="193" id="hc3-qh-ddt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                <color key="textColor" red="0.1215686275" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 강아지 목줄" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCb-Ti-rZa">
+                                <rect key="frame" x="142" y="436" width="193" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="e3l-e2-Abb"/>
+                                    <constraint firstAttribute="width" constant="193" id="nXQ-wi-VKY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                <color key="textColor" red="0.1215686275" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 신분증 사본" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPe-9I-GWQ">
+                                <rect key="frame" x="142" y="462" width="193" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="GcV-IE-ATo"/>
+                                    <constraint firstAttribute="height" constant="18" id="uuh-Uz-U91"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                <color key="textColor" red="0.1215686275" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. 강아지 집" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1i-cW-9Ym">
+                                <rect key="frame" x="142" y="488" width="193" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="QXt-fl-LIW"/>
+                                    <constraint firstAttribute="width" constant="193" id="hFO-KC-BGC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
+                                <color key="textColor" red="0.1215686275" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3525" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-Xi-R50">
                                 <rect key="frame" x="79.5" y="210" width="216" height="20"/>
                             </imageView>
@@ -488,16 +538,23 @@
                             <constraint firstItem="ocE-yZ-3EX" firstAttribute="top" secondItem="XBf-Xi-R50" secondAttribute="bottom" constant="-68" id="8o3-HO-ohF"/>
                             <constraint firstItem="Bia-sp-U3C" firstAttribute="leading" secondItem="rxi-NF-g2w" secondAttribute="trailing" id="CBY-Ms-XY7"/>
                             <constraint firstItem="Uzp-OX-KQ7" firstAttribute="top" secondItem="s8n-sI-7Hk" secondAttribute="bottom" constant="11" id="FGm-Uz-6s9"/>
+                            <constraint firstItem="H1i-cW-9Ym" firstAttribute="top" secondItem="WPe-9I-GWQ" secondAttribute="bottom" constant="8" id="GwB-uS-eqs"/>
                             <constraint firstItem="n0r-yc-4vi" firstAttribute="trailing" secondItem="Yt4-a6-vQh" secondAttribute="trailing" id="HBJ-cm-Qid"/>
                             <constraint firstItem="n0r-yc-4vi" firstAttribute="leading" secondItem="Yt4-a6-vQh" secondAttribute="leading" id="HmY-U7-q65"/>
+                            <constraint firstItem="aCb-Ti-rZa" firstAttribute="top" secondItem="Xpk-Le-KoI" secondAttribute="bottom" constant="32" id="JS0-5N-8nj"/>
+                            <constraint firstItem="aCb-Ti-rZa" firstAttribute="leading" secondItem="hSf-6q-mpB" secondAttribute="trailing" constant="-212" id="Jqn-Jg-MEo"/>
                             <constraint firstItem="rxi-NF-g2w" firstAttribute="leading" secondItem="s8n-sI-7Hk" secondAttribute="trailing" constant="2" id="K1g-2u-b57"/>
                             <constraint firstItem="s8n-sI-7Hk" firstAttribute="top" secondItem="5Md-hH-to4" secondAttribute="bottom" constant="5" id="KiH-kq-3FU"/>
                             <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="5Md-hH-to4" secondAttribute="trailing" constant="-102" id="NHr-MZ-tHb"/>
+                            <constraint firstItem="WPe-9I-GWQ" firstAttribute="top" secondItem="aCb-Ti-rZa" secondAttribute="bottom" constant="8" id="Oec-D5-moZ"/>
                             <constraint firstItem="Yt4-a6-vQh" firstAttribute="trailing" secondItem="yfa-IU-xlP" secondAttribute="trailing" id="Pqq-wR-rdt"/>
+                            <constraint firstItem="fTO-pA-KwW" firstAttribute="leading" secondItem="hSf-6q-mpB" secondAttribute="trailing" constant="-212" id="QVV-QB-kci"/>
                             <constraint firstItem="5fP-3x-OzS" firstAttribute="leading" secondItem="Yt4-a6-vQh" secondAttribute="leading" id="T9q-EW-oBO"/>
+                            <constraint firstItem="H1i-cW-9Ym" firstAttribute="leading" secondItem="hSf-6q-mpB" secondAttribute="trailing" constant="-212" id="YQb-I5-P6v"/>
                             <constraint firstItem="8sT-Zk-G5i" firstAttribute="centerX" secondItem="Yt4-a6-vQh" secondAttribute="centerX" id="YVF-kq-aFu"/>
                             <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="jeC-Cr-Pqr" secondAttribute="trailing" constant="-305" id="aPu-NI-HDa"/>
                             <constraint firstItem="8sT-Zk-G5i" firstAttribute="centerY" secondItem="Yt4-a6-vQh" secondAttribute="centerY" id="bNj-D5-tBx"/>
+                            <constraint firstItem="WPe-9I-GWQ" firstAttribute="leading" secondItem="hSf-6q-mpB" secondAttribute="trailing" constant="-212" id="cpJ-dO-k5U"/>
                             <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="5Md-hH-to4" secondAttribute="bottom" constant="-44" id="d8t-dD-xFX"/>
                             <constraint firstItem="xDO-LH-gA4" firstAttribute="centerX" secondItem="Yt4-a6-vQh" secondAttribute="centerX" id="eaf-iy-CGA"/>
                             <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="rxi-NF-g2w" secondAttribute="bottom" constant="-86" id="fZv-Pj-rij"/>
@@ -506,6 +563,9 @@
                             <constraint firstItem="hSf-6q-mpB" firstAttribute="top" secondItem="ocE-yZ-3EX" secondAttribute="bottom" constant="-471" id="kXr-yU-zLq"/>
                             <constraint firstItem="yfa-IU-xlP" firstAttribute="leading" secondItem="Uzp-OX-KQ7" secondAttribute="trailing" constant="-199" id="kjN-fg-I2O"/>
                             <constraint firstItem="n0r-yc-4vi" firstAttribute="top" secondItem="jcn-Zf-Zdd" secondAttribute="top" id="m0V-ZP-Hmi"/>
+                            <constraint firstItem="hSf-6q-mpB" firstAttribute="top" secondItem="fTO-pA-KwW" secondAttribute="bottom" constant="-151" id="mUy-DS-mCt"/>
+                            <constraint firstItem="Xpk-Le-KoI" firstAttribute="top" secondItem="fTO-pA-KwW" secondAttribute="bottom" constant="31" id="qNA-yF-ymY"/>
+                            <constraint firstItem="Xpk-Le-KoI" firstAttribute="leading" secondItem="hSf-6q-mpB" secondAttribute="trailing" constant="-212" id="v59-Fd-NWI"/>
                             <constraint firstItem="jeC-Cr-Pqr" firstAttribute="top" secondItem="Uzp-OX-KQ7" secondAttribute="bottom" constant="11" id="wFI-w3-jls"/>
                             <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="Bia-sp-U3C" secondAttribute="bottom" constant="-86" id="xJs-pu-PIK"/>
                             <constraint firstItem="yfa-IU-xlP" firstAttribute="top" secondItem="Yt4-a6-vQh" secondAttribute="top" id="xUp-r0-qZf"/>
@@ -528,6 +588,7 @@
                         <outlet property="blackScreen2" destination="n0r-yc-4vi" id="vCp-iM-Rvw"/>
                         <outlet property="cardView" destination="ocE-yZ-3EX" id="18b-zP-uD6"/>
                         <outlet property="cardViewConstraint" destination="71J-TK-qkV" id="cn4-QO-4ll"/>
+                        <outlet property="date" destination="Xpk-Le-KoI" id="pnq-ex-zO4"/>
                         <outlet property="downSwipe" destination="iEa-se-KPW" id="67Y-vZ-x2H"/>
                         <outlet property="guideImageView" destination="xDO-LH-gA4" id="Mp9-kv-qLR"/>
                         <outlet property="guideIndicator" destination="rzd-iL-kur" id="Egj-Q3-Yht"/>
@@ -538,6 +599,10 @@
                         <outlet property="myName" destination="Agn-5f-vji" id="7QL-1P-AYc"/>
                         <outlet property="new" destination="XBf-Xi-R50" id="2mp-FR-pNC"/>
                         <outlet property="newFamBtn" destination="C9z-zA-wTb" id="E68-k8-737"/>
+                        <outlet property="place" destination="fTO-pA-KwW" id="fzq-wd-MBF"/>
+                        <outlet property="prepare1" destination="aCb-Ti-rZa" id="kTK-Yb-hnW"/>
+                        <outlet property="prepare2" destination="WPe-9I-GWQ" id="68r-OR-HqZ"/>
+                        <outlet property="prepare3" destination="H1i-cW-9Ym" id="MGc-Lh-WPw"/>
                         <outlet property="profileImg" destination="BaO-yW-J6o" id="dFb-ce-iZt"/>
                         <outlet property="rightSwipe" destination="QOq-Ql-Olu" id="zmw-Ne-VKB"/>
                         <outlet property="sideMenuView" destination="5fP-3x-OzS" id="2bD-wZ-Nv5"/>

@@ -30,10 +30,14 @@ class LoginVC: UIViewController {
     
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UserDefaults.standard.string(forKey: "Token") != nil {
+            let login = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeNav") as! UINavigationController
+            
+            self.present(login, animated: true, completion: nil)
+        }
         
         self.setNavigationBarClear()
         
