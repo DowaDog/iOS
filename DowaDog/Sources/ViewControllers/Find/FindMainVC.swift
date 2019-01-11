@@ -10,6 +10,7 @@ import UIKit
 
 class FindMainVC: UIViewController,sendBackDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var dayView: UIView!
     
     var getType:String = ""
     var getRegion:String = ""
@@ -21,6 +22,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
     var heartId:Int?
     
     var lastPage = 0
+    var pagelimit:Int?
     
     var emergenDogList = [EmergenDog]()
     var newDogList = [EmergenDog]()
@@ -63,10 +65,13 @@ class FindMainVC: UIViewController,sendBackDelegate {
             print("test===")
             
             
-            self.newDogList  = self.newDogList + data
-            //            self.lastPage += 1
             
+            
+            self.newDogList  = self.newDogList + data
+            self.pagelimit = (data.count/10) + 1
             self.collectionView?.reloadData()
+            
+              self.lastPage += 1
         }
     }
     
@@ -76,7 +81,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
         collectionView.dataSource = self
         collectionView.delegate = self
         filterBtn.roundRadius()
-        
+    
         
     }
     
@@ -134,17 +139,6 @@ class FindMainVC: UIViewController,sendBackDelegate {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 extension FindMainVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -175,6 +169,7 @@ extension FindMainVC:UICollectionViewDataSource{
         
         if section == 0{
             return UICollectionViewCell()
+            
         } else if section == 1 {
             
             
@@ -325,11 +320,11 @@ extension FindMainVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let section = indexPath.section
+        
         if section == 0 {
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer", for: indexPath) as! ImageCRView
             return view
-            
-            
+
         }else if section == 1 {
             let view = collectionView.dequeueReusableSupplementaryView(ofKind:UICollectionView.elementKindSectionHeader,
                                                                        withReuseIdentifier: resusableheader,
@@ -348,6 +343,7 @@ extension FindMainVC:UICollectionViewDataSource{
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                        withReuseIdentifier: resusableheader,
                                                                        for: indexPath) as! HeaderCRView
+            
             view.headerLabel.text = "새로 구조된 아이들"
             
             view.nextBtn.isHidden = true
@@ -368,10 +364,17 @@ extension FindMainVC:UICollectionViewDataSource{
 
 
 extension FindMainVC: UICollectionViewDelegate{
+
+    
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if !(indexPath.row + 1 < self.newDogList.count) {
-            getData()
+            if lastPage <=  pagelimit ?? 100{
+                  getData()
+            }else{
+                
+            }
+          
         }
         
     }
@@ -381,7 +384,9 @@ extension FindMainVC: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
+        
         let section = indexPath.section
+        
         if section == 1{
             
             let cell = self.collectionView.cellForItem(at: indexPath) as!EmergenCVCell
@@ -424,6 +429,8 @@ extension FindMainVC: UICollectionViewDelegate{
 
 
 extension FindMainVC: UICollectionViewDelegateFlowLayout {
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (view.frame.width - 45) / 2
         let height: CGFloat = ((view.frame.width - 45) / 2) * 0.8 + 53
