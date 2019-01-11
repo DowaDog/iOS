@@ -255,7 +255,7 @@ class HomeVC: UIViewController {
     }
     
     @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
-        if UserDefaults.standard.string(forKey: "guide") == nil {
+        if UserDefaults.standard.string(forKey: "guide") != nil {
             hideCardView()
         }
     }

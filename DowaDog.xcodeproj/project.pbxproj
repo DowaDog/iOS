@@ -93,6 +93,7 @@
 		F527A0AA21D7567900BC20DE /* NavBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527A0A921D7567900BC20DE /* NavBtn.swift */; };
 		F527A0AC21D7626E00BC20DE /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527A0AB21D7626E00BC20DE /* CommunityVC.swift */; };
 		F527A0AE21D7867100BC20DE /* CommunityWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F527A0AD21D7867100BC20DE /* CommunityWriteVC.swift */; };
+		F52C72E621E9345D00BB3D05 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52C72E521E9345D00BB3D05 /* Splash.storyboard */; };
 		F54B111521E308B7000BA8DF /* MailboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111421E308B7000BA8DF /* MailboxService.swift */; };
 		F54B111721E308D9000BA8DF /* Mailbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111621E308D9000BA8DF /* Mailbox.swift */; };
 		F54B111921E3100C000BA8DF /* MyCommunityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B111821E3100C000BA8DF /* MyCommunityService.swift */; };
@@ -252,6 +253,7 @@
 		F527A0A921D7567900BC20DE /* NavBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBtn.swift; sourceTree = "<group>"; };
 		F527A0AB21D7626E00BC20DE /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
 		F527A0AD21D7867100BC20DE /* CommunityWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityWriteVC.swift; sourceTree = "<group>"; };
+		F52C72E521E9345D00BB3D05 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		F54B111421E308B7000BA8DF /* MailboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxService.swift; sourceTree = "<group>"; };
 		F54B111621E308D9000BA8DF /* Mailbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailbox.swift; sourceTree = "<group>"; };
 		F54B111821E3100C000BA8DF /* MyCommunityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommunityService.swift; sourceTree = "<group>"; };
@@ -790,6 +792,7 @@
 				F501E64521D4DFA9004CD703 /* Home.storyboard */,
 				F5508A1821D4D54400BE73FF /* LaunchScreen.storyboard */,
 				F511E29021E5DF7D004E462F /* Search.storyboard */,
+				F52C72E521E9345D00BB3D05 /* Splash.storyboard */,
 				F527A08521D6591E00BC20DE /* Community.storyboard */,
 				4C0E95C121D890A900301D52 /* Login.storyboard */,
 				F524E9DF21DF553A0001CA5A /* Info.storyboard */,
@@ -954,6 +957,7 @@
 			files = (
 				F527A08621D6591E00BC20DE /* Community.storyboard in Resources */,
 				F5508A2B21D4D8B100BE73FF /* NanumSquareBold.ttf in Resources */,
+				F52C72E621E9345D00BB3D05 /* Splash.storyboard in Resources */,
 				F524E9E021DF553A0001CA5A /* Info.storyboard in Resources */,
 				4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */,
 				F5EAB1F621E8BB810005654C /* Support.storyboard in Resources */,
@@ -1318,6 +1322,7 @@
 			baseConfigurationReference = 5AE6EC9ACD1107B95B4D092F /* Pods-DowaDog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JT57WV788F;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1354,6 +1359,7 @@
 			baseConfigurationReference = 4AF23DFCB82EAED1106940D1 /* Pods-DowaDog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JT57WV788F;
 				FRAMEWORK_SEARCH_PATHS = (

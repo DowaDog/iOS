@@ -28,6 +28,7 @@ class MyPageMainVC: UIViewController {
         super.viewDidLoad()
         
         setBackBtn()
+        setNavigationBarClear()
         coverView.alpha = 0.0
         
         userProfile.circleImageView()
@@ -42,17 +43,23 @@ class MyPageMainVC: UIViewController {
     
     
     @IBAction func logoutAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.coverView.alpha = 0.5
             
         })
         simpleAlertwithHandler(title: "로그아웃 하시겠습니까?", message: "", okHandler:  {(alert: UIAlertAction!) in
             UIView.animate(withDuration: 0.3, animations: {
                 self.coverView.alpha = 0.0
+                
+                UserDefaults.standard.removeObject(forKey: "Token")
+                
+                // 여기
+                
             })}
             , cancleHandler: {(alert: UIAlertAction!) in
-                
-                self.coverView.alpha = 0.0
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.coverView.alpha = 0.0
+                })
         })
         
     }
