@@ -39,7 +39,11 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
+<<<<<<< HEAD
 	<string>Login</string>
+=======
+	<string>Contents</string>
+>>>>>>> 431c0cb8cfe83431f7ffce44c2e1561b91a6f351
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

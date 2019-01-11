@@ -47,6 +47,8 @@ class MainPageVC: UIViewController {
            self.selectPoint2.alpha = 0.0
         
         
+        self.tab2.setTitleColor(UIColor(red: 154.0/255.0, green: 154.0/255.0, blue: 154.0/255.0, alpha: 1.0), for: .normal)
+        
         // sidemenu
         setBlackScreen()
         setSideMenu()
