@@ -74,6 +74,16 @@ class SearchVC: UIViewController {
         }
     }
     
+    
+    func findByHashtag(hashtag: String) {
+        EmergenDogService.shared.findAnimalByHashTag(hashtag: hashtag) { (data) in
+            
+            print("data================")
+            print(data)
+            print("data================")
+        }
+    }
+    
     @IBAction func searchBtnAction(_ sender: Any) {
 
          searchWord = searchTF.text
