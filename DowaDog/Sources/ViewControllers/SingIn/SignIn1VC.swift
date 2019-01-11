@@ -86,30 +86,33 @@ class SignIn1VC: UIViewController {
         
         let test = isValidEmailAddress(email: emailTextField.text!)
         
+        let nameTest = isValidName(name: nameTextField.text!)
         
         
-        if test {
-            guard let email = emailTextField.text
-                else { return }
-            
-            
-            DuplicateService.shared.duplicateEmail(email: email) { (data) in
+        if nameTest {
+            self.simpleAlert(title: "실패", message: "이름을 확인해주세요.")
+        } else if test {
                 
-                if data.data == false{
-                    self.simpleAlert(title: "성공", message: "등록 가능한 이메일입니다.")
-                    self.emailCheck = true
-                    self.endCheck()
+                guard let email = emailTextField.text
+                    else { return }
+                
+                
+                DuplicateService.shared.duplicateEmail(email: email) { (data) in
                     
-                } else if data.data == true{
-                    self.simpleAlert(title: "실패", message: "이미 등록된 이메일입니다. 다시 입력해주세요!")
-                    self.emailCheck = false
-                    
+                    if data.data == false{
+                        self.simpleAlert(title: "성공", message: "등록 가능한 이메일입니다.")
+                        self.emailCheck = true
+                        self.endCheck()
+                        
+                    } else if data.data == true{
+                        self.simpleAlert(title: "실패", message: "이미 등록된 이메일입니다. 다시 입력해주세요!")
+                        self.emailCheck = false
+                        
+                    }
                 }
+            } else {
+                self.simpleAlert(title: "경고", message: "올바르지 않은 이메일 형식입니다.")
             }
-        } else {
-            self.simpleAlert(title: "경고", message: "올바르지 않은 이메일 형식입니다.")
-        }
-        
         self.view.endEditing(true)
     }
 

@@ -89,12 +89,23 @@ extension UIViewController {
     
     func isValidId(id: String) -> Bool {
         
-        let idRegEx = "[A-Z0-9a-z._%+-]{2,}"
+        let idRegEx = "[A-Z0-9a-z._%+-]{2,8}"
         
         let idTest = NSPredicate(format:"SELF MATCHES %@", idRegEx)
         
         return idTest.evaluate(with: id)
     }
+    
+    func isValidName(name: String) -> Bool{
+        
+        let nameRegEx = "[가-힣]{2,4}"
+        
+        let nameTest = NSPredicate(format: "SELF MATCHS %@", nameRegEx)
+        
+        return nameTest.evaluate(with: name)
+    }
+    
+    
 }
 
 extension UIView {
