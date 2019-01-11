@@ -48,7 +48,7 @@ class AboutNewDogVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackBtn()
-        self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
+        self.setNavigationBar()
         
         self.coverView.alpha = 0.0
         self.popupView.alpha = 0.0
@@ -139,22 +139,22 @@ class AboutNewDogVC: UIViewController {
             
         }
         
-        let offsetY = scroll.contentOffset.y
-        if ( offsetY > 170) {
-            UIView.animate(withDuration: 0.4, animations: {
-                self.navBarBackgroundAlpha = 1//navbar 투명하게 setup
-                
-                self.heartItem.tintColor = UIColor.init(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
-                
-            })
-            
-        }else if (offsetY <= 170 ){
-            UIView.animate(withDuration: 0.4, animations: {
-                self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
-                self.heartItem.tintColor = UIColor.white
-            })
-            
-        }
+//        let offsetY = scroll.contentOffset.y
+//        if ( offsetY > 170) {
+//            UIView.animate(withDuration: 0.4, animations: {
+//                self.navBarBackgroundAlpha = 1//navbar 투명하게 setup
+//                
+//                self.heartItem.tintColor = UIColor.init(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
+//                
+//            })
+//            
+//        }else if (offsetY <= 170 ){
+//            UIView.animate(withDuration: 0.4, animations: {
+//                self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
+//                self.heartItem.tintColor = UIColor.white
+//            })
+//            
+//        }
         
     }
     @IBAction func okBtnAction(_ sender: Any) {

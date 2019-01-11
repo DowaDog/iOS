@@ -21,8 +21,7 @@ class CardVC: UIViewController {
     @IBOutlet weak var scroll: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navBarBackgroundAlpha = 0
+        self.setNavigationBar()
         setBackBtn()
         
         
@@ -101,25 +100,25 @@ class CardVC: UIViewController {
             
         }
             
-        else if abs(velocity.y) > abs(velocity.x) {
-          
-        let offsetY = scroll.contentOffset.y
-        if ( offsetY > 276) {
-            UIView.animate(withDuration: 0.4, animations: {
-                self.navBarBackgroundAlpha = 1//navbar 투명하게 setup
-                
-                self.scrapItem.tintColor = UIColor.init(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
-                
-            })
-            
-        } else if (offsetY <= 276 ){
-            UIView.animate(withDuration: 0.4, animations: {
-                self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
-                self.scrapItem.tintColor = UIColor.white
-                })
-            
-            }
-        }
+//        else if abs(velocity.y) > abs(velocity.x) {
+//
+//        let offsetY = scroll.contentOffset.y
+//        if ( offsetY > 276) {
+//            UIView.animate(withDuration: 0.4, animations: {
+//                self.navBarBackgroundAlpha = 1//navbar 투명하게 setup
+//
+//                self.scrapItem.tintColor = UIColor.init(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
+//
+//            })
+//
+//        } else if (offsetY <= 276 ){
+//            UIView.animate(withDuration: 0.4, animations: {
+//                self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
+//                self.scrapItem.tintColor = UIColor.white
+//                })
+//
+//            }
+//        }
     }
     
     @IBAction func completeBtnAction(_ sender: UIButton) {

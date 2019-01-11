@@ -746,8 +746,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="53V-F9-3eA">
-                                <rect key="frame" x="0.0" y="-40" width="375" height="1240"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="53V-F9-3eA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8cn-sc-V0b">
                                     <size key="itemSize" width="375" height="671"/>
@@ -982,9 +982,9 @@
                             <constraint firstItem="53V-F9-3eA" firstAttribute="trailing" secondItem="yyK-Pb-GSj" secondAttribute="trailing" id="EbI-Hz-Qhp"/>
                             <constraint firstItem="yQu-vk-vlQ" firstAttribute="top" secondItem="OFc-zP-gXs" secondAttribute="top" id="Iye-5U-B93"/>
                             <constraint firstAttribute="bottom" secondItem="yQu-vk-vlQ" secondAttribute="bottom" id="THV-Sn-BUW"/>
+                            <constraint firstItem="53V-F9-3eA" firstAttribute="bottom" secondItem="yyK-Pb-GSj" secondAttribute="bottom" id="hQb-j2-Dmf"/>
                             <constraint firstItem="UGD-vE-mgi" firstAttribute="leading" secondItem="yyK-Pb-GSj" secondAttribute="leading" id="qxv-us-KaR"/>
-                            <constraint firstItem="53V-F9-3eA" firstAttribute="bottom" secondItem="yyK-Pb-GSj" secondAttribute="bottom" id="rFP-hw-8Zo"/>
-                            <constraint firstItem="53V-F9-3eA" firstAttribute="top" secondItem="OFc-zP-gXs" secondAttribute="top" constant="-40" id="s7Q-ey-org"/>
+                            <constraint firstItem="53V-F9-3eA" firstAttribute="top" secondItem="OFc-zP-gXs" secondAttribute="top" id="s7Q-ey-org"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yyK-Pb-GSj"/>
                     </view>

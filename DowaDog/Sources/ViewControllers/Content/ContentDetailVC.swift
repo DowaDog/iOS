@@ -43,7 +43,8 @@ class ContentDetailVC: UIViewController {
         collectionView.dataSource = self
         
         self.setBackBtn()
-        self.navBarBackgroundAlpha = 0.0
+        self.setNavigationBar()
+
         
         scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(scrapTapped))
         scrapItem.tintColor = UIColor.white
@@ -70,7 +71,17 @@ class ContentDetailVC: UIViewController {
         countAlert.text = "4개 중의 \(self.gino(count))개의"
         
         
+        
+        
+        let panGestureRecongnizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))
+        collectionView.addGestureRecognizer(panGestureRecongnizer)
+        panGestureRecongnizer.delegate = self 
+        
+            collectionView.delaysContentTouches = true
+        
+        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -115,6 +126,30 @@ class ContentDetailVC: UIViewController {
         }
 
     }
+    
+    @objc func panAction (_ sender : UIPanGestureRecognizer){
+        
+        let velocity = sender.velocity(in: collectionView)
+        
+        if abs(velocity.x) > abs(velocity.y) {
+            
+            
+        }
+            
+        else if abs(velocity.y) > abs(velocity.x) {
+            if velocity.y<0{
+                self.adoptBtn.alpha = 0.0
+                
+            }else{
+                self.adoptBtn.alpha = 1.0
+                
+            }
+            
+        }
+        
+        
+    }
+
     
     @IBAction func educationCompleteAction(_ sender: Any) {
         EducationListService.shared.contentComplete(contentIdx: id){
@@ -202,19 +237,21 @@ extension ContentDetailVC:UICollectionViewDelegateFlowLayout{
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]
         let estimatedFrame = NSString(string: contentstory.detail ?? "").boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         
-        
-//        let user = users[indexPath.row]
-//        let approximateWidthOfText = view.frame.width - 150 - 8
-//        let size = CGSize(width: approximateWidthOfText, height: 1000)
-//        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
-//        let estimatedFrame = NSString(string: user.bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-//        return estimatedFrame.height + 16 + 20
-//    }
-//}
-        return estimatedFrame.height + 20
+    
+        return estimatedFrame.height 
     }
 
 
     
 }
 
+
+extension ContentDetailVC : UIGestureRecognizerDelegate{
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+        
+        return true
+        
+    }
+    
+}
