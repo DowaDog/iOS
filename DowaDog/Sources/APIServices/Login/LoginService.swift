@@ -10,7 +10,7 @@ import Alamofire
 
 struct LoginService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<TokenType<Token>>
+    typealias NetworkData = ResponseObject<TokenType>
     static let shared = LoginService()
     let loginURL = url("/api/auth")
     let headers: HTTPHeaders = [
@@ -18,7 +18,7 @@ struct LoginService: APIManager, Requestable {
     ]
     
     // refresh Token
-    func refresh(completion: @escaping (TokenType<Token>) -> Void) {
+    func refresh(completion: @escaping (TokenType) -> Void) {
         
         let queryURL = loginURL + "/refresh"
         
@@ -47,7 +47,7 @@ struct LoginService: APIManager, Requestable {
     }
     
     // 로그인 api
-    func login(id: String, password: String, completion: @escaping (TokenType<Token>) -> Void) {
+    func login(id: String, password: String, completion: @escaping (ResponseObject<TokenType>) -> Void) {
         
         let queryURL = loginURL + "/login"
         
@@ -64,8 +64,7 @@ struct LoginService: APIManager, Requestable {
                 print(value)
                 print(".success=========================")
                 
-                guard let token = value.data else {return}
-                completion(token)
+                completion(value)
             case .error(let error):
                 print(".error============================")
                 print("error: ")
