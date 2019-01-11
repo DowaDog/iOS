@@ -16,6 +16,7 @@ class NewDogVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var lastPage = 0
+    var pagelimit:Int?
     
     var reuseIdentifier = "newdogCell"
     
@@ -40,9 +41,11 @@ class NewDogVC: UIViewController {
             print("---여기--------------")
             
             self.storyDogList  = self.storyDogList + data
+             self.pagelimit = (data.count/10) + 1
             self.lastPage += 1
             
             self.collectionView.reloadData()
+
             
         }
     }
@@ -135,7 +138,11 @@ extension NewDogVC:UICollectionViewDataSource{
 extension NewDogVC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if !(indexPath.row + 1 < self.storyDogList.count) {
-            getData()
+            if lastPage <=  pagelimit ?? 100{
+                getData()
+            }else{
+                
+            }
         }
         
         
