@@ -14,9 +14,11 @@ protocol SendDataDelegate {
 
 class SearchVC: UIViewController {
     
-    let flag = true
-    var searchFlag = false
+    var searchDogList = [EmergenDog]()
     
+    var flag = true
+    var searchFlag = false
+    var searchWord:String?
     var delegate: SendDataDelegate?
     
     @IBOutlet var searchTF: UITextField!
@@ -43,6 +45,26 @@ class SearchVC: UIViewController {
     
     @objc func textFieldDidChange(textField: UITextField){
         
+        searchWord = searchTF.text
+        
+        //여기서 분기
+        EmergenDogService.shared.findAnimalList(type: "", region: "", remainNoticeDate: 300, searchWord: searchWord, page: 0, limit: 10){ [weak self]
+            (data) in
+            guard self != nil else {return}
+            
+            print("---여기--------------")
+            print(data)
+            print("---여기--------------")
+            self?.searchDogList = data
+            if  self?.searchDogList.count == 0{
+                self?.flag  =  false
+            }else {
+                self?.flag = true
+            }
+            
+        
+        }
+        
         if searchTF.text != "" {
             searchBtn.backgroundColor = UIColor(red: 0/255, green: 218/255, blue: 218/255, alpha: 1.0)
             searchFlag = true
@@ -53,7 +75,8 @@ class SearchVC: UIViewController {
     }
     
     @IBAction func searchBtnAction(_ sender: Any) {
-        
+
+         searchWord = searchTF.text
         
         if searchFlag == true {
             
@@ -76,10 +99,14 @@ class SearchVC: UIViewController {
             
             let nextVC = segue.destination as! SearchResultVC
             
+           
+            
             nextVC.navTitle = searchTF.text!
+            nextVC.searchWord = searchWord
         }
         
         if segue.identifier == "goNoResult" {
+            
             let nextVC = segue.destination as! NoResultVC
             
             nextVC.navTitle = searchTF.text!

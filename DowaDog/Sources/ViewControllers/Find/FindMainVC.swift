@@ -10,7 +10,7 @@ import UIKit
 
 class FindMainVC: UIViewController,sendBackDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var dayView: UIView!
+
     
     var getType:String = ""
     var getRegion:String = ""
@@ -81,8 +81,6 @@ class FindMainVC: UIViewController,sendBackDelegate {
         collectionView.dataSource = self
         collectionView.delegate = self
         filterBtn.roundRadius()
-    
-        
     }
     
     
@@ -95,11 +93,12 @@ class FindMainVC: UIViewController,sendBackDelegate {
     
     @IBAction func searchClickAction(_ sender: Any) {
         
-        let filter = UIStoryboard(name: "Filter", bundle: nil).instantiateViewController(withIdentifier: "FilterVC")
+        let filter = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchVC")
         
         //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
         navigationController?.pushViewController(filter, animated: true)
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

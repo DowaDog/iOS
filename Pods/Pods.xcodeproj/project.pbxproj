@@ -68,7 +68,6 @@
 		48D9D155785BA85911BED51563E4AF1D /* GULNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 4930E140CCD64A766407954B06F1A0E4 /* GULNSData+zlib.m */; };
 		4936999FBD083F2628BE64CE7BEE2036 /* FDLLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 33A7FEEEAC1D7153014CC24FA9F6F976 /* FDLLogging.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4A3EA2B64857488A7D376B2912A3D1A1 /* FIRBundleUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FC673ADF0BA29011E2D40DFD77D4409 /* FIRBundleUtil.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		4C15B3FF21E7C7770046692B /* AutoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B3FE21E7C7770046692B /* AutoVC.swift */; };
 		4E1A913EFB404FB11524718FF0298EFE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0D28669F874E72363F20EF45FE4D08 /* Alamofire.swift */; };
 		4FFE0EFF07423E76A6D6544B7AA7F86F /* FIRDLJavaScriptExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F563573C476E4344EA1E25DB15347C /* FIRDLJavaScriptExecutor.m */; };
 		500C8EDA60C07B0F127C7FC385E17D38 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3997010F5D884A325C92077803AD3BFE /* Notifications.swift */; };
@@ -398,7 +397,6 @@
 		4AFA797E49C8A0B9320141DBE5E7D0D1 /* AlamofireObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		4B92E3A56B61A52C688965313B2C775B /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		4BAE908DD3ED20B878585E83F0F0D1CC /* Pods_DowaDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DowaDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C15B3FE21E7C7770046692B /* AutoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AutoVC.swift; path = ../DowaDog/Sources/ViewControllers/AutoVC.swift; sourceTree = "<group>"; };
 		4D646AE8BCED43E64E26EF5D1D5312BC /* FIRDLRetrievalProcessResult+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FIRDLRetrievalProcessResult+Private.h"; path = "Firebase/DynamicLinks/FIRDLRetrievalProcessResult+Private.h"; sourceTree = "<group>"; };
 		4D890B290DB60E142714B25B543AC148 /* FirebaseDynamicLinks-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseDynamicLinks-umbrella.h"; sourceTree = "<group>"; };
 		500D01810A2DF8DC1748D65167626E9A /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
@@ -914,7 +912,6 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				4C15B3FE21E7C7770046692B /* AutoVC.swift */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				91D36E1C14DB808583B6F2BF1C4F27A4 /* Frameworks */,
 				FDE16316695491941DDFF509E69EF4B2 /* Pods */,
@@ -1800,7 +1797,6 @@
 			files = (
 				BE4BA1EDE444A770F834605F4B65348E /* AFError.swift in Sources */,
 				D4C3899574E9D5DF5E5DA52310560BCC /* Alamofire-dummy.m in Sources */,
-				4C15B3FF21E7C7770046692B /* AutoVC.swift in Sources */,
 				4E1A913EFB404FB11524718FF0298EFE /* Alamofire.swift in Sources */,
 				DBE6E2E4D205545E7988CFA5057C31D6 /* DispatchQueue+Alamofire.swift in Sources */,
 				FF9C7BC64DB23D2CED48197DE67F0335 /* MultipartFormData.swift in Sources */,
