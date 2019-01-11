@@ -9,21 +9,27 @@
 import UIKit
 
 class CommunityDetailVC: UIViewController {
+    
+    
+    var replyList = [Community<CommunityImgList>]()
+    var reusablecell = "ReplyCell"
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    var reusableheader = "postHeader" //To승언: reusableview의 storyboard identifier
-    var reusablecell = "replyCell" //To승언: 댓글 담을 cell의 identifier
-    var replyData = ["111111111111111111111111111111111111111111111111111","222222222222222222222222222222222222222222222222222222222222222222222","3333333333"]
-    //To승언: 가상으로 넣어둔 데이터
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userIdTextView: UILabel!
     
-    var id:Int?
+    @IBOutlet weak var profileImage: UIImageView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var aboutLabel: UITextView!
+    
+    
+    
+    
+    var id:Int!
 
-    var newImg = [(UIImage(named: "testcat.png")),
-                  (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),
-                  (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png"))
-    ]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,102 +37,86 @@ class CommunityDetailVC: UIViewController {
         
         setDetailView()
 
-        collectionView.dataSource = self
-        collectionView.delegate = self
-
-//        self.setNavigationBarShadow()
-    
+        tableView.dataSource = self
+        tableView.delegate = self
 
     }
     
     
     func setDetailView() {
-        CommunityDetailService.shared.getCommunityDetail(communityIdx: 198) {
+        CommunityDetailService.shared.getCommunityDetail(communityIdx: id ) {
             (data) in
             
             print("data============================")
             print(data)
             print("data============================")
             
-        }
-        
-    }
-
-}
-
-extension CommunityDetailVC:UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-
-           return replyData.count
-            //MARK: 데이터 받아와서 통신 붙이는 곳
-        
-   
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! PostCVCell
-        
-//        cell.replyTextView.text = replyData[indexPath.item]
-        cell.userImage.image = newImg[indexPath.item]
-    
-        return cell
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-//        let section = indexPath.section
-
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reusableheader, for: indexPath) as! PostCRView
- 
-           return view
-    }
-    
-}
-
-extension CommunityDetailVC: UICollectionViewDelegate{
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 1
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-        let section = indexPath.section
-//        if section == 2{
-//
-//            let cell = self.collectionView.cellForItem(at: indexPath) as! PostCVCell
-//            if indexPath.row == 0{
-//                if let dvc = storyboard?.instantiateViewController(withIdentifier: "NewDogVC") as? NewDogVC {
-//
-//                    //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-//                    navigationController?.pushViewController(dvc, animated: true)
-//                }
-//            }
-//
-//
-//        }
-        
-        func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+            self.replyList = [data]
             
+            self.titleLabel.text = self.gsno(data.title)
+            
+            self.aboutLabel.text = self.gsno(data.detail)
+            
+            let date: String = self.gsno(data.createdAt)
+            
+            let fmt = DateFormatter()
+            fmt.dateFormat = "yyyy.MM.dd"
+            
+            let showDate: Date = fmt.date(from:date) ?? Date()
+            
+            let afterDate: String = fmt.string(from: showDate)
+            
+            
+            
+            self.dateLabel.text = afterDate
+            
+        self.profileImage.imageFromUrl( self.gsno(data.userProfileImg), defaultImgPath: "")
+            
+            self.userIdTextView.text = self.gsno(data.userId)
+            
+            
+
         }
-    }
- 
-}
-extension CommunityDetailVC: UICollectionViewDelegateFlowLayout {
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = collectionView.frame.width
         
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! PostCVCell
-        
-        //여기서부터 collectionView Cell 높이 동적으로 주는 코드
-        
-        let height: CGFloat = cell.replyTextView.frame.height + 10
-        return CGSize(width: width, height: height)
     }
 
 }
+extension CommunityDetailVC: UITableViewDelegate{
+    
+}
+extension CommunityDetailVC:UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return replyList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusablecell, for:indexPath) as! ReplyCell
+        
+        let reply = replyList[indexPath.row]
+//        cell.idTextView.text = "gsno(\(reply.userId))"
+//        cell.profileImage.imageFromUrl(gsno(reply.userProfileImg), defaultImgPath: "")
+//
+//
+//        cell.timeView.text = gsno(reply.updatedAt)
+//        cell.replyTextView.text = gsno(reply.detail)
+//        reply.
+        
+        
+        let date: String = gsno(reply.createdAt)
+        
+        let fmt = DateFormatter()
+        fmt.dateFormat = "yyyy.MM.dd"
+        
+        let showDate: Date = fmt.date(from:date) ?? Date()
+        
+        let afterDate: String = fmt.string(from: showDate)
+   
+    return cell
+    }
+
+}
+
+
+
+
+

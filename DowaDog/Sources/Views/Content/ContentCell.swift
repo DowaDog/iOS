@@ -18,7 +18,7 @@ class ContentCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        aboutTextView.numberOfLines = 0
+
        
     }
 }

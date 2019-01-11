@@ -183,6 +183,8 @@ class CommunityVC: UIViewController {
 }
 
 extension CommunityVC: UITableViewDataSource {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return communityList.count
@@ -269,4 +271,19 @@ extension CommunityVC: UITableViewDataSource {
             return oneTVC
         }
     }
+}
+extension CommunityVC: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        let detail = communityList[indexPath.row]
+
+        if let dvc = storyboard?.instantiateViewController(withIdentifier: "CommunityDetailVC") as? CommunityDetailVC {
+
+            dvc.id = gino(detail.id)
+
+            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+            navigationController?.pushViewController(dvc, animated: true)
+        
+    }
+}
 }
