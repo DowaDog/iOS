@@ -682,6 +682,7 @@
 		F5508A2321D4D89200BE73FF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F5EAB1F521E8BB810005654C /* Support.storyboard */,
 				F5508A2721D4D8B100BE73FF /* NanumSquareBold.ttf */,
 				F5508A2621D4D8B100BE73FF /* NanumSquareExtraBold.ttf */,
 				F5508A2521D4D8B100BE73FF /* NanumSquareLight.ttf */,
@@ -801,7 +802,6 @@
 				4C0E95C321D890BD00301D52 /* Adopt.storyboard */,
 				4C0E95C521D890CB00301D52 /* MyProfile.storyboard */,
 				4C0E95F121D894B000301D52 /* Contents.storyboard */,
-				F5EAB1F521E8BB810005654C /* Support.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
