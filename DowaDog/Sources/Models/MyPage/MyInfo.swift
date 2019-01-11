@@ -14,6 +14,7 @@ struct MyInfo: Mappable {
     var thumbnailImg: String?
     var birth: String?
     var phone: String?
+    var email:String?
     
     init?(map: Map) {
         
@@ -25,5 +26,6 @@ struct MyInfo: Mappable {
         thumbnailImg <- map["thumbnailImg"]
         birth <- map["birth"]
         phone <- map["phone"]
+        email <- map["email"]
     }
 }

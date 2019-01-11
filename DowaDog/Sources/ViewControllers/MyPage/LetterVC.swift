@@ -80,6 +80,9 @@ extension LetterVC:UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! MailCell
         let mail = mailboxList[indexPath.row]
 
+        cell.mailImage.imageFromUrl(gsno(mail.imgPath), defaultImgPath: "")
+        cell.title.text = self.gsno(mail.title)
+        cell.subtitle.text = self.gsno(mail.detail)
         return cell
         
     }
