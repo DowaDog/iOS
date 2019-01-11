@@ -18,6 +18,7 @@ class EmergenDetailCVCell: UICollectionViewCell {
     @IBOutlet weak var sexImage: UIImageView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var dayView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         backView.roundRadius()
@@ -30,16 +31,11 @@ class EmergenDetailCVCell: UICollectionViewCell {
         
         self.heartBtn.isEnabled = false
         
-//        heartBtn.setImage(UIImage(named: "likedAnimalHeartBtnFill.png"), for: UIControl.State.selected)
-//          heartBtn.setImage(UIImage(named: "heartBtn.png"), for: UIControl.State.normal)
+        dayView.roundRadius()
     }
     
     @IBAction func heartClickAction(_ sender: Any) {
-//        if heartBtn.isSelected == false{
-//            heartBtn.isSelected = true
-//        }else{
-//            heartBtn.isSelected = false
-//        }
+
         
     }
 }

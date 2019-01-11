@@ -82,11 +82,7 @@ class StoryDogVC: UIViewController {
         
         
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-    }
+
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -233,17 +229,9 @@ class StoryDogVC: UIViewController {
 extension StoryDogVC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //
-        //        var returnValue = Int()
-        //
-        //        if section == 0{
-        //            returnValue = 0
-        //        }
-        //        else if section == 1 {
-        //            returnValue = storyArray.count
-        //////        }
-        //        return returnValue
-        return storyArray.count
+
+                return  storyArray.count
+        
     }
     
     
@@ -251,26 +239,16 @@ extension StoryDogVC:UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCell", for: indexPath) as! StoryImageCVCell
         
-        //        let section = indexPath.section
-        //
-        //        if section == 0{
-        //            return UICollectionViewCell()
-        //
-        //        } else if section == 1 {
-        //
-        let story = self.storyArray[indexPath.item]
-        //데이터 집어넣기 여기서
-        cell.storyImage.imageFromUrl(story, defaultImgPath: "communityNoimg")
-        //        }
-        return cell
+                    let story = self.storyArray[indexPath.item]
+                    //데이터 집어넣기 여기서
+                    cell.storyImage.imageFromUrl(story, defaultImgPath: "communityNoimg")
+        
+                return cell
     }
     
     
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        let section = indexPath.section
-        
+
         let view = collectionView.dequeueReusableSupplementaryView(ofKind:kind,withReuseIdentifier: resusableheader,for: indexPath) as! StoryHeader
         
         AnimalDetailService.shared.getAnimalDetail(animalIdx: id){
@@ -341,15 +319,15 @@ extension StoryDogVC:UICollectionViewDataSource{
             view.protectPlace.text = data.careName
             view.phoneNumb.setTitle(data.careTel, for: .normal)
         }
-        
-        
-        
         return view
         
     }
 }
 
+
 extension StoryDogVC: UICollectionViewDelegate{
+    
+   
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -375,3 +353,5 @@ extension StoryDogVC : UIGestureRecognizerDelegate{
     }
     
 }
+
+
