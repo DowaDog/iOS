@@ -20,6 +20,8 @@ class AboutEmergenVC: UIViewController {
     var numb : String!
     var heart: UIBarButtonItem!
     var id : Int!
+    var Dday:String?
+    
 
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var regionKind: UILabel!
@@ -29,7 +31,6 @@ class AboutEmergenVC: UIViewController {
     @IBOutlet weak var kindIcon: UIImageView!
     @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var age: UILabel!
-    @IBOutlet weak var noticeNumb: UILabel!
     @IBOutlet weak var noticeTerm: UILabel!
     @IBOutlet weak var findPlace: UILabel!
     @IBOutlet weak var protectPlace: UILabel!
@@ -66,6 +67,9 @@ class AboutEmergenVC: UIViewController {
             print("data ===================")
             print(data)
             print("data ===================")
+            
+           
+
             
             if data.liked == true{
                 self.heartClcik = true

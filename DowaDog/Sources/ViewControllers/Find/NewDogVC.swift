@@ -16,7 +16,6 @@ class NewDogVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var lastPage = 0
-    var pagelimit:Int?
     
     var reuseIdentifier = "newdogCell"
     
@@ -42,9 +41,8 @@ class NewDogVC: UIViewController {
             
             self.storyDogList  = self.storyDogList + data
             self.lastPage += 1
-            self.pagelimit = (data.count/10) + 1
-            self.collectionView.reloadData()
             
+            self.collectionView.reloadData()
             
         }
     }
@@ -136,14 +134,9 @@ extension NewDogVC:UICollectionViewDataSource{
 
 extension NewDogVC: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
         if !(indexPath.row + 1 < self.storyDogList.count) {
-            if lastPage <=  pagelimit ?? 100{
-                getData()
-            }else{
-                
-            }
-            
+            getData()
+        }
         
         
     }
@@ -155,7 +148,7 @@ extension NewDogVC: UICollectionViewDelegate{
             //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
             dvc.id = storyDog.id
             navigationController?.pushViewController(dvc, animated: true)
-            
+            print("click")
         }
         
         func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -164,29 +157,16 @@ extension NewDogVC: UICollectionViewDelegate{
         }
     }
 }
-//
-//extension NewDogVC: UICollectionViewDelegateFlowLayout {
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width: CGFloat = (view.frame.width - 45) / 2
-//        let height: CGFloat = (view.frame.width - 30) / 2 + 15
-//        return CGSize(width: width, height: height)
-//        
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//    }
-//    
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//    
-//}
-//
-//
+
+
+extension NewDogVC: UICollectionViewDelegateFlowLayout {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (view.frame.width - 45) / 2
+        let height: CGFloat = ((view.frame.width - 45) / 2) * 0.8 + 53
+        return CGSize(width: width, height: height)
+    }
+    
+    
+}

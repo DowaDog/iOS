@@ -253,7 +253,7 @@ extension StoryDogVC:UICollectionViewDataSource{
         
         AnimalDetailService.shared.getAnimalDetail(animalIdx: id){
             (data) in
-            
+           
             view.mainImage.imageFromUrl(self.gsno(data.thumbnailImg), defaultImgPath: "communityNoimg")
             view.aboutLabel.text = self.gsno(data.specialMark)
             view.age.text = "\(self.gsno(data.age))살"
