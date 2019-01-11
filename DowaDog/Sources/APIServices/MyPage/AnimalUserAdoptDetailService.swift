@@ -16,7 +16,7 @@ struct AnimalUserAdoptDetailService: APIManager, Requestable {
     let adoptDetailURL = url("/api/normal/mypage/adoptAnimals")
     let headers: HTTPHeaders = [
         "Content-Type" : "application/json",
-        "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
+        "Authorization" : UserDefaults.standard.string(forKey: "Token") ?? ""
     ]
     
     // 사용자 입양 동물 상세 조회
@@ -54,7 +54,7 @@ struct AnimalUserAdoptDetailService: APIManager, Requestable {
         
         let headers: HTTPHeaders = [
             "Content-Type" : "multipart/form-data",
-            "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
+            "Authorization" : UserDefaults.standard.string(forKey: "Token") ?? ""
         ]
         
         let neuterYnString = String(neuterYn)

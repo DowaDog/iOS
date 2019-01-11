@@ -13,7 +13,7 @@ struct CommunityListService: APIManager, Requestable{
     static let shared = CommunityListService()
     let communicationURL = url("/api/normal/community")
     let headers: HTTPHeaders = [
-        "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
+        "Authorization": UserDefaults.standard.string(forKey: "Token") ?? ""
     ]
     
     // 커뮤니티 글 목록 조회

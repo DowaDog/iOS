@@ -10,6 +10,6 @@ protocol APIManager {}
 
 extension APIManager {
     static func url(_ path: String) -> String {
-        return "http://13.209.185.163:8080" + path
+        return "https://waitforudog.ml" + path
     }
 }
