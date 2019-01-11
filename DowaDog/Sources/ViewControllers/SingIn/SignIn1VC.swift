@@ -44,11 +44,14 @@ class SignIn1VC: UIViewController {
         initGestureRecognizer()
         setupTap()
         setTextFieldTarget()
+        self.title = "개인 정보 입력"
+        self.navBarTitleColor = UIColor(red: 72/255, green: 72/255, blue: 72/255, alpha: 1.0)
 
         
         // navBar
         self.setNavigationBarShadow()
         setBackBtn()
+        
         
         // UI
         profileImage.circleImageView()
@@ -122,9 +125,10 @@ class SignIn1VC: UIViewController {
             nextBtn.isEnabled = true
         } else {
             nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
+            nextBtn.isEnabled = false
         }
         
-        // 이메일 중복확인 이 후에 데이터 수정이 발생할 시 작동
+        // 이메일 중복확인 이후에 데이터 수정이 발생할 시 작동
         if textField == emailTextField && emailCheck == true {
             emailCheck = false
         }
@@ -146,13 +150,13 @@ class SignIn1VC: UIViewController {
                     self.simpleAlert(title: "성공", message: "등록 가능한 이메일입니다.")
                     self.emailCheck = true
                 } else if data.data == true {
-                    self.simpleAlert(title: "실패", message: "이미 등록된 이메일입니다. 다시 입력해주세요!")
+                    self.simpleAlert(title: "실패", message: "이미 사용 중인 이메일입니다.")
                     self.emailCheck = false
                 }
             }
             
         } else {
-            self.simpleAlert(title: "경고", message: "올바르지 않은 이메일 형식입니다.")
+            self.simpleAlert(title: "유효하지 않은 이메일", message: "이메일 형식을 확인하세요.")
         }
         
         // end editing
@@ -185,10 +189,10 @@ class SignIn1VC: UIViewController {
 
                                 self.navigationController?.pushViewController(dvc, animated: true)
                             }
-                        } else { self.simpleAlert(title: "경고", message: "이메일 중복체크를 확인해주세요.")}
-                    } else { self.simpleAlert(title: "경고", message: "전화번호를 확인해주세요.") }
-                } else { self.simpleAlert(title: "경고", message: "생년월일을 확인해주세요.") }
-            } else { self.simpleAlert(title: "경고", message: "이름을 확인해주세요.") }
+                        } else { self.simpleAlert(title: "경고", message: "이메일 중복체크를 확인하세요.")}
+                    } else { self.simpleAlert(title: "경고", message: "전화번호를 확인하세요.") }
+                } else { self.simpleAlert(title: "경고", message: "생년월일을 확인하세요.") }
+            } else { self.simpleAlert(title: "경고", message: "이름을 확인하세요.") }
         }
     }
 }

@@ -93,7 +93,7 @@ extension UIViewController {
     // 유효성 검사 아이디
     func isValidId(id: String) -> Bool {
         
-        let idRegEx = "[A-Z0-9a-z._%+-]{2,8}"
+        let idRegEx = "^[A-Z0-9a-z]{4,12}$"
         
         let idTest = NSPredicate(format:"SELF MATCHES %@", idRegEx)
         
@@ -112,7 +112,7 @@ extension UIViewController {
     
     func isValidBirth(birth: String) -> Bool {
         
-        let birthRegEx = "[0-9]{8}"
+        let birthRegEx = "^[0-9]{8}$"
         
         let birthTest = NSPredicate(format: "SELF MATCHES %@", birthRegEx)
         
@@ -126,6 +126,17 @@ extension UIViewController {
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegEx)
         
         return phoneTest.evaluate(with: phone)
+    }
+    
+    func isValidPw(password: String) -> Bool {
+        
+        print("extension:\(password)")
+        
+        let pwRegEx = "^(?=.*[0-9])(?=.*[a-z]).{8,}$"
+        
+        let pwTest = NSPredicate(format: "SELF MATCHES %@", pwRegEx)
+        
+        return pwTest.evaluate(with: password)
     }
 }
 
