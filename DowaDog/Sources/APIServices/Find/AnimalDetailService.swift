@@ -13,7 +13,7 @@ struct AnimalDetailService: APIManager, Requestable{
     static let shared = AnimalDetailService()
     let dogDetailURL = url("/api/normal/animals")
     let headers: HTTPHeaders = [
-        "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidGFla3l1bmcwNDAyIiwiaXNzIjoiZG93YWRvZyIsImV4cCI6MTU3ODI4NDQzOH0.MTN9ke4pknmiqwu29Je24mUWn56GVM8OEuCca4HEPqI"
+        "Authorization": UserDefaults.standard.string(forKey: "Token") ?? ""
     ]
     
     // 유기동물 상세조회

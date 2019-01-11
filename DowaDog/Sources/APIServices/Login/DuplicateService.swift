@@ -24,15 +24,7 @@ struct DuplicateService: APIManager, Requestable {
         gettable(queryURL, body: nil, header: nil) { res in
             switch res {
             case .success(let value):
-                
-                
-                
-                
-                print(".success=========================")
-                print("value: ")
-                print(value)
-                print(".success=========================")
-                
+            
                 completion(value)
                 
             case .error(let error):
@@ -57,12 +49,6 @@ struct DuplicateService: APIManager, Requestable {
             res in
             switch res {
             case .success(let value):
-                
-                
-                print(".success=========================")
-                print("value: ")
-                print(value)
-                print(".success=========================")
                 
                 completion(value)
             case .error(let error):

@@ -12,91 +12,92 @@ import UIKit
 
 class SignIn2VC: UIViewController {
     
-    
+    // send variables
     var name:String?
     var birth:String?
     var email:String?
     var numb:String?
     var profileImage: UIImage?
     
-    
+    // valid flag
     var emptyCheck = false
     var idCheck = false
+    
+    // UI
     @IBOutlet weak var profile: UIImageView!
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var pwCheckTextField: UITextField!
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
+    // Outlet
     @IBOutlet weak var nextBtn: UIButton!
     
-    @IBOutlet weak var idTextField: UITextField!
-    @IBOutlet weak var pwTextField: UITextField!
     
-    @IBOutlet weak var pwCheckTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextBtn.isEnabled = true
         
-        self.setNavigationBarShadow()
+        
+        // init
+        nextBtn.isEnabled = false
+        initGestureRecognizer()
         setTarget()
+        profile.circleImageView()
+        self.title = "개인 정보 입력"
         
+        // navBar
+        self.setNavigationBarShadow()
         self.setBackBtn()
         
-        initGestureRecognizer()
         
-        profile.circleImageView()
+        
         
         
         
     }
-    
-    
-    func setTarget(){
-        
-        idTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
-        pwTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
-        pwCheckTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
-    
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
-        registerForKeyboardNotifications()
         
-       profile.image = profileImage
+        profile.image = profileImage
+        
+        registerForKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         unregisterForKeyboardNotifications()
     }
     
-    @objc func textFieldDidChange(textField: UITextField){
-        if idTextField.text == "" || pwTextField.text == "" || pwCheckTextField.text == ""  {
-            nextBtn.backgroundColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1.0)
-        }
-        
-        if idTextField.text != "" {
-            if pwTextField.text != "" {
-                if pwCheckTextField.text != "" {
-                    
-                    emptyCheck = true
-                    endCheck()
-                    
-                }
-            }
-        }
-        
+    
+    // set
+    func setTarget(){
+        idTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        pwTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        pwCheckTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
-    func endCheck (){
-        if emptyCheck == true && idCheck == true {
-            
-            nextBtn.backgroundColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
+    
+   
+    // 유효성 검사 (빈칸)
+    @objc func textFieldDidChange(textField: UITextField) {
+        
+        if idTextField.text != "" && pwTextField.text != "" && pwCheckTextField.text != "" {
+            nextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
             nextBtn.isEnabled = true
-            
+        } else {
+            nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
+            nextBtn.isEnabled = false
+        }
+        
+        // 아이디 중복확인 이후에 데이터 수정이 발생할 시 작동
+        if textField == idTextField && idCheck == true {
+            idCheck = false
         }
     }
     
+    // 유효성 검사 (아이디 중복체크)
     @IBAction func checkIdAction(_ sender: Any) {
         
         let test = isValidId(id: idTextField.text!)
@@ -114,7 +115,6 @@ class SignIn2VC: UIViewController {
                     
                     self.simpleAlert(title: "성공", message: "사용 가능한 아이디입니다.")
                     self.idCheck = true
-                    self.endCheck()
                     
                 }
                 else if data.data == true{
@@ -124,43 +124,51 @@ class SignIn2VC: UIViewController {
                 }
             }
         } else {
-            self.simpleAlert(title: "실패", message: "올바른 형태의 아이디를 입력하세요.")
+            self.simpleAlert(title: "유효하지 않은 아이디", message: "숫자와 문자 포함 4~12자리")
+            self.idCheck = false
         }
-        
     }
     
     
+    
+    // submit action
     @IBAction func submitAction(_ sender: UIButton) {
         
+        let pwTest = isValidPw(password: gsno(pwTextField.text))
         
-        guard let id = idTextField.text else{return}
-        guard let password = pwTextField.text else{return}
-        guard let name = name else{ return}
-        guard let birth = birth else{return}
-        guard let phone = numb else{return}
-        guard let email = email else{return}
-        guard let profile = profileImage else{return}
-        //이미지 꼴 바꾸기 kingfisher
+        print("vc:\(gsno(pwTextField.text))")
         
         
-        if pwCheckTextField.text == pwTextField.text{
-            
-            DuplicateService.shared.signUp(id: id, password: password, name: name, birth: birth, phone: phone, email: email, profileImgFile: profile) {
-                (data) in
-                
-                
-                self.simpleAlert(title: "회원가입 성공!", message: "로그인하세요.")
-                
-                self.performSegue(withIdentifier: "goToLoginVC", sender: self)
-            }
-        } else if pwCheckTextField.text != pwTextField.text{
-            
-            simpleAlert(title: "회원가입 실패", message: "패스워드가 일치하지 않습니다.")
-        }
+        if idCheck {
+            if pwTest {
+                if pwTextField.text == pwCheckTextField.text {
+                    
+                    guard let id = idTextField.text else{return}
+                    guard let password = pwTextField.text else{return}
+                    guard let name = name else{ return}
+                    guard let birth = birth else{return}
+                    guard let phone = numb else{return}
+                    guard let email = email else{return}
+                    guard let profile = profileImage else{return}
+                    
+                    DuplicateService.shared.signUp(id: id, password: password, name: name, birth: birth, phone: phone, email: email, profileImgFile: profile) {
+                        (data) in
+                        
+                        self.simpleAlert(title: "회원가입 성공!", message: "로그인하세요.")
+                    }
+                    
+                    self.performSegue(withIdentifier: "goToLoginVC", sender: self)
+                    
+                } else { self.simpleAlert(title: "경고", message: "비밀번호가 일치하지 않습니다.")}
+            } else { self.simpleAlert(title: "유효하지 않은 비밀번호", message: "숫자와 문자 포함 8자리 이상")}
+        } else { self.simpleAlert(title: "경고", message: "아이디 중복체크를 확인하세요.")}
     }
 }
 
 
+
+
+// Gesture Recognizer Delegate
 extension SignIn2VC: UIGestureRecognizerDelegate {
     
     func initGestureRecognizer() {

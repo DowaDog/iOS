@@ -13,6 +13,13 @@ class HomeVC: UIViewController {
     // 0 -> -428
     @IBOutlet var cardViewConstraint: NSLayoutConstraint!
 
+    // profile set
+    @IBOutlet var profileImg: UIImageView!
+    @IBOutlet var myName: UILabel!
+    @IBOutlet var loginPanel: UIView!
+    
+    // 구조수
+    @IBOutlet var todayCount: UILabel!
     
     
     
@@ -107,6 +114,9 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
+        profileImg.layer.cornerRadius = profileImg.layer.frame.height/2
+        profileImg.layer.masksToBounds = true
+        
         
         upSwipe.direction = .up
         downSwipe.direction = .down
@@ -118,6 +128,8 @@ class HomeVC: UIViewController {
         setSideMenu()
         setGuideView()
         setCardView()
+        
+        
 
 
 
@@ -144,6 +156,18 @@ class HomeVC: UIViewController {
             
             
             self.newFlag = self.gbno(data.data?.userCheck)
+        }
+        
+        
+        
+        
+        
+        MyInfoService.shared.getMyInfo() {
+            (data) in
+            self.myName.text = "\(self.gsno(data.data?.name))님,"
+            self.profileImg.imageFromUrl(self.gsno(data.data?.thumbnailImg), defaultImgPath: "")
+            
+            self.loginPanel.isHidden = false
         }
     }
     
@@ -285,6 +309,11 @@ class HomeVC: UIViewController {
     }
     
     
+    // 로그인으로 unwind
+    @IBAction func loginBtnAction(_ sender: UIStoryboardSegue) {
+        hideMenu()
+        performSegue(withIdentifier: "unwindToLogin", sender: self)
+    }
     
     
     
@@ -346,6 +375,15 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -517,28 +555,9 @@ class HomeVC: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    
     //unwind Point
     @IBAction func unwindAction(_ sender: UIStoryboardSegue) {}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // 가이드뷰 하단 모서리 둥글게 설정

@@ -170,3 +170,31 @@ extension NewDogVC: UICollectionViewDelegateFlowLayout {
     
     
 }
+}
+//
+//extension NewDogVC: UICollectionViewDelegateFlowLayout {
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let width: CGFloat = (view.frame.width - 45) / 2
+//        let height: CGFloat = (view.frame.width - 30) / 2 + 15
+//        return CGSize(width: width, height: height)
+//        
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//    }
+//    
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
+//    
+//    
+//}
+//
+//
+>>>>>>> 55fe258e606dadfec4e47b7d0866da023c5b1e2e

@@ -159,6 +159,8 @@
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
 		F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA521DA725800231B27 /* CustomTextView.swift */; };
 		F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */; };
+		F5EAB1F621E8BB810005654C /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EAB1F521E8BB810005654C /* Support.storyboard */; };
+		F5EAB1F921E8C1E50005654C /* SupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB1F821E8C1E50005654C /* SupportVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -318,6 +320,8 @@
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F58ADAA521DA725800231B27 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep2VC.swift; sourceTree = "<group>"; };
+		F5EAB1F521E8BB810005654C /* Support.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
+		F5EAB1F821E8C1E50005654C /* SupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -732,6 +736,7 @@
 		F5508A2F21D4D8D200BE73FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F5EAB1F721E8C1D40005654C /* Support */,
 				F511E29321E5E2AA004E462F /* Search */,
 				F524E9E121DF55AC0001CA5A /* Info */,
 				4CF99FE821DB4B44007F34EB /* AdoptPopupTestVC.swift */,
@@ -793,6 +798,7 @@
 				4C0E95C321D890BD00301D52 /* Adopt.storyboard */,
 				4C0E95C521D890CB00301D52 /* MyProfile.storyboard */,
 				4C0E95F121D894B000301D52 /* Contents.storyboard */,
+				F5EAB1F521E8BB810005654C /* Support.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -878,6 +884,14 @@
 			path = Adopt;
 			sourceTree = "<group>";
 		};
+		F5EAB1F721E8C1D40005654C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F5EAB1F821E8C1E50005654C /* SupportVC.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -942,6 +956,7 @@
 				F5508A2B21D4D8B100BE73FF /* NanumSquareBold.ttf in Resources */,
 				F524E9E021DF553A0001CA5A /* Info.storyboard in Resources */,
 				4C0E95C021D8909900301D52 /* Finding.storyboard in Resources */,
+				F5EAB1F621E8BB810005654C /* Support.storyboard in Resources */,
 				4C0E95C621D890CB00301D52 /* MyProfile.storyboard in Resources */,
 				F5508A2821D4D8B100BE73FF /* NanumSquareRegular.ttf in Resources */,
 				F5508A2A21D4D8B100BE73FF /* NanumSquareExtraBold.ttf in Resources */,
@@ -1054,6 +1069,7 @@
 				F5609D5721E11B170090E3B6 /* MyScrapVC.swift in Sources */,
 				F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */,
 				F511E27021E487FD004E462F /* ContentDetail.swift in Sources */,
+				F5EAB1F921E8C1E50005654C /* SupportVC.swift in Sources */,
 				F54B112721E340D8000BA8DF /* AnimalStoryList.swift in Sources */,
 				4C0E95CD21D8914300301D52 /* SignIn1VC.swift in Sources */,
 				4C0E95EB21D8937C00301D52 /* EmergencyCVCell.swift in Sources */,
