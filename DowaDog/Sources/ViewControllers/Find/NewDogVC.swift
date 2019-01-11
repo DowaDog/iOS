@@ -164,6 +164,7 @@ extension NewDogVC: UICollectionViewDelegate{
         }
     }
 }
+}
 //
 //extension NewDogVC: UICollectionViewDelegateFlowLayout {
 //    
