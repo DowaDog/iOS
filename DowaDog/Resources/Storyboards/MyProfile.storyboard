@@ -39,14 +39,14 @@
                                     <constraint firstAttribute="width" constant="86" id="yDx-KD-NY1"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-dQ-Gzx">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-dQ-Gzx">
                                 <rect key="frame" x="206" y="138" width="27" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27" id="F8J-Ce-65L"/>
                                     <constraint firstAttribute="width" secondItem="jUK-dQ-Gzx" secondAttribute="height" multiplier="1:1" id="OD4-Gz-tCV"/>
                                     <constraint firstAttribute="height" constant="27" id="x9z-Gh-K7y"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="settingCameraIcon"/>
+                                <state key="normal" image="settingCameraIcon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 정보" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOf-oA-oI5">
                                 <rect key="frame" x="16" y="180" width="39" height="15"/>

@@ -160,6 +160,7 @@
 		F58ADAA421DA2ED600231B27 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA321DA2ED600231B27 /* CheckBox.swift */; };
 		F58ADAA621DA725800231B27 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA521DA725800231B27 /* CustomTextView.swift */; };
 		F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */; };
+		F5DC3A6C21E94E3200D5544C /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC3A6B21E94E3200D5544C /* SplashVC.swift */; };
 		F5EAB1F621E8BB810005654C /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EAB1F521E8BB810005654C /* Support.storyboard */; };
 		F5EAB1F921E8C1E50005654C /* SupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB1F821E8C1E50005654C /* SupportVC.swift */; };
 /* End PBXBuildFile section */
@@ -322,6 +323,7 @@
 		F58ADAA321DA2ED600231B27 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F58ADAA521DA725800231B27 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep2VC.swift; sourceTree = "<group>"; };
+		F5DC3A6B21E94E3200D5544C /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		F5EAB1F521E8BB810005654C /* Support.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
 		F5EAB1F821E8C1E50005654C /* SupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -739,6 +741,7 @@
 		F5508A2F21D4D8D200BE73FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F5B8957B21E93CF700F4DB8E /* Splash */,
 				F5EAB1F721E8C1D40005654C /* Support */,
 				F511E29321E5E2AA004E462F /* Search */,
 				F524E9E121DF55AC0001CA5A /* Info */,
@@ -887,6 +890,14 @@
 			path = Adopt;
 			sourceTree = "<group>";
 		};
+		F5B8957B21E93CF700F4DB8E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC3A6B21E94E3200D5544C /* SplashVC.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		F5EAB1F721E8C1D40005654C /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,10 +1024,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-DowaDog/Pods-DowaDog-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1024,10 +1033,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1070,6 +1077,7 @@
 				F5508A1021D4D54400BE73FF /* AppDelegate.swift in Sources */,
 				4C0E95F421D8A9A100301D52 /* CustomColorUICVLayoutAttributes.swift in Sources */,
 				F566A48421E24DF100FE958B /* MyInfo.swift in Sources */,
+				F5DC3A6C21E94E3200D5544C /* SplashVC.swift in Sources */,
 				F5609D5721E11B170090E3B6 /* MyScrapVC.swift in Sources */,
 				F5609D9E21E1E1A60090E3B6 /* Requestable.swift in Sources */,
 				F511E27021E487FD004E462F /* ContentDetail.swift in Sources */,

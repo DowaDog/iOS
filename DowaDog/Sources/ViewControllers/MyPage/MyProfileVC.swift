@@ -20,11 +20,18 @@ class MyProfileVC: UIViewController {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var email: UITextField!
     
+    var flag = false
+    
+    let picker = UIImagePickerController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker.delegate = self
 
         confirmItem = UIBarButtonItem(title: "확인", style: .plain, target: self, action: #selector(confirmTapped))
-         confirmItem.tintColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
+        confirmItem.tintColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
         
         navigationItem.rightBarButtonItems = [ confirmItem ]
         
@@ -49,13 +56,13 @@ class MyProfileVC: UIViewController {
             print("data ===================")
             print(data)
             print("data ===================")
-        
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyy.MM.dd"
            
-
-            self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
+            if self.flag == false {
+                self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
+            }
+            
             self.name.text = self.gsno(data.data?.name)
+            self.birth.text = self.gsno(data.data?.birth)
             self.phone.text = self.gsno(data.data?.phone)
             self.email.text = self.gsno(data.data?.email)
 
@@ -68,14 +75,14 @@ class MyProfileVC: UIViewController {
         
         print("transfer=========")
         
-        let name = self.name.text
-        let birth = self.birth.text
-        let phone = self.phone.text
-        let profileImg:UIImage! = self.profileImage.image
-        let email = self.email.text
+        guard let name = self.name.text else {return}
+        guard let birth = self.birth.text else {return}
+        guard let phone = self.phone.text else {return}
+        guard let profileImg = self.profileImage.image else {return}
+        guard let email = self.email.text else {return}
         
         
-        MyInfoEditService.shared.putMyInfo(name: name ?? "--", phone: phone ?? "--", email: email ?? "--", birth: birth ?? "--", profileImgFile: profileImg ) {
+        MyInfoEditService.shared.putMyInfo(name: name, phone: phone, email: email, birth: birth, profileImgFile: profileImg ) {
             (data) in
             
             print("data ===================")
@@ -85,13 +92,10 @@ class MyProfileVC: UIViewController {
         print("transfer=========")
         
             navigationController?.popViewController(animated: true)
-        
- 
     }
     
 
     func setupTap() {
-        
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         self.profileImage.addGestureRecognizer(imageTap)
     }
@@ -99,14 +103,30 @@ class MyProfileVC: UIViewController {
 
     // image Tapped
     @objc func imageTapped() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
         
         
-        picker.sourceType = .photoLibrary
-        picker.allowsEditing = true
+        let actionSheet = UIAlertController(title: "사진 첨부", message: "", preferredStyle: .actionSheet)
         
-        self.present(picker, animated: true)
+        actionSheet.addAction(UIAlertAction(title: "카메라", style: .default, handler: { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.picker.sourceType = .camera
+                self.picker.allowsEditing = true
+                self.picker.showsCameraControls = true
+                self.present(self.picker, animated: true)
+            } else {
+                print("not available")
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "앨범", style: .default, handler: { (action) in
+            self.picker.sourceType = .photoLibrary
+            self.picker.allowsEditing = true
+            self.present(self.picker, animated: true)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel))
+        
+        self.present(actionSheet, animated: true)
     }
 
 }
@@ -119,13 +139,12 @@ extension MyProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDe
         dismiss(animated: true, completion: nil)
     }
     
-    //이미지 피커에서 이미지를 선택하였을 때 일어나는 이벤트를 작성하는 메소드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         var newImg = UIImage()
         
         if let possibleImg = info[.editedImage] as? UIImage {
             newImg = possibleImg
-            
         }
         else if let possibleImg = info[.originalImage] as? UIImage {
             newImg = possibleImg
@@ -133,7 +152,10 @@ extension MyProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDe
         else {
             return
         }
-        profileImage.image = newImg
+        self.flag = true
+        
+        
+        self.profileImage.image = newImg
         
         dismiss(animated: true, completion: nil)
     }
