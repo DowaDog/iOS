@@ -133,8 +133,6 @@ class SearchVC: UIViewController {
             
             let nextVC = segue.destination as! SearchResultVC
             
-           
-            
             nextVC.navTitle = searchTF.text!
             nextVC.searchWord = searchWord
         }

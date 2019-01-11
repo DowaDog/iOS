@@ -50,6 +50,9 @@
                                 <state key="normal" image="mainFindingBtn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="newFamBtnAction:" destination="ifU-eu-E2I" eventType="touchUpInside" id="jI2-4g-WSE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-hH-to4">
                                 <rect key="frame" x="56" y="81" width="46" height="27"/>
@@ -582,6 +585,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="categoryMypageIcon" style="plain" id="oSL-Ig-VT9">
                             <color key="tintColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="rightItemBtnAction:" destination="ifU-eu-E2I" id="pLS-p5-mS8"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

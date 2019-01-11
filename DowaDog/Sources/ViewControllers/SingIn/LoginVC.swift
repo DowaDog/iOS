@@ -27,9 +27,6 @@ class LoginVC: UIViewController {
     
     var token = [Token]()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,6 +64,8 @@ class LoginVC: UIViewController {
                 
                 
                 if data.message == "로그인 성공" {
+                    
+                    
                     UserDefaults.standard.set(data.data?.refreshToken?.data, forKey: "Token")
                     
                     let login = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeNav") as! UINavigationController

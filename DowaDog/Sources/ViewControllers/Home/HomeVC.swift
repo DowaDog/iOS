@@ -68,12 +68,12 @@ class HomeVC: UIViewController {
     @IBOutlet var stateImageView: UIImageView!
     let stateImageArray: Array<UIImage> = [
         UIImage(named: "mainSlideNonadoptImg")!,
-        UIImage(named: "mainSlideFailImg")!,
         UIImage(named: "mainSlide1StepImg")!,
         UIImage(named: "mainSlide2StepImg")!,
         UIImage(named: "mainSlide3StepImg")!,
         UIImage(named: "mainSlide4StepImg")!,
-        UIImage(named: "mainSlide5StepImg")!
+        UIImage(named: "mainSlide5StepImg")!,
+        UIImage(named: "mainSlideFailImg")!
     ]
     
     
@@ -154,6 +154,32 @@ class HomeVC: UIViewController {
                 self.new.alpha = 1
             }
             
+            let index = self.state.firstIndex(of: self.gsno(data.data?.view))
+            
+            self.stateImageView.image = self.stateImageArray[index!]
+            self.stateImageView.alpha = 0
+            
+            if index == 3 {
+                self.place.text = self.gsno(data.data?.place)
+                self.time.text = self.gsno(data.data?.time)
+                
+                self.place.isHidden = false
+                self.time.isHidden = false
+                self.prepare1.isHidden = false
+                self.prepare2.isHidden = false
+                self.prepare3.isHidden = false
+            } else {
+                self.place.text = ""
+                self.time.text = ""
+                self.place.isHidden = true
+                self.time.isHidden = true
+                self.prepare1.isHidden = true
+                self.prepare2.isHidden = true
+                self.prepare3.isHidden = true
+            }
+            
+ 
+            
             self.todayCount.text = String(self.gino(data.data?.totalCount))
             
             
@@ -172,10 +198,6 @@ class HomeVC: UIViewController {
             self.loginPanel.isHidden = false
         }
     }
-    
-    
-    
-    
     
     
     
@@ -253,24 +275,6 @@ class HomeVC: UIViewController {
     
     
     
-    // sideMenu 를 뷰 최상단으로 지정
-    func setSideMenu() {
-        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
-        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
-        
-        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
-    }
-    
-    // init BlackScreen
-    func setBlackScreen() {
-        blackScreen=UIView(frame: self.view.bounds)
-        blackScreen.alpha = 0
-        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        self.navigationController?.view.addSubview(blackScreen)
-        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
-        blackScreen.addGestureRecognizer(tapGestRecognizer)
-    }
-
     
     
     
@@ -290,94 +294,15 @@ class HomeVC: UIViewController {
     
     
     
-    // Open sideMenu
-    func showMenu() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 1
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
-            self.sideMenuView.transform = .identity
-        })
-    }
-    // Close sideMenu
-    func hideMenu() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 0
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
-            self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
-        })
-    }
-    
-    
-    // 로그인으로 unwind
-    @IBAction func loginBtnAction(_ sender: UIStoryboardSegue) {
-        hideMenu()
-        performSegue(withIdentifier: "unwindToLogin", sender: self)
-    }
     
     
     
-    @IBAction func sideNavBtnAction(_ sender: UIButton) {
-        
-        if let btnTitle = sender.titleLabel?.text {
-            switch (btnTitle) {
-            case "홈":
-                hideMenu()
-                
-                break
-            case "기다릴개 란?":
-                hideMenu()
-                
-                let info = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "InfoNav") as! UINavigationController
-                
-                self.present(info, animated: true, completion: nil)
-                
-                break
-            case "입양하기":
-                hideMenu()
-                
-                let finding = UIStoryboard(name: "Finding", bundle: nil).instantiateViewController(withIdentifier: "FindingNav") as! UINavigationController
-                
-                self.present(finding, animated: true, completion: nil)
-                
-                break
-            case "커뮤니티":
-                hideMenu()
-                
-                let community = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityNav") as! UINavigationController
-                
-                self.present(community, animated: true, completion: nil)
-                break
-            case "컨텐츠":
-                hideMenu()
-                
-                let contents = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentsNav") as! UINavigationController
-                
-                self.present(contents, animated: true, completion: nil)
-                break
-            case "마이페이지":
-                hideMenu()
-                
-                let myProfile = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyProfileNav") as! UINavigationController
-                
-                self.present(myProfile, animated: true, completion: nil)
-                break
-            case "기다릴개와 함께할개":
-                hideMenu()
-                
-                let support = UIStoryboard(name: "Support", bundle: nil).instantiateViewController(withIdentifier: "SupportNav") as! UINavigationController
-                
-                self.present(support, animated: true, completion: nil)
-                break
-            default:
-                hideMenu()
-                break
-            }
-        }
-    }
+    
+    
+    
+    
+    
+    
     
     
     
@@ -428,7 +353,12 @@ class HomeVC: UIViewController {
     // 카드뷰 스와이프
     @IBAction func downSwipeAction(_ sender: UISwipeGestureRecognizer) {
 
-        
+        HomeService.shared.getHome() {
+            (data) in
+            
+            let index = self.state.firstIndex(of: self.gsno(data.data?.view))
+            self.stateImageView.image = self.stateImageArray[index!]
+        }
         
         UIView.animate(withDuration: 0.3, animations: {
             self.navigationController?.navigationBar.layer.zPosition = 1
@@ -466,12 +396,153 @@ class HomeVC: UIViewController {
     
     
     
+    // 중
+    
+    
+    @IBAction func sideNavBtnAction(_ sender: UIButton) {
+        
+        if let btnTitle = sender.titleLabel?.text {
+            switch (btnTitle) {
+            case "홈":
+                hideMenu()
+                
+                break
+            case "기다릴개 란?":
+                hideMenu()
+                
+                let info = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "InfoNav") as! UINavigationController
+                
+                self.present(info, animated: true, completion: nil)
+                
+                break
+            case "입양하기":
+                hideMenu()
+                
+                let finding = UIStoryboard(name: "Finding", bundle: nil).instantiateViewController(withIdentifier: "FindingNav") as! UINavigationController
+                
+                self.present(finding, animated: true, completion: nil)
+                
+                break
+            case "커뮤니티":
+                hideMenu()
+                
+                let community = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityNav") as! UINavigationController
+                
+                self.present(community, animated: true, completion: nil)
+                break
+            case "컨텐츠":
+                hideMenu()
+                
+                let contents = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentsNav") as! UINavigationController
+                
+                self.present(contents, animated: true, completion: nil)
+                break
+            case "마이페이지":
+                hideMenu()
+                let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
+                
+                self.navigationController?.pushViewController(myPage, animated: true)
+                break
+            case "기다릴개와 함께할개":
+                hideMenu()
+                
+                let support = UIStoryboard(name: "Support", bundle: nil).instantiateViewController(withIdentifier: "SupportNav") as! UINavigationController
+                
+                self.present(support, animated: true, completion: nil)
+                break
+            default:
+                hideMenu()
+                break
+            }
+        }
+    }
     
     
     
     
     
     
+    
+    // 끝
+    
+    
+    
+    // Open sideMenu
+    func showMenu() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackScreen.alpha = 1
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = .identity
+        })
+    }
+    // Close sideMenu
+    func hideMenu() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackScreen.alpha = 0
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+        })
+    }
+    
+    // sideMenu 를 뷰 최상단으로 지정
+    func setSideMenu() {
+        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
+        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
+        
+        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+    }
+    
+    // init BlackScreen
+    func setBlackScreen() {
+        blackScreen=UIView(frame: self.view.bounds)
+        blackScreen.alpha = 0
+        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        self.navigationController?.view.addSubview(blackScreen)
+        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
+        blackScreen.addGestureRecognizer(tapGestRecognizer)
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // 로그인으로 unwind
+    @IBAction func loginBtnAction(_ sender: UIStoryboardSegue) {
+        hideMenu()
+        performSegue(withIdentifier: "unwindToLogin", sender: self)
+    }
+    
+    
+    
+    
+    
+    
+    @IBAction func rightItemBtnAction(_ sender: Any) {
+        let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
+        
+        self.navigationController?.pushViewController(myPage, animated: true)
+    }
+    
+    
+    @IBAction func newFamBtnAction(_ sender: UIButton) {
+        let login = UIStoryboard(name: "Finding", bundle: nil).instantiateViewController(withIdentifier: "FindingNav") as! UINavigationController
+        
+        self.present(login, animated: true, completion: nil)
+    }
     
     
     
