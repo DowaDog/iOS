@@ -15,7 +15,9 @@ struct Home: Mappable {
     var place: String?
     var time: String?
     var material: String?
+    var totalCount: Int?
     var view: String?
+    
     
     init?(map: Map) {}
     
@@ -26,6 +28,7 @@ struct Home: Mappable {
         place <- map["place"]
         time <- map["material"]
         material <- map["material"]
+        totalCount <- map["totalCount"]
         view <- map["view"]
     }
 }

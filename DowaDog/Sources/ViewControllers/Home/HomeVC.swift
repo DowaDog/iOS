@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
     
     // Step3
     @IBOutlet var place: UILabel!
-    @IBOutlet var date: UILabel!
+    @IBOutlet var time: UILabel!
     @IBOutlet var prepare1: UILabel!
     @IBOutlet var prepare2: UILabel!
     @IBOutlet var prepare3: UILabel!
@@ -153,6 +153,9 @@ class HomeVC: UIViewController {
             } else {
                 self.new.alpha = 1
             }
+            
+            self.todayCount.text = String(self.gino(data.data?.totalCount))
+            
             
             self.newFlag = self.gbno(data.data?.userCheck)
         }

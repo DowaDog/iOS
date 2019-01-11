@@ -588,7 +588,6 @@
                         <outlet property="blackScreen2" destination="n0r-yc-4vi" id="vCp-iM-Rvw"/>
                         <outlet property="cardView" destination="ocE-yZ-3EX" id="18b-zP-uD6"/>
                         <outlet property="cardViewConstraint" destination="71J-TK-qkV" id="cn4-QO-4ll"/>
-                        <outlet property="date" destination="Xpk-Le-KoI" id="pnq-ex-zO4"/>
                         <outlet property="downSwipe" destination="iEa-se-KPW" id="67Y-vZ-x2H"/>
                         <outlet property="guideImageView" destination="xDO-LH-gA4" id="Mp9-kv-qLR"/>
                         <outlet property="guideIndicator" destination="rzd-iL-kur" id="Egj-Q3-Yht"/>
@@ -607,6 +606,7 @@
                         <outlet property="rightSwipe" destination="QOq-Ql-Olu" id="zmw-Ne-VKB"/>
                         <outlet property="sideMenuView" destination="5fP-3x-OzS" id="2bD-wZ-Nv5"/>
                         <outlet property="stateImageView" destination="hSf-6q-mpB" id="P4q-cj-8wc"/>
+                        <outlet property="time" destination="Xpk-Le-KoI" id="9it-o7-D7t"/>
                         <outlet property="todayCount" destination="s8n-sI-7Hk" id="Axq-SP-5i1"/>
                         <outlet property="upSwipe" destination="Hfm-7g-TAV" id="NoX-c7-clJ"/>
                         <segue destination="gZE-0x-zdp" kind="unwind" identifier="unwindToLogin" unwindAction="unwindAction:" id="2Q9-Wy-ImB"/>
