@@ -15,8 +15,8 @@ class NoResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        self.setNavigationBar()
-        //        self.setBackBtn(color: UIColor(red: 111/255, green: 111/255, blue: 111/255, alpha: 1.0))
+        self.setBackBtn()
+        self.setNavigationBarClear()
         
         
         self.navigationItem.title = "'" + navTitle! + "'에 대한 검색 결과"
