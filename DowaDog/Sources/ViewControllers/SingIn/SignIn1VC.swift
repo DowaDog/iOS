@@ -45,7 +45,6 @@ class SignIn1VC: UIViewController {
         setupTap()
         setTextFieldTarget()
         self.title = "개인 정보 입력"
-        self.navBarTitleColor = UIColor(red: 72/255, green: 72/255, blue: 72/255, alpha: 1.0)
 
         
         // navBar
