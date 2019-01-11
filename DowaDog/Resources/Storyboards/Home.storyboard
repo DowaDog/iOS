@@ -228,6 +228,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <connections>
+                                            <action selector="loginBtnAction:" destination="ifU-eu-E2I" eventType="touchUpInside" id="Ihe-eY-BZV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02R-3P-FmN">
                                         <rect key="frame" x="30" y="189" width="16" height="20"/>
@@ -386,7 +389,7 @@
                                             <action selector="xBtnAction:" destination="ifU-eu-E2I" eventType="touchUpInside" id="YTa-FD-bzT"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hb-rS-iwp">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hb-rS-iwp" userLabel="LoginPanel">
                                         <rect key="frame" x="0.0" y="86" width="285" height="43"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이승언님," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agn-5f-vji">
@@ -531,6 +534,7 @@
                         <outlet property="guideView" destination="8sT-Zk-G5i" id="wpu-wb-fNB"/>
                         <outlet property="guideViewNextBtn" destination="5Sm-gG-IAa" id="Iif-yQ-pB9"/>
                         <outlet property="leftSwipe" destination="xXX-s1-Ctg" id="mZU-Bh-kry"/>
+                        <outlet property="loginPanel" destination="7hb-rS-iwp" id="HYX-lJ-3a8"/>
                         <outlet property="myName" destination="Agn-5f-vji" id="7QL-1P-AYc"/>
                         <outlet property="new" destination="XBf-Xi-R50" id="2mp-FR-pNC"/>
                         <outlet property="newFamBtn" destination="C9z-zA-wTb" id="E68-k8-737"/>
@@ -538,10 +542,13 @@
                         <outlet property="rightSwipe" destination="QOq-Ql-Olu" id="zmw-Ne-VKB"/>
                         <outlet property="sideMenuView" destination="5fP-3x-OzS" id="2bD-wZ-Nv5"/>
                         <outlet property="stateImageView" destination="hSf-6q-mpB" id="P4q-cj-8wc"/>
+                        <outlet property="todayCount" destination="s8n-sI-7Hk" id="Axq-SP-5i1"/>
                         <outlet property="upSwipe" destination="Hfm-7g-TAV" id="NoX-c7-clJ"/>
+                        <segue destination="gZE-0x-zdp" kind="unwind" identifier="unwindToLogin" unwindAction="unwindAction:" id="2Q9-Wy-ImB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKp-Xf-aXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gZE-0x-zdp" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="up" id="Hfm-7g-TAV">
                     <connections>
                         <action selector="upSwipeAction:" destination="ifU-eu-E2I" id="7ed-qo-IxM"/>
