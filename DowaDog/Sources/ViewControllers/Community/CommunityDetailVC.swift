@@ -16,6 +16,8 @@ class CommunityDetailVC: UIViewController {
     var replyData = ["111111111111111111111111111111111111111111111111111","222222222222222222222222222222222222222222222222222222222222222222222","3333333333"]
     //To승언: 가상으로 넣어둔 데이터
     
+    var id:Int?
+    
 
     var newImg = [(UIImage(named: "testcat.png")),
                   (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")), (UIImage(named: "testcat.png")),(UIImage(named: "testcat.png")),

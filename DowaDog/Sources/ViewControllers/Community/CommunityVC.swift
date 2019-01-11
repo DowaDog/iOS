@@ -202,6 +202,7 @@ extension CommunityVC: UITableViewDataSource {
         let fmt = DateFormatter()
         fmt.dateFormat = "yyyy년 MM월 dd일"
         
+        
         let beforeDate: Date = fmt.date(from: date) ?? Date()
         let afterDate: String = fmt.string(from: beforeDate)
         

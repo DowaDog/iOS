@@ -16,8 +16,7 @@ class LetterVC: UIViewController {
     
     var mailboxList = [Mailbox]()
     
-    
-    var testImg = [(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingCatImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png"))]
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -79,12 +78,8 @@ extension LetterVC:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! MailCell
-        
-        cell.mailImage.image = self.testImg[indexPath.item]
         let mail = mailboxList[indexPath.row]
-//        self.userProfile.imageFromUrl(self.gsno(data.data?.profileImg), defaultImgPath: "")
-//        cell.mailImage.imageFromUrl(mail., defaultImgPath: <#T##String#>)
-        
+
         return cell
         
     }

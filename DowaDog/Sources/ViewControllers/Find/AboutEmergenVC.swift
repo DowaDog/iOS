@@ -47,6 +47,7 @@ class AboutEmergenVC: UIViewController {
         heart.tintColor = UIColor.white
         navigationItem.rightBarButtonItems = [heart]
         
+        
         coverView.alpha = 0.0
         popupView.alpha = 0.0
         alertView.alpha = 0.0
@@ -67,14 +68,14 @@ class AboutEmergenVC: UIViewController {
             print("data ===================")
             print(data)
             print("data ===================")
-            
-           
 
             
-            if data.liked == true{
+            if self.gbno(data.liked ) == true{
+                 self.heart.image = UIImage(named: "heartBtnFill")
                 self.heartClcik = true
-            }else if data.liked == false{
+            }else if self.gbno(data.liked) == false{
                 self.heartClcik = false
+                self.heart.image = UIImage(named: "heartBtnLine.png")
             }
             
             self.age.text  = "\(self.gsno(data.age))살"

@@ -228,7 +228,6 @@
         <!--My Want DogVC-->
         <scene sceneID="nzz-z7-AFa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RKo-Sw-LAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KuB-g8-8m5" customClass="MyWantDogVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ue0-65-43Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -371,6 +370,7 @@
                         <outlet property="collectionView" destination="KHH-nx-qDu" id="VhV-a6-plM"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKo-Sw-LAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-46" y="-810"/>
         </scene>
@@ -1612,21 +1612,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-lP-dx5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="100" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-lP-dx5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.85099190473556519" green="0.85095977783203125" blue="0.85098159313201904" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="m8B-8M-JHj" customClass="ScrapCell" customModule="DowaDog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="84"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrapCell" rowHeight="88" id="m8B-8M-JHj" customClass="ScrapCell" customModule="DowaDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m8B-8M-JHj" id="cv2-50-rL0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m8B-8M-JHj" id="cv2-50-rL0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스크랩 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fas-qK-ct5">
                                                     <rect key="frame" x="31" y="16" width="329" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Fas-qK-ct5" secondAttribute="height" multiplier="329:18" id="0NX-bR-glc"/>
                                                         <constraint firstAttribute="height" constant="18" id="Qv4-eG-zII"/>
                                                         <constraint firstAttribute="width" constant="329" id="SYM-Li-Yzp"/>
                                                     </constraints>
@@ -1638,7 +1637,6 @@
                                                     <rect key="frame" x="31" y="52" width="101" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="101" id="QC8-UI-yoo"/>
-                                                        <constraint firstAttribute="width" secondItem="aIM-do-RPT" secondAttribute="height" multiplier="101:16" id="axN-OG-pCU"/>
                                                         <constraint firstAttribute="height" constant="16" id="nxJ-yL-VfA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
@@ -1650,6 +1648,7 @@
                                                 <constraint firstItem="aIM-do-RPT" firstAttribute="leading" secondItem="cv2-50-rL0" secondAttribute="leading" constant="31" id="2Mf-MI-TLm"/>
                                                 <constraint firstItem="Fas-qK-ct5" firstAttribute="leading" secondItem="cv2-50-rL0" secondAttribute="leading" constant="31" id="iA4-RF-uaa"/>
                                                 <constraint firstItem="aIM-do-RPT" firstAttribute="top" secondItem="Fas-qK-ct5" secondAttribute="bottom" constant="18" id="rf5-iH-HND"/>
+                                                <constraint firstAttribute="bottom" secondItem="aIM-do-RPT" secondAttribute="bottom" constant="10.5" id="vXv-qR-cy9"/>
                                                 <constraint firstItem="Fas-qK-ct5" firstAttribute="top" secondItem="cv2-50-rL0" secondAttribute="top" constant="16" id="wfs-eB-z2D"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1688,7 +1687,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0di-G5-sfw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.85099190469999997" green="0.85095977779999998" blue="0.85098159309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="writeCell" rowHeight="84" id="pq0-fy-SG8" customClass="MyWriteCell" customModule="DowaDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
