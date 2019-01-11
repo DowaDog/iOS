@@ -14,6 +14,17 @@ class ContentDetailVC: UIViewController {
     var  reusablecell = "cell"
     var resusableheader = "header"
     
+    var isEducated:Bool?
+    var scrapClick:Bool?
+    
+    var getTitle:String?
+    var getImage:String?
+    var getScrap:Bool?
+    
+    var scrapItem:UIBarButtonItem!
+    
+    @IBOutlet weak var adoptBtn: UIButton!
+    
     var id:Int!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -32,6 +43,8 @@ class ContentDetailVC: UIViewController {
             
             self.contentList = data
             self.collectionView.reloadData()
+            
+        
         }
         
     }
@@ -41,7 +54,61 @@ class ContentDetailVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        self.setBackBtn()
+        self.navBarBackgroundAlpha = 0.0
+        
+        scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(scrapTapped))
+        scrapItem.tintColor = UIColor.white
+        
+        if getScrap == false{
+              scrapClick = false
+        }else if getScrap == true{
+             scrapClick = true
+        }
+ navigationItem.rightBarButtonItems = [scrapItem]
+        
+        if isEducated == false{
+            
+        }else if isEducated == true{
+            adoptBtn.alpha = 0.0
+        }
+        
     }
+    
+    @objc func scrapTapped(){
+        
+        EducationListService.shared.contentScrap(contentIdx: id) {
+            (data) in
+            
+            print("scrap==================")
+            print("data: ")
+            print(data)
+            print("scrap==================")
+        
+         
+            if self.scrapClick == false{
+                self.scrapItem.image = UIImage(named: "categoryScrabBtn.png")
+                self.scrapClick = true
+                    }else{
+                self.scrapItem.image = UIImage(named: "categoryUnscrabBtn.png")
+                self.scrapClick = false
+                    }
+
+        
+        }
+
+    }
+    
+    @IBAction func educationCompleteAction(_ sender: Any) {
+        EducationListService.shared.contentComplete(contentIdx: id){
+            (data) in
+            print("isComplete==================")
+            print("data: ")
+            print(data)
+            print("isComplete==================")
+        }
+    }
+    
 }
 
 extension ContentDetailVC :UICollectionViewDataSource{
@@ -67,8 +134,13 @@ extension ContentDetailVC :UICollectionViewDataSource{
         
    
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! ContentHeader
+        
+            view.title.text = getTitle
+            view.mainImage.imageFromUrl(getImage, defaultImgPath: "")
             return view
         }
+    
+
     }
     
 
@@ -87,41 +159,21 @@ extension ContentDetailVC: UICollectionViewDelegate{
 }
 
 extension ContentDetailVC:UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGFloat {
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let width: CGFloat = view.frame.width - 158
-//        let height: CGFloat = view.frame.height - 121
-//
-//
-//        EducationDetailContentService.shared.getContentDetail(contentIdx: id) {
-//            (data) in
-//
-//            print("CardVC content==============================")
-//            print("data: ")
-//            print(data)
-//            print("CardVc content==============================")
-//
-//            self.contentList = data
-//
-//            self.collectionView.reloadData()
-//            let content = self.contentList[indexPath.row]
-//
-//
-//            let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize:16)]
-//            let estimatedFrame = NSString(string: gsno(content.detail) ?? "").boundingRect( with: size, options: option.usesLineFragmentOrigin, attributes: attributes, context:nil)
-//
-//            //여기 해결해야함
-//            //해결못하면 테이블뷰로 할듯
-//
-//
-//        return estimatedFrame.height + 16 + 20
-//
-//        }
-//
-//        return CGSize(width: width, height: height)
-//    }
-//
+      
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! ContentCell
+
+        let contentstory = contentList[indexPath.row]
+        let approximateWidthOfText = view.frame.width - 150 - 8
+        let size = CGSize(width: approximateWidthOfText, height: 500)
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]
+        let estimatedFrame = NSString(string: contentstory.detail ?? "").boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+        
+        return estimatedFrame.height + 10
+    }
+
 
     
 }

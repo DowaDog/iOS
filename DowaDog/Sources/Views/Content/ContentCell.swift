@@ -12,15 +12,14 @@ class ContentCell: UICollectionViewCell {
     @IBOutlet weak var subTitle: UILabel!
     
     @IBOutlet weak var contentImage: UIImageView!
-    
-    @IBOutlet weak var aboutTextView: UITextView!
 
     
+    @IBOutlet weak var aboutTextView: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        aboutTextView.isEditable = false
+        aboutTextView.numberOfLines = 0
+       
     }
 }
 
