@@ -40,7 +40,7 @@ class LoginVC: UIViewController {
         initGestureRecognizer()
     }
     
-    override func viewWillAppear(_ animated: Bool)         
+    override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
     }
     

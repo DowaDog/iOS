@@ -13,6 +13,7 @@ class HomeVC: UIViewController {
     // 0 -> -428
     @IBOutlet var cardViewConstraint: NSLayoutConstraint!
 
+    @IBOutlet var profileImg: UIImageView!
     
     
     
@@ -517,28 +518,9 @@ class HomeVC: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    
     //unwind Point
     @IBAction func unwindAction(_ sender: UIStoryboardSegue) {}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // 가이드뷰 하단 모서리 둥글게 설정
