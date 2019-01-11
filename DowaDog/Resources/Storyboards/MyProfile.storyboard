@@ -1649,9 +1649,11 @@
                         <outlet property="userName" destination="FgF-3S-DMQ" id="1K1-BH-lz5"/>
                         <outlet property="userProfile" destination="mRM-Zn-hyF" id="vkD-9h-rw4"/>
                         <outlet property="userScrap" destination="8zY-8F-jrz" id="RZa-t9-ZiY"/>
+                        <segue destination="hrl-dy-yQa" kind="unwind" identifier="unwindToHome" unwindAction="unwindAction:" id="Veu-7Z-Tco"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lss-YE-if9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hrl-dy-yQa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-943.20000000000005" y="-82.3088455772114"/>
         </scene>
@@ -1819,7 +1821,7 @@
         <image name="writingIcon" width="11" height="12.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nps-ED-hoO"/>
+        <segue reference="SfB-O3-c0C"/>
         <segue reference="rKJ-kM-OkA"/>
     </inferredMetricsTieBreakers>
 </document>
