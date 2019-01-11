@@ -102,11 +102,17 @@ extension AdoptListVC: UICollectionViewDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-        //        if let dvc = storyboard?.instantiateViewController(withIdentifier: "MyDogDetailVC") as? MyDogDetailVC{
-        //
-        //            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-        //            navigationController?.pushViewController(dvc, animated: true)
+        
+        let cell = self.collectionView.cellForItem(at: indexPath) as! MyDogCell
+        
+        let adopt = animalUserAdoptList[indexPath.row]
+        
+        let dvc = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyDogDetailVC") as! MyDogDetailVC
+        
+        dvc.id = gino(adopt.id)
+        
+        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+        navigationController?.pushViewController(dvc, animated: true)
         
     }
     
@@ -114,8 +120,6 @@ extension AdoptListVC: UICollectionViewDelegate{
         
     }
 }
-
-
 
 extension AdoptListVC: UICollectionViewDelegateFlowLayout {
     

@@ -10,6 +10,13 @@ import UIKit
 
 class MyDogDetailVC: UIViewController {
     
+    var id:Int!
+    var gender:String!
+    var isNeuter:Bool!
+    
+      var inoculationArray: Array<String> = []
+    
+    
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var maleBtn: UIButton!
@@ -23,6 +30,12 @@ class MyDogDetailVC: UIViewController {
     @IBOutlet weak var inject4Btn: UIButton!
     @IBOutlet weak var inject5Btn: UIButton!
     @IBOutlet weak var inject6Btn: UIButton!
+    
+    @IBOutlet weak var nameTf: UITextField!
+    @IBOutlet weak var kindTf: UITextField!
+    @IBOutlet weak var birthTf: UITextField!
+    @IBOutlet weak var weightTf: UITextField!
+    
     
     var confirmItem:UIBarButtonItem!
     
@@ -69,16 +82,47 @@ class MyDogDetailVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        AnimalUserAdoptDetailService.shared.getAdoptAnimalDetail(adoptAnimalIdx: 12) {
+        AnimalUserAdoptDetailService.shared.getAdoptAnimalDetail(adoptAnimalIdx: id) {
             (data) in
             
             print("data======================")
             print("data : ")
             print(data)
             print("data======================")
+            
+            self.nameTf.text = self.gsno(data.name)
+            self.kindTf.text = self.gsno(data.kind)
+            self.birthTf.text = self.gsno(data.age)
+            self.weightTf.text = self.gsno(data.weight)
+            
+            
+            if self.gsno(data.gender) == "M"{
+                self.maleBtn.isSelected = true
+                self.gender = "M"
+                self.femaleBtn.isSelected = false
+            }else if self.gsno(data.gender) == "F"{
+                self.femaleBtn.isSelected = true
+                self.maleBtn.isSelected = false
+                self.gender = "F"
+                
+            }
+            
+            if self.gbno(data.neuterYn) == true{
+                self.doBtn.isSelected = true
+                self.undoBtn.isSelected = false
+                self.isNeuter = true
+                
+            }else if self.gbno(data.neuterYn) == false{
+                self.undoBtn.isSelected = true
+                self.doBtn.isSelected = false
+                self.isNeuter = false
+            }
+            
+            
+            
         }
         
-        AnimalUserAdoptInoculationService.shared.getAdoptAnimalInoculation(adoptAnimalIdx: 12) {
+        AnimalUserAdoptInoculationService.shared.getAdoptAnimalInoculation(adoptAnimalIdx: id) {
             
             (data) in
             
@@ -89,29 +133,77 @@ class MyDogDetailVC: UIViewController {
             self.inoculationList = data
             print("data===================")
             
+            if self.inoculationList[0].complete == true{
+                self.inject1Btn.isSelected = true
+                self.inoculationArray.append("I1")
+            }else{
+                   self.inject1Btn.isSelected = false
+            }
+            
+            if self.inoculationList[1].complete == true{
+                self.inject2Btn.isSelected = true
+                   self.inoculationArray.append("I2")
+            }else{
+                self.inject2Btn.isSelected = false
+            }
+            
+            if self.inoculationList[2].complete == true{
+                self.inject3Btn.isSelected = true
+                  self.inoculationArray.append("I3")
+            }else{
+                self.inject3Btn.isSelected = false
+            }
+            
+            if self.inoculationList[3].complete == true{
+                self.inject4Btn.isSelected = true
+                  self.inoculationArray.append("I4")
+            }else{
+                self.inject4Btn.isSelected = false
+            }
+            
+            if self.inoculationList[4].complete == true{
+                self.inject5Btn.isSelected = true
+                  self.inoculationArray.append("I5")
+            }else{
+                self.inject5Btn.isSelected = false
+            }
+            
+            if self.inoculationList[5].complete == true{
+                self.inject6Btn.isSelected = true
+                  self.inoculationArray.append("I6")
+            }else{
+                self.inject6Btn.isSelected = false
+            }
         }
         
     }
     
-    let inoculationArray: Array<String> = ["I3", "I5"]
+  
+    
+
+   
     
     
     @objc func confirmTapped(){
         //TODO: 확인 선택 시 일어날 액션
         
-        AnimalUserAdoptDetailService.shared.putAdoptAnimalDetail(adoptAnimalIdx: 12, name: "희야4", gender: "M", kind: "갈색푸들5", weight: "4.4", neuterYn: true, profileImgFile: UIImage(named: "xBtn")!, age: "4", inoculationArray: ["I1", "I2"]) {
+        let name:String! = nameTf.text
+        let kind:String! = kindTf.text
+        let weight:String! = weightTf.text
+        let birth:String! = birthTf.text
+        let profile:UIImage! = profileImage?.image
+        
+        
+        AnimalUserAdoptDetailService.shared.putAdoptAnimalDetail(adoptAnimalIdx: id , name: name, gender: gender, kind:kind, weight: weight, neuterYn: isNeuter, profileImgFile: profile, age: birth, inoculationArray: inoculationArray) {
             (data) in
-            
-            // inoculationArray 에 ["I1", "I2"] 라고 해당 항목을 보내주면 트루로 바뀜
-            // inoculationArray 에 inoculataionArray: inoculataionArray 처럼 변수형으로 사용해도 작동함.
+    
             
             print("data==========confirm==========")
             print(data)
             print("data==========confirm==========")
+            
+        self.navigationController?.popViewController(animated: true)
         }
-        
-        
-        
         
     }
     
