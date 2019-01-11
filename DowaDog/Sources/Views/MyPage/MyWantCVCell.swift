@@ -21,6 +21,9 @@ class MyWantCVCell: UICollectionViewCell {
     @IBOutlet weak var aboutLabel: UILabel!
     
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var dayView: UIView!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,5 +35,9 @@ class MyWantCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.3
         self.layer.masksToBounds = false
         
+        dayView.roundRadius()
+        
     }
+    
+    
 }

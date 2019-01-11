@@ -15,12 +15,13 @@ class EmergenDogVC: UIViewController {
     
     var emergenDogList = [EmergenDog]()
     
-    var pagelimit:Int?
+    
     
     @IBOutlet weak var navbar: UINavigationItem!
     var reuseIdentifier = "emergenCell"
     
     var lastPage = 0
+    var pagelimit:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
