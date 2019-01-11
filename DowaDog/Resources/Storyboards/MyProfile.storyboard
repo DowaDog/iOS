@@ -436,7 +436,6 @@
                                         <constraints>
                                             <constraint firstItem="7qK-5K-tsT" firstAttribute="leading" secondItem="mXr-2R-DLS" secondAttribute="leading" constant="15" id="3tS-Ua-foU"/>
                                             <constraint firstItem="3u9-1Q-8qA" firstAttribute="leading" secondItem="mXr-2R-DLS" secondAttribute="leading" constant="15" id="4Dl-6q-AHZ"/>
-                                            <constraint firstItem="beX-Be-5GD" firstAttribute="top" secondItem="lQM-Pa-u6B" secondAttribute="bottom" constant="-54" id="BLE-GJ-2Xb"/>
                                             <constraint firstItem="lQM-Pa-u6B" firstAttribute="leading" secondItem="mXr-2R-DLS" secondAttribute="leading" id="JN3-DT-c3R"/>
                                             <constraint firstItem="lQM-Pa-u6B" firstAttribute="top" secondItem="mXr-2R-DLS" secondAttribute="top" id="Onp-Py-9AG"/>
                                             <constraint firstItem="3u9-1Q-8qA" firstAttribute="top" secondItem="7qK-5K-tsT" secondAttribute="bottom" constant="-1" id="Pyt-hI-Spt"/>
@@ -444,6 +443,7 @@
                                             <constraint firstAttribute="bottom" secondItem="lQM-Pa-u6B" secondAttribute="bottom" id="ahJ-iK-fHG"/>
                                             <constraint firstAttribute="trailing" secondItem="lQM-Pa-u6B" secondAttribute="trailing" id="cOq-2S-Y0I"/>
                                             <constraint firstItem="beX-Be-5GD" firstAttribute="leading" secondItem="7qK-5K-tsT" secondAttribute="trailing" constant="-1" id="kRC-UR-zKS"/>
+                                            <constraint firstItem="beX-Be-5GD" firstAttribute="top" secondItem="mXr-2R-DLS" secondAttribute="top" constant="81" id="sUT-5u-umL"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="aboutLabel" destination="3u9-1Q-8qA" id="WiU-t1-VRp"/>
@@ -478,12 +478,11 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리 아이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-cM-wYR">
                                             <rect key="frame" x="27" y="39" width="78" height="23"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="aZa-cM-wYR" secondAttribute="height" multiplier="78:23" id="EYZ-jr-goe"/>
                                                 <constraint firstAttribute="height" constant="23" id="Vec-GL-kL9"/>
                                                 <constraint firstAttribute="width" constant="78" id="dNb-8O-0dm"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="20"/>
-                                            <color key="textColor" red="0.26274910569999999" green="0.26273781060000001" blue="0.26274549959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1115,18 +1114,42 @@
                                                         <constraint firstAttribute="width" constant="36" id="k46-x5-k6N"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동물들은 " lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfV-PM-iOD">
+                                                    <rect key="frame" x="20" y="17" width="220" height="22.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="5MO-d9-NJm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작은제목작은제목작은제목작은제목작은제목작은제목" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxJ-Sb-ncv">
+                                                    <rect key="frame" x="20" y="46.5" width="235" height="14.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="235" id="e5V-XR-nqG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="wxJ-Sb-ncv" firstAttribute="top" secondItem="BfV-PM-iOD" secondAttribute="bottom" constant="7" id="0JB-oO-WhJ"/>
+                                            <constraint firstItem="BfV-PM-iOD" firstAttribute="leading" secondItem="gb1-zw-Kv2" secondAttribute="leading" constant="20" id="7ff-Vd-obY"/>
+                                            <constraint firstItem="wxJ-Sb-ncv" firstAttribute="leading" secondItem="gb1-zw-Kv2" secondAttribute="leading" constant="20" id="I8d-9q-feg"/>
                                             <constraint firstAttribute="trailing" secondItem="zM2-tJ-VI0" secondAttribute="trailing" id="PDW-hj-P7y"/>
                                             <constraint firstItem="zM2-tJ-VI0" firstAttribute="top" secondItem="vXF-66-Ugh" secondAttribute="bottom" constant="-28.5" id="b21-F5-sqV"/>
                                             <constraint firstAttribute="bottom" secondItem="zM2-tJ-VI0" secondAttribute="bottom" id="gt9-zG-m6N"/>
                                             <constraint firstItem="vXF-66-Ugh" firstAttribute="leading" secondItem="zM2-tJ-VI0" secondAttribute="trailing" constant="-45.5" id="oZ6-ST-ktS"/>
                                             <constraint firstItem="zM2-tJ-VI0" firstAttribute="leading" secondItem="gb1-zw-Kv2" secondAttribute="leading" id="ts6-b0-lhk"/>
                                             <constraint firstItem="zM2-tJ-VI0" firstAttribute="top" secondItem="gb1-zw-Kv2" secondAttribute="top" id="xrh-fy-Ube"/>
+                                            <constraint firstItem="BfV-PM-iOD" firstAttribute="top" secondItem="gb1-zw-Kv2" secondAttribute="top" constant="17" id="yUV-o4-hkr"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="mailImage" destination="zM2-tJ-VI0" id="XLP-n8-ffS"/>
+                                            <outlet property="subtitle" destination="wxJ-Sb-ncv" id="yKz-GN-WW1"/>
+                                            <outlet property="title" destination="BfV-PM-iOD" id="ilU-Ge-B4r"/>
                                             <outlet property="updatedImage" destination="vXF-66-Ugh" id="qRk-Bf-HoS"/>
                                         </connections>
                                     </collectionViewCell>
@@ -1138,12 +1161,36 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2995" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-Ia-V7x">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기다릴개에서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-69-O5P">
+                                            <rect key="frame" x="27" y="15" width="110" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="jnx-2E-kRd"/>
+                                                <constraint firstAttribute="width" constant="110" id="xpP-Pa-CIi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="20"/>
+                                            <color key="textColor" red="0.26274910569190979" green="0.26273781061172485" blue="0.26274549961090088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보내는 편지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVA-MW-xuY">
+                                            <rect key="frame" x="27" y="46" width="96" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="96" id="acO-ix-a3r"/>
+                                                <constraint firstAttribute="height" constant="23" id="dA7-V3-nZV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="20"/>
+                                            <color key="textColor" red="0.26274910569190979" green="0.26273781061172485" blue="0.26274549961090088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="SFC-Ia-V7x" firstAttribute="leading" secondItem="Jtk-69-O5P" secondAttribute="trailing" constant="-137" id="6Ix-WK-3ax"/>
+                                        <constraint firstItem="SFC-Ia-V7x" firstAttribute="leading" secondItem="wVA-MW-xuY" secondAttribute="trailing" constant="-123" id="8On-gn-uue"/>
                                         <constraint firstAttribute="trailing" secondItem="SFC-Ia-V7x" secondAttribute="trailing" id="Frg-TQ-VUi"/>
                                         <constraint firstItem="SFC-Ia-V7x" firstAttribute="top" secondItem="iqA-B4-C4C" secondAttribute="top" id="IPs-bz-y00"/>
                                         <constraint firstAttribute="bottom" secondItem="SFC-Ia-V7x" secondAttribute="bottom" id="LOS-dC-5U3"/>
                                         <constraint firstItem="SFC-Ia-V7x" firstAttribute="leading" secondItem="iqA-B4-C4C" secondAttribute="leading" id="PBe-Bo-8Qy"/>
+                                        <constraint firstItem="SFC-Ia-V7x" firstAttribute="top" secondItem="Jtk-69-O5P" secondAttribute="bottom" constant="-38" id="ne8-rR-Swi"/>
+                                        <constraint firstItem="wVA-MW-xuY" firstAttribute="top" secondItem="Jtk-69-O5P" secondAttribute="bottom" constant="8" id="qjk-uY-Lvp"/>
                                     </constraints>
                                 </collectionReusableView>
                             </collectionView>
@@ -1163,7 +1210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBq-7f-nbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1780" y="715"/>
+            <point key="canvasLocation" x="-1780" y="714.69265367316348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w7Y-gt-gl4">
@@ -1612,15 +1659,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="100" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-lP-dx5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="30" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-lP-dx5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.85099190473556519" green="0.85095977783203125" blue="0.85098159313201904" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrapCell" rowHeight="88" id="m8B-8M-JHj" customClass="ScrapCell" customModule="DowaDog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrapCell" rowHeight="84" id="m8B-8M-JHj" customClass="ScrapCell" customModule="DowaDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m8B-8M-JHj" id="cv2-50-rL0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스크랩 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fas-qK-ct5">
@@ -1689,7 +1736,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="writeCell" rowHeight="84" id="pq0-fy-SG8" customClass="MyWriteCell" customModule="DowaDog" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myWriteCell" rowHeight="84" id="pq0-fy-SG8" customClass="MyWriteCell" customModule="DowaDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pq0-fy-SG8" id="kwC-gC-mK0">
@@ -1718,6 +1765,7 @@
                                             <constraints>
                                                 <constraint firstItem="prK-ik-P65" firstAttribute="leading" secondItem="kwC-gC-mK0" secondAttribute="leading" constant="31" id="1IM-eD-uW0"/>
                                                 <constraint firstItem="mZY-nz-1De" firstAttribute="leading" secondItem="kwC-gC-mK0" secondAttribute="leading" constant="31" id="IWC-0h-ywx"/>
+                                                <constraint firstAttribute="bottom" secondItem="prK-ik-P65" secondAttribute="bottom" constant="15.5" id="RM5-Ej-ZJf"/>
                                                 <constraint firstItem="mZY-nz-1De" firstAttribute="top" secondItem="kwC-gC-mK0" secondAttribute="top" constant="16" id="ZKn-O1-XpZ"/>
                                                 <constraint firstItem="prK-ik-P65" firstAttribute="top" secondItem="mZY-nz-1De" secondAttribute="bottom" constant="18" id="ewt-44-T27"/>
                                             </constraints>
@@ -1740,7 +1788,7 @@
                         <viewLayoutGuide key="safeArea" id="sKF-l4-nQQ"/>
                     </view>
                     <connections>
-                        <outlet property="boardTable" destination="0di-G5-sfw" id="0CM-oI-raX"/>
+                        <outlet property="tableView" destination="0di-G5-sfw" id="uxb-b4-58k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eco-ig-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1767,7 +1815,7 @@
         <image name="writingIcon" width="11" height="12.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SfB-O3-c0C"/>
+        <segue reference="nps-ED-hoO"/>
         <segue reference="rKJ-kM-OkA"/>
     </inferredMetricsTieBreakers>
 </document>

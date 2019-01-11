@@ -13,5 +13,15 @@ class MailCell: UICollectionViewCell {
     
     @IBOutlet weak var mailImage: UIImageView!
     @IBOutlet weak var updatedImage: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var subtitle: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        subtitle.numberOfLines = 0
+        title.numberOfLines = 0
+          
+    }
     
 }

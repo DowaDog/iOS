@@ -20,7 +20,6 @@ class AdoptListVC: UIViewController {
     var reusablecell = "MyDogCell"
     var header = "header"
     
-    var testImg = [(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingCatImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")), (UIImage(named:"myPageAdoptingDogImg.png")), (UIImage(named: "myPageAdoptingDogImg.png")),(UIImage(named: "myPageAdoptingDogImg.png"))]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,20 +77,13 @@ extension AdoptListVC:UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! MyDogCell
           let myDog = animalUserAdoptList[indexPath.row]
         
-//        id <- map["id"]
-//        name <- map["name"]
-//        gender <- map["gender"]
-//        kind <- map["kind"]
-//        birth <- map["age"]
-//        weight <- map["weight"]
-//        neuterYn <- map["neuterYn"]
-//        profileImg <- map["profileImg"]
-//        adoptType <- map["adoptType"]
+
 
         
         cell.cardImage.imageFromUrl(gsno(myDog.profileImg), defaultImgPath: "")
-        let label = "\(myDog.kind)|\(myDog.age)|\(myDog.gender)"
-        cell.dogName.text = myDog.name
+        let label = "\(gsno(myDog.kind))|\(gsno(myDog.age))|\(gsno(myDog.gender))"
+        
+        cell.dogName.text = gsno(myDog.name)
         cell.aboutLabel.text = label
         
         return cell

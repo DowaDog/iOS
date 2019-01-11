@@ -28,7 +28,8 @@ class MyProfileVC: UIViewController {
         
         navigationItem.rightBarButtonItems = [ confirmItem ]
         
-         setupTap()
+        setupTap()
+        
         profileImage.circleImageView()
         
         initGestureRecognizer()
@@ -50,14 +51,13 @@ class MyProfileVC: UIViewController {
             print("data ===================")
         
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy/MM/dd"
+            dateFormatter.dateFormat = "yyy.MM.dd"
            
 
             self.profileImage.imageFromUrl(data.data?.thumbnailImg, defaultImgPath: "")
             self.name.text = self.gsno(data.data?.name)
-//            self.birth.text = dateFormatter.string(from: data.data?.birth ?? Date())
-            
             self.phone.text = self.gsno(data.data?.phone)
+            self.email.text = self.gsno(data.data?.email)
 
         }
         print("transfer=========")
@@ -68,8 +68,14 @@ class MyProfileVC: UIViewController {
         
         print("transfer=========")
         
+        let name = self.name.text
+        let birth = self.birth.text
+        let phone = self.phone.text
+        let profileImg:UIImage! = self.profileImage.image
+        let email = self.email.text
         
-        MyInfoEditService.shared.putMyInfo(name: "강태경", phone: "010-3068-1191", email: "perlyuy8@naver.com", birth: "1997-04-02", profileImgFile: UIImage(named: "xBtn")!) {
+        
+        MyInfoEditService.shared.putMyInfo(name: name ?? "--", phone: phone ?? "--", email: email ?? "--", birth: birth ?? "--", profileImgFile: profileImg ) {
             (data) in
             
             print("data ===================")
@@ -77,6 +83,8 @@ class MyProfileVC: UIViewController {
             print("data ===================")
         }
         print("transfer=========")
+        
+ 
     }
     
 
@@ -87,35 +95,20 @@ class MyProfileVC: UIViewController {
     }
     
 
+    // image Tapped
     @objc func imageTapped() {
-        print("tap")
         let picker = UIImagePickerController()
         picker.delegate = self
         
-        let actionSheet = UIAlertController(title: "Photo sourse", message: "Choose a source", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                picker.sourceType = .camera
-                picker.allowsEditing = true
-                picker.showsCameraControls = true
-                self.present(picker, animated: true)
-            } else {
-                print("not available")
-            }
-        }))
         
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
-            picker.sourceType = .photoLibrary
-            picker.allowsEditing = true
-            self.present(picker, animated: true)
-        }))
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
         
-        actionSheet.addAction(UIAlertAction(title: "Cancle", style: .cancel))
-        self.present(actionSheet, animated: true)
+        self.present(picker, animated: true)
     }
-    
 
 }
+
 
 extension MyProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -139,8 +132,6 @@ extension MyProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDe
             return
         }
         profileImage.image = newImg
-        profileImage.clipsToBounds = true
-        profileImage.layer.cornerRadius = profileImage.layer.frame.size.height/2
         
         dismiss(animated: true, completion: nil)
     }

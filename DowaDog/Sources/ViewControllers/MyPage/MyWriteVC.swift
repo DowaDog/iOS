@@ -10,7 +10,8 @@ import UIKit
 
 class MyWriteVC: UIViewController {
     
-    @IBOutlet weak var boardTable: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
 
     var myScrapList = [MyScrap]()
     
@@ -25,148 +26,55 @@ class MyWriteVC: UIViewController {
         setBackBtn()
 
 
-        boardTable.dataSource = self
-        boardTable.delegate = self
+       tableView.dataSource = self
+        tableView.delegate = self
+        
+        self.title = "내가 쓴 글"
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        getData()
+     
+        
+    }
 
 
-
-        print("refresh=========")
-
-
-        print("transfer=========")
-
-
+    func getData(){
         MyCommunityService.shared.getMyCommunity() { [weak self]
             (data) in
             guard let `self` = self else {return}
-
+            
             self.myWriteList = data
-
+            
             print("data ===================")
             print(data)
             print(data.count)
             print(self.myWriteList.count)
             print("data ===================")
-        }
-        print("transfer=========")
-        print("=======check=========")
-        print(myWriteList.count)
-    }
-
-
-}
-
-extension MyWriteVC : UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        print("data Source==========================")
-        print(myWriteList.count)
-        print("data Source==========================")
-
-        let writeData = myWriteList[IndexPath.row]
-
-        return writeData.count
-//        return myWriteList.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = boardTable.dequeueReusableCell(withIdentifier: "writeCell") as! MyWriteCell
-
-//        let board = myWriteList[indexPath.row]
-        cell.titleLabel.text = writeData[indexPath.row]
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-
-//        cell.dateLabel.text = dateFormatter.string(from: board.updatedAt ?? Date())
-//        cell.titleLabel.text = gsno(board.title)
-
-        return cell
-    }
-}
-
-extension MyWriteVC: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailBoardVC") as! DetailBoardVC
-//
-//        let board = boardList[indexPath.row]
-//
-//        detailVC.detailBoardId = board.boardId
-//
-//        navigationController?.pushViewController(detailVC, animated: true)
-    }
-}
-
-
-////////////////////////////////////////
-//
-class MyScrapVC: UIViewController {
-
-    var myScrapList = [MyScrap]()
-
-    var reuseIdentifier = "scrapCell"
-
-    @IBOutlet weak var tableView: UITableView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setBackBtn()
-        tableView.dataSource = self
-        tableView.delegate = self
-
-        self.title = "스크랩"
-
-    }
-
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-
-        print("refresh=========")
-
-
-        print("transfer=========")
-
-        getData()
-
-    }
-
-    func getData(){
-
-        MyScrapService.shared.getMyScrap() { [weak self]
-            (data) in
-
-            guard let `self` = self else {return}
-            print("---여기--------------")
-            print(data)
-            print("---여기--------------")
-            self.myScrapList = data
+            
+            self.myWriteList = data
+            
             self.tableView.reloadData()
-
+            
         }
     }
 }
-extension MyScrapVC:UITableViewDataSource{
+
+
+extension MyWriteVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myScrapList.count
+        return myWriteList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ScrapCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as!MyWriteCell
 
-        let scrap = myScrapList[indexPath.row]
+        let write = myWriteList[indexPath.row]
 
-        let date: String = gsno(scrap.createdAt)
+        let date: String = gsno(write.createdAt)
 
         let fmt = DateFormatter()
         fmt.dateFormat = "yyyy.MM.dd"
@@ -175,7 +83,7 @@ extension MyScrapVC:UITableViewDataSource{
 
         let afterDate: String = fmt.string(from: showDate)
 
-        cell.titleLabel.text = gsno(scrap.title)
+        cell.titleLabel.text = gsno(write.title)
         cell.dateLabel.text = afterDate
 
         return cell
@@ -183,17 +91,18 @@ extension MyScrapVC:UITableViewDataSource{
 
     }
 }
-extension MyScrapVC:UITableViewDelegate{
+
+extension MyWriteVC:UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = self.tableView.cellForRow(at: indexPath) as! ScrapCell
+        let cell = self.tableView.cellForRow(at: indexPath) as! MyWriteCell
 
-        let scrap = myScrapList[indexPath.row]
+        let scrap = myWriteList[indexPath.row]
 
-        let dvc = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentDetailVC") as! ContentDetailVC
+        let dvc = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityDetailVC") as! CommunityDetailVC
 
         dvc.id = gino(scrap.id)
 
