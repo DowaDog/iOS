@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumSquareExtraBold.ttf">
+            <string>NanumSquareEB</string>
+        </array>
         <array key="NanumSquareRegular.ttf">
             <string>NanumSquareR</string>
         </array>
@@ -168,7 +171,7 @@
         <!--Sign In2VC-->
         <scene sceneID="ETT-vQ-Ink">
             <objects>
-                <viewController id="TYk-l9-IRb" customClass="SignIn2VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUp2VC" id="TYk-l9-IRb" customClass="SignIn2VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1uw-HI-wnZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,11 +280,11 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwb-Fz-Bbm">
                                 <rect key="frame" x="0.0" y="611" width="375" height="56"/>
-                                <color key="backgroundColor" red="0.80393248799999995" green="0.8039019704" blue="0.8039226532" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bwb-Fz-Bbm" secondAttribute="height" multiplier="375:56" id="pRl-IV-8x7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="18"/>
                                 <state key="normal" title="동의하고 가입하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -334,7 +337,7 @@
         <!--Sign In1VC-->
         <scene sceneID="TaI-YN-3bQ">
             <objects>
-                <viewController id="Q1e-IH-1WM" customClass="SignIn1VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUp1VC" id="Q1e-IH-1WM" customClass="SignIn1VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dHX-Qr-ftS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,11 +414,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpN-Sh-o3H" customClass="RoundView" customModule="DowaDog" customModuleProvider="target">
                                 <rect key="frame" x="56" y="390" width="263" height="41"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="njV-9n-gyJ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일 (ex: 19941004)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="njV-9n-gyJ">
                                         <rect key="frame" x="16" y="6" width="231" height="29"/>
                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="one-time-code"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -434,7 +437,7 @@
                                         <rect key="frame" x="16" y="6" width="179" height="29"/>
                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-8x-Czb">
                                         <rect key="frame" x="203" y="6" width="52" height="29"/>
@@ -473,7 +476,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" smartDashesType="yes"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -487,17 +490,16 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKM-8n-2fG">
                                 <rect key="frame" x="0.0" y="611" width="375" height="56"/>
-                                <color key="backgroundColor" red="0.80393248799999995" green="0.8039019704" blue="0.8039226532" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AKM-8n-2fG" secondAttribute="height" multiplier="375:56" id="UCz-iJ-Mrx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="NanumSquareEB" family="NanumSquare" pointSize="18"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="nextBtnAction:" destination="Q1e-IH-1WM" eventType="touchUpInside" id="VYn-2D-FMR"/>
-                                    <segue destination="TYk-l9-IRb" kind="show" identifier="action_show" id="XfX-t4-cLa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -546,6 +548,7 @@
                         <outlet property="phoneNumbTextField" destination="RW4-u0-ZTt" id="aRa-L0-kPJ"/>
                         <outlet property="profileImage" destination="QIV-IT-v6T" id="2Kd-vP-c9N"/>
                         <outlet property="topConstraint" destination="OWj-7R-fuF" id="LJw-ne-sS5"/>
+                        <segue destination="TYk-l9-IRb" kind="show" identifier="action_show" id="rfX-A5-853"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgX-Zu-SVK" userLabel="First Responder" sceneMemberID="firstResponder"/>

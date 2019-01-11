@@ -78,6 +78,9 @@ extension UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    
+    // 유효성 검사 이메일
     func isValidEmailAddress(email: String) -> Bool {
         
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -87,6 +90,7 @@ extension UIViewController {
         return emailTest.evaluate(with: email)
     }
     
+    // 유효성 검사 아이디
     func isValidId(id: String) -> Bool {
         
         let idRegEx = "[A-Z0-9a-z._%+-]{2,8}"
@@ -96,16 +100,33 @@ extension UIViewController {
         return idTest.evaluate(with: id)
     }
     
+    // 유효성 검사
     func isValidName(name: String) -> Bool{
         
-        let nameRegEx = "[가-힣]{2,4}"
+        let nameRegEx = "^[가-힣]{2,4}$"
         
-        let nameTest = NSPredicate(format: "SELF MATCHS %@", nameRegEx)
+        let nameTest = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
         
         return nameTest.evaluate(with: name)
     }
     
+    func isValidBirth(birth: String) -> Bool {
+        
+        let birthRegEx = "[0-9]{8}"
+        
+        let birthTest = NSPredicate(format: "SELF MATCHES %@", birthRegEx)
+        
+        return birthTest.evaluate(with: birth)
+    }
     
+    func isValidPhone(phone: String) -> Bool {
+        
+        let phoneRegEx = "^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$"
+        
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegEx)
+        
+        return phoneTest.evaluate(with: phone)
+    }
 }
 
 extension UIView {
@@ -184,5 +205,3 @@ extension CALayer {
         self.addSublayer(border)
     }
 }
-
-

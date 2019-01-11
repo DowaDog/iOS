@@ -15,35 +15,42 @@ import UIKit
 
 class SignIn1VC: UIViewController {
     
-    var emailCheck = false
-    var emptyCheck = false
+    // 유효성 flag
+    var birthTest: Bool = false
+    var emailCheck: Bool = false
+    var phoneTest: Bool = false
     
-    
+    // UI
     @IBOutlet weak var profileImage: UIImageView!
-    
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var birthTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneNumbTextField: UITextField!
+    
     @IBOutlet var topConstraint: NSLayoutConstraint!
+    
+    // Outlet
     @IBOutlet var nextBtn: UIButton!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nextBtn.isEnabled = false
         
-        self.setNavigationBarShadow()
+        // init
+        nextBtn.isEnabled = false
+        initGestureRecognizer()
+        setupTap()
+        setTextFieldTarget()
 
+        
+        // navBar
+        self.setNavigationBarShadow()
         setBackBtn()
         
-        
-        setupTap()
-        
-        setTextFieldTarget()
-        
-        initGestureRecognizer()
-        
+        // UI
         profileImage.circleImageView()
     }
     
@@ -55,77 +62,15 @@ class SignIn1VC: UIViewController {
         unregisterForKeyboardNotifications()
     }
     
-
-    @objc func textFieldDidChange(textField: UITextField){
-        
-        if nameTextField.text == "" || birthTextField.text == "" || phoneNumbTextField.text == "" || emailTextField.text == "" {
-            
-            emptyCheck = false
-            nextBtn.backgroundColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1.0)
-        }
-        
-        if nameTextField.text != "" {
-            if birthTextField.text != ""{
-               
-                if phoneNumbTextField.text != "" {
-                    if emailTextField.text != "" {
-                        //모든 텍스트 필드가 null이 아니라면
-                        emptyCheck = true
-                        print("emptycheck end")
-                        
-                        endCheck()
-                            
-                        }
-                    }
-                }
-            }
-        }
-
-
-    @IBAction func emailCheckAction(_ sender: UIButton) {
-        
-        let test = isValidEmailAddress(email: emailTextField.text!)
-        
-        let nameTest = isValidName(name: nameTextField.text!)
-        
-        
-        if nameTest {
-            self.simpleAlert(title: "실패", message: "이름을 확인해주세요.")
-        } else if test {
-                
-                guard let email = emailTextField.text
-                    else { return }
-                
-                
-                DuplicateService.shared.duplicateEmail(email: email) { (data) in
-                    
-                    if data.data == false{
-                        self.simpleAlert(title: "성공", message: "등록 가능한 이메일입니다.")
-                        self.emailCheck = true
-                        self.endCheck()
-                        
-                    } else if data.data == true{
-                        self.simpleAlert(title: "실패", message: "이미 등록된 이메일입니다. 다시 입력해주세요!")
-                        self.emailCheck = false
-                        
-                    }
-                }
-            } else {
-                self.simpleAlert(title: "경고", message: "올바르지 않은 이메일 형식입니다.")
-            }
-        self.view.endEditing(true)
-    }
-
-    @IBAction func nextBtnAction(_ sender: UIButton) {
-        nextBtn.isEnabled = true
-        
-        if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) {
-            
-            
-
-        }
+    
+    
+    // setGestureTap
+    func setupTap() {
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        self.profileImage.addGestureRecognizer(imageTap)
     }
     
+    // set textfield action @objc
     func setTextFieldTarget(){
         
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
@@ -134,67 +79,130 @@ class SignIn1VC: UIViewController {
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
-    func endCheck (){
-        if emptyCheck == true && emailCheck == true {
-            //모든 텍스트필드가 null이 아니고 이메일이 중복되지 않는다면,
-            
-            nextBtn.backgroundColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
-            
-            nextBtn.isEnabled = true
-            //다음 버튼 활성화
-            
-        }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "action_show" {
-            
-            let name = nameTextField.text
-            let birth = birthTextField.text
-            let email = emailTextField.text
-            let numb = phoneNumbTextField.text
-            let profile = profileImage.image
-            
-            let dvc = segue.destination as! SignIn2VC
-            dvc.name = name
-            dvc.birth = birth
-            dvc.email = email
-            dvc.numb = numb
-            dvc.profileImage = profile
-            
-            
-            
-            // segue.destination은 세그웨이 목적지 뷰컨트롤러를 의미합니다.
-            // 위와같이 데이터전달을 수행할 수 있습니다.
-            
-        }
-
-    }
-    
-
-
-    func setupTap() {
-        
-        let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-        self.profileImage.addGestureRecognizer(imageTap)
-    }
-    
-    
+    // image Tapped
     @objc func imageTapped() {
         let picker = UIImagePickerController()
         picker.delegate = self
         
-
+        
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         
         self.present(picker, animated: true)
     }
     
-   
+    func setPhoneNumber(phone: String) -> String {
+        
+        var temp = Array(phone)
+        
+        var result: String = ""
+        
+        if temp.count == 10 {
+            temp.insert("-", at: 3)
+            temp.insert("-", at: 7)
+        }
+        
+        if temp.count == 11 {
+            temp.insert("-", at: 3)
+            temp.insert("-", at: 8)
+        }
+        
+        for i in 0..<temp.count {
+            result.append(temp[i])
+        }
+        
+        return result
+    }
+    
+    // 유효성 검사 (빈칸)
+    @objc func textFieldDidChange(textField: UITextField){
+        
+        if nameTextField.text != "" && birthTextField.text != "" && emailTextField.text != "" && phoneNumbTextField.text !=  "" {
+            nextBtn.backgroundColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
+            nextBtn.isEnabled = true
+        } else {
+            nextBtn.backgroundColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
+        }
+        
+        // 이메일 중복확인 이 후에 데이터 수정이 발생할 시 작동
+        if textField == emailTextField && emailCheck == true {
+            emailCheck = false
+        }
+    }
+    
+    // 유효성 검사 (이메일)
+    @IBAction func emailCheckAction(_ sender: UIButton) {
+        
+        let test = isValidEmailAddress(email: emailTextField.text!)
+        
+        // 유효성 검사 (이메일 형식)
+        if test {
+            guard let email = emailTextField.text else { return }
+            
+            // 유효성 검사 (이메일 중복: 통신)
+            DuplicateService.shared.duplicateEmail(email: email) { (data) in
+                
+                if data.data == false{
+                    self.simpleAlert(title: "성공", message: "등록 가능한 이메일입니다.")
+                    self.emailCheck = true
+                } else if data.data == true {
+                    self.simpleAlert(title: "실패", message: "이미 등록된 이메일입니다. 다시 입력해주세요!")
+                    self.emailCheck = false
+                }
+            }
+            
+        } else {
+            self.simpleAlert(title: "경고", message: "올바르지 않은 이메일 형식입니다.")
+        }
+        
+        // end editing
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func nextBtnAction(_ sender: UIStoryboardSegue) {
+        if nextBtn.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) {
+            
+            let nameTest = isValidName(name: gsno(nameTextField.text))
+            let birthTest = isValidBirth(birth: gsno(birthTextField.text))
+            let phoneTest = isValidPhone(phone: gsno(phoneNumbTextField.text))
+            
+            if nameTest {
+                if birthTest {
+                    if phoneTest {
+                        if emailCheck {
+                            let name = nameTextField.text
+                            let birth = birthTextField.text
+                            let email = emailTextField.text
+                            let numb = phoneNumbTextField.text
+                            let profile = profileImage.image
+
+                            if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "SignUp2VC") as? SignIn2VC {
+                                dvc.name = name
+                                dvc.birth = birth
+                                dvc.email = email
+                                dvc.numb = numb
+                                dvc.profileImage = profile
+
+                                self.navigationController?.pushViewController(dvc, animated: true)
+                            }
+                        } else { self.simpleAlert(title: "경고", message: "이메일 중복체크를 확인해주세요.")}
+                    } else { self.simpleAlert(title: "경고", message: "전화번호를 확인해주세요.") }
+                } else { self.simpleAlert(title: "경고", message: "생년월일을 확인해주세요.") }
+            } else { self.simpleAlert(title: "경고", message: "이름을 확인해주세요.") }
+        }
+    }
 }
 
+
+
+
+
+
+
+
+
+
+// image picker set
 extension SignIn1VC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //이미지를 선택하지 않고 피커 종료시에 실행되는 delegate 메소드
@@ -217,14 +225,24 @@ extension SignIn1VC: UIImagePickerControllerDelegate, UINavigationControllerDele
             return
         }
         profileImage.image = newImg
-        profileImage.clipsToBounds = true
-        profileImage.layer.cornerRadius = profileImage.layer.frame.size.height/2
         
         dismiss(animated: true, completion: nil)
     }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+// Gesture Recognizer
 extension SignIn1VC: UIGestureRecognizerDelegate {
     
     func initGestureRecognizer() {
@@ -268,6 +286,10 @@ extension SignIn1VC: UIGestureRecognizerDelegate {
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             self.topConstraint.constant = 79
         })
+        
+        if phoneNumbTextField.text != "" {
+            phoneNumbTextField.text = setPhoneNumber(phone: gsno(phoneNumbTextField.text))
+        }
         
         self.view.layoutIfNeeded()
     }
