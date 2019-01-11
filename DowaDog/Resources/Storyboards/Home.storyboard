@@ -362,13 +362,13 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXN-J7-ll6">
-                                        <rect key="frame" x="30" y="473" width="63" height="18"/>
+                                        <rect key="frame" x="30" y="473" width="136" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="63" id="2xl-pv-zM3"/>
                                             <constraint firstAttribute="height" constant="18" id="P4l-bF-pSS"/>
+                                            <constraint firstAttribute="width" constant="136" id="T2c-Tj-0r9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
-                                        <state key="normal" title="입양 안내">
+                                        <state key="normal" title="기다릴개와 함께할개">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -409,7 +409,7 @@
                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BaO-yW-J6o">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mypageProfileImg" translatesAutoresizingMaskIntoConstraints="NO" id="BaO-yW-J6o">
                                                 <rect key="frame" x="211" y="0.0" width="44" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="gBF-RS-fi2"/>
@@ -531,6 +531,7 @@
                         <outlet property="guideView" destination="8sT-Zk-G5i" id="wpu-wb-fNB"/>
                         <outlet property="guideViewNextBtn" destination="5Sm-gG-IAa" id="Iif-yQ-pB9"/>
                         <outlet property="leftSwipe" destination="xXX-s1-Ctg" id="mZU-Bh-kry"/>
+                        <outlet property="myName" destination="Agn-5f-vji" id="7QL-1P-AYc"/>
                         <outlet property="new" destination="XBf-Xi-R50" id="2mp-FR-pNC"/>
                         <outlet property="newFamBtn" destination="C9z-zA-wTb" id="E68-k8-737"/>
                         <outlet property="profileImg" destination="BaO-yW-J6o" id="dFb-ce-iZt"/>
@@ -591,6 +592,7 @@
         <image name="drawerBtn" width="20" height="20"/>
         <image name="mainFindingBtn" width="238" height="61"/>
         <image name="mainIllust" width="375" height="602"/>
+        <image name="mypageProfileImg" width="86" height="86"/>
         <image name="popupOneIndicate" width="86" height="6"/>
         <image name="xBtn" width="15" height="15"/>
     </resources>

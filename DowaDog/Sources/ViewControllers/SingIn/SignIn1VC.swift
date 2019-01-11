@@ -49,7 +49,7 @@ class SignIn1VC: UIViewController {
         
         // navBar
         self.setNavigationBarShadow()
-        setBackBtn()
+        self.setBackBtn()
         
         
         // UI

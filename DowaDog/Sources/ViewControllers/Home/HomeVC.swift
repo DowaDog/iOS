@@ -13,7 +13,10 @@ class HomeVC: UIViewController {
     // 0 -> -428
     @IBOutlet var cardViewConstraint: NSLayoutConstraint!
 
+    // profile set
     @IBOutlet var profileImg: UIImageView!
+    @IBOutlet var myName: UILabel!
+    
     
     
     
@@ -108,6 +111,8 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
+        profileImg.layer.cornerRadius = profileImg.layer.frame.height/2
+        
         
         upSwipe.direction = .up
         downSwipe.direction = .down
@@ -119,6 +124,8 @@ class HomeVC: UIViewController {
         setSideMenu()
         setGuideView()
         setCardView()
+        
+        
 
 
 
