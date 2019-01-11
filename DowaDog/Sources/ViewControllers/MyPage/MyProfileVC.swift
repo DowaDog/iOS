@@ -84,6 +84,8 @@ class MyProfileVC: UIViewController {
         }
         print("transfer=========")
         
+            navigationController?.popViewController(animated: true)
+        
  
     }
     

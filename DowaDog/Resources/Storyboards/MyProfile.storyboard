@@ -1058,6 +1058,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="815"/>
                     <connections>
+                        <outlet property="birthTf" destination="5A7-4A-VHm" id="w4h-3B-pf6"/>
                         <outlet property="doBtn" destination="ipx-qs-7ja" id="lIK-yQ-McW"/>
                         <outlet property="femaleBtn" destination="JmB-ME-fbb" id="xOF-X6-oLO"/>
                         <outlet property="inject1Btn" destination="F4N-g1-EnL" id="D5P-XQ-yb2"/>
@@ -1066,9 +1067,12 @@
                         <outlet property="inject4Btn" destination="2rC-Uu-toI" id="OQW-V9-eEY"/>
                         <outlet property="inject5Btn" destination="ien-R1-8Mh" id="8q7-Zb-Rgx"/>
                         <outlet property="inject6Btn" destination="30e-O9-IkY" id="4Mo-d3-6Ol"/>
+                        <outlet property="kindTf" destination="tsE-p7-OHz" id="Ib5-ur-OIt"/>
                         <outlet property="maleBtn" destination="mZy-z3-OfP" id="TV8-II-4ha"/>
+                        <outlet property="nameTf" destination="Sc4-NC-zu2" id="sFT-ix-hpa"/>
                         <outlet property="profileImage" destination="E6w-Q3-KRN" id="Phg-JZ-kSV"/>
                         <outlet property="undoBtn" destination="VWE-y6-v77" id="tUE-AW-P9L"/>
+                        <outlet property="weightTf" destination="gPW-uc-U2H" id="HpX-cu-4PP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSc-gf-7xC" userLabel="First Responder" sceneMemberID="firstResponder"/>
