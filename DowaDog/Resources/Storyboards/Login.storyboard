@@ -158,6 +158,7 @@
                     <navigationItem key="navigationItem" id="4PL-5Q-G9E"/>
                     <connections>
                         <outlet property="aroundBtn" destination="eKy-bo-X8q" id="ZYN-Xy-p6f"/>
+                        <outlet property="constraint" destination="Aka-ae-Rod" id="d9y-b1-aoU"/>
                         <outlet property="idTextField" destination="dsf-tH-WMV" id="0Iw-PF-gwS"/>
                         <outlet property="loginBtn" destination="6ds-dD-Vy4" id="Swj-S3-D4V"/>
                         <outlet property="pwTextField" destination="iFR-jf-1mQ" id="nLn-Dp-QPk"/>

@@ -30,10 +30,6 @@ struct LoginService: APIManager, Requestable {
         postable(queryURL, body: nil, header: headers) { res in
             switch res {
             case .success(let value):
-                print(".success=========================")
-                print("value: ")
-                print(value)
-                print(".success=========================")
                 
                 guard let token = value.data else {return}
                 completion(token)
@@ -59,10 +55,6 @@ struct LoginService: APIManager, Requestable {
         postable(queryURL, body: body, header: headers) { res in
             switch res {
             case .success(let value):
-                print(".success=========================")
-                print("value: ")
-                print(value)
-                print(".success=========================")
                 
                 completion(value)
             case .error(let error):
