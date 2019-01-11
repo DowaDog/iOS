@@ -53,8 +53,9 @@ class MyPageMainVC: UIViewController {
                 
                 UserDefaults.standard.removeObject(forKey: "Token")
                 
-                // 여기
+                let logout = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginNav") as! UINavigationController
                 
+                self.present(logout, animated: true, completion: nil)
             })}
             , cancleHandler: {(alert: UIAlertAction!) in
                 UIView.animate(withDuration: 0.3, animations: {
