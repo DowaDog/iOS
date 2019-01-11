@@ -10,6 +10,9 @@ import UIKit
 
 class NewDogDetailCVCell: UICollectionViewCell {
     
+    @IBOutlet weak var dayView: UIView!
+    
+    
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var animalImage: UIImageView!
     
@@ -37,6 +40,7 @@ class NewDogDetailCVCell: UICollectionViewCell {
         
         self.heartBtn.isEnabled = false
         
+        dayView.roundRadius()
         
         
     }

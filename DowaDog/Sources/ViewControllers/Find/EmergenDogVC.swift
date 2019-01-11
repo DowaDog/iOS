@@ -15,6 +15,8 @@ class EmergenDogVC: UIViewController {
     
     var emergenDogList = [EmergenDog]()
     
+    var pagelimit:Int?
+    
     @IBOutlet weak var navbar: UINavigationItem!
     var reuseIdentifier = "emergenCell"
     
@@ -44,6 +46,7 @@ class EmergenDogVC: UIViewController {
             print(data)
             print("---여기--------------")
             self.emergenDogList  = self.emergenDogList + data
+            self.pagelimit = (data.count/10) + 1
             self.collectionView.reloadData()
             
             self.lastPage += 1
@@ -143,7 +146,11 @@ extension EmergenDogVC: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if !(indexPath.row + 1 < self.emergenDogList.count) {
-            getBoard()
+            if lastPage <=  pagelimit ?? 100{
+                getBoard()
+            }else{
+                
+            }
         }
         
         
@@ -175,23 +182,14 @@ extension EmergenDogVC: UICollectionViewDelegate{
     }
 }
 
+
 extension EmergenDogVC: UICollectionViewDelegateFlowLayout {
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (view.frame.width - 45) / 2
         let height: CGFloat = ((view.frame.width - 45) / 2) * 0.8 + 53
         return CGSize(width: width, height: height)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
     }
     
     
