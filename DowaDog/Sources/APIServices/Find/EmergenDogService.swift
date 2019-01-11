@@ -45,6 +45,34 @@ struct EmergenDogService: APIManager, Requestable{
         }
     }
     
+    // Search with Hashtag
+    func findAnimalByHashTag(hashtag: String, completion: @escaping ([EmergenDog]) -> Void) {
+        
+        let queryURL = emergenDogURL + "/hashtags?tag=\(hashtag)"
+        let encodingURL = queryURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        gettable(encodingURL, body: nil, header: headers) { res in
+            switch res {
+            case .success(let value):
+                
+                print(".success=========================")
+                print("value: ")
+                print(value)
+                print(".success=========================")
+                
+                guard let data = value.data?.content else {return}
+                
+                completion(data)
+            case .error(let error):
+                
+                print("error======================")
+                print("error : ")
+                print(error)
+                print("error======================")
+            }
+        }
+    }
+    
     // Search without story
     func findAnimalList(type: String?, region: String?, remainNoticeDate: Int?, searchWord: String?, page: Int?, limit: Int?, completion: @escaping ([EmergenDog]) -> Void) {
         

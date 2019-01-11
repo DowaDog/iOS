@@ -51,12 +51,6 @@ class SignIn2VC: UIViewController {
         // navBar
         self.setNavigationBarShadow()
         self.setBackBtn()
-        
-        
-        
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,20 +98,22 @@ class SignIn2VC: UIViewController {
         
         if test {
             guard let id = idTextField.text else {return}
+            print("여기")
             
-            DuplicateService.shared.duplicateId(id: id) { (data) in
+            DuplicateService.shared.duplicateId(id: id) {
+                (data) in
                 
                 print(data)
                 
                 print("성공")
                 
-                if data.data == false{
+                if data.data == false {
                     
                     self.simpleAlert(title: "성공", message: "사용 가능한 아이디입니다.")
                     self.idCheck = true
                     
                 }
-                else if data.data == true{
+                else if data.data == true {
                     
                     self.simpleAlert(title: "실패", message: "이미 사용중인 아이디입니다.")
                     self.idCheck = false
