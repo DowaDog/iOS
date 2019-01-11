@@ -21,8 +21,12 @@ class HomeVC: UIViewController {
     // 구조수
     @IBOutlet var todayCount: UILabel!
     
-    
-    
+    // Step3
+    @IBOutlet var place: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var prepare1: UILabel!
+    @IBOutlet var prepare2: UILabel!
+    @IBOutlet var prepare3: UILabel!
     
     // Swipe
     @IBOutlet var upSwipe: UISwipeGestureRecognizer!
@@ -100,7 +104,6 @@ class HomeVC: UIViewController {
     
     
     var guideState: Int = 0                 // 가이드뷰 스테이트
-    var guideViewFlag: Bool = false         // 가이드뷰 확인
     var blackFlag: Bool = false             // 
     
     
@@ -129,18 +132,9 @@ class HomeVC: UIViewController {
         setGuideView()
         setCardView()
         
-        
-
-
-
-        if guideViewFlag == false {
+        if UserDefaults.standard.string(forKey: "guide") == nil {
             cardView.alpha = 0
-            new.alpha = 0
             showGuideView()
-        } else {
-            if newFlag == false {
-                new.alpha = 1
-            }
         }
     }
     
@@ -154,6 +148,11 @@ class HomeVC: UIViewController {
             print(data)
             print("data: =========================")
             
+            if self.gbno(data.data?.userCheck) == true {
+                self.new.alpha = 0
+            } else {
+                self.new.alpha = 1
+            }
             
             self.newFlag = self.gbno(data.data?.userCheck)
         }
@@ -209,10 +208,11 @@ class HomeVC: UIViewController {
             self.blackFlag = false
             self.blackScreen2.alpha = 0
             self.guideView.alpha = 0
-            self.guideViewFlag = true
 
             self.view.layoutIfNeeded()
         })
+        
+        UserDefaults.standard.set("1", forKey: "guide")
     }
     
     @IBAction func menuTapped(_ sender: Any) {
@@ -230,7 +230,7 @@ class HomeVC: UIViewController {
     }
     
     @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
-        if guideViewFlag == true {
+        if UserDefaults.standard.string(forKey: "guide") == nil {
             hideCardView()
         }
     }
