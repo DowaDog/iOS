@@ -12,7 +12,12 @@ class Page1VC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var reuseIdentifier = "Page1CVCell"
     
+    var edu1:Int = 0
+    var edu2:Int = 0
+    var edu3:Int = 0
+    var edu4:Int = 0
     
+    var sum:Int!
 
     var educationList = [Education]()
     
@@ -21,7 +26,15 @@ class Page1VC: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-       
+        UserDefaults.standard.set(edu1, forKey: "edu1")
+        UserDefaults.standard.set(edu2, forKey: "edu2")
+        UserDefaults.standard.set(edu3, forKey: "edu3")
+        UserDefaults.standard.set(edu4, forKey: "edu4")
+        UserDefaults.standard.set(sum, forKey: "Sum")
+        sum = edu1 + edu2 + edu3 + edu4
+        
+        
+ 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,12 +108,16 @@ extension Page1VC: UICollectionViewDelegate{
             self.educationList = data
             self.collectionView.reloadData()
             
-            let education = self.educationList[indexPath.item]
+          
             
             if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ContentDetailVC") as? ContentDetailVC {
                 
+                  let education = self.educationList[indexPath.item]
                 dvc.id = education.id
-                
+                dvc.getTitle  = self.gsno(education.title)
+                dvc.getImage = self.gsno(education.imgPath)
+                dvc.getScrap = self.gbno(education.scrap)
+                dvc.isEducated = self.gbno(education.educated)
                     //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                 self.navigationController?.pushViewController(dvc, animated: true)
             }

@@ -16,6 +16,7 @@ struct Education: Mappable {
     var imgPath: String?
     var educated: Bool?
     var auth: Bool?
+    var scrap: Bool?
     
     init?(map: Map) {
         
@@ -29,5 +30,7 @@ struct Education: Mappable {
         imgPath <- map["imgPath"]
         educated <- map["educated"]
         auth <- map["auth"]
+        
+        scrap <- map["scrap"]
     }
 }

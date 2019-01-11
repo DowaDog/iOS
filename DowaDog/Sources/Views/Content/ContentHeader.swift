@@ -11,6 +11,8 @@ import UIKit
 class ContentHeader: UICollectionReusableView {
     @IBOutlet weak var title: UITextView!
     @IBOutlet weak var contentDate: UILabel!
+    @IBOutlet weak var mainImage: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

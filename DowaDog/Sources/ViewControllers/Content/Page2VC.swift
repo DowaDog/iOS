@@ -98,8 +98,13 @@ extension Page2VC: UICollectionViewDelegate{
             
             self.collectionView.reloadData()
             if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ContentDetailVC") as?ContentDetailVC {
+                let knowledge = self.knowledgeList[indexPath.row]
                 
                 dvc.id = knowledge.id
+                dvc.getTitle  = self.gsno(knowledge.title)
+                dvc.getImage = self.gsno(knowledge.imgPath)
+                dvc.getScrap = self.gbno(knowledge.scrap)
+                dvc.isEducated = true
                 //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                 self.navigationController?.pushViewController(dvc, animated: true)
             }
