@@ -10,26 +10,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SplashVC-->
         <scene sceneID="d6e-B9-rVR">
             <objects>
-                <viewController id="V71-eD-jO6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splashController" id="V71-eD-jO6" customClass="SplashVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ugD-cL-9BZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="geL-QB-YOc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="yfz-mD-frf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ugR-bo-1sG" firstAttribute="bottom" secondItem="yfz-mD-frf" secondAttribute="bottom" id="EpE-DZ-kjp"/>
+                            <constraint firstItem="ugR-bo-1sG" firstAttribute="trailing" secondItem="yfz-mD-frf" secondAttribute="trailing" id="KKU-7p-r7T"/>
+                            <constraint firstItem="ugR-bo-1sG" firstAttribute="top" secondItem="yfz-mD-frf" secondAttribute="top" constant="20" id="Vbu-Xz-qoN"/>
+                            <constraint firstItem="yfz-mD-frf" firstAttribute="width" secondItem="ugD-cL-9BZ" secondAttribute="height" multiplier="375:667" id="Yhx-9U-CR3"/>
+                            <constraint firstItem="yfz-mD-frf" firstAttribute="leading" secondItem="ugR-bo-1sG" secondAttribute="leading" id="zZ5-d9-S4K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ugR-bo-1sG"/>
                     </view>
+                    <connections>
+                        <outlet property="splashImage" destination="yfz-mD-frf" id="Xlm-F1-Yyt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pze-fp-8tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="72.799999999999997" y="124.58770614692655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash" width="720" height="1280"/>
+    </resources>
 </document>

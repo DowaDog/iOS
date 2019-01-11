@@ -10,6 +10,4 @@ target 'DowaDog' do
   pod 'AlamofireObjectMapper'
   pod 'ObjectMapper'
   pod 'Kingfisher'
-  pod 'Firebase/Core'
-  pod 'Firebase/DynamicLinks'
 end
