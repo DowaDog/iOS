@@ -40,7 +40,6 @@
 		4C15B3F921E78C360046692B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B3F821E78C360046692B /* ContentCell.swift */; };
 		4C15B3FB21E78C570046692B /* ContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B3FA21E78C570046692B /* ContentHeader.swift */; };
 		4C15B3FD21E78C9D0046692B /* ContentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B3FC21E78C9D0046692B /* ContentDetailVC.swift */; };
-		4C15B40521E834A60046692B /* AutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15B40421E834A60046692B /* AutoCell.swift */; };
 		4C72A14F21DB2CC20039ECB9 /* SMSTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */; };
 		4CF5A64521DC9A0F00969511 /* Page1CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */; };
 		4CF5A64821DC9A2700969511 /* Page2CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5A64721DC9A2700969511 /* Page2CVCell.swift */; };
@@ -118,7 +117,6 @@
 		F5508A2921D4D8B100BE73FF /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2521D4D8B100BE73FF /* NanumSquareLight.ttf */; };
 		F5508A2A21D4D8B100BE73FF /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2621D4D8B100BE73FF /* NanumSquareExtraBold.ttf */; };
 		F5508A2B21D4D8B100BE73FF /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5508A2721D4D8B100BE73FF /* NanumSquareBold.ttf */; };
-		F5609D4D21E11A5D0090E3B6 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D4C21E11A5D0090E3B6 /* CustomNavigationBar.swift */; };
 		F5609D4F21E11AC20090E3B6 /* AdoptListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D4E21E11AC20090E3B6 /* AdoptListVC.swift */; };
 		F5609D5121E11AD50090E3B6 /* LetterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D5021E11AD50090E3B6 /* LetterVC.swift */; };
 		F5609D5321E11AE80090E3B6 /* MyDogDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609D5221E11AE80090E3B6 /* MyDogDetailVC.swift */; };
@@ -198,7 +196,6 @@
 		4C15B3F821E78C360046692B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		4C15B3FA21E78C570046692B /* ContentHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeader.swift; sourceTree = "<group>"; };
 		4C15B3FC21E78C9D0046692B /* ContentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailVC.swift; sourceTree = "<group>"; };
-		4C15B40421E834A60046692B /* AutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCell.swift; sourceTree = "<group>"; };
 		4C72A14E21DB2CC20039ECB9 /* SMSTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMSTestViewController.swift; path = DowaDog/Sources/ViewControllers/SMSTestViewController.swift; sourceTree = SOURCE_ROOT; };
 		4CF5A64421DC9A0F00969511 /* Page1CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1CVCell.swift; sourceTree = "<group>"; };
 		4CF5A64721DC9A2700969511 /* Page2CVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2CVCell.swift; sourceTree = "<group>"; };
@@ -279,7 +276,6 @@
 		F5508A2521D4D8B100BE73FF /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
 		F5508A2621D4D8B100BE73FF /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
 		F5508A2721D4D8B100BE73FF /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
-		F5609D4C21E11A5D0090E3B6 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		F5609D4E21E11AC20090E3B6 /* AdoptListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptListVC.swift; sourceTree = "<group>"; };
 		F5609D5021E11AD50090E3B6 /* LetterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterVC.swift; sourceTree = "<group>"; };
 		F5609D5221E11AE80090E3B6 /* MyDogDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDogDetailVC.swift; sourceTree = "<group>"; };
@@ -673,7 +669,6 @@
 				F5508A2321D4D89200BE73FF /* Fonts */,
 				F5508A1621D4D54400BE73FF /* Assets.xcassets */,
 				F5508A1B21D4D54400BE73FF /* Info.plist */,
-				F5609D4C21E11A5D0090E3B6 /* CustomNavigationBar.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -798,7 +793,6 @@
 				4C0E95C321D890BD00301D52 /* Adopt.storyboard */,
 				4C0E95C521D890CB00301D52 /* MyProfile.storyboard */,
 				4C0E95F121D894B000301D52 /* Contents.storyboard */,
-				4C15B40421E834A60046692B /* AutoCell.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1114,11 +1108,9 @@
 				4C0E95CF21D8916200301D52 /* SignIn2VC.swift in Sources */,
 				4C15B3F921E78C360046692B /* ContentCell.swift in Sources */,
 				F511E28221E53767004E462F /* TokenType.swift in Sources */,
-				F5609D4D21E11A5D0090E3B6 /* CustomNavigationBar.swift in Sources */,
 				4C15B3FD21E78C9D0046692B /* ContentDetailVC.swift in Sources */,
 				F54B111F21E31428000BA8DF /* MyLikeListService.swift in Sources */,
 				F5609D5521E11AFC0090E3B6 /* MyPageMainVC.swift in Sources */,
-				4C15B40521E834A60046692B /* AutoCell.swift in Sources */,
 				4C00D46621E669000051AC37 /* StoryHeader.swift in Sources */,
 				F511E26E21E48535004E462F /* Edu.swift in Sources */,
 				F54B112121E3144F000BA8DF /* MyLikeList.swift in Sources */,

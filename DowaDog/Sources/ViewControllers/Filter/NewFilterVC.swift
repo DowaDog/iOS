@@ -61,7 +61,9 @@ class NewFilterVC: UIViewController {
     // set navigationBar Button
     func setNavigationBarBtn() {
         self.title = "필터"
-        self.navBarTitleColor = UIColor(red: 72/255, green: 72/255, blue: 72/255, alpha: 1.0)
+            let bar: UINavigationBar! = self.navigationController?.navigationBar
+ 
+        bar.barTintColor = UIColor(red: 72/255, green: 72/255, blue: 72/255, alpha: 1.0)
         resetBtn = UIBarButtonItem(image:UIImage(named: "filterRefresh") , style: .plain, target: self, action: #selector(refreshAction))
         resetBtn.tintColor = UIColor(red: 111/255, green: 111/255, blue: 111/255, alpha: 1.0)
         navigationItem.rightBarButtonItems = [resetBtn]

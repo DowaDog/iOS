@@ -52,7 +52,7 @@ class AboutEmergenVC: UIViewController {
         noticeView.roundRadius()
         notice2View.roundRadius()
         
-         self.navBarBackgroundAlpha = 0//navbar 투명하게 setup
+        self.setNavigationBar()
         
     }
     override func viewWillAppear(_ animated: Bool) {

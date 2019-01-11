@@ -17,6 +17,7 @@ class ContentDetailVC: UIViewController {
     var isEducated:Bool?
     var scrapClick:Bool?
     
+    var count:Int?
     var getTitle:String?
     var getImage:String?
     var getScrap:Bool?
@@ -28,6 +29,58 @@ class ContentDetailVC: UIViewController {
     var id:Int!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var noticeView: UIView!
+    @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var coverView: UIView!
+    
+    @IBOutlet weak var countAlert: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        self.setBackBtn()
+        self.setNavigationBar()
+
+        
+        scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(scrapTapped))
+        scrapItem.tintColor = UIColor.white
+        navigationItem.rightBarButtonItems = [scrapItem]
+        
+        
+        if getScrap == false{
+            scrapClick = false
+        }else if getScrap == true{
+            scrapClick = true
+        }
+        
+        
+        if isEducated == false{
+            
+        }else if isEducated == true{
+            adoptBtn.alpha = 0.0
+        }
+        
+        noticeView.roundRadius()
+        coverView.alpha = 0.0
+        alertView.alpha = 0.0
+        
+        countAlert.text = "4개 중의 \(self.gino(count))개의"
+        
+        
+        
+        
+        let panGestureRecongnizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))
+        collectionView.addGestureRecognizer(panGestureRecongnizer)
+        panGestureRecongnizer.delegate = self 
+        
+            collectionView.delaysContentTouches = true
+        
+        
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,32 +101,7 @@ class ContentDetailVC: UIViewController {
         }
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        self.setBackBtn()
-        self.navBarBackgroundAlpha = 0.0
-        
-        scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(scrapTapped))
-        scrapItem.tintColor = UIColor.white
-        
-        if getScrap == false{
-              scrapClick = false
-        }else if getScrap == true{
-             scrapClick = true
-        }
- navigationItem.rightBarButtonItems = [scrapItem]
-        
-        if isEducated == false{
-            
-        }else if isEducated == true{
-            adoptBtn.alpha = 0.0
-        }
-        
-    }
+
     
     @objc func scrapTapped(){
         
@@ -99,6 +127,30 @@ class ContentDetailVC: UIViewController {
 
     }
     
+    @objc func panAction (_ sender : UIPanGestureRecognizer){
+        
+        let velocity = sender.velocity(in: collectionView)
+        
+        if abs(velocity.x) > abs(velocity.y) {
+            
+            
+        }
+            
+        else if abs(velocity.y) > abs(velocity.x) {
+            if velocity.y<0{
+                self.adoptBtn.alpha = 0.0
+                
+            }else{
+                self.adoptBtn.alpha = 1.0
+                
+            }
+            
+        }
+        
+        
+    }
+
+    
     @IBAction func educationCompleteAction(_ sender: Any) {
         EducationListService.shared.contentComplete(contentIdx: id){
             (data) in
@@ -107,9 +159,22 @@ class ContentDetailVC: UIViewController {
             print(data)
             print("isComplete==================")
         }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.coverView.alpha = 0.5
+            self.alertView.alpha = 1.0
+            
+            
+        })
+        
+    }
+    
+    @IBAction func okBtnAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+     
     }
     
 }
+
 
 extension ContentDetailVC :UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -165,16 +230,28 @@ extension ContentDetailVC:UICollectionViewDelegateFlowLayout{
       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusablecell, for: indexPath) as! ContentCell
 
+        //동적으로 cell 높이를 지정해보자
         let contentstory = contentList[indexPath.row]
-        let approximateWidthOfText = view.frame.width - 150 - 8
+        let approximateWidthOfText = view.frame.width - 24 - 20
         let size = CGSize(width: approximateWidthOfText, height: 500)
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]
         let estimatedFrame = NSString(string: contentstory.detail ?? "").boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         
-        return estimatedFrame.height + 10
+    
+        return estimatedFrame.height 
     }
 
 
     
 }
 
+
+extension ContentDetailVC : UIGestureRecognizerDelegate{
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+        
+        return true
+        
+    }
+    
+}

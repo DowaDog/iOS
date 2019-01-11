@@ -55,6 +55,7 @@ extension UIViewController {
 
     }
     
+    
     func setNavigationSahdow(){
         let bar: UINavigationBar! = self.navigationController?.navigationBar
         
@@ -62,18 +63,7 @@ extension UIViewController {
         bar.backgroundColor = UIColor.clear
         
     }
-    //    //커스텀 백버튼 설정
-    //    func setBackBtn(color : UIColor){
-    //
-    //        let backBTN = UIBarButtonItem(image: UIImage(named: "icBackBtn"), //백버튼 이미지 파일 이름에 맞게 변경해주세요.
-    //            style: .plain,
-    //            target: self,
-    //            action: #selector(self.pop))
-    //        navigationItem.leftBarButtonItem = backBTN
-    //        navigationItem.leftBarButtonItem?.tintColor = color
-    //        navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
-    //    }
-    //
+
     //확인 팝업
     func simpleAlert(title: String, message: String) {
         
@@ -120,35 +110,7 @@ extension UIViewController {
     }
 }
 
-extension UIView {
-    
-    
-    
-//    //뷰 라운드 처리 설정
-//    func makeRounded(cornerRadius : CGFloat?){
-//        if let cornerRadius_ = cornerRadius {
-//            self.layer.cornerRadius = cornerRadius_
-//        }  else {
-//            self.layer.cornerRadius = self.layer.frame.height/2
-//        }
-//        self.layer.masksToBounds = true
-//    }
-    
-//    //뷰 그림자 설정
-//    //color: 색상, opacity: 그림자 투명도, offset: 그림자 위치, radius: 그림자 크기
-//    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
-//        layer.masksToBounds = false
-//        layer.shadowColor = color.cgColor
-//        layer.shadowOpacity = opacity
-//        layer.shadowOffset = offSet
-//        layer.shadowRadius = radius
-//
-//        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-//        layer.shouldRasterize = true
-//        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-//    }
-//}
-}
+
 extension UIView {
     
     
