@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "adoptingDocumentCheckGrey.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "adoptingDocumentCheckGrey.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "adoptingDocumentCheckGrey@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "adoptingDocumentCheckGrey@2x.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "adoptingDocumentCheckGrey@3x.png",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "adoptingDocumentCheckGrey@3x.png"
     }
   ],
   "info" : {
