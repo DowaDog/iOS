@@ -15,7 +15,8 @@ class MainPageVC: UIViewController {
     @IBOutlet weak var page2CV: UIView!
     
     
-   
+    @IBOutlet var blackscreen2: UIView!
+    
     @IBOutlet weak var selectPoint1: UIView!
     
     @IBOutlet weak var selectPoint2: UIView!
@@ -32,7 +33,6 @@ class MainPageVC: UIViewController {
 
     
     // sidemenu
-    var blackScreen: UIView!
     @IBOutlet var sideMenuView: UIView!
     
     
@@ -41,6 +41,7 @@ class MainPageVC: UIViewController {
         super.viewDidLoad()
         
         self.setNavigationBarShadow()
+        self.setBlackScreen2()
 
         page2CV.alpha = 0.0
         self.selectPoint1.alpha = 1.0
@@ -50,33 +51,18 @@ class MainPageVC: UIViewController {
         self.tab2.setTitleColor(UIColor(red: 154.0/255.0, green: 154.0/255.0, blue: 154.0/255.0, alpha: 1.0), for: .normal)
         
         // sidemenu
-        setBlackScreen()
         setSideMenu()
     }
     
     // sidemenu
     func setSideMenu() {
-        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
-        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
-        
         self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
     }
     
-    func setBlackScreen() {
-        blackScreen=UIView(frame: self.view.bounds)
-        blackScreen.alpha = 0
-        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        self.navigationController?.view.addSubview(blackScreen)
-        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
-        blackScreen.addGestureRecognizer(tapGestRecognizer)
-    }
+   
     
     @IBAction func menuTapped(_ sender: Any) {
         showMenu()
-    }
-    
-    @IBAction func xBtnAction(_ sender: Any) {
-        hideMenu()
     }
     
     
@@ -85,8 +71,10 @@ class MainPageVC: UIViewController {
     }
     
     func showMenu() {
+        self.navigationController?.navigationBar.layer.zPosition = -1
+        
         UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 1
+            self.blackscreen2.alpha = 1
         })
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
@@ -94,20 +82,34 @@ class MainPageVC: UIViewController {
         })
     }
     func hideMenu() {
+        self.navigationController?.navigationBar.layer.zPosition = 1
+        
         UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 0
+            self.blackscreen2.alpha = 0
         })
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
         })
     }
+    
+    func setBlackScreen2() {
+        let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(blackScreen2TapAction(sender:)))
+        blackscreen2.addGestureRecognizer(tapGestRecognizer2)
+    }
+    
+    @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
+        hideMenu()
+    }
+    
     @IBAction func sideNavBtnAction(_ sender: UIButton) {
         
         if let btnTitle = sender.titleLabel?.text {
             switch (btnTitle) {
             case "홈":
                 hideMenu()
+                
+                performSegue(withIdentifier: "unwindToHome", sender: self)
                 
                 break
             case "기다릴개 란?":
@@ -136,16 +138,16 @@ class MainPageVC: UIViewController {
             case "컨텐츠":
                 hideMenu()
                 
-                let contents = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentsNav") as! UINavigationController
-                
-                self.present(contents, animated: true, completion: nil)
                 break
             case "마이페이지":
                 hideMenu()
-                
-                let myProfile = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyProfileNav") as! UINavigationController
-                
-                self.present(myProfile, animated: true, completion: nil)
+                if UserDefaults.standard.string(forKey: "Token") != nil {
+                    let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
+                    
+                    self.navigationController?.pushViewController(myPage, animated: true)
+                } else {
+                    simpleAlert(title: "접근불가", message: "로그인이 필요합니다.")
+                }
                 break
             case "기다릴개와 함께할개":
                 hideMenu()
