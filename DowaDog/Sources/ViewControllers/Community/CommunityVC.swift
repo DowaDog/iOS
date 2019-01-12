@@ -65,10 +65,6 @@ class CommunityVC: UIViewController {
     
     
     
-    
-    
-    
-    
     func setBlackScreen2() {
         let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(blackScreen2TapAction(sender:)))
         blackscreen2.addGestureRecognizer(tapGestRecognizer2)

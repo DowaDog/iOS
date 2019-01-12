@@ -541,9 +541,6 @@
                     <navigationItem key="navigationItem" id="YGa-mN-gjP">
                         <barButtonItem key="leftBarButtonItem" image="barButtonItem:dwy-tO-l3d:image" id="dwy-tO-l3d">
                             <color key="tintColor" red="0.45490837099999998" green="0.45489025119999998" blue="0.4549025297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="menuTapped:" destination="gCu-Rm-ulV" id="kQg-db-GCN"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="barButtonItem:gJs-vj-VZR:image" id="gJs-vj-VZR">
                             <color key="tintColor" red="0.45490837097167969" green="0.45489025115966797" blue="0.4549025297164917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -557,7 +554,6 @@
                         <outlet property="collectionView" destination="MKe-Xt-vLb" id="Xia-CB-44I"/>
                         <outlet property="filterBtn" destination="wso-CZ-ZMi" id="SEw-HQ-oCr"/>
                         <outlet property="sideMenuView" destination="TgB-GK-XE1" id="s5o-xB-WYS"/>
-                        <outlet property="sidemenu" destination="TgB-GK-XE1" id="Mrm-My-80g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mjf-Pm-mRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
