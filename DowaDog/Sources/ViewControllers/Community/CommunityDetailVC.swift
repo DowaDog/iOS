@@ -69,7 +69,7 @@ class CommunityDetailVC: UIViewController {
             self.mainImage.imageFromUrl(self.imageArray?[0], defaultImgPath: "")
         }
         
-        CommentListService.shared.getCommunityList(communityIdx: communityIdx!) {
+        CommentListService.shared.getCommunityList(communityIdx: id) {
             (data) in
             
             print(data)
