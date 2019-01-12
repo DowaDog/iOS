@@ -35,6 +35,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
     var resusableheader = "header"
     
     
+    @IBOutlet var sideMenuView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
