@@ -19,7 +19,7 @@ class StoryDogVC: UIViewController {
     @IBOutlet weak var adoptBtn: UIButton!
     
     var lastPage = 0
-    
+
     var age:String?
     var tel:String?
     var care:String?
@@ -65,12 +65,10 @@ class StoryDogVC: UIViewController {
         
         let panGestureRecongnizer = UIPanGestureRecognizer(target: self, action: #selector(panAction(_ :)))
         
-    collectionView.addGestureRecognizer(panGestureRecongnizer)
+        collectionView.addGestureRecognizer(panGestureRecongnizer)
         panGestureRecongnizer.delegate = self
         
         collectionView.delaysContentTouches = true
-        
-        setNavigationBar()
         
         adoptBtn.alpha = 0.0
         
@@ -78,9 +76,9 @@ class StoryDogVC: UIViewController {
         coverView.alpha = 0.0
         
         noticeView.roundRadius()
+        setNavigationSahdow()
         
-        
-        
+
     }
 
     

@@ -31,7 +31,6 @@ class EmergenDogVC: UIViewController {
         
         
         navbar.title = "긴급동물"
-        self.setNavigationBarShadow()
         
     }
     override func viewWillAppear(_ animated: Bool) {

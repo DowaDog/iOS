@@ -28,7 +28,8 @@ class NewDogVC: UIViewController {
         navbar.title = "제 이야기를 들어보실래요?"
         
         self.setBackBtn()
-        self.setNavigationBarShadow()
+        
+        // init
         
     }
     

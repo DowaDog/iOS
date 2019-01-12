@@ -56,6 +56,9 @@ class NewFilterVC: UIViewController {
         initButton()
         setButtonImage()
         setNavigationBarBtn()
+        
+        // init
+        self.setNavigationBarClear()
     }
     
     // set navigationBar Button

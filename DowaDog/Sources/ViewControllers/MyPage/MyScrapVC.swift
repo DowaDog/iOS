@@ -104,7 +104,8 @@ extension MyScrapVC:UITableViewDelegate{
         let dvc = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentDetailVC") as! ContentDetailVC
 
         dvc.id = gino(scrap.id)
-            
+        dvc.getScrap = true
+        dvc.getTitle = gsno(scrap.title)
         //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
         
         navigationController?.pushViewController(dvc, animated: true)
