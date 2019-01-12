@@ -11,6 +11,7 @@ import UIKit
 class ContentDetailVC: UIViewController {
 
     var contentList = [Content]()
+    
     var reusablecell = "cell"
     var resusableheader = "header"
     
@@ -41,9 +42,12 @@ class ContentDetailVC: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         self.setBackBtn()
-        self.setNavigationBar()
+        
+//        self.setBackBtn(color: UIColor.lightGray)
+        self.setNavigationBarClear()
+
+
 
         
         scrapItem = UIBarButtonItem(image:UIImage(named: "categoryUnscrabBtn.png") , style: .plain, target: self, action: #selector(scrapTapped))
@@ -53,12 +57,17 @@ class ContentDetailVC: UIViewController {
         
         if getScrap == false{
             scrapClick = false
+            self.scrapItem.image = UIImage(named: "categoryUnscrabBtn.png")
+            
         }else if getScrap == true{
             scrapClick = true
+            self.scrapItem.image = UIImage(named: "categoryScrabBtn.png")
+
         }
         
         
         if isEducated == false{
+            
             
         }else if isEducated == true{
             adoptBtn.alpha = 0.0
@@ -77,7 +86,7 @@ class ContentDetailVC: UIViewController {
         collectionView.addGestureRecognizer(panGestureRecongnizer)
         panGestureRecongnizer.delegate = self 
         
-            collectionView.delaysContentTouches = true
+        collectionView.delaysContentTouches = true
         
         
     }
@@ -94,10 +103,10 @@ class ContentDetailVC: UIViewController {
             print(data)
             print("CardVc content==============================")
             
+            
             self.contentList = data
             self.collectionView.reloadData()
-            
-        
+
         }
         
     }
@@ -207,8 +216,13 @@ extension ContentDetailVC :UICollectionViewDataSource{
         }
         
         
-        
+        let today = NSDate() //현재 시각 구하기
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 M월 d일"
+        var dateString = dateFormatter.string(from: today as Date)
+  
             view.title.text = getTitle
+            view.contentDate.text = dateString
 
             return view
         }

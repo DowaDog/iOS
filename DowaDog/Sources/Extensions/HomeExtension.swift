@@ -31,8 +31,10 @@ extension UIViewController {
     func setNavigationBarShadow() {
         let bar: UINavigationBar! = self.navigationController?.navigationBar
         bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        bar.backgroundColor = UIColor.clear
+        bar.backgroundColor = UIColor.white
     }
+    
+    
     
     func setTopItem(title: String) {
         
