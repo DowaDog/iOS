@@ -273,13 +273,21 @@
                                     <segue destination="3ZN-UE-Se2" kind="show" identifier="action_show" id="y4w-o7-xRs"/>
                                 </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-L5-hBg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XPh-pn-ahE" firstAttribute="trailing" secondItem="wso-CZ-ZMi" secondAttribute="trailing" constant="130" id="79b-AH-Afg"/>
+                            <constraint firstItem="r4f-L5-hBg" firstAttribute="leading" secondItem="XPh-pn-ahE" secondAttribute="leading" id="7XV-Ef-PmW"/>
                             <constraint firstItem="XPh-pn-ahE" firstAttribute="bottom" secondItem="wso-CZ-ZMi" secondAttribute="bottom" constant="10" id="Dkf-rf-0bB"/>
                             <constraint firstItem="MKe-Xt-vLb" firstAttribute="leading" secondItem="XPh-pn-ahE" secondAttribute="leading" id="O3f-eS-ymW"/>
+                            <constraint firstItem="XPh-pn-ahE" firstAttribute="top" secondItem="r4f-L5-hBg" secondAttribute="top" constant="64" id="OFz-cH-AQ4"/>
+                            <constraint firstItem="XPh-pn-ahE" firstAttribute="bottom" secondItem="r4f-L5-hBg" secondAttribute="bottom" id="Wxn-g5-p19"/>
                             <constraint firstItem="MKe-Xt-vLb" firstAttribute="top" secondItem="XPh-pn-ahE" secondAttribute="top" id="b8b-xw-AGr"/>
+                            <constraint firstItem="XPh-pn-ahE" firstAttribute="trailing" secondItem="r4f-L5-hBg" secondAttribute="trailing" id="npZ-Nq-UAy"/>
                             <constraint firstItem="wso-CZ-ZMi" firstAttribute="leading" secondItem="XPh-pn-ahE" secondAttribute="leading" constant="149" id="oTM-Xl-UG2"/>
                             <constraint firstItem="MKe-Xt-vLb" firstAttribute="bottom" secondItem="XPh-pn-ahE" secondAttribute="bottom" id="vn3-i9-dmJ"/>
                             <constraint firstItem="MKe-Xt-vLb" firstAttribute="trailing" secondItem="XPh-pn-ahE" secondAttribute="trailing" id="xy8-l3-6BZ"/>
@@ -301,6 +309,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="blackscreen2" destination="r4f-L5-hBg" id="Y87-uq-ZrJ"/>
                         <outlet property="collectionView" destination="MKe-Xt-vLb" id="Xia-CB-44I"/>
                         <outlet property="filterBtn" destination="wso-CZ-ZMi" id="SEw-HQ-oCr"/>
                     </connections>

@@ -19,6 +19,7 @@ class FindMainVC: UIViewController,sendBackDelegate {
     var page:Int = 0
     var limit:Int = 10
     
+    @IBOutlet var blackscreen2: UIView!
     var heartId:Int?
     
     var lastPage = 0
@@ -40,6 +41,9 @@ class FindMainVC: UIViewController,sendBackDelegate {
         
         getEmergenData()
         getData()
+        
+        
+        
     }
     
     func getEmergenData(){
@@ -134,6 +138,128 @@ class FindMainVC: UIViewController,sendBackDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func setBlackScreen2() {
+        let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(blackScreen2TapAction(sender:)))
+        blackscreen2.addGestureRecognizer(tapGestRecognizer2)
+    }
+    
+    @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
+        hideMenu()
+    }
+    
+    
+    
+    func setSideMenu() {
+        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+    }
+    
+    
+    
+    func showMenu() {
+        self.navigationController?.navigationBar.layer.zPosition = -1
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackscreen2.alpha = 1
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = .identity
+        })
+    }
+    func hideMenu() {
+        self.navigationController?.navigationBar.layer.zPosition = 1
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackscreen2.alpha = 0
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+        })
+    }
+    
+    
+    @IBAction func barBtnAction(_ sender: Any) {
+        showMenu()
+    }
+    
+    
+    // 연결필요
+    @IBAction func sideNavBtnAction(_ sender: UIButton) {
+        
+        if let btnTitle = sender.titleLabel?.text {
+            switch (btnTitle) {
+            case "홈":
+                hideMenu()
+                
+                performSegue(withIdentifier: "unwindToHome", sender: self)
+                
+                break
+            case "기다릴개 란?":
+                hideMenu()
+                
+                let info = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "InfoNav") as! UINavigationController
+                
+                self.present(info, animated: true, completion: nil)
+                
+                break
+            case "입양하기":
+                hideMenu()
+                
+                let finding = UIStoryboard(name: "Finding", bundle: nil).instantiateViewController(withIdentifier: "FindingNav") as! UINavigationController
+                
+                self.present(finding, animated: true, completion: nil)
+                
+                break
+            case "커뮤니티":
+                hideMenu()
+                
+                break
+            case "컨텐츠":
+                hideMenu()
+                
+                let contents = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentsNav") as! UINavigationController
+                
+                self.present(contents, animated: true, completion: nil)
+                break
+            case "마이페이지":
+                hideMenu()
+                if UserDefaults.standard.string(forKey: "Token") != nil {
+                    let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
+                    
+                    self.navigationController?.pushViewController(myPage, animated: true)
+                } else {
+                    simpleAlert(title: "접근불가", message: "로그인이 필요합니다.")
+                }
+                break
+            case "기다릴개와 함께할개":
+                hideMenu()
+                
+                let support = UIStoryboard(name: "Support", bundle: nil).instantiateViewController(withIdentifier: "SupportNav") as! UINavigationController
+                
+                self.present(support, animated: true, completion: nil)
+                break
+            default:
+                hideMenu()
+                break
+            }
+        }
     }
 }
 

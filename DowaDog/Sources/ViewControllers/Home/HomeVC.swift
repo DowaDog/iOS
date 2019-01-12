@@ -78,7 +78,6 @@ class HomeVC: UIViewController {
     
     
     @IBOutlet var sideMenuView: UIView!
-    var blackScreen: UIView!
     
     
     
@@ -104,7 +103,7 @@ class HomeVC: UIViewController {
     
     
     var guideState: Int = 0                 // 가이드뷰 스테이트
-    var blackFlag: Bool = false             // 
+    
     
     
     
@@ -126,7 +125,6 @@ class HomeVC: UIViewController {
         leftSwipe.direction = .left
         rightSwipe.direction = .right
         
-        setBlackScreen()
         setBlackScreen2()
         setSideMenu()
         setGuideView()
@@ -240,34 +238,13 @@ class HomeVC: UIViewController {
         UserDefaults.standard.set("1", forKey: "guide")
     }
     
-    @IBAction func menuTapped(_ sender: Any) {
-        if blackFlag != true {
-            showMenu()
-        }
-    }
-    
-    @IBAction func xBtnAction(_ sender: Any) {
-        hideMenu()
-    }
-    
-    @objc func blackScreenTapAction(sender: UITapGestureRecognizer) {
-        hideMenu()
-    }
-    
-    @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
-        if UserDefaults.standard.string(forKey: "guide") != nil {
-            hideCardView()
-        }
-    }
+
     
     func setCardView() {
         cardViewConstraint.constant = -428
     }
     
-    func setBlackScreen2() {
-        let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(blackScreen2TapAction(sender:)))
-        blackScreen2.addGestureRecognizer(tapGestRecognizer2)
-    }
+    
     
     
     
@@ -338,7 +315,6 @@ class HomeVC: UIViewController {
             self.new.isHidden = true
             
             self.blackFlag = true
-//            self.stateImageView.image = self.stateImageArray[self.state]
             self.stateImageView.alpha = 1
             self.navigationController?.navigationBar.layer.zPosition = -1
 
@@ -381,7 +357,19 @@ class HomeVC: UIViewController {
             self.view.layoutIfNeeded()
         })
     }
+    @IBAction func menuTapped(_ sender: Any) {
+        if blackFlag != true {
+            showMenu()
+        }
+    }
     
+    @objc func blackScreen2TapAction(sender: UITapGestureRecognizer) {
+        if UserDefaults.standard.string(forKey: "guide") != nil {
+            hideCardView()
+        }
+        
+        hideMenu()
+    }
     
     
     
@@ -399,6 +387,55 @@ class HomeVC: UIViewController {
     // 중
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    // 끝
+    
+    
+    
+    
+    
+    // 사이드메뉴 시작
+    // Open sideMenu
+    var blackFlag: Bool = false             //
+    func setBlackScreen2() {
+        let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(blackScreen2TapAction(sender:)))
+        blackScreen2.addGestureRecognizer(tapGestRecognizer2)
+    }
+    func showMenu() {
+        self.navigationController?.navigationBar.layer.zPosition = -1
+        self.cardView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackScreen2.alpha = 1.0
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = .identity
+        })
+    }
+    // Close sideMenu
+    func hideMenu() {
+        self.navigationController?.navigationBar.layer.zPosition = 1
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.blackScreen2.alpha = 0
+            self.cardView.alpha = 1
+        })
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+        })
+    }
+    func setSideMenu() {        
+        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
+    }
     @IBAction func sideNavBtnAction(_ sender: UIButton) {
         
         if let btnTitle = sender.titleLabel?.text {
@@ -441,7 +478,7 @@ class HomeVC: UIViewController {
                 hideMenu()
                 if UserDefaults.standard.string(forKey: "Token") != nil {
                     let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
-                
+                    
                     self.navigationController?.pushViewController(myPage, animated: true)
                 } else {
                     simpleAlert(title: "접근불가", message: "로그인이 필요합니다.")
@@ -460,6 +497,7 @@ class HomeVC: UIViewController {
             }
         }
     }
+    // 사이드메뉴 끝
     
     
     
@@ -467,49 +505,8 @@ class HomeVC: UIViewController {
     
     
     
-    // 끝
     
     
-    
-    // Open sideMenu
-    func showMenu() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 1
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
-            self.sideMenuView.transform = .identity
-        })
-    }
-    // Close sideMenu
-    func hideMenu() {
-        UIView.animate(withDuration: 0.4, animations: {
-            self.blackScreen.alpha = 0
-        })
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
-            self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
-        })
-    }
-    
-    // sideMenu 를 뷰 최상단으로 지정
-    func setSideMenu() {
-        sideMenuView.frame = UIApplication.shared.keyWindow!.frame
-        UIApplication.shared.keyWindow!.addSubview(sideMenuView)
-        
-        self.sideMenuView.transform = CGAffineTransform(translationX: -self.sideMenuView.frame.width, y: 0)
-    }
-    
-    // init BlackScreen
-    func setBlackScreen() {
-        blackScreen=UIView(frame: self.view.bounds)
-        blackScreen.alpha = 0
-        blackScreen.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        self.navigationController?.view.addSubview(blackScreen)
-        let tapGestRecognizer = UITapGestureRecognizer(target: self, action: #selector(blackScreenTapAction(sender:)))
-        blackScreen.addGestureRecognizer(tapGestRecognizer)
-    }
-
     
     
     

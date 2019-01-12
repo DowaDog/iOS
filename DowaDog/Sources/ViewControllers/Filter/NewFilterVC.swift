@@ -56,6 +56,7 @@ class NewFilterVC: UIViewController {
         initButton()
         setButtonImage()
         setNavigationBarBtn()
+        setNavigationBarClear()
     }
     
     // set navigationBar Button
@@ -116,8 +117,6 @@ class NewFilterVC: UIViewController {
             areaBtnArray[i].isSelected = false
         }
         areaBtnArray[0].isSelected = true
-        
-        
     }
     
     // kind Button Action

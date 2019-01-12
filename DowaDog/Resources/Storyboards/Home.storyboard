@@ -431,17 +431,6 @@
                                             <action selector="sideNavBtnAction:" destination="ifU-eu-E2I" eventType="touchUpInside" id="fqb-mh-5Qj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNC-CC-I9c" userLabel="xBtn">
-                                        <rect key="frame" x="229" y="20" width="41" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="Pcx-q8-eu3"/>
-                                            <constraint firstAttribute="width" constant="41" id="oe5-zv-S1u"/>
-                                        </constraints>
-                                        <state key="normal" image="xBtn"/>
-                                        <connections>
-                                            <action selector="xBtnAction:" destination="ifU-eu-E2I" eventType="touchUpInside" id="YTa-FD-bzT"/>
-                                        </connections>
-                                    </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hb-rS-iwp" userLabel="LoginPanel">
                                         <rect key="frame" x="0.0" y="86" width="285" height="43"/>
                                         <subviews>
@@ -492,7 +481,6 @@
                                     <constraint firstItem="LgC-yG-5Ao" firstAttribute="top" secondItem="Sdo-cm-BqY" secondAttribute="bottom" constant="14" id="2G0-Eq-9kI"/>
                                     <constraint firstItem="Sdo-cm-BqY" firstAttribute="leading" secondItem="5fP-3x-OzS" secondAttribute="leading" constant="30" id="6bV-w2-Y7G"/>
                                     <constraint firstItem="7hb-rS-iwp" firstAttribute="leading" secondItem="5fP-3x-OzS" secondAttribute="leading" id="71R-BC-1kT"/>
-                                    <constraint firstItem="oNC-CC-I9c" firstAttribute="top" secondItem="5fP-3x-OzS" secondAttribute="top" constant="20" id="73l-wV-5fF"/>
                                     <constraint firstItem="gXN-J7-ll6" firstAttribute="leading" secondItem="5fP-3x-OzS" secondAttribute="leading" constant="30" id="87s-SH-H1x"/>
                                     <constraint firstItem="zAS-lW-FFt" firstAttribute="top" secondItem="Tcm-dl-o90" secondAttribute="bottom" constant="14" id="BUM-FT-s67"/>
                                     <constraint firstItem="ILd-aI-bmF" firstAttribute="top" secondItem="6f0-GB-EiW" secondAttribute="bottom" constant="14" id="CUb-bA-YQ3"/>
@@ -507,7 +495,6 @@
                                     <constraint firstItem="02R-3P-FmN" firstAttribute="top" secondItem="3hv-Jw-VPX" secondAttribute="bottom" constant="61" id="X5p-Zs-f5E"/>
                                     <constraint firstItem="LgC-yG-5Ao" firstAttribute="leading" secondItem="5fP-3x-OzS" secondAttribute="leading" constant="30" id="XAK-kW-k8n"/>
                                     <constraint firstAttribute="trailing" secondItem="7hb-rS-iwp" secondAttribute="trailing" id="Yxb-s9-FQq"/>
-                                    <constraint firstAttribute="trailing" secondItem="oNC-CC-I9c" secondAttribute="trailing" constant="15" id="ZpE-on-3m0"/>
                                     <constraint firstItem="6f0-GB-EiW" firstAttribute="top" secondItem="02R-3P-FmN" secondAttribute="bottom" constant="14" id="a1h-PF-Ej8"/>
                                     <constraint firstItem="eoB-jp-rzR" firstAttribute="top" secondItem="LgC-yG-5Ao" secondAttribute="bottom" constant="14" id="bQ5-sc-LpF"/>
                                     <constraint firstItem="CK3-4j-FP0" firstAttribute="leading" secondItem="5fP-3x-OzS" secondAttribute="leading" constant="30" id="ckA-2y-y0e"/>
@@ -672,6 +659,5 @@
         <image name="mainIllust" width="375" height="602"/>
         <image name="mypageProfileImg" width="86" height="86"/>
         <image name="popupOneIndicate" width="86" height="6"/>
-        <image name="xBtn" width="15" height="15"/>
     </resources>
 </document>
