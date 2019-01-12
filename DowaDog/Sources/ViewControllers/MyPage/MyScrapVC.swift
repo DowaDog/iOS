@@ -41,7 +41,7 @@ class MyScrapVC: UIViewController {
       
             getData()
 
-        }
+    }
 
     func getData(){
     
@@ -58,10 +58,13 @@ class MyScrapVC: UIViewController {
         }
     }
 }
+
+
 extension MyScrapVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myScrapList.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ScrapCell
@@ -85,6 +88,8 @@ extension MyScrapVC:UITableViewDataSource{
         
     }
 }
+
+
 extension MyScrapVC:UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
@@ -95,15 +100,17 @@ extension MyScrapVC:UITableViewDelegate{
         
         let scrap = myScrapList[indexPath.row]
         
+        
         let dvc = UIStoryboard(name: "Contents", bundle: nil).instantiateViewController(withIdentifier: "ContentDetailVC") as! ContentDetailVC
 
-            dvc.id = gino(scrap.id)
+        dvc.id = gino(scrap.id)
             
-            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-            navigationController?.pushViewController(dvc, animated: true)
+        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+        
+        navigationController?.pushViewController(dvc, animated: true)
             
-        }
     }
+}
 
 
 

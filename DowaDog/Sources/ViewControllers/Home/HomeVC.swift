@@ -439,9 +439,13 @@ class HomeVC: UIViewController {
                 break
             case "마이페이지":
                 hideMenu()
-                let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
+                if UserDefaults.standard.string(forKey: "Token") != nil {
+                    let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
                 
-                self.navigationController?.pushViewController(myPage, animated: true)
+                    self.navigationController?.pushViewController(myPage, animated: true)
+                } else {
+                    simpleAlert(title: "접근불가", message: "로그인이 필요합니다.")
+                }
                 break
             case "기다릴개와 함께할개":
                 hideMenu()
@@ -532,9 +536,14 @@ class HomeVC: UIViewController {
     
     
     @IBAction func rightItemBtnAction(_ sender: Any) {
-        let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
         
-        self.navigationController?.pushViewController(myPage, animated: true)
+        if UserDefaults.standard.string(forKey: "Token") != nil {
+            let myPage = UIStoryboard(name: "MyProfile", bundle: nil).instantiateViewController(withIdentifier: "MyPageMainVC") as! MyPageMainVC
+        
+            self.navigationController?.pushViewController(myPage, animated: true)
+        } else {
+            self.simpleAlert(title: "접근 불가", message: "로그인이 필요합니다.")
+        }
     }
     
     

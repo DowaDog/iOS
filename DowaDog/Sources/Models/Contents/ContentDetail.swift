@@ -10,12 +10,14 @@ import ObjectMapper
 
 struct ContentDetail<T: Mappable>: Mappable {
     
+    var cardnewsThumbnail: String?
     var content: [T]?
     var edu: T?
     
     init?(map: Map) {}
     
     mutating func mapping(map: Map) {
+        cardnewsThumbnail <- map["cardnewsThumbnail"]
         content <- map["content"]
         edu <- map["edu"]
     }

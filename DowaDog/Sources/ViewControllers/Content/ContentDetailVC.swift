@@ -11,7 +11,7 @@ import UIKit
 class ContentDetailVC: UIViewController {
 
     var contentList = [Content]()
-    var  reusablecell = "cell"
+    var reusablecell = "cell"
     var resusableheader = "header"
     
     var isEducated:Bool?
@@ -200,8 +200,16 @@ extension ContentDetailVC :UICollectionViewDataSource{
    
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! ContentHeader
         
+        EducationThumbnailService.shared.getThumbnail(contentIdx: id) {
+            (data) in
+            
+            view.mainImage.imageFromUrl(data, defaultImgPath: "")
+        }
+        
+        
+        
             view.title.text = getTitle
-            view.mainImage.imageFromUrl(getImage, defaultImgPath: "")
+
             return view
         }
     
