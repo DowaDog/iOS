@@ -42,6 +42,24 @@ class CommunityDetailVC: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewWillAppear(animated)
+        
+        // 댓글 조회
+        CommentListService.shared.getCommunityList(communityIdx: 1) {
+            (data) in
+            
+            print(data)
+        }
+        
+        
+        // 댓글 작성
+        CommentService.shared.postComment(communityIdx: 1, detail: "1") {
+            (data) in
+            
+            print(data)
+        }
+    }
     
     func setDetailView() {
         CommunityDetailService.shared.getCommunityDetail(communityIdx: id ) {

@@ -413,6 +413,7 @@ class HomeVC: UIViewController {
         self.cardView.alpha = 0
         
         UIView.animate(withDuration: 0.4, animations: {
+            self.navigationController?.navigationBar.alpha = 0
             self.blackScreen2.alpha = 1.0
         })
         
@@ -425,6 +426,7 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.layer.zPosition = 1
         
         UIView.animate(withDuration: 0.4, animations: {
+            self.navigationController?.navigationBar.alpha = 1
             self.blackScreen2.alpha = 0
             self.cardView.alpha = 1
         })

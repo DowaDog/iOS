@@ -17,9 +17,9 @@ struct CommentListService: APIManager, Requestable{
     ]
     
     // 커뮤니티 글 목록 조회
-    func getCommunityList(page: Int, limit: Int,completion: @escaping ([Comment]) -> Void) {
+    func getCommunityList(communityIdx: Int, completion: @escaping ([Comment]) -> Void) {
         
-        let queryURL = communicationURL + "?page=\(page)&limit=\(limit)"
+        let queryURL = communicationURL + "/\(communityIdx)/comments"
         
         
         gettable(queryURL, body: nil, header: headers) { res in
