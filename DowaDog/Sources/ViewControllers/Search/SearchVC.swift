@@ -150,6 +150,8 @@ class SearchVC: UIViewController {
     }
 }
 
+
+
 extension SearchVC: UIGestureRecognizerDelegate {
     func initGestureRecognizer() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextView(_:)))
