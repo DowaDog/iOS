@@ -21,6 +21,7 @@ class AdoptDocSelectStep3VC: UIViewController {
     var getEmail:String?
     var getAddress:String?
     var getWork:String?
+    var id:Int!
 
     
     let normalColor: UIColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
@@ -70,9 +71,21 @@ class AdoptDocSelectStep3VC: UIViewController {
         if nextBtn.backgroundColor == selectColor {
             if tempBtn.isSelected == true {
                 performSegue(withIdentifier: "goTemp", sender: self)
+                
+                let preferences = UserDefaults.standard
+                
+                let typeKey = "type"
+                let type = "temp"
+                preferences.set(type, forKey: typeKey)
+                
             } else {
                 performSegue(withIdentifier: "goAdopt", sender: self)
-            }
+                let preferences = UserDefaults.standard
+                
+                let typeKey = "type"
+                let type = "adopt"
+                preferences.set(type, forKey: typeKey)
+                }
         }
     }
 }

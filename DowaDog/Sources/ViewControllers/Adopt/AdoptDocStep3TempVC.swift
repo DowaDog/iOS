@@ -17,6 +17,17 @@ class AdoptDocStep3TempVC: UIViewController {
 
     @IBOutlet var nextBtn: UIButton!
     @IBOutlet var agreeBtn: UIButton!
+    
+    var id:Int!
+    var getDogProfile:UIImage!
+    var getHave:Bool!
+    var getDetail:String!
+    var getPhoneNumb:String!
+    var getEmail:String!
+    var getAddress:String!
+    var getWork:String!
+
+    
 
     let normalColor: UIColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1.0)
     let selectColor: UIColor = UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0)
@@ -66,9 +77,8 @@ class AdoptDocStep3TempVC: UIViewController {
     }
 
     @IBAction func nextBtnAction(_ sender: UIButton) {
-        if nextBtn.backgroundColor == selectColor {
-            performSegue(withIdentifier: "goStep4", sender: self)
-        }
+       
+        
     }
 }
 

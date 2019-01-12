@@ -181,7 +181,7 @@ class AboutEmergenVC: UIViewController {
             if data.educationState == false{
                 UIView.animate(withDuration: 0.5, animations: {
                     
-                    self.coverView.alpha = 1.0
+                    self.coverView.alpha = 0.5
                     self.alertView.alpha = 1.0
 
                 })

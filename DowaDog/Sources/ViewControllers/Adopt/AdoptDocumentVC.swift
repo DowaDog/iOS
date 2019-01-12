@@ -11,6 +11,7 @@ import UIKit
 class AdoptDocumentVC: UIViewController {
 
     var id:Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,10 +20,11 @@ class AdoptDocumentVC: UIViewController {
     }
     
     @IBAction func nextBtn(_ sender: Any) {
-        if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocStep1VC") as?AdoptDocStep1VC {
-            
-            dvc.id = id
-        }
+        print("id값 체크====================")
+        print("\(gino(id))")
+        print("id값 체크====================")
+        
+       
         
     }
     

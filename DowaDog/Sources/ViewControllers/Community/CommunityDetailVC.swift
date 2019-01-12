@@ -11,7 +11,8 @@ import UIKit
 class CommunityDetailVC: UIViewController {
     
     
-    var replyList = [Community<CommunityImgList>]()
+//    var replyList = [Community<CommunityImgList>]()
+    var replyList = [Comment]()
     var reusablecell = "ReplyCell"
 
     @IBOutlet var tableView: UITableView!
@@ -69,16 +70,17 @@ class CommunityDetailVC: UIViewController {
             self.mainImage.imageFromUrl(data.communityImgList?[0].filePath, defaultImgPath: "")
         }
         
+        CommentListService.shared.getCommunityList(communityIdx: communityIdx!) {
+            (data) in
+            
+            print(data)
+           let replyList = data
+        }
         
         
         
-        
-//        // 댓글 조회
-//        CommentListService.shared.getCommunityList(communityIdx: communityIdx!) {
-//            (data) in
-//
-//            print(data)
-//        }
+        // 댓글 조회
+
         
         
 //        // 댓글 작성
@@ -139,15 +141,13 @@ extension CommunityDetailVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusablecell, for:indexPath) as! ReplyCell
         
-        let reply = replyList[indexPath.row]
-//        cell.idTextView.text = "gsno(\(reply.userId))"
-//        cell.profileImage.imageFromUrl(gsno(reply.userProfileImg), defaultImgPath: "")
-//
-//
-//        cell.timeView.text = gsno(reply.updatedAt)
-//        cell.replyTextView.text = gsno(reply.detail)
-//        reply.
         
+        
+
+        
+
+        
+        let reply = replyList[indexPath.row]
         
         let date: String = gsno(reply.createdAt)
         
@@ -157,7 +157,13 @@ extension CommunityDetailVC:UITableViewDataSource{
         let showDate: Date = fmt.date(from:date) ?? Date()
         
         let afterDate: String = fmt.string(from: showDate)
-   
+        
+        
+        cell.idTextView.text = gsno(reply.userId)
+        cell.profileImage.imageFromUrl(gsno(reply.userProfileImg), defaultImgPath: "")
+            cell.replyTextView.text = gsno(reply.detail)
+            cell.timeView.text = gsno(afterDate)
+
     return cell
     }
 
