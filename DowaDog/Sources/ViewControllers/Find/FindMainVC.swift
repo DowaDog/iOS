@@ -37,14 +37,7 @@ class FindMainVC: UIViewController, sendBackDelegate {
     
     @IBOutlet var sideMenuView: UIView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        getEmergenData()
-        getData()
-        
-        
-    }
+
     
     func getEmergenData(){
         EmergenDogService.shared.getEmergenDogList( page: 0, limit: 2) { [weak self]
@@ -92,11 +85,18 @@ class FindMainVC: UIViewController, sendBackDelegate {
     }
     
     
-    @IBAction func storyAction(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        
+        getEmergenData()
+        getData()
     }
     
     
+    @IBAction func storyAction(_ sender: Any) {
+        
+    }
     
     
     @IBAction func searchClickAction(_ sender: Any) {
@@ -106,8 +106,6 @@ class FindMainVC: UIViewController, sendBackDelegate {
         //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
         navigationController?.pushViewController(filter, animated: true)
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -143,20 +141,6 @@ class FindMainVC: UIViewController, sendBackDelegate {
         super.didReceiveMemoryWarning()
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     func setBlackScreen2() {
         let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(blackScreen2TapAction(sender:)))
