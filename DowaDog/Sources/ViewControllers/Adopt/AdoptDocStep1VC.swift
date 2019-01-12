@@ -23,7 +23,7 @@ class AdoptDocStep1VC: UIViewController {
     
     
     var agreeFlag: Bool = false
-    var id:Int!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,13 +95,23 @@ class AdoptDocStep1VC: UIViewController {
     @IBAction func nextBtn(_ sender: UIButton) {
         if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) {
             performSegue(withIdentifier: "goStep2", sender: self)
-            if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocStep2VC") as?AdoptDocStep2VC {
+            let preferences = UserDefaults.standard
+            
+            let phoneKey = "phone"
+            let id = self.phoneNumbTextField.text
+            preferences.set(id, forKey: phoneKey)
+            
+            let emailKey = "email"
+            let email = self.emailTextField.text
+            preferences.set(email, forKey: emailKey)
+            
+            let addressKey = "address"
+            let address = self.addressTextField.text
+            preferences.set(address, forKey: addressKey)
+            
+            let jobKey = "job"
+            let job = self.jobTextField.text
 
-            dvc.getPhoneNumb = self.phoneNumbTextField.text
-            dvc.getEmail = self.emailTextField.text
-            dvc.getAddress = self.addressTextField.text
-            dvc.getWork = self.jobTextField.text
-            }
         }
     }
 }

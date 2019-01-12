@@ -17,6 +17,17 @@ class AdoptDocStep4VC: UIViewController {
     @IBOutlet var checkBox4: UIButton!
     @IBOutlet var checkBox5: UIButton!
     @IBOutlet var checkBoxAll: UIButton!
+    
+    
+    var id:Int!
+    var getDogProfile:UIImage!
+    var getHave:Bool!
+    var getDetail:String!
+    var getPhoneNumb:String!
+    var getEmail:String!
+    var getAddress:String!
+    var getWork:String!
+    var getType:String!
 
     
     // TextField
@@ -126,23 +137,55 @@ class AdoptDocStep4VC: UIViewController {
     @IBAction func nextBtnAction(_ sender: UIButton) {
         if nextBtn.backgroundColor == selectColor {
             
-            AdoptService.shared.requestOnline(animalIdx: 8, phone: "010-9910-0433", email: "creator_wookeon@naver.com", address: "서울특별시 구로구", job: "백수", havePet: false, regType: "online", petInfo: "귀엽고 깜찍하게", adoptType: "adopt") {
+            let preferences = UserDefaults.standard
+            
+            let idKey = "id"
+            let phoneKey = "phone"
+            let emailKey = "email"
+            let addressKey = "email"
+            let haveKey = "have"
+            let jobKey = "job"
+            let typeKey = "type"
+            let detailKey = "detail"
+            
+            
+                let getId = preferences.integer(forKey: idKey)
+                let getPhone = preferences.string(forKey: phoneKey)
+                let getEmail = preferences.string(forKey: emailKey)
+                let getAddress =  preferences.string(forKey: addressKey)
+                let getHave = preferences.string(forKey: haveKey)
+                let getJob = preferences.string(forKey: jobKey)
+                let getType =  preferences.string(forKey: typeKey)
+                let getDetail =  preferences.string(forKey: detailKey)
+            
+                print("id 체크=======================")
+                print("\(getId)")
+             print("\(getPhone)")
+             print("\(getEmail)")
+             print("\(getAddress)")
+             print("\(getHave)")
+             print("\(getJob)")
+             print("\(getType)")
+             print("\(getDetail)")
+                
+                print("id 체크=======================")
+                
+                AdoptService.shared.requestOffline(animalIdx: getId) {
+                    (data) in
+                    
+                    print("data ========================")
+                    print(data)
+                    print("data ========================")
+                }
+            
+            AdoptService.shared.requestOnline(animalIdx: getId, phone: getPhone ?? "", email: getEmail ?? "", address: getAddress ?? "", job: getJob ?? "", havePet:(getHave != nil), regType: "complete", petInfo: getDetail ?? "", adoptType: getType ?? "") {
                 (data) in
-                
-                
-                
+
                 print("data====================")
                 print(data)
                 print("data====================")
             }
-            
-            
-            
-            
-            
-            
-            
-            
+
             performSegue(withIdentifier: "goEnd", sender: self)
         }
     }

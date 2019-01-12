@@ -161,7 +161,7 @@
         <!--Adopt DocumentVC-->
         <scene sceneID="8vd-z3-GXZ">
             <objects>
-                <viewController id="TXL-bj-JM2" customClass="AdoptDocumentVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocumentVC" id="TXL-bj-JM2" customClass="AdoptDocumentVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xy8-jN-68G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,6 +210,7 @@
                                 </state>
                                 <connections>
                                     <action selector="nextBtn:" destination="TXL-bj-JM2" eventType="touchUpInside" id="UeE-4G-6N6"/>
+                                    <segue destination="srJ-vO-GEg" kind="show" id="xAW-nl-yx6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,13 +239,13 @@
         <!--Adopt Doc Step1VC-->
         <scene sceneID="E9Y-Qg-r5q">
             <objects>
-                <viewController id="srJ-vO-GEg" customClass="AdoptDocStep1VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocStep1VC" id="srJ-vO-GEg" customClass="AdoptDocStep1VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCJ-8Q-1Ea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCm-n0-TOv">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAA-U8-qmS">
                                         <rect key="frame" x="28" y="80" width="70" height="28"/>
@@ -459,7 +460,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXW-8q-fsv">
-                                <rect key="frame" x="0.0" y="472" width="375" height="139"/>
+                                <rect key="frame" x="0.0" y="516" width="375" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신청자와 함께 거주하고 있는 가족이" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqx-WM-Kp8">
                                         <rect key="frame" x="28" y="20" width="207" height="16"/>
@@ -537,7 +538,7 @@
         <!--Adopt DirectVC-->
         <scene sceneID="O8D-2L-2LD">
             <objects>
-                <viewController id="2xd-ky-giU" customClass="AdoptDirectVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDirectVC" id="2xd-ky-giU" customClass="AdoptDirectVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y5X-Ru-Yje">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -681,7 +682,7 @@
         <!--Adopt Doc Step2VC-->
         <scene sceneID="mLw-7n-wbd">
             <objects>
-                <viewController id="eTX-Fb-2fE" customClass="AdoptDocStep2VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocStep2VC" id="eTX-Fb-2fE" customClass="AdoptDocStep2VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pqG-aU-drO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -701,7 +702,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM4-nF-Oko">
-                                <rect key="frame" x="28" y="36" width="70" height="28"/>
+                                <rect key="frame" x="28" y="80" width="70" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="7Jz-rb-Hir"/>
                                     <constraint firstAttribute="height" constant="28" id="yal-z8-yDy"/>
@@ -711,7 +712,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물 정보를 입력해주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpI-2x-zf4">
-                                <rect key="frame" x="28" y="78" width="312" height="27"/>
+                                <rect key="frame" x="28" y="122" width="312" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="312" id="hOe-LZ-rv5"/>
                                     <constraint firstAttribute="height" constant="27" id="ywd-3U-bfA"/>
@@ -721,7 +722,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체크박스는 중복 선택이 불가능합니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oC4-XR-k3q">
-                                <rect key="frame" x="28" y="119" width="233.5" height="17"/>
+                                <rect key="frame" x="28" y="163" width="233.5" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="ROz-8y-OMD"/>
                                     <constraint firstAttribute="width" constant="233.5" id="kgf-A0-bZ6"/>
@@ -731,14 +732,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogProfileImg" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-T3-GrC">
-                                <rect key="frame" x="153.5" y="161" width="68" height="68"/>
+                                <rect key="frame" x="153.5" y="205" width="68" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="PHG-rM-mJq"/>
                                     <constraint firstAttribute="height" constant="68" id="rYB-CJ-YM7"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2u-fl-Boh">
-                                <rect key="frame" x="199.5" y="207" width="22" height="22"/>
+                                <rect key="frame" x="199.5" y="251" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="fid-p2-1DM"/>
                                     <constraint firstAttribute="width" constant="22" id="tVn-WP-aUS"/>
@@ -746,7 +747,7 @@
                                 <state key="normal" image="settingCameraIcon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 반려동물을 키우고 계신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-6S-P3A">
-                                <rect key="frame" x="28" y="254" width="225" height="18"/>
+                                <rect key="frame" x="28" y="298" width="225" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="GCw-By-bQu"/>
                                     <constraint firstAttribute="width" constant="225" id="ssu-Qk-Fz7"/>
@@ -756,7 +757,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eA8-6q-jtM">
-                                <rect key="frame" x="28" y="286" width="15" height="16"/>
+                                <rect key="frame" x="28" y="330" width="15" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="X37-oE-tic"/>
                                     <constraint firstAttribute="width" constant="15" id="m8t-ox-vPQ"/>
@@ -766,7 +767,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izW-oL-DpM">
-                                <rect key="frame" x="42" y="276" width="36" height="36"/>
+                                <rect key="frame" x="42" y="320" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="9yb-dB-lUb"/>
                                     <constraint firstAttribute="height" constant="36" id="CfP-tr-XDV"/>
@@ -777,7 +778,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVC-82-55e">
-                                <rect key="frame" x="125" y="276" width="36" height="36"/>
+                                <rect key="frame" x="125" y="320" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="7XA-kD-8Bg"/>
                                     <constraint firstAttribute="width" constant="36" id="uef-Jw-6Km"/>
@@ -788,13 +789,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아니오" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuN-Kw-x5d">
-                                <rect key="frame" x="82" y="286" width="44" height="18"/>
+                                <rect key="frame" x="82" y="330" width="44" height="18"/>
                                 <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="16"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 신청자가 키우고 계신 경우," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-VO-NnZ">
-                                <rect key="frame" x="28" y="333" width="210" height="18"/>
+                                <rect key="frame" x="28" y="377" width="210" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="Wka-Cc-WX8"/>
                                     <constraint firstAttribute="height" constant="18" id="fvJ-1L-jlM"/>
@@ -804,7 +805,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물의 정보를 입력해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGA-Ui-nlf">
-                                <rect key="frame" x="28" y="360" width="216" height="18"/>
+                                <rect key="frame" x="28" y="404" width="216" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="216" id="HCu-X7-xhj"/>
                                     <constraint firstAttribute="height" constant="18" id="tdC-dN-Zeb"/>
@@ -814,7 +815,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3P-Ot-9Vp">
-                                <rect key="frame" x="28" y="398" width="319" height="189"/>
+                                <rect key="frame" x="28" y="442" width="319" height="145"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="NanumSquareL" family="NanumSquare" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -876,13 +877,13 @@
         <!--Adopt Doc Select Step3VC-->
         <scene sceneID="PHY-dd-3tN">
             <objects>
-                <viewController id="c9D-Q7-wUp" customClass="AdoptDocSelectStep3VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocSelectStep3VC" id="c9D-Q7-wUp" customClass="AdoptDocSelectStep3VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gtV-23-71l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adoptBackgroundImg" translatesAutoresizingMaskIntoConstraints="NO" id="2kJ-eD-goZ">
-                                <rect key="frame" x="0.0" y="-24" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2kJ-eD-goZ" secondAttribute="height" multiplier="125:199" id="Ik3-Fz-tqK"/>
                                 </constraints>
@@ -902,7 +903,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임시보호 또는 입양을" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89o-Zr-eT7">
-                                <rect key="frame" x="100" y="114" width="175" height="23"/>
+                                <rect key="frame" x="100" y="158" width="175" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="VNB-Q0-t7y"/>
                                     <constraint firstAttribute="width" constant="175" id="k5M-Ey-Sia"/>
@@ -912,7 +913,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택해 주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKA-nI-Bb1">
-                                <rect key="frame" x="130" y="145" width="115" height="23"/>
+                                <rect key="frame" x="130" y="189" width="115" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="c03-ua-HpH"/>
                                     <constraint firstAttribute="height" constant="23" id="mO6-P0-exq"/>
@@ -922,7 +923,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-Iz-IDd">
-                                <rect key="frame" x="88" y="246" width="199" height="94"/>
+                                <rect key="frame" x="88" y="290" width="199" height="94"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVv-k6-WH0">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
@@ -1003,13 +1004,13 @@
         <!--Adopt Doc Step3 TempVC-->
         <scene sceneID="zIW-ia-4Fa">
             <objects>
-                <viewController id="cBP-Ih-ZtF" customClass="AdoptDocStep3TempVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocStep3TempVC" id="cBP-Ih-ZtF" customClass="AdoptDocStep3TempVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W1z-1P-FkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTw-TF-pfq">
-                                <rect key="frame" x="28" y="36" width="70" height="28"/>
+                                <rect key="frame" x="28" y="80" width="70" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="ayD-Sp-W9w"/>
                                     <constraint firstAttribute="height" constant="28" id="qUY-9R-npI"/>
@@ -1019,7 +1020,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임보 정보를 입력해 주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5Q-u6-sRf">
-                                <rect key="frame" x="28" y="78" width="269" height="27"/>
+                                <rect key="frame" x="28" y="122" width="269" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="44i-Oi-tLE"/>
                                     <constraint firstAttribute="width" constant="269" id="M9D-u8-rI5"/>
@@ -1029,7 +1030,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임보 가능기간을 입력해주세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE2-HR-Dqb">
-                                <rect key="frame" x="28" y="254" width="201.5" height="18"/>
+                                <rect key="frame" x="28" y="298" width="201.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="NEb-PR-cf7"/>
                                     <constraint firstAttribute="width" constant="201.5" id="nrC-Mr-42O"/>
@@ -1039,7 +1040,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-oG-8Kc">
-                                <rect key="frame" x="28" y="292" width="319" height="32"/>
+                                <rect key="frame" x="28" y="336" width="319" height="32"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예시) 일, 개월 수 또는 입양 전까지로 입력해주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktO-ed-SHl">
                                         <rect key="frame" x="13" y="4" width="293" height="24"/>
@@ -1061,7 +1062,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임보기간 동안 꾸준히" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPZ-VJ-PI4">
-                                <rect key="frame" x="28" y="364" width="139.5" height="18"/>
+                                <rect key="frame" x="28" y="408" width="139.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139.5" id="irD-TP-Xai"/>
                                     <constraint firstAttribute="height" constant="18" id="tCT-qc-Phe"/>
@@ -1071,7 +1072,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임보 일기를 작성하는 것에 동의하십니까?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKm-7q-ziL">
-                                <rect key="frame" x="28" y="390" width="272" height="18"/>
+                                <rect key="frame" x="28" y="434" width="272" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="SlX-1q-WIO"/>
                                     <constraint firstAttribute="width" constant="272" id="Xpm-DK-Kjh"/>
@@ -1081,7 +1082,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0O-4D-x5I">
-                                <rect key="frame" x="317" y="381" width="36" height="36"/>
+                                <rect key="frame" x="317" y="425" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="kIn-wq-Eow"/>
                                     <constraint firstAttribute="height" constant="36" id="zoZ-Af-n5d"/>
@@ -1145,13 +1146,13 @@
         <!--Adopt Doc Step3 AdoptVC-->
         <scene sceneID="kGj-El-dxZ">
             <objects>
-                <viewController id="ZPp-MF-rX9" customClass="AdoptDocStep3AdoptVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocStep3AdoptVC" id="ZPp-MF-rX9" customClass="AdoptDocStep3AdoptVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cpw-Sn-kt8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3단계," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5O-B3-5fA">
-                                <rect key="frame" x="28" y="36" width="70" height="28"/>
+                                <rect key="frame" x="28" y="80" width="70" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Cx6-eQ-jd3"/>
                                     <constraint firstAttribute="height" constant="28" id="ovD-uE-Mp5"/>
@@ -1161,7 +1162,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽고 동의를 선택해 주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-1b-uoc">
-                                <rect key="frame" x="28" y="78" width="269" height="27"/>
+                                <rect key="frame" x="28" y="122" width="269" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="269" id="Q6C-nf-vbH"/>
                                     <constraint firstAttribute="height" constant="27" id="bCB-zS-Qa8"/>
@@ -1171,7 +1172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입양 후 한 달에 한 번 정도" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-2P-3Mn">
-                                <rect key="frame" x="28" y="316" width="174" height="18"/>
+                                <rect key="frame" x="28" y="360" width="174" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="EAb-O6-6ba"/>
                                     <constraint firstAttribute="width" constant="174" id="wa4-ls-EVP"/>
@@ -1181,7 +1182,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임양 일기를 작성하는 것에 동의하십니까?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxQ-fZ-5yK">
-                                <rect key="frame" x="28" y="342" width="272" height="18"/>
+                                <rect key="frame" x="28" y="386" width="272" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="qur-vd-ubg"/>
                                     <constraint firstAttribute="width" constant="272" id="ujR-fV-cWr"/>
@@ -1205,7 +1206,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-j2-qQ0">
-                                <rect key="frame" x="317" y="333" width="36" height="36"/>
+                                <rect key="frame" x="317" y="377" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="27B-zl-kfv"/>
                                     <constraint firstAttribute="height" constant="36" id="Rzb-xN-EHq"/>
@@ -1248,13 +1249,13 @@
         <!--Adopt Doc Step4VC-->
         <scene sceneID="EZr-W5-WJb">
             <objects>
-                <viewController id="W7Q-K5-e8X" customClass="AdoptDocStep4VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocStep4VC" id="W7Q-K5-e8X" customClass="AdoptDocStep4VC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qJ0-pf-W8S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="851"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jf-Qg-NlN">
-                                <rect key="frame" x="0.0" y="20" width="375" height="831"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="787"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbE-In-TGl">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="787"/>
@@ -1659,7 +1660,7 @@
         <!--Adopt Doc EndVC-->
         <scene sceneID="lxy-tE-yuc">
             <objects>
-                <viewController id="81t-Lb-wZZ" customClass="AdoptDocEndVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdoptDocEndVC" id="81t-Lb-wZZ" customClass="AdoptDocEndVC" customModule="DowaDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v7U-lP-mzn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
