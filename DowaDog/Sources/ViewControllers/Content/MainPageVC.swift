@@ -74,6 +74,7 @@ class MainPageVC: UIViewController {
         self.navigationController?.navigationBar.layer.zPosition = -1
         
         UIView.animate(withDuration: 0.4, animations: {
+            self.navigationController?.navigationBar.alpha = 0
             self.blackscreen2.alpha = 1
         })
         
@@ -85,6 +86,7 @@ class MainPageVC: UIViewController {
         self.navigationController?.navigationBar.layer.zPosition = 1
         
         UIView.animate(withDuration: 0.4, animations: {
+            self.navigationController?.navigationBar.alpha = 1
             self.blackscreen2.alpha = 0
         })
         

@@ -34,7 +34,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OneTVC" rowHeight="311" id="t8R-Xg-E3S" customClass="CommunityOneTVC" customModule="DowaDog" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OneTVC" rowHeight="311" id="t8R-Xg-E3S" customClass="CommunityOneTVC" customModule="DowaDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="311"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t8R-Xg-E3S" id="vzp-ru-GAZ">
@@ -111,7 +111,7 @@
                                             <outlet property="writeTime" destination="PBn-bc-2ye" id="ODI-D7-m8E"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoTVC" rowHeight="311" id="RFa-ZP-GYs" customClass="CommunityTwoTVC" customModule="DowaDog" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoTVC" rowHeight="311" id="RFa-ZP-GYs" customClass="CommunityTwoTVC" customModule="DowaDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="339" width="343" height="311"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RFa-ZP-GYs" id="Xa0-dR-xg0">
@@ -197,7 +197,7 @@
                                             <outlet property="writeTime" destination="O02-ZM-e0J" id="w3J-MM-USa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeTVC" rowHeight="311" id="212-KK-U0B" customClass="CommunityThreeTVC" customModule="DowaDog" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeTVC" rowHeight="311" id="212-KK-U0B" customClass="CommunityThreeTVC" customModule="DowaDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="650" width="343" height="311"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="212-KK-U0B" id="aLa-Tu-fVf">
@@ -293,7 +293,7 @@
                                             <outlet property="writeTime" destination="VGS-9Q-EWr" id="kFV-aW-V79"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FourTVC" rowHeight="311" id="gaq-aD-At9" customClass="CommunityFourTVC" customModule="DowaDog" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FourTVC" rowHeight="311" id="gaq-aD-At9" customClass="CommunityFourTVC" customModule="DowaDog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="961" width="343" height="311"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gaq-aD-At9" id="qAc-r0-9HE">
@@ -991,9 +991,14 @@
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-da-uGz">
                                             <rect key="frame" x="0.0" y="45" width="375" height="230"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="hyH-da-uGz" secondAttribute="height" multiplier="75:46" id="ENw-bB-4aj"/>
                                             </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="lzd-kj-Vmk" appends="YES" id="S70-oG-Er4"/>
+                                                <outletCollection property="gestureRecognizers" destination="PLh-mK-XSl" appends="YES" id="Rnw-kf-bXZ"/>
+                                            </connections>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목제목제목제목제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4T-7N-zqn">
                                             <rect key="frame" x="16" y="292" width="342" height="23"/>
@@ -1134,14 +1139,26 @@
                     <connections>
                         <outlet property="aboutLabel" destination="aR8-zb-DIQ" id="uH9-Kn-ASc"/>
                         <outlet property="dateLabel" destination="kvB-wb-diU" id="uQA-it-fyu"/>
+                        <outlet property="leftSwipe" destination="lzd-kj-Vmk" id="HP6-Az-Ksq"/>
                         <outlet property="mainImage" destination="hyH-da-uGz" id="VAN-1S-Agy"/>
                         <outlet property="profileImage" destination="zba-7J-Dl3" id="2DG-yc-adV"/>
+                        <outlet property="rightSwipe" destination="PLh-mK-XSl" id="a7Z-uy-QP7"/>
                         <outlet property="tableView" destination="ZbZ-Q3-XCr" id="9hR-6L-dkN"/>
                         <outlet property="titleLabel" destination="w4T-7N-zqn" id="l6i-yi-Knt"/>
                         <outlet property="userIdTextView" destination="YxN-PH-0Ci" id="Pan-tW-eny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEN-EV-FKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="lzd-kj-Vmk">
+                    <connections>
+                        <action selector="leftSwipeAction:" destination="2Vm-fC-n2U" id="84t-Ra-Y06"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="PLh-mK-XSl">
+                    <connections>
+                        <action selector="rightSwipeAction:" destination="2Vm-fC-n2U" id="rD0-jI-TDi"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1574" y="1022"/>
         </scene>

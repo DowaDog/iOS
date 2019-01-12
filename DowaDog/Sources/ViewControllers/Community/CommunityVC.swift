@@ -27,9 +27,8 @@ class CommunityVC: UIViewController {
         setBlackScreen2()
     
         
-        communityTableView.dataSource = self
-        
-//        communityTableView.delegate = self
+        communityTableView.dataSource = self        
+        communityTableView.delegate = self
     }
 
     
@@ -310,19 +309,15 @@ extension CommunityVC: UITableViewDataSource {
 extension CommunityVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        print("check")
-//
-//        let community = communityList[indexPath.row]
-//
-//        let dvc = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityDetailVC") as! CommunityDetailVC
-//
-//        dvc.id = gino(community.id)
-//        
-//        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-//        navigationController?.pushViewController(dvc, animated: true)
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "CommunityDetailVC") as! CommunityDetailVC
         
-        }
-    
-    
+        let community = communityList[indexPath.row]
+        
+        print(community)
+        
+        detailVC.communityIdx = community.id
+        
+        navigationController?.pushViewController(detailVC, animated: true)
     }
+}
 

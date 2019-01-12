@@ -14,96 +14,122 @@ class CommunityDetailVC: UIViewController {
     var replyList = [Community<CommunityImgList>]()
     var reusablecell = "ReplyCell"
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var userIdTextView: UILabel!
-    
-    @IBOutlet weak var profileImage: UIImageView!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var aboutLabel: UITextView!
-    
-    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var userIdTextView: UILabel!
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var aboutLabel: UITextView!
+    @IBOutlet var mainImage: UIImageView!
     
     
+    // swipe
+    @IBOutlet var leftSwipe: UISwipeGestureRecognizer!
+    @IBOutlet var rightSwipe: UISwipeGestureRecognizer!
+    
+    
+    
+    
+    var imageArray: Array<String>?
+    
+    var communityIdx: Int?
+    var comment: String?
     
     var id:Int!
+    
+    var imageIndex = 0
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        setDetailView()
 
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewWillAppear(animated)
+        super.viewWillAppear(animated)
         
-        // 댓글 조회
-        CommentListService.shared.getCommunityList(communityIdx: 1) {
+        CommunityDetailService.shared.getCommunityDetail(communityIdx: gino(communityIdx)) {
             (data) in
             
-            print(data)
+            for i in 0..<self.gino(data.communityImgList?.count) {
+                self.imageArray?.append(self.gsno(data.communityImgList?[i].filePath))
+            }
+            
+            self.userIdTextView.text = data.userId
+            self.titleLabel.text = data.title
+            self.dateLabel.text = data.createdAt
+            self.aboutLabel.text = data.detail
+            self.profileImage.imageFromUrl(data.userProfileImg, defaultImgPath: "")
+            self.mainImage.imageFromUrl(self.imageArray?[0], defaultImgPath: "")
         }
         
         
-        // 댓글 작성
-        CommentService.shared.postComment(communityIdx: 1, detail: "1") {
-            (data) in
-            
-            print(data)
-        }
+        
+        
+        
+//        // 댓글 조회
+//        CommentListService.shared.getCommunityList(communityIdx: communityIdx!) {
+//            (data) in
+//
+//            print(data)
+//        }
+        
+        
+//        // 댓글 작성
+//        CommentService.shared.postComment(communityIdx: communityIdx!, detail: comment) {
+//            (data) in
+//
+//            print(data)
+//        }
     }
     
-    func setDetailView() {
-        CommunityDetailService.shared.getCommunityDetail(communityIdx: id ) {
-            (data) in
+    
+    
+    
+    
+    
+    
+    @IBAction func leftSwipeAction(_ sender: UISwipeGestureRecognizer) {
+        if imageIndex < gino(imageArray?.count) {
             
-            print("data============================")
-            print(data)
-            print("data============================")
+            imageIndex += 1
             
-            self.replyList = [data]
+            UIView.animate(withDuration: 0.3, animations: {
+                self.mainImage.alpha = 0
+            })
             
-            self.titleLabel.text = self.gsno(data.title)
+            self.mainImage.imageFromUrl(imageArray?[imageIndex], defaultImgPath: "")
             
-            self.aboutLabel.text = self.gsno(data.detail)
-            
-            let date: String = self.gsno(data.createdAt)
-            
-            let fmt = DateFormatter()
-            fmt.dateFormat = "yyyy.MM.dd"
-            
-            let showDate: Date = fmt.date(from:date) ?? Date()
-            
-            let afterDate: String = fmt.string(from: showDate)
-            
-//            self.mainImage.imageFromUrl(gsno( data.communityImgList![0] ), defaultImgPath: "")
-      
-            
-            self.dateLabel.text = afterDate
-            
-        self.profileImage.imageFromUrl( self.gsno(data.userProfileImg), defaultImgPath: "")
-            
-            self.userIdTextView.text = self.gsno(data.userId)
-            
-            
-
+            UIView.animate(withDuration: 0.3, animations: {
+                self.mainImage.alpha = 1
+            })
         }
+            
+        
+            
+            
+    }
+    
+    
+    @IBAction func rightSwipeAction(_ sender: UISwipeGestureRecognizer) {
         
     }
-
-}
-extension CommunityDetailVC: UITableViewDelegate{
+    
     
 }
+
+
+extension CommunityDetailVC: UITableViewDelegate {
+    
+}
+
+
+
 extension CommunityDetailVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return replyList.count
@@ -135,6 +161,7 @@ extension CommunityDetailVC:UITableViewDataSource{
     }
 
 }
+
 
 
 

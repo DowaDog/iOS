@@ -106,7 +106,7 @@ class ContentDetailVC: UIViewController {
             
             self.contentList = data
             self.collectionView.reloadData()
-
+            
         }
         
     }
