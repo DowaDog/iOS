@@ -821,7 +821,7 @@
                                                         <constraint firstAttribute="width" secondItem="8FP-hP-zAm" secondAttribute="height" multiplier="335:177" id="RhI-dL-rls"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-Ca-PqT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장긴 문장긴문장" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-Ca-PqT">
                                                     <rect key="frame" x="20" y="245" width="335" height="406"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="335" id="OX5-HM-cLP"/>

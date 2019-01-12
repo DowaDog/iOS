@@ -10,6 +10,7 @@ import UIKit
 
 class AdoptDocumentVC: UIViewController {
 
+    var id:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,5 +18,12 @@ class AdoptDocumentVC: UIViewController {
         self.setBackBtn()
     }
     
+    @IBAction func nextBtn(_ sender: Any) {
+        if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocStep1VC") as?AdoptDocStep1VC {
+            
+            dvc.id = id
+        }
+        
+    }
     
 }

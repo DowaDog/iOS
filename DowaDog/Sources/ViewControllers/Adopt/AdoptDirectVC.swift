@@ -10,6 +10,7 @@ import UIKit
 
 class AdoptDirectVC: UIViewController {
     
+    var id:Int!
     var callNumber = "0200000000"
 
     override func viewDidLoad() {

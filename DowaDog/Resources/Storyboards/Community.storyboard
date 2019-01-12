@@ -1134,6 +1134,7 @@
                     <connections>
                         <outlet property="aboutLabel" destination="aR8-zb-DIQ" id="uH9-Kn-ASc"/>
                         <outlet property="dateLabel" destination="kvB-wb-diU" id="uQA-it-fyu"/>
+                        <outlet property="mainImage" destination="hyH-da-uGz" id="VAN-1S-Agy"/>
                         <outlet property="profileImage" destination="zba-7J-Dl3" id="2DG-yc-adV"/>
                         <outlet property="tableView" destination="ZbZ-Q3-XCr" id="9hR-6L-dkN"/>
                         <outlet property="titleLabel" destination="w4T-7N-zqn" id="l6i-yi-Knt"/>

@@ -11,6 +11,8 @@ import UIKit
 class AdoptVC: UIViewController {
     
     
+    var id:Int!
+    
     @IBOutlet weak var nextBtn: UIButton!
     
     @IBOutlet weak var way2Btn: UIButton!
@@ -36,6 +38,13 @@ class AdoptVC: UIViewController {
         way1Btn.setBackgroundImage(UIImage(named: "walkingImgCheck.png"), for: .normal)
         
         way2Btn.setBackgroundImage(UIImage(named: "writingImgUncheck.png"), for: .normal)
+        
+        if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDirectVC") as?AdoptDirectVC {
+            
+            dvc.id = id
+        }
+        
+            
     }
     
     @IBAction func writeAction(_ sender: Any) {
@@ -45,6 +54,12 @@ class AdoptVC: UIViewController {
         nextBtn.backgroundColor = UIColor.init(displayP3Red: 1, green: 194/255, blue: 51/255, alpha: 1)
         way1Btn.setBackgroundImage(UIImage(named: "walkingImgUncheck.png"), for: .normal)
         way2Btn.setBackgroundImage(UIImage(named:"writingImgCheck.png"), for: .normal)
+        
+        if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocumentVC") as?AdoptDocumentVC {
+            
+            dvc.id = id
+        }
+        
     }
     
     @IBAction func nextBtnAction(_ sender: Any) {

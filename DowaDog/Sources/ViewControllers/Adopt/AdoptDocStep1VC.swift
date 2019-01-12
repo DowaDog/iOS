@@ -12,14 +12,18 @@ class AdoptDocStep1VC: UIViewController {
     
     @IBOutlet var topViewConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var phoneNumbTextField: UILabel!
+    
     @IBOutlet var profileImage: UIImageView!
+    @IBOutlet weak var emailTextField: UILabel!
     
     @IBOutlet var addressTextField: UITextField!
     @IBOutlet var jobTextField: UITextField!
     @IBOutlet var nextBtn: UIButton!
     
-    var agreeFlag: Bool = false
     
+    var agreeFlag: Bool = false
+    var id:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +95,13 @@ class AdoptDocStep1VC: UIViewController {
     @IBAction func nextBtn(_ sender: UIButton) {
         if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) {
             performSegue(withIdentifier: "goStep2", sender: self)
+            if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocStep2VC") as?AdoptDocStep2VC {
+
+            dvc.getPhoneNumb = self.phoneNumbTextField.text
+            dvc.getEmail = self.emailTextField.text
+            dvc.getAddress = self.addressTextField.text
+            dvc.getWork = self.jobTextField.text
+            }
         }
     }
 }

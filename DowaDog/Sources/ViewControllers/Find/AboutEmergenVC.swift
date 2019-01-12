@@ -188,11 +188,14 @@ class AboutEmergenVC: UIViewController {
                
             }else {
                 
-                let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptVC") as! UIViewController
+               
+                    if let adopt = UIStoryboard(name: "Adopt", bundle: nil).instantiateViewController(withIdentifier: "AdoptVC") as? AdoptVC{
+                        adopt.id = self.id
+                        self.navigationController?.pushViewController(adopt, animated: true)
+                    }
                 // Main 은 Main.storyboard, 뒤에껀 넘어갈 view 의 Storyboard identifier, as 뒤는 클래스
                 
-             
-                self.navigationController?.pushViewController(adopt, animated: true)
+                  
             }
             
         }

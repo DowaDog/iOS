@@ -25,7 +25,11 @@ class AdoptDocStep2VC: UIViewController {
     @IBOutlet var animalImage: UIImageView!
     
     @IBOutlet var nextBtn: UIButton!
-    
+    var getPhoneNumb:String?
+    var getEmail:String?
+    var getAddress:String?
+    var getWork:String?
+    var id:Int!
     
     let placeholder: String = "예시) 몇 마리를 키우는지, 크기는 어떠한지"
     
@@ -118,6 +122,22 @@ class AdoptDocStep2VC: UIViewController {
         
         if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) && (animalImage.image != defaultImage || disagreeBtn.isSelected == true) {
             performSegue(withIdentifier: "goSelectStep3", sender: self)
+            if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocSelectStep3VC") as?AdoptDocSelectStep3VC {
+                
+                dvc.getPhoneNumb = getPhoneNumb
+                dvc.geEmail = getEmail
+                dvc.getAddress = getAddress
+                dvc.getWork = getWork
+                
+                dvc.getDogProfile = animalImage.image
+                if agreeBtn.isSelected == true{
+                      dvc.getHave = true
+                }
+                else if agreeBtn.isSelected = false{
+                    dvc.getHave = false
+                }
+                dvc.getDetail = contentView.text
+            }
         }
         
         if sender.backgroundColor == UIColor(red: 255/255, green: 194/255, blue: 51/255, alpha: 1.0) && animalImage.image == defaultImage && agreeBtn.isSelected == true {

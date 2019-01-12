@@ -13,6 +13,14 @@ class AdoptDocSelectStep3VC: UIViewController {
     @IBOutlet var tempBtn: UIButton!
     @IBOutlet var adoptBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
+    
+    var getDogProfile:String!
+    var getHave:String!
+    var getDetail:String!
+    var getPhoneNumb:String?
+    var getEmail:String?
+    var getAddress:String?
+    var getWork:String?
 
     let normalColor: UIColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
     let normalTextColor: UIColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)

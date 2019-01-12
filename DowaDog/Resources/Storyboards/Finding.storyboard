@@ -1254,9 +1254,8 @@
                                     <action selector="adoptAction:" destination="pQO-cw-Y5H" eventType="touchUpInside" id="SS6-K3-NM8"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-r6-JKO">
-                                <rect key="frame" x="0.0" y="13" width="375" height="1474"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-r6-JKO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-xv-am5">
@@ -1455,6 +1454,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NSs-r6-JKO" firstAttribute="bottom" secondItem="uwT-dS-7B0" secondAttribute="bottom" id="6z0-1f-EdE"/>
                             <constraint firstItem="uwT-dS-7B0" firstAttribute="leading" secondItem="RUa-7S-dFs" secondAttribute="trailing" constant="-322" id="9Pb-3W-NQB"/>
                             <constraint firstItem="P0k-K2-xSW" firstAttribute="trailing" secondItem="uwT-dS-7B0" secondAttribute="trailing" id="C2v-ak-s6f"/>
                             <constraint firstItem="uwT-dS-7B0" firstAttribute="top" secondItem="nZC-xv-am5" secondAttribute="bottom" constant="-350" id="N8v-1J-hq5"/>
@@ -1464,8 +1464,11 @@
                             <constraint firstItem="BOW-qm-TeR" firstAttribute="bottom" secondItem="uwT-dS-7B0" secondAttribute="bottom" id="cPF-VQ-wcE"/>
                             <constraint firstItem="P0k-K2-xSW" firstAttribute="leading" secondItem="uwT-dS-7B0" secondAttribute="leading" id="hWN-Fz-0dB"/>
                             <constraint firstItem="BOW-qm-TeR" firstAttribute="trailing" secondItem="uwT-dS-7B0" secondAttribute="trailing" id="jaZ-5j-Nec"/>
+                            <constraint firstItem="NSs-r6-JKO" firstAttribute="trailing" secondItem="uwT-dS-7B0" secondAttribute="trailing" id="n7Q-ab-jeG"/>
                             <constraint firstItem="uwT-dS-7B0" firstAttribute="top" secondItem="RUa-7S-dFs" secondAttribute="bottom" constant="-350" id="t0X-O7-65G"/>
+                            <constraint firstItem="NSs-r6-JKO" firstAttribute="leading" secondItem="uwT-dS-7B0" secondAttribute="leading" id="vIj-li-lfP"/>
                             <constraint firstItem="BOW-qm-TeR" firstAttribute="top" secondItem="9Ry-qU-h75" secondAttribute="top" id="vwR-Ye-GUo"/>
+                            <constraint firstItem="NSs-r6-JKO" firstAttribute="top" secondItem="9Ry-qU-h75" secondAttribute="top" id="wcP-XI-xDV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uwT-dS-7B0"/>
                     </view>
@@ -1482,7 +1485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvk-zd-0IR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3569" y="586"/>
+            <point key="canvasLocation" x="3568.8000000000002" y="585.60719640179911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rKa-wt-8YG">
@@ -3742,7 +3745,7 @@ D5wUnBycH5wxnDScOQAAAAAAAAIBAAAAAAAAAG0AAAAAAAAAAAAAAAAAAJw7A
         <image name="wholeAreaBtnDefault" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gia-2h-lDG"/>
-        <segue reference="9Jn-aL-Yii"/>
+        <segue reference="Tz5-Oe-LRc"/>
+        <segue reference="UKZ-qz-FiZ"/>
     </inferredMetricsTieBreakers>
 </document>
