@@ -272,18 +272,22 @@ extension CommunityVC: UITableViewDataSource {
         }
     }
 }
-extension CommunityVC: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-        let detail = communityList[indexPath.row]
-
-        if let dvc = storyboard?.instantiateViewController(withIdentifier: "CommunityDetailVC") as? CommunityDetailVC {
-
-            dvc.id = gino(detail.id)
-
-            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-            navigationController?.pushViewController(dvc, animated: true)
+extension CommunityVC: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+//        print("check")
+//
+//        let community = communityList[indexPath.row]
+//
+//        let dvc = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityDetailVC") as! CommunityDetailVC
+//
+//        dvc.id = gino(community.id)
+//        
+//        //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+//        navigationController?.pushViewController(dvc, animated: true)
+        
+        }
+    
+    
     }
-}
-}
+

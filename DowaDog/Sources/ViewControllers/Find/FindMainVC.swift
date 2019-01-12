@@ -395,9 +395,7 @@ extension FindMainVC: UICollectionViewDelegate{
             if let dvc = storyboard?.instantiateViewController(withIdentifier: "AboutEmergenVC") as? AboutEmergenVC {
                 
                 dvc.id = gino(emergenDog.id)
-                
-                
-                
+
                 //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
                 navigationController?.pushViewController(dvc, animated: true)
                 
