@@ -163,6 +163,9 @@
 		F58ADAA821DB47B800231B27 /* AdoptDocStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */; };
 		F5DC3A6C21E94E3200D5544C /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC3A6B21E94E3200D5544C /* SplashVC.swift */; };
 		F5DC3A6E21E95BB300D5544C /* EducationThumbnailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC3A6D21E95BB300D5544C /* EducationThumbnailService.swift */; };
+		F5DC3A7021E9813F00D5544C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC3A6F21E9813F00D5544C /* Comment.swift */; };
+		F5DC3A7221E981A000D5544C /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC3A7121E981A000D5544C /* CommentService.swift */; };
+		F5DC3A7621E982C300D5544C /* CommentListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC3A7521E982C300D5544C /* CommentListService.swift */; };
 		F5EAB1F621E8BB810005654C /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EAB1F521E8BB810005654C /* Support.storyboard */; };
 		F5EAB1F921E8C1E50005654C /* SupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EAB1F821E8C1E50005654C /* SupportVC.swift */; };
 /* End PBXBuildFile section */
@@ -328,6 +331,9 @@
 		F58ADAA721DB47B800231B27 /* AdoptDocStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptDocStep2VC.swift; sourceTree = "<group>"; };
 		F5DC3A6B21E94E3200D5544C /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		F5DC3A6D21E95BB300D5544C /* EducationThumbnailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationThumbnailService.swift; sourceTree = "<group>"; };
+		F5DC3A6F21E9813F00D5544C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F5DC3A7121E981A000D5544C /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		F5DC3A7521E982C300D5544C /* CommentListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListService.swift; sourceTree = "<group>"; };
 		F5EAB1F521E8BB810005654C /* Support.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
 		F5EAB1F821E8C1E50005654C /* SupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -543,6 +549,8 @@
 				F511E2A221E6017B004E462F /* CommunityListService.swift */,
 				F511E2AB21E63942004E462F /* CommunityDetailService.swift */,
 				F511E2AD21E674EE004E462F /* CommunityWriteService.swift */,
+				F5DC3A7121E981A000D5544C /* CommentService.swift */,
+				F5DC3A7521E982C300D5544C /* CommentListService.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -553,6 +561,7 @@
 				F511E2A721E602D8004E462F /* CommunityImgList.swift */,
 				F511E2AF21E67D37004E462F /* CommunityWrite.swift */,
 				F511E2A921E602FD004E462F /* Community.swift */,
+				F5DC3A6F21E9813F00D5544C /* Comment.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1112,6 +1121,7 @@
 				4CF5A64E21DCB33C00969511 /* CardVC.swift in Sources */,
 				4C0E95D321D891BC00301D52 /* MainPageVC.swift in Sources */,
 				4C03252221E1400C001208D8 /* PostCVCell.swift in Sources */,
+				F5DC3A7021E9813F00D5544C /* Comment.swift in Sources */,
 				F524E9EC21DF78600001CA5A /* CommunityFourTVC.swift in Sources */,
 				F524E9D221DD1FDE0001CA5A /* AdoptDocStep3AdoptVC.swift in Sources */,
 				F511E2B621E74C2F004E462F /* Home.swift in Sources */,
@@ -1134,8 +1144,10 @@
 				4C0E95E521D8932F00301D52 /* AreaCollectionViewCell.swift in Sources */,
 				4C0E95E021D892A800301D52 /* YoonExtension.swift in Sources */,
 				F54B114521E4689F000BA8DF /* Education.swift in Sources */,
+				F5DC3A7621E982C300D5544C /* CommentListService.swift in Sources */,
 				F511E26C21E4847D004E462F /* Content.swift in Sources */,
 				4CF99FE921DB4B44007F34EB /* AdoptPopupTestVC.swift in Sources */,
+				F5DC3A7221E981A000D5544C /* CommentService.swift in Sources */,
 				F524E9E821DF783E0001CA5A /* CommunityTwoTVC.swift in Sources */,
 				F5609D6E21E11CA90090E3B6 /* MailCell.swift in Sources */,
 				F511E2AC21E63942004E462F /* CommunityDetailService.swift in Sources */,
