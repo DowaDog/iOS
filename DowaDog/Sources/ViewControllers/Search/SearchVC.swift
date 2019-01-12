@@ -97,6 +97,9 @@ class SearchVC: UIViewController {
     }
     
     
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {
+        performSegue(withIdentifier: "unwind", sender: self)
+    }
     
     func findByHashtag(hashtag: String) {
         EmergenDogService.shared.findAnimalByHashTag(hashtag: hashtag) { (data) in
@@ -116,7 +119,6 @@ class SearchVC: UIViewController {
             
             if let data = searchTF.text {
                 delegate?.sendData(data: data)
-                dismiss(animated: true, completion: nil)
             }
             
             if ( flag == true ) {

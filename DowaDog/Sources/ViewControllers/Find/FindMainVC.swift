@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FindMainVC: UIViewController,sendBackDelegate {
+class FindMainVC: UIViewController, sendBackDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
 
     
@@ -42,7 +42,6 @@ class FindMainVC: UIViewController,sendBackDelegate {
         
         getEmergenData()
         getData()
-        
         
         
     }
@@ -86,6 +85,10 @@ class FindMainVC: UIViewController,sendBackDelegate {
         collectionView.dataSource = self
         collectionView.delegate = self
         filterBtn.roundRadius()
+        
+        
+        setBlackScreen2()
+        setSideMenu()
     }
     
     
@@ -223,13 +226,13 @@ class FindMainVC: UIViewController,sendBackDelegate {
             case "입양하기":
                 hideMenu()
                 
-                let finding = UIStoryboard(name: "Finding", bundle: nil).instantiateViewController(withIdentifier: "FindingNav") as! UINavigationController
-                
-                self.present(finding, animated: true, completion: nil)
-                
                 break
             case "커뮤니티":
                 hideMenu()
+                
+                let community = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "CommunityNav") as! UINavigationController
+                
+                self.present(community, animated: true, completion: nil)
                 
                 break
             case "컨텐츠":

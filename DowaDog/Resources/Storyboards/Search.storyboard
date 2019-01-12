@@ -325,6 +325,9 @@
                     <navigationItem key="navigationItem" id="1v9-Lm-25v">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="backBtn" id="nwA-e6-RV9">
                             <color key="tintColor" red="0.43529411759999997" green="0.43921568630000002" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="unwind:" destination="Jed-gK-HFD" id="VWL-Tc-EDI"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -344,9 +347,11 @@
                         <outlet property="userName" destination="Jfm-Jj-Nwj" id="EbT-zZ-B5j"/>
                         <segue destination="HAM-Nn-BOh" kind="show" identifier="goNoResult" id="7fc-H8-bmy"/>
                         <segue destination="PnH-eP-WF9" kind="show" identifier="goResult" id="MpC-Ey-7iy"/>
+                        <segue destination="PkT-s9-qiZ" kind="unwind" identifier="unwind" unwindAction="unwindAction:" id="gFl-8F-M7w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ww9-nH-yU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PkT-s9-qiZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1455.2" y="41.829085457271368"/>
         </scene>
