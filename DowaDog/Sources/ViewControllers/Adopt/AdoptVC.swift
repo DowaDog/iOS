@@ -26,6 +26,21 @@ class AdoptVC: UIViewController {
         
         self.setNavigationBarClear()
         self.setBackBtn()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        print("id값 체크====================")
+        print("\(gino(self.id))")
+        print("id값 체크====================")
+        
+        let preferences = UserDefaults.standard
+        
+        let idKey = "id"
+        let id = gino(self.id)
+        preferences.set(id, forKey: idKey)
+        
     }
     
     
@@ -39,12 +54,6 @@ class AdoptVC: UIViewController {
         
         way2Btn.setBackgroundImage(UIImage(named: "writingImgUncheck.png"), for: .normal)
         
-        if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDirectVC") as?AdoptDirectVC {
-            
-            dvc.id = id
-        }
-        
-            
     }
     
     @IBAction func writeAction(_ sender: Any) {
@@ -55,10 +64,7 @@ class AdoptVC: UIViewController {
         way1Btn.setBackgroundImage(UIImage(named: "walkingImgUncheck.png"), for: .normal)
         way2Btn.setBackgroundImage(UIImage(named:"writingImgCheck.png"), for: .normal)
         
-        if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocumentVC") as?AdoptDocumentVC {
-            
-            dvc.id = id
-        }
+
         
     }
     
