@@ -19,7 +19,6 @@ class SupportVC: UIViewController {
         super.viewDidLoad()
 
         setTapGestureRecognizer()
-        setBackBtn()
         setNavigationBarShadow()
     }
     
@@ -30,7 +29,14 @@ class SupportVC: UIViewController {
         
         petfit.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openPetfit)))
     }
+    
+    
 
+    @IBAction func backBtnAction(_ sender: UIStoryboardSegue) {
+        performSegue(withIdentifier: "unwind", sender: self)
+    }
+    
+    
     @objc func openKlorenz() {
         guard let klorenzURL = URL(string: "https://klorenz.com") else { return }
         UIApplication.shared.open(klorenzURL)

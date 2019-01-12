@@ -152,7 +152,7 @@ class MainPageVC: UIViewController {
             case "기다릴개와 함께할개":
                 hideMenu()
                 
-                let support = UIStoryboard(name: "Support", bundle: nil).instantiateViewController(withIdentifier: "SupportNav") as! UINavigationController
+                let support = UIStoryboard(name: "Support", bundle: nil).instantiateViewController(withIdentifier: "SupportVC") as! UINavigationController
                 
                 self.present(support, animated: true, completion: nil)
                 break

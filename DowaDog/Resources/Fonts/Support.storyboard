@@ -140,21 +140,31 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PF1-8V-WYx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="함께할개" id="j2G-d8-BEm"/>
+                    <navigationItem key="navigationItem" title="함께할개" id="j2G-d8-BEm">
+                        <barButtonItem key="leftBarButtonItem" image="backBtn" id="pOB-il-lY7">
+                            <color key="tintColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backBtnAction:" destination="aIb-io-EeL" id="F3F-iL-nux"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1250"/>
                     <connections>
                         <outlet property="fromella" destination="FxT-Hx-T07" id="46s-c1-VLC"/>
                         <outlet property="klorenz" destination="cec-N5-Y15" id="OTc-Zg-N74"/>
                         <outlet property="petfit" destination="b6q-w1-5bv" id="Frq-xC-hkl"/>
+                        <segue destination="beK-DW-iEL" kind="unwind" identifier="unwind" unwindAction="unwindAction:" id="rDx-nJ-GLa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ws-hf-rPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="beK-DW-iEL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1180" y="-31.484257871064472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MPi-aI-ZVF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaL-N7-RSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="SupportNav" automaticallyAdjustsScrollViewInsets="NO" id="vbg-Dy-Oy4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SsM-di-QN4">
@@ -173,12 +183,12 @@
                         <segue destination="aIb-io-EeL" kind="relationship" relationship="rootViewController" id="caV-H3-THz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XaL-N7-RSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29.600000000000001" y="-31.03448275862069"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backBtn" width="12" height="24"/>
         <image name="fromella" width="337" height="328"/>
         <image name="klorenz" width="337" height="328"/>
         <image name="petfit" width="337" height="328"/>
