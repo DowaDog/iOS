@@ -125,7 +125,7 @@ class AdoptDocStep2VC: UIViewController {
             if let dvc = self.storyboard?.instantiateViewController(withIdentifier: "AdoptDocSelectStep3VC") as?AdoptDocSelectStep3VC {
                 
                 dvc.getPhoneNumb = getPhoneNumb
-                dvc.geEmail = getEmail
+                dvc.getEmail = getEmail
                 dvc.getAddress = getAddress
                 dvc.getWork = getWork
                 
@@ -133,7 +133,7 @@ class AdoptDocStep2VC: UIViewController {
                 if agreeBtn.isSelected == true{
                       dvc.getHave = true
                 }
-                else if agreeBtn.isSelected = false{
+                else if agreeBtn.isSelected == false{
                     dvc.getHave = false
                 }
                 dvc.getDetail = contentView.text
