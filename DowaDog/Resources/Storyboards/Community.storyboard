@@ -1125,12 +1125,53 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zi6-4q-vDs" customClass="SearchBarView" customModule="DowaDog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="953" width="375" height="47"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="댓글을 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FJ-IN-k3y">
+                                        <rect key="frame" x="20" y="10" width="121" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="dhv-eU-9W1"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urf-eu-dR5">
+                                        <rect key="frame" x="329" y="9" width="31" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="1el-AQ-bD7"/>
+                                            <constraint firstAttribute="width" constant="31" id="4L4-sP-Zzc"/>
+                                        </constraints>
+                                        <state key="normal" title="게시">
+                                            <color key="titleColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="5G3-q5-N1p"/>
+                                    <constraint firstAttribute="bottom" secondItem="6FJ-IN-k3y" secondAttribute="bottom" constant="10" id="MJF-Bq-eJ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="urf-eu-dR5" secondAttribute="trailing" constant="15" id="NUQ-vR-WeK"/>
+                                    <constraint firstItem="urf-eu-dR5" firstAttribute="top" secondItem="zi6-4q-vDs" secondAttribute="top" constant="9" id="a44-O2-E95"/>
+                                    <constraint firstItem="6FJ-IN-k3y" firstAttribute="top" secondItem="zi6-4q-vDs" secondAttribute="top" constant="10" id="bJG-3b-HeW"/>
+                                    <constraint firstItem="6FJ-IN-k3y" firstAttribute="leading" secondItem="zi6-4q-vDs" secondAttribute="leading" constant="20" id="nNU-BF-xHF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="lPJ-pM-ufz" firstAttribute="trailing" secondItem="zi6-4q-vDs" secondAttribute="trailing" id="Q7P-4c-ikX"/>
                             <constraint firstItem="ZbZ-Q3-XCr" firstAttribute="leading" secondItem="lPJ-pM-ufz" secondAttribute="leading" id="QR7-sH-gf0"/>
                             <constraint firstItem="ZbZ-Q3-XCr" firstAttribute="trailing" secondItem="lPJ-pM-ufz" secondAttribute="trailing" id="RNp-zd-T1x"/>
                             <constraint firstItem="ZbZ-Q3-XCr" firstAttribute="top" secondItem="lPJ-pM-ufz" secondAttribute="top" id="UnU-fq-nkp"/>
+                            <constraint firstItem="lPJ-pM-ufz" firstAttribute="bottom" secondItem="zi6-4q-vDs" secondAttribute="bottom" id="ZYf-0A-PWd"/>
+                            <constraint firstItem="zi6-4q-vDs" firstAttribute="leading" secondItem="lPJ-pM-ufz" secondAttribute="leading" id="oCd-27-OZS"/>
                             <constraint firstItem="ZbZ-Q3-XCr" firstAttribute="bottom" secondItem="lPJ-pM-ufz" secondAttribute="bottom" id="rZ7-cl-52z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lPJ-pM-ufz"/>
@@ -1160,7 +1201,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1574" y="1022"/>
+            <point key="canvasLocation" x="1573.5999999999999" y="1021.889055472264"/>
         </scene>
     </scenes>
     <resources>
