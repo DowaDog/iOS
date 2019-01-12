@@ -23,13 +23,15 @@ class CommunityDetailVC: UIViewController {
     @IBOutlet var aboutLabel: UITextView!
     @IBOutlet var mainImage: UIImageView!
     
+    @IBOutlet var constraint: NSLayoutConstraint!
     
     // swipe
     @IBOutlet var leftSwipe: UISwipeGestureRecognizer!
     @IBOutlet var rightSwipe: UISwipeGestureRecognizer!
     
     
-    
+    @IBOutlet var replyTF: UITextField!
+    var keyboardHeight: CGFloat = 0.0
     
     var imageArray: Array<String>?
     
@@ -51,9 +53,14 @@ class CommunityDetailVC: UIViewController {
         rightSwipe.direction = .right
     }
     
+    // 옵저버 해지
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterForKeyboardNotifications()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        registerForKeyboardNotifications()
         CommunityDetailService.shared.getCommunityDetail(communityIdx: gino(communityIdx)) {
             (data) in
             
@@ -70,25 +77,12 @@ class CommunityDetailVC: UIViewController {
             self.mainImage.imageFromUrl(data.communityImgList?[0].filePath, defaultImgPath: "")
         }
         
-        CommentListService.shared.getCommunityList(communityIdx: id) {
+        CommentListService.shared.getCommunityList(communityIdx: gino(communityIdx)) {
             (data) in
             
             print(data)
            let replyList = data
         }
-        
-        
-        
-        // 댓글 조회
-
-        
-        
-//        // 댓글 작성
-//        CommentService.shared.postComment(communityIdx: communityIdx!, detail: comment) {
-//            (data) in
-//
-//            print(data)
-//        }
     }
     
     
@@ -122,6 +116,26 @@ class CommunityDetailVC: UIViewController {
     @IBAction func rightSwipeAction(_ sender: UISwipeGestureRecognizer) {
         
     }
+    
+    
+    @IBAction func writeAction(_ sender: Any) {
+        
+        if replyTF.text != "" {
+            
+            guard let communityIdx = self.communityIdx else {return}
+            guard let comment = self.replyTF.text else {return}
+                
+            CommentService.shared.postComment(communityIdx: communityIdx, detail: comment) {
+                (data) in
+            
+                
+                
+                print(data)
+            }
+        }
+    }
+    
+    
     
     
 }
@@ -170,7 +184,63 @@ extension CommunityDetailVC:UITableViewDataSource{
 }
 
 
-
-
-
-
+extension CommunityDetailVC: UIGestureRecognizerDelegate {
+    func initGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextView(_:)))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTapTextView(_ sender: UITapGestureRecognizer) {
+        self.replyTF.resignFirstResponder()
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if (touch.view?.isDescendant(of: replyTF))! {
+            
+            return false
+        }
+        
+        return true
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            keyboardHeight = keyboardRectangle.height
+        }
+        
+        
+        
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.constraint.constant = self.keyboardHeight
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
+        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
+            self.constraint.constant = 0
+            
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+}

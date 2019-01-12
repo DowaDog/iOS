@@ -1129,7 +1129,7 @@
                                 <rect key="frame" x="0.0" y="953" width="375" height="47"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="댓글을 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FJ-IN-k3y">
-                                        <rect key="frame" x="20" y="10" width="121" height="27"/>
+                                        <rect key="frame" x="20" y="10" width="293" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="dhv-eU-9W1"/>
                                         </constraints>
@@ -1146,15 +1146,19 @@
                                         <state key="normal" title="게시">
                                             <color key="titleColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="writeAction:" destination="2Vm-fC-n2U" eventType="touchUpInside" id="Vlo-04-vfb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="5G3-q5-N1p"/>
                                     <constraint firstAttribute="bottom" secondItem="6FJ-IN-k3y" secondAttribute="bottom" constant="10" id="MJF-Bq-eJ0"/>
                                     <constraint firstAttribute="trailing" secondItem="urf-eu-dR5" secondAttribute="trailing" constant="15" id="NUQ-vR-WeK"/>
                                     <constraint firstItem="urf-eu-dR5" firstAttribute="top" secondItem="zi6-4q-vDs" secondAttribute="top" constant="9" id="a44-O2-E95"/>
                                     <constraint firstItem="6FJ-IN-k3y" firstAttribute="top" secondItem="zi6-4q-vDs" secondAttribute="top" constant="10" id="bJG-3b-HeW"/>
+                                    <constraint firstItem="urf-eu-dR5" firstAttribute="leading" secondItem="6FJ-IN-k3y" secondAttribute="trailing" constant="16" id="dGM-8C-VoZ"/>
+                                    <constraint firstAttribute="width" secondItem="zi6-4q-vDs" secondAttribute="height" multiplier="375:47" id="hpr-2l-rAb"/>
                                     <constraint firstItem="6FJ-IN-k3y" firstAttribute="leading" secondItem="zi6-4q-vDs" secondAttribute="leading" constant="20" id="nNU-BF-xHF"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -1179,10 +1183,12 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="aboutLabel" destination="aR8-zb-DIQ" id="uH9-Kn-ASc"/>
+                        <outlet property="constraint" destination="ZYf-0A-PWd" id="3yB-Hd-7XA"/>
                         <outlet property="dateLabel" destination="kvB-wb-diU" id="uQA-it-fyu"/>
                         <outlet property="leftSwipe" destination="lzd-kj-Vmk" id="HP6-Az-Ksq"/>
                         <outlet property="mainImage" destination="hyH-da-uGz" id="VAN-1S-Agy"/>
                         <outlet property="profileImage" destination="zba-7J-Dl3" id="2DG-yc-adV"/>
+                        <outlet property="replyTF" destination="6FJ-IN-k3y" id="0M0-JP-lrL"/>
                         <outlet property="rightSwipe" destination="PLh-mK-XSl" id="a7Z-uy-QP7"/>
                         <outlet property="tableView" destination="ZbZ-Q3-XCr" id="9hR-6L-dkN"/>
                         <outlet property="titleLabel" destination="w4T-7N-zqn" id="l6i-yi-Knt"/>
