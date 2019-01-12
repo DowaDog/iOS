@@ -60,12 +60,13 @@ class CommunityDetailVC: UIViewController {
                 self.imageArray?.append(self.gsno(data.communityImgList?[i].filePath))
             }
             
+            
             self.userIdTextView.text = data.userId
             self.titleLabel.text = data.title
             self.dateLabel.text = data.createdAt
             self.aboutLabel.text = data.detail
             self.profileImage.imageFromUrl(data.userProfileImg, defaultImgPath: "")
-            self.mainImage.imageFromUrl(self.imageArray?[0], defaultImgPath: "")
+            self.mainImage.imageFromUrl(data.communityImgList?[0].filePath, defaultImgPath: "")
         }
         
         
