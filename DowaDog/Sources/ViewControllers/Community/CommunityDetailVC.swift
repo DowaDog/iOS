@@ -67,7 +67,7 @@ class CommunityDetailVC: UIViewController {
             
             let afterDate: String = fmt.string(from: showDate)
             
-            self.mainImage.imageFromUrl(gsno( data.communityImgList![0] ), defaultImgPath: "")
+//            self.mainImage.imageFromUrl(gsno( data.communityImgList![0] ), defaultImgPath: "")
       
             
             self.dateLabel.text = afterDate
